@@ -390,10 +390,18 @@ const CAPABILITIES = [
     paths: ["p-agent-studio"]
   },
   {
+    id: "d365-sales-agent",
+    title: "Use Sales agent (formerly Copilot for Sales) in Outlook and Teams",
+    category: "bizapps",
+    keywords: ["sales agent","copilot for sales","sales copilot","viva sales","crm in outlook","crm in teams","seller copilot","sales chat","record summary"],
+    description: "The seller assistant that brings Dynamics 365 Sales or Salesforce CRM context into Outlook and Teams and appears as an agent inside Microsoft 365 Copilot. This is the successor to Copilot for Sales.",
+    paths: ["p-sales-agent-full", "p-sales-agent-crmonly"]
+  },
+  {
     id: "d365-sales-dev-agent",
     title: "Use the Sales Development agent (SDR agent) with Dynamics 365 Sales",
     category: "bizapps",
-    keywords: ["sales development agent","sdr agent","sales development","prospecting agent","agent 365","frontier","outreach agent","teams sales agent","autonomous agent"],
+    keywords: ["sales development agent","sdr agent","sales development representative","prospecting agent","agent 365","copilot frontier","outreach agent","autonomous agent"],
     description: "The Frontier / Agent 365 agent that runs in Microsoft Teams, does autonomous prospect outreach, and syncs leads and interactions back to Dynamics 365 Sales. Currently in preview.",
     paths: ["p-salesdev-agent"]
   },
@@ -401,7 +409,7 @@ const CAPABILITIES = [
     id: "d365-builtin-sales-agents",
     title: "Use the built-in Dynamics 365 Sales agents (Sales Qualification / Close / Opportunity)",
     category: "bizapps",
-    keywords: ["sales qualification agent","sqa","sales close agent","opportunity agent","research agent","dynamics 365 sales agent","ai hub","lead qualification"],
+    keywords: ["sales qualification agent","sales close agent","opportunity agent","research agent","dynamics 365 sales ai hub","lead qualification agent","built-in sales agent"],
     description: "The agents configured inside the Sales Hub AI hub that research and qualify leads, draft outreach and progress opportunities. Metered on Copilot Studio messages.",
     paths: ["p-builtin-sales-agents"]
   },
@@ -539,6 +547,23 @@ const PATHS = [
     rationale: "Custom agents are built in Microsoft Copilot Studio, licensed by a tenant subscription with a message pack or by pay-as-you-go metering through an Azure subscription.",
     conditions: [],
     sources: ["https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"] },
+
+  // --- Sales agent (Copilot for Sales successor) ---
+  { id: "p-sales-agent-full", capabilityId: "d365-sales-agent",
+    licenses: ["copilot-m365", "d365-sales-ent"], preferred: true,
+    rationale: "Sales agent is delivered through Microsoft 365 Copilot — a Microsoft 365 Copilot licence is required for the full experience (Graph grounding of Outlook mail, Teams meetings and messages, and use inside Microsoft 365 Copilot). It also needs a connected CRM: Dynamics 365 Sales Enterprise or Premium, or Salesforce. Users need the Salesperson or Sales Manager security role.",
+    conditions: [],
+    note: "If the Dynamics 365 Sales licence already includes Microsoft 365 Copilot access, no separate Copilot licence is needed. Salesforce can replace Dynamics 365 Sales as the CRM.",
+    sources: [
+      "https://learn.microsoft.com/microsoft-sales-copilot/introduction",
+      "https://learn.microsoft.com/microsoft-sales-copilot/set-up-sales-chat",
+      "https://learn.microsoft.com/dynamics365/sales/sales-agent-banner-summary"
+    ] },
+  { id: "p-sales-agent-crmonly", capabilityId: "d365-sales-agent",
+    licenses: ["d365-sales-ent"],
+    rationale: "Dynamics 365 Sales Enterprise or Premium on its own gives a limited Sales agent — CRM data only. Without Microsoft 365 Copilot there is no Microsoft Graph grounding (Outlook email, Teams meetings and messages) and no use inside Microsoft 365 Copilot.",
+    conditions: [],
+    sources: ["https://learn.microsoft.com/microsoft-sales-copilot/use-sales-chat"] },
 
   // --- Sales Development agent (Frontier / Agent 365) ---
   { id: "p-salesdev-agent", capabilityId: "d365-sales-dev-agent",

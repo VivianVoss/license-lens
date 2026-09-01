@@ -132,36 +132,48 @@
       });
     }
 
-    // prune pass: drop any chosen licence made redundant by a broader one picked later
+    // Choose the best explaining path per capability within the greedy set, preferring
+    // a `preferred` path over a degraded one, then rebuild the licence set from the picks.
     function rebuild(ids) {
       var s = baseId ? expand([baseId]) : {};
       ids.forEach(function (id) { var e = expand([id]); Object.keys(e).forEach(function (k) { s[k] = true; }); });
       return s;
     }
-    chosen.slice().sort(function (a, b) { return rankSum([a]) - rankSum([b]); }).forEach(function (id) {
-      var without = chosen.filter(function (x) { return x !== id; });
-      var set = rebuild(without);
-      var stillOk = solvable.every(function (e) {
-        return e.paths.some(function (p) { return p.licenses.every(function (l) { return set[l]; }); });
-      });
-      if (stillOk) { chosen = without; chosenSet = rebuild(chosen); }
-    });
-
-    // display order: the owned base first (if it does any covering), then added licences
-    var display = (baseId ? [baseId] : []).concat(chosen);
-
-    // For each covered capability, pick the clearest explaining path within the chosen set.
-    var coverage = {}; // licId -> [{cap, path}]
-    display.forEach(function (id) { coverage[id] = []; });
+    var picks = [];
     solvable.forEach(function (e) {
       var opts = e.paths.filter(function (p) { return p.licenses.every(has); });
       opts.sort(function (a, b) {
         return (pathLocked(b, state.answers) - pathLocked(a, state.answers))
           || ((b.preferred ? 1 : 0) - (a.preferred ? 1 : 0))
-          || (a.licenses.length - b.licenses.length);
+          || (a.licenses.length - b.licenses.length)
+          || (rankSum(a.licenses) - rankSum(b.licenses));
       });
-      var pick = opts[0];
-      if (!pick) return;
+      if (opts[0]) picks.push({ e: e, pick: opts[0] });
+    });
+    // needed licences = union of the picks' licences, minus what the owned base already grants
+    chosen = [];
+    picks.forEach(function (pp) {
+      pp.pick.licenses.forEach(function (l) {
+        if (baseId && expand([baseId])[l]) return;
+        if (chosen.indexOf(l) === -1) chosen.push(l);
+      });
+    });
+    // dedupe: if one needed licence's expansion already grants another, keep the broader one
+    chosen = chosen.filter(function (id) {
+      return !chosen.some(function (other) {
+        return other !== id && expand([other])[id] && !expand([id])[other];
+      });
+    });
+    chosenSet = rebuild(chosen);
+
+    // display order: the owned base first (if it does any covering), then added licences
+    var display = (baseId ? [baseId] : []).concat(chosen);
+
+    // attribute each pick's capability to the displayed licences it relies on
+    var coverage = {}; // licId -> [{cap, path}]
+    display.forEach(function (id) { coverage[id] = []; });
+    picks.forEach(function (pp) {
+      var e = pp.e, pick = pp.pick;
       // attribute the capability to every displayed licence the pick actually relies on
       // (so a multi-licence path shows the requirement under each of its licences).
       // when the owned base already grants a pick licence, attribute there instead of to an added one.
@@ -189,20 +201,27 @@
   function cmp(a, b) { for (var i = 0; i < a.length; i++) { if (a[i] !== b[i]) return a[i] - b[i]; } return 0; }
 
   // ---- search ----
+  function scoreCap(cap, q) {
+    var terms = q.split(/\s+/).filter(Boolean);
+    var kw = cap.keywords.map(function (k) { return k.toLowerCase(); });
+    var title = cap.title.toLowerCase();
+    var hay = (cap.title + " " + cap.description + " " + cap.keywords.join(" ")).toLowerCase();
+    var score = 0;
+    if (kw.indexOf(q) !== -1) score += 30;                 // exact keyword match
+    else if (kw.some(function (k) { return k.indexOf(q) !== -1 || q.indexOf(k) !== -1; })) score += 12;
+    if (title.indexOf(q) !== -1) score += 10;              // whole query appears in title
+    terms.forEach(function (t) {
+      if (title.indexOf(t) !== -1) score += 4;
+      if (kw.some(function (k) { return k.indexOf(t) !== -1; })) score += 3;
+      if (hay.indexOf(t) !== -1) score += 1;
+    });
+    return score;
+  }
   function searchCaps(query) {
-    var q = query.toLowerCase().trim();
+    var q = (query || "").toLowerCase().trim();
     if (!q) return [];
-    var terms = q.split(/\s+/);
-    return D.CAPABILITIES.map(function (cap) {
-      var hay = (cap.title + " " + cap.description + " " + cap.keywords.join(" ")).toLowerCase();
-      var score = 0;
-      terms.forEach(function (t) {
-        if (cap.title.toLowerCase().indexOf(t) !== -1) score += 5;
-        if (cap.keywords.some(function (k) { return k.indexOf(t) !== -1; })) score += 3;
-        if (hay.indexOf(t) !== -1) score += 1;
-      });
-      return { cap: cap, score: score };
-    }).filter(function (r) { return r.score > 0; })
+    return D.CAPABILITIES.map(function (cap) { return { cap: cap, score: scoreCap(cap, q) }; })
+      .filter(function (r) { return r.score > 0; })
       .sort(function (a, b) { return b.score - a.score; })
       .slice(0, 8)
       .map(function (r) { return r.cap; });
@@ -276,14 +295,15 @@
       disclaimer() + footer();
   }
 
-  function capCard(cap) {
+  function capCard(cap, pick) {
     var inBasket = state.basket.indexOf(cap.id) !== -1;
     return '<div class="card" style="--cat-color:' + catColor(cap.category) + '">' +
       '<h3>' + esc(cap.title) + '</h3>' +
       '<div class="sub">' + esc(cap.description) + '</div>' +
       (inBasket
         ? '<button class="btn-ghost" onclick="LLremove(\'' + cap.id + '\')">In basket &check; — remove</button>'
-        : '<button class="btn-primary" onclick="LLadd(\'' + cap.id + '\')">Add to basket</button>') +
+        : '<button class="btn-primary" onclick="' + (pick ? 'LLpick' : 'LLadd') + '(\'' + cap.id + '\')">' +
+          (pick ? 'This one &rarr;' : 'Add to basket') + '</button>') +
       '</div>';
   }
 
@@ -364,11 +384,35 @@
     window.scrollTo(0, 0);
   }
 
+  function renderFind() {
+    var q = window._llq || "";
+    var res = searchCaps(q);
+    var body;
+    if (!q) { location.hash = "home"; return; }
+    if (!res.length) {
+      body = '<div class="card"><h3>No match for &ldquo;' + esc(q) + '&rdquo;</h3>' +
+        '<div class="sub">Try different words, or browse by area.</div></div>';
+    } else {
+      body = '<div class="sectionLabel">' + res.length + ' match' + (res.length === 1 ? "" : "es") + ' for &ldquo;' + esc(q) + '&rdquo;</div>' +
+        '<div class="sub" style="margin:-8px 0 18px">Pick the one you mean. Microsoft reuses names — several &ldquo;agent&rdquo; and &ldquo;Copilot&rdquo; products differ only by a word.</div>' +
+        res.map(function (cap) { return capCard(cap, true); }).join("");
+    }
+    app.innerHTML =
+      topBar() +
+      (state.basket.length ? basketBar() + chipRow() : "") +
+      '<div class="searchWrap" style="margin:18px auto 8px"><div class="searchRow">' +
+      '<input id="q" type="text" autocomplete="off" value="' + esc(q) + '" oninput="LLsuggest(this.value)" onkeydown="LLkey(event)">' +
+      '<button class="btn-primary" onclick="LLgo()">Search</button></div><div id="sugg"></div></div>' +
+      body +
+      disclaimer() + footer();
+  }
+
   // ---- navigation ----
   function route() {
     var hash = (location.hash || "#home").slice(1);
     if (hash === "home" || hash === "") return renderHome();
     if (hash === "result") return renderResult();
+    if (hash === "find") return renderFind();
     if (hash.indexOf("cat:") === 0) return renderCategory(hash.slice(4));
     renderHome();
   }
@@ -383,14 +427,26 @@
     save(); route();
   };
   window.LLclear = function () { state.basket = []; state.answers = {}; save(); location.hash = "home"; };
+  window.LLpick = function (id) {
+    if (state.basket.indexOf(id) === -1) state.basket.push(id);
+    save();
+    if (location.hash === "#result") route(); else location.hash = "result";
+  };
   window.LLanswer = function (cid, oid) {
     if (oid) state.answers[cid] = oid; else delete state.answers[cid];
     save(); renderResult();
   };
   window.LLgo = function () {
     var q = document.getElementById("q"); if (!q) return;
-    var res = searchCaps(q.value);
-    if (res.length) { LLadd(res[0].id); location.hash = "result"; }
+    window._llq = q.value.trim();
+    if (!window._llq) return;
+    var res = searchCaps(window._llq);
+    // one clearly-dominant hit: add it and go straight to the result
+    if (res.length === 1 || (res.length > 1 && scoreCap(res[0], window._llq.toLowerCase()) >= scoreCap(res[1], window._llq.toLowerCase()) + 20)) {
+      LLadd(res[0].id); location.hash = "result"; return;
+    }
+    location.hash = "find";
+    if (location.hash === "#find") route();
   };
   window.LLkey = function (e) { if (e.key === "Enter") LLgo(); };
   window.LLsuggest = function (val) {
