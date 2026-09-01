@@ -199,6 +199,25 @@ const LICENSES = [
     note: "Light-use licence for read access and a limited set of write scenarios across Dynamics 365 apps. Not for full operational use of an app.",
     prerequisites: ["At least one full Dynamics 365 user licence in the tenant"],
     source: "https://learn.microsoft.com/en-us/dynamics365/get-started/licensing"
+  },
+  {
+    id: "d365-sales-prem", name: "Dynamics 365 Sales Premium", family: "bizapps", type: "standalone", rank: 55,
+    note: "Sales Enterprise plus the AI-driven seller experience (conversation intelligence, predictive scoring, and the basic features of the built-in Sales agents).",
+    includes: ["d365-sales-ent"],
+    prerequisites: [],
+    source: "https://learn.microsoft.com/en-us/dynamics365/sales/buy-dynamics-365-sales"
+  },
+  {
+    id: "teams-ent", name: "Microsoft Teams (Enterprise / standalone)", family: "m365", type: "standalone", rank: 12,
+    note: "A Teams licence, either inside a Microsoft 365 suite or bought standalone (for example Microsoft Teams Enterprise, or Teams EEA in the EEA/Switzerland).",
+    prerequisites: [],
+    source: "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/licensing-enhance-teams"
+  },
+  {
+    id: "agent-365", name: "Microsoft Agent 365", family: "m365", type: "addon", rank: 30,
+    note: "The platform that gives an agent its own identity, mailbox and Teams account and governs it. In public preview via a no-cost 'Microsoft 365 Frontier for Autopilots' SKU that includes 25 agent instances; Copilot Frontier must be enabled.",
+    prerequisites: ["Microsoft 365 Copilot", "Copilot Frontier enabled in the Microsoft 365 admin center"],
+    source: "https://learn.microsoft.com/dynamics365/sales/sales-dev-agent/activate-agent"
   }
 ];
 
@@ -366,9 +385,25 @@ const CAPABILITIES = [
     id: "custom-agent",
     title: "Build a custom AI agent / chatbot for staff or customers",
     category: "bizapps",
-    keywords: ["copilot studio","agent","chatbot","virtual agent","conversational ai","bot","custom copilot"],
+    keywords: ["copilot studio","agent","chatbot","virtual agent","conversational ai","bot","custom copilot","build agent"],
     description: "A custom conversational agent with its own knowledge sources and actions, published to Teams, a website or other channels.",
     paths: ["p-agent-studio"]
+  },
+  {
+    id: "d365-sales-dev-agent",
+    title: "Use the Sales Development agent (SDR agent) with Dynamics 365 Sales",
+    category: "bizapps",
+    keywords: ["sales development agent","sdr agent","sales development","prospecting agent","agent 365","frontier","outreach agent","teams sales agent","autonomous agent"],
+    description: "The Frontier / Agent 365 agent that runs in Microsoft Teams, does autonomous prospect outreach, and syncs leads and interactions back to Dynamics 365 Sales. Currently in preview.",
+    paths: ["p-salesdev-agent"]
+  },
+  {
+    id: "d365-builtin-sales-agents",
+    title: "Use the built-in Dynamics 365 Sales agents (Sales Qualification / Close / Opportunity)",
+    category: "bizapps",
+    keywords: ["sales qualification agent","sqa","sales close agent","opportunity agent","research agent","dynamics 365 sales agent","ai hub","lead qualification"],
+    description: "The agents configured inside the Sales Hub AI hub that research and qualify leads, draft outreach and progress opportunities. Metered on Copilot Studio messages.",
+    paths: ["p-builtin-sales-agents"]
   },
   {
     id: "d365-sales",
@@ -504,6 +539,29 @@ const PATHS = [
     rationale: "Custom agents are built in Microsoft Copilot Studio, licensed by a tenant subscription with a message pack or by pay-as-you-go metering through an Azure subscription.",
     conditions: [],
     sources: ["https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"] },
+
+  // --- Sales Development agent (Frontier / Agent 365) ---
+  { id: "p-salesdev-agent", capabilityId: "d365-sales-dev-agent",
+    licenses: ["copilot-m365", "teams-ent", "agent-365", "d365-sales-ent"], preferred: true,
+    rationale: "The Sales Development agent needs Microsoft 365 Copilot (with Copilot Frontier enabled) and Microsoft Teams for every user who creates or manages an instance, plus Microsoft Agent 365 for the agent's own identity. For the Dynamics 365 integration, a Dynamics 365 Sales licence (Professional, Enterprise or Premium) is assigned to the agent user itself, with the Salesperson security role.",
+    conditions: [],
+    note: "Preview feature — subject to supplemental preview terms, not for production. Agent 365 is currently a no-cost preview SKU (25 agent instances). Teams can be standalone or bundled in the AI Teammate licence.",
+    sources: [
+      "https://learn.microsoft.com/dynamics365/sales/sales-dev-agent/activate-agent",
+      "https://learn.microsoft.com/dynamics365/sales/sales-dev-agent/integrate-with-dynamics"
+    ] },
+
+  // --- Built-in Dynamics 365 Sales agents (SQA / Close / Opportunity) ---
+  { id: "p-builtin-sales-agents", capabilityId: "d365-builtin-sales-agents",
+    licenses: ["d365-sales-ent", "copilot-studio"], preferred: true,
+    rationale: "The built-in Sales agents are configured in the Sales Hub AI hub and require a Dynamics 365 Sales licence plus Copilot Studio message capacity (a message pack or pay-as-you-go), set up in the Power Platform admin center. Sales Enterprise and Sales Premium include the basic Sales agent features; premium agent features additionally require a Microsoft 365 Copilot licence.",
+    conditions: [],
+    note: "Also needs server-side synchronisation with Exchange and a Dataverse app user (AISalesPerson role). A Power Platform administrator role is required to complete setup.",
+    sources: [
+      "https://learn.microsoft.com/dynamics365/sales/configure-sales-qualification-agent",
+      "https://learn.microsoft.com/dynamics365/sales/prerequisites-for-all-agents",
+      "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales"
+    ] },
 
   // --- D365 Sales ---
   { id: "p-sales-ent", capabilityId: "d365-sales", licenses: ["d365-sales-ent"], preferred: true,

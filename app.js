@@ -162,23 +162,26 @@
       });
       var pick = opts[0];
       if (!pick) return;
-      // attribute to a licence in `display` that grants one of the pick's licences,
-      // preferring an added licence over the owned base, then higher rank
-      var anchor = display.filter(function (d) {
-        var ex = expand([d]);
-        return pick.licenses.some(function (l) { return ex[l]; });
-      }).sort(function (a, b) {
-        return ((a === baseId ? 0 : 1) - (b === baseId ? 0 : 1)) || (rankSum([b]) - rankSum([a]));
-      })[0] || pick.licenses[0];
-      (coverage[anchor] = coverage[anchor] || []).push({ cap: e.cap, path: pick, viaBase: anchor === baseId });
+      // attribute the capability to every displayed licence the pick actually relies on
+      // (so a multi-licence path shows the requirement under each of its licences).
+      // when the owned base already grants a pick licence, attribute there instead of to an added one.
+      var anchors = pick.licenses.map(function (l) {
+        if (baseId && expand([baseId])[l]) return baseId;
+        var owner = display.filter(function (d) { return d !== baseId && expand([d])[l]; })
+          .sort(function (a, b) { return rankSum([b]) - rankSum([a]); })[0];
+        return owner || l;
+      });
+      uniq(anchors).forEach(function (aId) {
+        (coverage[aId] = coverage[aId] || []).push({ cap: e.cap, path: pick, viaBase: aId === baseId });
+      });
       e.alts = e.paths.filter(function (p) {
         return p !== pick && sig(p.licenses) !== sig(pick.licenses);
       });
       e.pick = pick;
     });
 
-    // drop the base card if it covers nothing
-    display = display.filter(function (id) { return (coverage[id] || []).length > 0; });
+    // keep every added licence; drop only an owned-base card that covers nothing
+    display = display.filter(function (id) { return id !== baseId || (coverage[id] || []).length > 0; });
 
     return { chosen: chosen, baseId: baseId, display: display, coverage: coverage, solvable: solvable, unresolved: unresolved };
   }
@@ -301,6 +304,7 @@
           '</div></div>';
       }).join("") + '</div>' : "";
 
+    var rationaleShown = {}; // path.id -> true, so a multi-licence path explains itself once
     var licHtml = rec.display.map(function (licId) {
       var lic = LIC_BY_ID[licId];
       var covers = (rec.coverage[licId] || []);
@@ -313,8 +317,11 @@
         (lic.prerequisites && lic.prerequisites.length
           ? '<div class="prereq">Prerequisite: ' + lic.prerequisites.map(esc).join("; ") + '</div>' : "") +
         (covers.length ? '<ul class="covers">' + covers.map(function (c) {
-          return '<li><div class="cvTitle">' + esc(c.cap.title) + '</div><div class="cvWhy">' + esc(c.path.rationale) + '</div>' +
-            (c.path.note ? '<div class="cvWhy"><em>' + esc(c.path.note) + '</em></div>' : "") + '</li>';
+          var showWhy = !rationaleShown[c.path.id];
+          rationaleShown[c.path.id] = true;
+          return '<li><div class="cvTitle">' + (showWhy ? "" : "Required for: ") + esc(c.cap.title) + '</div>' +
+            (showWhy ? '<div class="cvWhy">' + esc(c.path.rationale) + '</div>' +
+              (c.path.note ? '<div class="cvWhy"><em>' + esc(c.path.note) + '</em></div>' : "") : "") + '</li>';
         }).join("") + '</ul>' : "") +
         '<div class="srcRow"><a href="' + esc(lic.source) + '" target="_blank" rel="noopener">Licence overview &nearr;</a>' +
         allSources.map(function (s) { return '<a href="' + esc(s) + '" target="_blank" rel="noopener">Source &nearr;</a>'; }).join("") +
