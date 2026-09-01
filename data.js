@@ -171,6 +171,18 @@ const LICENSES = [
     source: "https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-per-user-faq"
   },
   {
+    id: "fabric-capacity", name: "Microsoft Fabric capacity (F SKU)", family: "bizapps", type: "consumption", rank: 20,
+    note: "A provisioned Fabric capacity (F2–F2048, or a Trial) billed on Capacity Units. All Fabric workloads — including the Fabric IQ workload (ontology, graph, planning, data and operations agents) — run on it and draw from the same CU pool. No separate SKU per workload.",
+    prerequisites: [],
+    source: "https://learn.microsoft.com/fabric/enterprise/licenses"
+  },
+  {
+    id: "github-copilot-business", name: "GitHub Copilot Business", family: "m365", type: "standalone", rank: 20,
+    note: "Per-seat GitHub Copilot for organisations (Enterprise is the larger tier). The seat must be assigned and the GitHub Copilot app policy enabled for the user — an assigned seat alone is not enough.",
+    prerequisites: [],
+    source: "https://learn.microsoft.com/microsoft-scout/admin-access-overview"
+  },
+  {
     id: "powerapps-premium", name: "Power Apps Premium", family: "bizapps", type: "standalone", rank: 25,
     note: "Per-user. Run custom canvas and model-driven apps, including premium connectors and Dataverse, outside the seeded rights that come with Microsoft 365 or Dynamics 365.",
     prerequisites: [],
@@ -324,6 +336,22 @@ const CAPABILITIES = [
     keywords: ["copilot","microsoft 365 copilot","generative ai","word","excel","outlook","teams","m365 chat","graph grounding","ai assistant"],
     description: "Microsoft 365 Copilot embedded in the Office apps and Teams, grounded on the user's Microsoft Graph content.",
     paths: ["p-copilot-need-base", "p-copilot-have-base"]
+  },
+  {
+    id: "microsoft-scout",
+    title: "Use Microsoft Scout",
+    category: "m365",
+    keywords: ["microsoft scout","scout","desktop agent","developer agent","github copilot agent","scout app","frontier"],
+    description: "The Microsoft Scout desktop app (Windows 11 / macOS 12+) — an agent that runs on GitHub Copilot for developer and research tasks.",
+    paths: ["p-scout"]
+  },
+  {
+    id: "fabric-iq",
+    title: "Use Fabric IQ (ontology, semantic layer, graph, operations agents)",
+    category: "bizapps",
+    keywords: ["fabric iq","microsoft iq","ontology","semantic layer","semantic intelligence","operations agent","data agent","graph","business entities","enterprise intelligence layer"],
+    description: "The semantic-intelligence workload in Microsoft Fabric that turns data into shared business concepts and grounds agents in them. Currently in preview.",
+    paths: ["p-fabric-iq"]
   },
   {
     id: "eDiscovery-premium",
@@ -547,6 +575,28 @@ const PATHS = [
     rationale: "Custom agents are built in Microsoft Copilot Studio, licensed by a tenant subscription with a message pack or by pay-as-you-go metering through an Azure subscription.",
     conditions: [],
     sources: ["https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"] },
+
+  // --- Microsoft Scout ---
+  { id: "p-scout", capabilityId: "microsoft-scout", licenses: ["copilot-m365", "github-copilot-business"], preferred: true,
+    rationale: "Microsoft Scout needs a Microsoft 365 Copilot licence assigned to a work or school account, plus a GitHub Copilot Business or Enterprise seat with the GitHub Copilot app policy enabled. The app installs per machine and the IT admin must complete Scout access setup first (Frontier access, Intune policy and attestation).",
+    conditions: [],
+    note: "Windows 11 or macOS 12+; local admin / Intune-enrolled device to install. Personal Microsoft accounts are not supported.",
+    sources: [
+      "https://learn.microsoft.com/microsoft-scout/get-started",
+      "https://learn.microsoft.com/microsoft-scout/admin-access-overview"
+    ] },
+
+  // --- Fabric IQ ---
+  { id: "p-fabric-iq", capabilityId: "fabric-iq", licenses: ["fabric-capacity"], preferred: true,
+    rationale: "Fabric IQ is a workload inside Microsoft Fabric, not a separate product. It runs on a provisioned Fabric capacity (F SKU) and draws Capacity Units for ontology modelling, logic and operations, AI reasoning, graph refresh and operations-agent compute. Power BI licensing (Pro or Premium Per User) still applies to the semantic models and reports per the normal Fabric rules.",
+    conditions: [],
+    note: "When Fabric IQ answers are surfaced inside Microsoft 365 Copilot (Copilot Chat or Cowork), those users also need a Microsoft 365 Copilot licence and read access to the underlying Power BI content; Cowork adds its own usage-based billing. Preview.",
+    sources: [
+      "https://learn.microsoft.com/fabric/iq/overview",
+      "https://learn.microsoft.com/fabric/enterprise/licenses",
+      "https://learn.microsoft.com/fabric/iq/ontology/resources-capacity-usage",
+      "https://learn.microsoft.com/fabric/iq/connectors/microsoft-365-copilot-overview"
+    ] },
 
   // --- Sales agent (Copilot for Sales successor) ---
   { id: "p-sales-agent-full", capabilityId: "d365-sales-agent",

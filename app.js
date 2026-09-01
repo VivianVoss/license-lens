@@ -368,11 +368,14 @@
 
     var addedCount = rec.chosen.length;
     var scen = rec.solvable.length + ' of your ' + state.basket.length + ' scenario' + (state.basket.length === 1 ? "" : "s");
+    var perUser = rec.chosen.every(function (id) {
+      return ["consumption", "benefit"].indexOf((LIC_BY_ID[id] || {}).type) === -1;
+    });
     var summary = rec.display.length
       ? (addedCount === 0
           ? 'Your existing ' + esc((LIC_BY_ID[rec.baseId] || {}).name || "base licence") + ' already covers ' + scen + '. Nothing further to buy.'
           : 'To cover ' + scen + ', License Lens recommends ' + addedCount + ' licence' + (addedCount === 1 ? "" : "s") +
-            ' per user' + (rec.baseId ? ' on top of your existing ' + esc((LIC_BY_ID[rec.baseId] || {}).name) : "") + ' (unless noted otherwise).')
+            (perUser ? ' per user' : '') + (rec.baseId ? ' on top of your existing ' + esc((LIC_BY_ID[rec.baseId] || {}).name) : "") + '. Check each card for how it is metered.')
       : (rec.unresolved.length ? "" : "Add a scenario to get started.");
 
     app.innerHTML =
