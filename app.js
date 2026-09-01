@@ -241,7 +241,8 @@
       'Knowledge base last updated ' + esc(D.META.updated) + '.</div>';
   }
   function footer() {
-    return '<div class="footer">Sources: <a href="' + esc(D.META.licensingHome) + '" target="_blank" rel="noopener">microsoft.com/licensing</a> and learn.microsoft.com. ' +
+    return '<div class="footer">Built by <a href="https://vivian.tiiman.com" target="_blank" rel="noopener">Vivian Voss</a>. ' +
+      'Sources: <a href="' + esc(D.META.licensingHome) + '" target="_blank" rel="noopener">microsoft.com/licensing</a> and learn.microsoft.com. ' +
       'Open source (GPL v3) &middot; <a href="https://github.com/VivianVoss/license-lens" target="_blank" rel="noopener">GitHub</a></div>';
   }
 
