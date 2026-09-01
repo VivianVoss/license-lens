@@ -268,11 +268,15 @@
     var q = document.getElementById("q"); if (q) q.focus();
   }
 
-  function basketBar() {
-    return '<div class="basketBar"><span class="count">' + state.basket.length + ' in basket</span>' +
+  function basketBar(onResult) {
+    return '<div class="basketBar"><span class="count">' + state.basket.length +
+      ' scenario' + (state.basket.length === 1 ? "" : "s") + ' in basket</span>' +
       '<span class="spacer"></span>' +
       '<button class="btn-ghost" onclick="LLclear()">Clear</button>' +
-      '<button class="btn-primary" onclick="LLnav(\'result\')">See licences &rarr;</button></div>';
+      (onResult
+        ? '<button class="btn-ghost" onclick="LLnav(\'home\')">+ Add scenario</button>'
+        : '<button class="btn-primary" onclick="LLnav(\'result\')">See licences &rarr;</button>') +
+      '</div>';
   }
   function chipRow() {
     return '<div class="chips">' + state.basket.map(function (id) {
@@ -373,7 +377,7 @@
 
     app.innerHTML =
       topBar() +
-      basketBar() + chipRow() +
+      basketBar(true) + chipRow() +
       '<h2 class="resultHead">Recommended licences</h2>' +
       '<div class="resultLede">' + esc(summary) + '</div>' +
       clarHtml +
@@ -419,7 +423,9 @@
   window.addEventListener("hashchange", route);
 
   // ---- global handlers ----
-  window.LLnav = function (where) { location.hash = where; };
+  window.LLnav = function (where) {
+    if (location.hash === "#" + where) route(); else location.hash = where;
+  };
   window.LLadd = function (id) { if (state.basket.indexOf(id) === -1) state.basket.push(id); save(); route(); };
   window.LLremove = function (id) {
     state.basket = state.basket.filter(function (x) { return x !== id; });
