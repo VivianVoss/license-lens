@@ -1,0 +1,3502 @@
+{
+  "licenses": [
+    {
+      "id": "mdo-p1",
+      "name": "Microsoft Defender for Office 365 Plan 1",
+      "family": "security",
+      "type": "addon",
+      "rank": 22,
+      "prerequisites": [
+        "Exchange Online via a qualifying Office 365 / Microsoft 365 plan"
+      ],
+      "note": "Safe Attachments, Safe Links, Safe Attachments for SharePoint/OneDrive/Teams, anti-phishing and real-time detections. Standalone, or in Microsoft 365 Business Premium and Office 365 / Microsoft 365 E5.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mde-p1",
+      "name": "Microsoft Defender for Endpoint Plan 1",
+      "family": "security",
+      "type": "addon",
+      "rank": 22,
+      "prerequisites": [
+        "A supported OS and a qualifying per-user or per-device licence"
+      ],
+      "note": "Next-generation antimalware, attack surface reduction rules, device control, endpoint firewall, web/network protection and application control. Included in Microsoft 365 E3/A3/G3. No EDR.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mdi",
+      "name": "Microsoft Defender for Identity",
+      "family": "security",
+      "type": "standalone",
+      "rank": 25,
+      "prerequisites": [],
+      "note": "Per-user cloud service that detects identity attacks and compromised accounts across on-prem Active Directory and hybrid identity. Standalone, or in EMS E5 and Microsoft 365 E5.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mdca",
+      "name": "Microsoft Defender for Cloud Apps",
+      "family": "security",
+      "type": "standalone",
+      "rank": 28,
+      "prerequisites": [],
+      "note": "CASB / SaaS security: cloud app discovery, app governance for OAuth apps, session and access control, and threat protection for SaaS. Standalone, or in EMS E5 and Microsoft 365 E5.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mdvm-standalone",
+      "name": "Microsoft Defender Vulnerability Management (standalone)",
+      "family": "security",
+      "type": "standalone",
+      "rank": 20,
+      "prerequisites": [],
+      "note": "Full vulnerability management (core plus premium capabilities) for organisations that do not have Defender for Endpoint Plan 2. Per-user subscription.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mdvm-addon",
+      "name": "Microsoft Defender Vulnerability Management add-on",
+      "family": "security",
+      "type": "addon",
+      "rank": 15,
+      "prerequisites": [
+        "Microsoft Defender for Endpoint Plan 2, or a plan that includes it"
+      ],
+      "note": "Premium vulnerability management tools (security baselines assessment, browser extension and certificate inventory, blocking vulnerable apps, and more) added onto Defender for Endpoint Plan 2.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "eiot-addon",
+      "name": "Microsoft Defender for IoT - EIoT Device License add-on",
+      "family": "security",
+      "type": "addon",
+      "rank": 12,
+      "prerequisites": [
+        "Microsoft Defender for Endpoint Plan 2, or a subscription that includes it"
+      ],
+      "note": "Per-device add-on that brings enterprise IoT devices (printers, cameras, VoIP phones) under Defender for Endpoint vulnerability and threat monitoring.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "mdti-premium",
+      "name": "Microsoft Defender Threat Intelligence Premium",
+      "family": "security",
+      "type": "standalone",
+      "rank": 18,
+      "prerequisites": [],
+      "note": "Full threat-intelligence portal: Microsoft-curated IOCs and enriched OSINT, finished intel articles, threat actor and infrastructure analysis. A standalone licence beyond the limited free/Defender tier.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "defender-experts-xdr",
+      "name": "Microsoft Defender Experts for XDR",
+      "family": "security",
+      "type": "addon",
+      "rank": 20,
+      "prerequisites": [
+        "Microsoft 365 E5, or Microsoft 365 E3 + the Defender suite / EMS E5 add-on"
+      ],
+      "note": "Managed extended detection and response: Microsoft analysts triage, investigate and (optionally) respond to incidents across the Defender XDR workloads on the customer's behalf. Sold as a service on top of a qualifying Defender suite.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "defender-experts-hunting",
+      "name": "Microsoft Defender Experts for Hunting",
+      "family": "security",
+      "type": "addon",
+      "rank": 18,
+      "prerequisites": [
+        "Defender for Endpoint Plan 2; optionally Defender for Office 365 P2, Defender for Identity, Defender for Cloud Apps, Entra ID P2"
+      ],
+      "note": "Managed proactive threat hunting across endpoints, email, identity and cloud apps, with Defender Experts Notifications and Ask Defender Experts. For customers who run their own SOC.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "defender-business",
+      "name": "Microsoft Defender for Business",
+      "family": "security",
+      "type": "standalone",
+      "rank": 20,
+      "prerequisites": [
+        "Up to 300 employees"
+      ],
+      "note": "Endpoint security (next-gen protection, EDR, automated investigation) for organisations up to 300 employees. Included in Microsoft 365 Business Premium, or standalone. Servers need the Defender for Business servers add-on.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+    },
+    {
+      "id": "defender-servers-p1",
+      "name": "Microsoft Defender for Servers Plan 1",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 18,
+      "prerequisites": [],
+      "note": "Per-server Defender for Cloud plan that licenses Defender for Endpoint on server OSEs (EDR, automatic onboarding, integrated alerts). Billed per server hour through an Azure subscription.",
+      "source": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-servers-overview"
+    },
+    {
+      "id": "defender-servers-p2",
+      "name": "Microsoft Defender for Servers Plan 2",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 26,
+      "prerequisites": [],
+      "note": "Everything in Plan 1 plus agentless scanning, premium Defender Vulnerability Management, file integrity monitoring, just-in-time VM access and free data ingestion allowance. Billed per server hour.",
+      "source": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-servers-overview"
+    },
+    {
+      "id": "defender-cspm",
+      "name": "Microsoft Defender Cloud Security Posture Management (Defender CSPM)",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 22,
+      "prerequisites": [],
+      "note": "Paid Defender for Cloud posture plan: attack path analysis, cloud security explorer, agentless scanning, data and AI security posture, regulatory compliance and governance across Azure, AWS and GCP. Billed per billable resource.",
+      "source": "https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management"
+    },
+    {
+      "id": "defender-cloud-cwp",
+      "name": "Microsoft Defender for Cloud - workload protection plan",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 20,
+      "prerequisites": [],
+      "note": "Any of the resource-specific Defender for Cloud plans (Storage, SQL, Containers, App Service, Key Vault, Resource Manager, APIs, etc.). Each is enabled per subscription/resource and billed on consumption.",
+      "source": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction"
+    },
+    {
+      "id": "security-copilot",
+      "name": "Microsoft Security Copilot",
+      "family": "security",
+      "type": "consumption",
+      "rank": 30,
+      "prerequisites": [],
+      "note": "Generative-AI assistance across the Security Copilot portal and embedded in Defender, Purview, Intune and Entra. Metered in Security Compute Units (SCUs) - provisioned hourly capacity plus optional overage; Microsoft 365 E5/E7 tenants get an included monthly SCU allocation.",
+      "source": "https://learn.microsoft.com/copilot/security/security-compute-units-capacity"
+    },
+    {
+      "id": "intune-p2",
+      "name": "Microsoft Intune Plan 2",
+      "family": "security",
+      "type": "addon",
+      "rank": 24,
+      "prerequisites": [
+        "Microsoft Intune Plan 1 (standalone or via a suite)"
+      ],
+      "note": "Additive to Intune Plan 1. Adds Remote Help, Advanced Analytics, Microsoft Tunnel for MAM, firmware-over-the-air updates and specialty (AR/VR, meeting-room) device management.",
+      "source": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+    },
+    {
+      "id": "intune-epm",
+      "name": "Microsoft Intune Endpoint Privilege Management",
+      "family": "security",
+      "type": "addon",
+      "rank": 14,
+      "prerequisites": [
+        "Microsoft Intune Plan 1"
+      ],
+      "note": "Standalone Intune Suite add-on. Lets standard users run approved tasks with elevation without holding local admin rights.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/add-ons"
+    },
+    {
+      "id": "intune-remote-help",
+      "name": "Microsoft Intune Remote Help",
+      "family": "security",
+      "type": "addon",
+      "rank": 12,
+      "prerequisites": [
+        "Microsoft Intune Plan 1"
+      ],
+      "note": "Standalone Intune add-on. Authenticated, compliance-aware remote view and control of managed devices with role-based access, plus Azure Virtual Desktop / RemoteApp support.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/add-ons"
+    },
+    {
+      "id": "intune-advanced-analytics",
+      "name": "Microsoft Intune Advanced Analytics",
+      "family": "security",
+      "type": "addon",
+      "rank": 14,
+      "prerequisites": [
+        "Microsoft Intune Plan 1"
+      ],
+      "note": "Standalone Intune add-on. Endpoint analytics anomaly detection, enhanced device timeline, device query (near-real-time device state), battery health and custom device scopes.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/advanced-capabilities"
+    },
+    {
+      "id": "intune-enterprise-app-mgmt",
+      "name": "Microsoft Intune Enterprise App Management",
+      "family": "security",
+      "type": "addon",
+      "rank": 14,
+      "prerequisites": [
+        "Microsoft Intune Plan 1"
+      ],
+      "note": "Standalone Intune add-on. Enterprise App Catalog of curated Win32 apps with pre-set install/detection settings, Microsoft-hosted app content and app update management.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/add-ons"
+    },
+    {
+      "id": "intune-cloud-pki",
+      "name": "Microsoft Cloud PKI",
+      "family": "security",
+      "type": "addon",
+      "rank": 16,
+      "prerequisites": [
+        "Microsoft Intune Plan 1"
+      ],
+      "note": "Standalone Intune add-on. A Microsoft-managed certificate authority that issues, renews and revokes device certificates across all Intune-supported platforms without on-prem PKI/NDES.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/add-ons"
+    },
+    {
+      "id": "intune-tunnel-mam",
+      "name": "Microsoft Tunnel for Mobile Application Management",
+      "family": "security",
+      "type": "addon",
+      "rank": 12,
+      "prerequisites": [
+        "Microsoft Intune Plan 1 plus Intune Plan 2 or Intune Suite"
+      ],
+      "note": "Extends the Microsoft Tunnel VPN gateway to unenrolled Android and iOS devices. Available only through Intune Plan 2 or the Intune Suite - not sold as an individual standalone add-on.",
+      "source": "https://learn.microsoft.com/intune/fundamentals/add-ons"
+    },
+    {
+      "id": "aip-p1",
+      "name": "Azure Information Protection Plan 1",
+      "family": "security",
+      "type": "standalone",
+      "rank": 12,
+      "prerequisites": [],
+      "note": "Manual sensitivity labelling and protection (Azure RMS), and Office 365 Message Encryption rights. Included in EMS E3/E5 and Microsoft 365 E3 and above.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "aip-p2",
+      "name": "Azure Information Protection Plan 2",
+      "family": "security",
+      "type": "standalone",
+      "rank": 18,
+      "prerequisites": [
+        "AIP Plan 1 must also be assigned for labelling to be available"
+      ],
+      "note": "Everything in AIP P1 plus automatic and recommended client-side labelling, and automatic classification. Included in EMS E5 and Microsoft 365 E5. Also called Information Protection for Office 365 - Premium.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "purview-ipg",
+      "name": "Microsoft 365 E5 Information Protection and Governance",
+      "family": "security",
+      "type": "addon",
+      "rank": 40,
+      "prerequisites": [
+        "Microsoft 365 E3 or the equivalent components"
+      ],
+      "note": "Add-on for Microsoft 365 E3. The information-protection and data-governance half of E5 Compliance: automatic sensitivity labelling, endpoint DLP, DLP for Teams, records management, trainable classifiers, Customer Key.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "purview-eda-audit",
+      "name": "Microsoft 365 E5 eDiscovery and Audit",
+      "family": "security",
+      "type": "addon",
+      "rank": 38,
+      "prerequisites": [
+        "Microsoft 365 E3 or the equivalent components"
+      ],
+      "note": "Add-on for Microsoft 365 E3. eDiscovery (Premium) end-to-end workflow and Audit (Premium) one-year (and add-on 10-year) log retention with high-value events.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "purview-irm",
+      "name": "Microsoft 365 E5 Insider Risk Management",
+      "family": "security",
+      "type": "addon",
+      "rank": 36,
+      "prerequisites": [
+        "Microsoft 365 E3 or the equivalent components"
+      ],
+      "note": "Add-on for Microsoft 365 E3. Insider Risk Management, Communication Compliance, Customer Lockbox, Information Barriers and Privileged Access Management.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "audit-10yr-addon",
+      "name": "Microsoft Purview Audit (Premium) - 10-Year Audit Log Retention add-on",
+      "family": "security",
+      "type": "addon",
+      "rank": 10,
+      "prerequisites": [
+        "Audit (Premium) via Microsoft 365 E5, E5 Compliance or E5 eDiscovery and Audit"
+      ],
+      "note": "Per-user add-on that extends Audit (Premium) log retention from one year to ten years for the assigned users.",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "exchange-online-p2",
+      "name": "Exchange Online Plan 2",
+      "family": "security",
+      "type": "standalone",
+      "rank": 14,
+      "prerequisites": [],
+      "note": "Adds a 100 GB mailbox, in-place hold / litigation hold and unlimited archiving. Needed for eDiscovery holds and some retention scenarios on standalone Exchange (Plan 1 needs the Exchange Online Archiving add-on instead).",
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+    },
+    {
+      "id": "priva-prm",
+      "name": "Microsoft Priva Privacy Risk Management",
+      "family": "security",
+      "type": "addon",
+      "rank": 20,
+      "prerequisites": [
+        "Office 365 or Microsoft 365 E1/E3/E5/F-series or equivalent"
+      ],
+      "note": "Add-on that surfaces personal data across Exchange, SharePoint, OneDrive and Teams and runs data-minimisation, overexposure and transfer risk policies with user remediation.",
+      "source": "https://learn.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-priva-service-description"
+    },
+    {
+      "id": "priva-srr",
+      "name": "Microsoft Priva Subject Rights Requests",
+      "family": "security",
+      "type": "addon",
+      "rank": 12,
+      "prerequisites": [],
+      "note": "Per-request licence to run data subject rights requests (DSAR/DSR) - identify a data subject and collect and review their personal data across Exchange, SharePoint, OneDrive and Teams.",
+      "source": "https://learn.microsoft.com/en-us/privacy/priva/subject-rights-requests"
+    },
+    {
+      "id": "win-e5-user",
+      "name": "Windows 11 Enterprise E5 (per user)",
+      "family": "security",
+      "type": "standalone",
+      "rank": 22,
+      "prerequisites": [
+        "Each device already licensed for Windows 10/11 Pro"
+      ],
+      "note": "Windows 11 Enterprise E3 per-user rights plus Microsoft Defender for Endpoint Plan 2. Per-user only, available through Commercial Licensing / CSP. Included in Microsoft 365 E5.",
+      "source": "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+    },
+    {
+      "id": "win-vda",
+      "name": "Windows Enterprise E3/E5 per-device (VDA)",
+      "family": "security",
+      "type": "standalone",
+      "rank": 16,
+      "prerequisites": [],
+      "note": "Per-device Windows Enterprise licensing (Virtual Desktop Access, or per-device Enterprise). The route when devices are shared, not assigned to a user, or are thin clients not covered by a per-user Windows subscription.",
+      "source": "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+    },
+    {
+      "id": "win-ltsc",
+      "name": "Windows 11 Enterprise LTSC",
+      "family": "security",
+      "type": "standalone",
+      "rank": 15,
+      "prerequisites": [
+        "A Windows Enterprise E3/E5 subscription (per-user) or Volume Licensing per-device"
+      ],
+      "note": "Long-Term Servicing Channel edition for fixed-function / regulated devices: security and critical fixes only, no feature updates, up to 5 years support. Available per-user or per-device depending on the licensing program.",
+      "source": "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+    },
+    {
+      "id": "w365-enterprise",
+      "name": "Windows 365 Enterprise",
+      "family": "security",
+      "type": "addon",
+      "rank": 30,
+      "prerequisites": [
+        "Windows 11/10 Enterprise E3+ , Microsoft Intune, Microsoft Entra ID P1"
+      ],
+      "note": "Per-user fixed-price Cloud PC managed with Microsoft Intune. Requires Windows Enterprise E3 (or higher), Intune and Entra ID P1 alongside it. No seat limit.",
+      "source": "https://learn.microsoft.com/windows-365/enterprise/requirements"
+    },
+    {
+      "id": "w365-business",
+      "name": "Windows 365 Business",
+      "family": "security",
+      "type": "suite",
+      "rank": 26,
+      "prerequisites": [
+        "Up to 300 users"
+      ],
+      "note": "Per-user Cloud PC for organisations up to 300 users, bought and managed simply without Intune or the Windows/Entra prerequisites.",
+      "source": "https://learn.microsoft.com/office365/servicedescriptions/windows-365-service-description/windows-365-service-description"
+    },
+    {
+      "id": "w365-frontline",
+      "name": "Windows 365 Frontline (Windows 365 Flex)",
+      "family": "security",
+      "type": "addon",
+      "rank": 24,
+      "prerequisites": [
+        "Windows 11/10 Enterprise E3+ , Microsoft Intune, Microsoft Entra ID P1"
+      ],
+      "note": "Cloud PC licences assigned to the tenant and shared across shift/frontline workers (or used in dedicated mode). Requires Windows Enterprise E3+, Intune and Entra ID P1.",
+      "source": "https://learn.microsoft.com/windows-365/enterprise/requirements"
+    }
+  ],
+  "clarifiers": [
+    {
+      "id": "cloudpc-management",
+      "question": "How should the Cloud PCs be bought and managed?",
+      "options": [
+        {
+          "id": "intune",
+          "label": "Managed with Intune, integrated with Entra/Defender"
+        },
+        {
+          "id": "simple",
+          "label": "Simple purchase, no Intune (small org)"
+        },
+        {
+          "id": "shared",
+          "label": "Shared between shift / frontline workers"
+        }
+      ]
+    },
+    {
+      "id": "server-count",
+      "question": "Roughly how many servers need protecting?",
+      "options": [
+        {
+          "id": "few",
+          "label": "Up to 60, SMB"
+        },
+        {
+          "id": "many",
+          "label": "More than 60 / enterprise / multicloud"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "email-safe-links-attachments",
+      "title": "Detonate malicious email attachments and links (Safe Attachments / Safe Links)",
+      "category": "security",
+      "keywords": [
+        "defender for office 365",
+        "safe links",
+        "safe attachments",
+        "anti-phishing",
+        "plan 1",
+        "email security",
+        "zero-hour purge"
+      ],
+      "description": "Time-of-click URL rewriting and sandbox detonation of attachments in Exchange Online, plus Safe Attachments for SharePoint, OneDrive and Teams and impersonation-based anti-phishing. This is Defender for Office 365 Plan 1.",
+      "paths": [
+        "p-mdo1-standalone",
+        "p-mdo1-e5"
+      ]
+    },
+    {
+      "id": "email-attack-investigation",
+      "title": "Investigate and auto-remediate email attacks (Threat Explorer, AIR)",
+      "category": "security",
+      "keywords": [
+        "defender for office 365 plan 2",
+        "threat explorer",
+        "automated investigation and response",
+        "campaign views",
+        "threat trackers",
+        "email remediation",
+        "xdr"
+      ],
+      "description": "Threat Explorer / real-time detections, campaign and threat-tracker views, automated investigation and response (AIR) for email, and Defender XDR integration. This is what Defender for Office 365 Plan 2 adds over Plan 1.",
+      "paths": [
+        "p-mdo2-standalone",
+        "p-mdo2-e5sec"
+      ]
+    },
+    {
+      "id": "attack-simulation-training",
+      "title": "Run phishing simulations and security awareness training",
+      "category": "security",
+      "keywords": [
+        "attack simulation training",
+        "phishing simulation",
+        "security awareness",
+        "simulated phishing",
+        "user training",
+        "defender for office 365 plan 2"
+      ],
+      "description": "Built-in simulated phishing campaigns with automatic assignment of targeted training. Part of Defender for Office 365 Plan 2.",
+      "paths": [
+        "p-ast-mdo2"
+      ]
+    },
+    {
+      "id": "endpoint-nextgen-protection",
+      "title": "Next-gen antivirus, attack surface reduction and device control",
+      "category": "security",
+      "keywords": [
+        "defender for endpoint plan 1",
+        "next generation protection",
+        "attack surface reduction",
+        "asr rules",
+        "device control",
+        "endpoint firewall",
+        "web protection",
+        "application control"
+      ],
+      "description": "Cloud-delivered antimalware, ASR rules, controlled folder access, device control, endpoint firewall and web/network protection - Microsoft Defender for Endpoint Plan 1. Plan 1 has no EDR or automated investigation.",
+      "paths": [
+        "p-mde1-in-e3",
+        "p-mde1-standalone"
+      ]
+    },
+    {
+      "id": "endpoint-vulnerability-management",
+      "title": "Continuous device vulnerability assessment and prioritisation",
+      "category": "security",
+      "keywords": [
+        "threat and vulnerability management",
+        "tvm",
+        "defender vulnerability management",
+        "vulnerability assessment",
+        "security recommendations",
+        "cve",
+        "exposure"
+      ],
+      "description": "Continuous discovery and risk-based prioritisation of software vulnerabilities and misconfigurations on managed devices. Core capabilities ship in Defender for Endpoint Plan 2.",
+      "paths": [
+        "p-vm-core-mde2",
+        "p-vm-standalone"
+      ]
+    },
+    {
+      "id": "vulnerability-management-premium",
+      "title": "Advanced vulnerability tools - security baselines, blocking vulnerable apps, digital certs",
+      "category": "security",
+      "keywords": [
+        "defender vulnerability management add-on",
+        "security baselines assessment",
+        "block vulnerable applications",
+        "browser extensions inventory",
+        "certificate inventory",
+        "premium vulnerability management"
+      ],
+      "description": "Premium Defender Vulnerability Management: security baseline profile assessment, blocking of vulnerable applications, browser-extension / digital-certificate / hardware-firmware inventory, and authenticated network scans.",
+      "paths": [
+        "p-vmprem-addon",
+        "p-vmprem-standalone"
+      ]
+    },
+    {
+      "id": "defender-for-business-smb",
+      "title": "Endpoint security for a small business (up to 300 staff)",
+      "category": "security",
+      "keywords": [
+        "defender for business",
+        "small business endpoint security",
+        "smb edr",
+        "business premium",
+        "ransomware protection",
+        "defender for business servers"
+      ],
+      "description": "Enterprise-grade endpoint protection and EDR sized and priced for organisations up to 300 employees. Included in Microsoft 365 Business Premium; servers are covered by the Defender for Business servers add-on.",
+      "paths": [
+        "p-dfb-standalone",
+        "p-dfb-bp"
+      ]
+    },
+    {
+      "id": "enterprise-iot-security",
+      "title": "Monitor and secure enterprise IoT devices (printers, cameras, VoIP)",
+      "category": "security",
+      "keywords": [
+        "defender for iot",
+        "enterprise iot",
+        "eiot",
+        "iot vulnerability management",
+        "unmanaged device discovery",
+        "ot security"
+      ],
+      "description": "Discovery, continuous monitoring and vulnerability management for enterprise IoT devices, integrated into Defender for Endpoint.",
+      "paths": [
+        "p-eiot-addon"
+      ]
+    },
+    {
+      "id": "defender-for-identity-threats",
+      "title": "Detect identity attacks against on-prem / hybrid Active Directory",
+      "category": "security",
+      "keywords": [
+        "defender for identity",
+        "mdi",
+        "identity threat detection",
+        "lateral movement",
+        "pass the hash",
+        "kerberoasting",
+        "active directory security",
+        "itdr"
+      ],
+      "description": "Sensor-based detection of reconnaissance, credential theft, lateral movement and domain dominance against on-prem AD and Active Directory Federation Services, surfaced in Defender XDR.",
+      "paths": [
+        "p-mdi-standalone",
+        "p-mdi-emsE5"
+      ]
+    },
+    {
+      "id": "cloud-app-discovery",
+      "title": "Discover shadow IT / unsanctioned cloud app usage",
+      "category": "security",
+      "keywords": [
+        "cloud app discovery",
+        "shadow it",
+        "cloud discovery",
+        "saas usage",
+        "app risk score",
+        "cloud app catalog"
+      ],
+      "description": "Analyse firewall/proxy logs and endpoint signals to reveal which cloud apps staff use, with risk scoring and the ability to sanction or block.",
+      "paths": [
+        "p-mdca-discovery"
+      ]
+    },
+    {
+      "id": "casb-saas-security",
+      "title": "Full SaaS security posture, governance and threat protection (CASB)",
+      "category": "security",
+      "keywords": [
+        "defender for cloud apps",
+        "casb",
+        "saas security",
+        "app connectors",
+        "saas security posture",
+        "cloud app policies",
+        "file policies"
+      ],
+      "description": "API connectors to major SaaS apps for data governance, anomaly-based threat detection, SaaS security posture management and OAuth app control.",
+      "paths": [
+        "p-mdca-full"
+      ]
+    },
+    {
+      "id": "app-governance-oauth",
+      "title": "Govern OAuth apps that access Microsoft 365 data",
+      "category": "security",
+      "keywords": [
+        "app governance",
+        "oauth apps",
+        "consent phishing",
+        "risky oauth",
+        "application security",
+        "graph api apps"
+      ],
+      "description": "Visibility, alerting and automated policy over OAuth-enabled apps registered in Entra ID and how they access mailbox, file and Teams data.",
+      "paths": [
+        "p-appgov-mdca"
+      ]
+    },
+    {
+      "id": "conditional-access-app-control",
+      "title": "Real-time session controls in the browser (block download, monitor, protect)",
+      "category": "security",
+      "keywords": [
+        "conditional access app control",
+        "session control",
+        "reverse proxy",
+        "block download",
+        "cloud app security session",
+        "in-session protection"
+      ],
+      "description": "Route sessions through Defender for Cloud Apps to enforce real-time controls - block or protect downloads, block copy/paste, require read-only - based on Conditional Access.",
+      "paths": [
+        "p-caac"
+      ]
+    },
+    {
+      "id": "defender-xdr-portal",
+      "title": "Unified incident view and cross-workload correlation (Defender XDR)",
+      "category": "security",
+      "keywords": [
+        "defender xdr",
+        "microsoft 365 defender",
+        "incident correlation",
+        "single pane of glass",
+        "advanced hunting",
+        "security operations",
+        "siem xdr"
+      ],
+      "description": "The Microsoft Defender portal correlating alerts from endpoint, email, identity and cloud-app workloads into single incidents, with advanced hunting (KQL) across them.",
+      "paths": [
+        "p-xdr-anyworkload",
+        "p-xdr-e5"
+      ]
+    },
+    {
+      "id": "automatic-attack-disruption",
+      "title": "Automatically contain an in-progress attack (attack disruption)",
+      "category": "security",
+      "keywords": [
+        "automatic attack disruption",
+        "attack disruption",
+        "ransomware containment",
+        "auto contain device",
+        "disable user",
+        "soc automation"
+      ],
+      "description": "Defender XDR automatically disables compromised accounts and contains devices mid-attack using high-confidence signals across workloads.",
+      "paths": [
+        "p-attackdisrupt"
+      ]
+    },
+    {
+      "id": "managed-xdr-service",
+      "title": "Have Microsoft run your SOC / triage incidents for you (Defender Experts for XDR)",
+      "category": "security",
+      "keywords": [
+        "defender experts for xdr",
+        "managed detection and response",
+        "mdr",
+        "managed xdr",
+        "soc as a service",
+        "managed response"
+      ],
+      "description": "A Microsoft-operated managed detection and response service that owns the incident queue, does triage and investigation, and can take response actions on the customer's behalf.",
+      "paths": [
+        "p-dex-xdr"
+      ]
+    },
+    {
+      "id": "managed-threat-hunting",
+      "title": "Add Microsoft proactive threat hunting to your own SOC (Defender Experts for Hunting)",
+      "category": "security",
+      "keywords": [
+        "defender experts for hunting",
+        "managed threat hunting",
+        "proactive hunting",
+        "ask defender experts",
+        "threat notifications",
+        "human hunters"
+      ],
+      "description": "A managed service that proactively hunts across endpoint, email, identity and cloud-app telemetry and delivers contextual alerts and an Experts-on-Demand channel, without taking over the SOC.",
+      "paths": [
+        "p-dex-hunting"
+      ]
+    },
+    {
+      "id": "threat-intelligence-portal",
+      "title": "Threat intelligence research - actor profiles, IOC enrichment, intel articles",
+      "category": "security",
+      "keywords": [
+        "defender threat intelligence",
+        "mdti",
+        "threat intelligence",
+        "indicators of compromise",
+        "threat actor profiles",
+        "osint",
+        "infrastructure analysis"
+      ],
+      "description": "The Defender Threat Intelligence portal: Microsoft-curated IOCs and enriched OSINT, finished intelligence articles and threat-actor / infrastructure pivoting.",
+      "paths": [
+        "p-mdti-premium",
+        "p-mdti-e5"
+      ]
+    },
+    {
+      "id": "security-exposure-management",
+      "title": "See attack paths and overall exposure across the estate (Exposure Management)",
+      "category": "security",
+      "keywords": [
+        "security exposure management",
+        "attack path analysis",
+        "attack surface map",
+        "exposure score",
+        "critical asset management",
+        "xspm"
+      ],
+      "description": "Microsoft Security Exposure Management unifies asset, vulnerability and posture data into attack-path analysis and an exposure score across Microsoft and third-party tools.",
+      "paths": [
+        "p-sem"
+      ]
+    },
+    {
+      "id": "security-copilot-soc",
+      "title": "Generative-AI assistant for security investigations (Security Copilot)",
+      "category": "security",
+      "keywords": [
+        "security copilot",
+        "copilot for security",
+        "scu",
+        "security compute unit",
+        "promptbook",
+        "ai soc analyst",
+        "incident summarization"
+      ],
+      "description": "The standalone Security Copilot portal and embedded experiences that summarise incidents, analyse scripts, build KQL and run promptbooks. Metered in Security Compute Units.",
+      "paths": [
+        "p-seccopilot-scu",
+        "p-seccopilot-e5"
+      ]
+    },
+    {
+      "id": "copilot-in-intune",
+      "title": "AI assistance for device management and policy troubleshooting (Copilot in Intune)",
+      "category": "security",
+      "keywords": [
+        "copilot in intune",
+        "intune copilot",
+        "device management ai",
+        "policy troubleshooting",
+        "endpoint copilot",
+        "security copilot embedded"
+      ],
+      "description": "The Security Copilot experience embedded in the Intune admin center to explain settings, compare policies and troubleshoot devices.",
+      "paths": [
+        "p-copilot-intune"
+      ]
+    },
+    {
+      "id": "cloud-posture-management",
+      "title": "Cloud security posture management across Azure, AWS and GCP (CSPM)",
+      "category": "security",
+      "keywords": [
+        "defender cspm",
+        "cloud security posture management",
+        "secure score",
+        "misconfiguration",
+        "regulatory compliance",
+        "attack path analysis",
+        "multicloud posture"
+      ],
+      "description": "Continuous assessment of cloud resource configuration against benchmarks, with secure score, regulatory compliance dashboards and (in the paid plan) attack-path analysis and agentless scanning.",
+      "paths": [
+        "p-cspm-free",
+        "p-cspm-defender"
+      ]
+    },
+    {
+      "id": "cloud-server-protection",
+      "title": "Protect server VMs in Azure/AWS/GCP with EDR and threat detection",
+      "category": "security",
+      "keywords": [
+        "defender for servers",
+        "server protection",
+        "cloud workload protection",
+        "vm threat detection",
+        "just in time vm access",
+        "file integrity monitoring",
+        "agentless scanning"
+      ],
+      "description": "Defender for Cloud's server plan: automatic Defender for Endpoint onboarding, threat detection, and (Plan 2) agentless scanning, premium vulnerability management, file integrity monitoring and JIT VM access.",
+      "paths": [
+        "p-dfservers-p2",
+        "p-dfservers-p1"
+      ]
+    },
+    {
+      "id": "cloud-workload-protection-resource",
+      "title": "Threat protection for a specific Azure resource type (Storage, SQL, Containers, Key Vault, APIs)",
+      "category": "security",
+      "keywords": [
+        "defender for storage",
+        "defender for sql",
+        "defender for containers",
+        "defender for key vault",
+        "defender for app service",
+        "defender for apis",
+        "cloud workload protection"
+      ],
+      "description": "Resource-specific Defender for Cloud plans that add threat detection and hardening for individual Azure services. Each is enabled per subscription/resource and billed on consumption.",
+      "paths": [
+        "p-cwp-resource"
+      ]
+    },
+    {
+      "id": "ai-security-posture",
+      "title": "Discover and secure AI workloads and models in the cloud",
+      "category": "security",
+      "keywords": [
+        "ai security posture management",
+        "ai-spm",
+        "defender for ai",
+        "model inventory",
+        "ai workload risk",
+        "genai posture"
+      ],
+      "description": "Defender for Cloud discovery of AI resources and models, AI-specific attack paths and posture recommendations across Azure and other clouds.",
+      "paths": [
+        "p-aispm"
+      ]
+    },
+    {
+      "id": "sensitivity-labels-manual",
+      "title": "Let users classify and protect documents and emails with sensitivity labels",
+      "category": "security",
+      "keywords": [
+        "sensitivity labels",
+        "information protection",
+        "manual labeling",
+        "classification",
+        "rights management",
+        "label encryption",
+        "aip"
+      ],
+      "description": "Manual application of sensitivity labels (with optional encryption and marking) in Office apps, Outlook, SharePoint and Teams.",
+      "paths": [
+        "p-labels-e3",
+        "p-labels-aip1"
+      ]
+    },
+    {
+      "id": "auto-labeling",
+      "title": "Automatically label sensitive content (auto-labelling / trainable classifiers)",
+      "category": "security",
+      "keywords": [
+        "automatic labeling",
+        "auto-labeling",
+        "service-side labeling",
+        "client-side labeling",
+        "trainable classifiers",
+        "default label",
+        "information protection premium"
+      ],
+      "description": "Policy-based automatic sensitivity labelling of content at rest (service-side) and in Office apps (client-side), including labelling driven by sensitive info types or trainable classifiers.",
+      "paths": [
+        "p-autolabel-e5",
+        "p-autolabel-ipg",
+        "p-autolabel-aip2"
+      ]
+    },
+    {
+      "id": "message-encryption",
+      "title": "Send encrypted email to any recipient (Microsoft Purview Message Encryption)",
+      "category": "security",
+      "keywords": [
+        "office 365 message encryption",
+        "ome",
+        "encrypt email",
+        "do not forward",
+        "encrypted email portal",
+        "purview message encryption"
+      ],
+      "description": "Encrypt outbound email to internal or external recipients regardless of their mail provider, with recipients reading it via a secure portal or a Microsoft account.",
+      "paths": [
+        "p-ome-e3"
+      ]
+    },
+    {
+      "id": "advanced-message-encryption",
+      "title": "Revoke or expire encrypted emails sent outside the org",
+      "category": "security",
+      "keywords": [
+        "advanced message encryption",
+        "revoke encrypted email",
+        "expiring email",
+        "branded encryption templates",
+        "external recipient control"
+      ],
+      "description": "Automatic policy-based encryption of sensitive outbound mail with custom branded templates, an expiry date and the ability to revoke external access to an encrypted message.",
+      "paths": [
+        "p-ame-e5"
+      ]
+    },
+    {
+      "id": "double-key-encryption",
+      "title": "Hold your own encryption key for the most sensitive data (Double Key Encryption)",
+      "category": "security",
+      "keywords": [
+        "double key encryption",
+        "dke",
+        "customer-held key",
+        "highest sensitivity",
+        "two key encryption",
+        "data sovereignty"
+      ],
+      "description": "Protect the most sensitive content with two keys - one held by the customer, one by Microsoft - so Microsoft cannot access the data.",
+      "paths": [
+        "p-dke-e5"
+      ]
+    },
+    {
+      "id": "customer-key",
+      "title": "Control the encryption keys for data at rest (Customer Key)",
+      "category": "security",
+      "keywords": [
+        "customer key",
+        "service encryption with customer key",
+        "byok",
+        "data at rest encryption",
+        "key control",
+        "exchange sharepoint teams encryption"
+      ],
+      "description": "Add a layer of encryption for Exchange, SharePoint, OneDrive and Teams data at rest using keys the customer supplies from Azure Key Vault.",
+      "paths": [
+        "p-customerkey-e5"
+      ]
+    },
+    {
+      "id": "data-classification-analytics",
+      "title": "See where sensitive data lives and how it is used (Content & Activity Explorer)",
+      "category": "security",
+      "keywords": [
+        "content explorer",
+        "activity explorer",
+        "data classification analytics",
+        "sensitive data map",
+        "label analytics",
+        "posture reports"
+      ],
+      "description": "Content Explorer (where sensitive/labelled items are stored) and Activity Explorer (label changes, DLP matches, endpoint DLP events) plus Purview posture reports.",
+      "paths": [
+        "p-dca-e5"
+      ]
+    },
+    {
+      "id": "label-download-permissions",
+      "title": "Keep permissions on files after they are downloaded from SharePoint",
+      "category": "security",
+      "keywords": [
+        "sharepoint sensitivity label",
+        "extend permissions to downloaded documents",
+        "protected document library",
+        "sharepoint advanced management",
+        "label on library"
+      ],
+      "description": "Apply a sensitivity label at the SharePoint document-library level so downloaded copies stay encrypted and access-controlled.",
+      "paths": [
+        "p-labeldl-e5"
+      ]
+    },
+    {
+      "id": "endpoint-dlp",
+      "title": "Stop sensitive files being copied to USB, printed or uploaded from a laptop",
+      "category": "security",
+      "keywords": [
+        "endpoint dlp",
+        "endpoint data loss prevention",
+        "usb block",
+        "print restriction",
+        "cloud upload restriction",
+        "device dlp"
+      ],
+      "description": "Extends Purview DLP to activity on Windows and macOS devices - copy to USB, print, upload to unmanaged cloud, paste to browser - with audit, warn or block.",
+      "paths": [
+        "p-edlp-e5",
+        "p-edlp-ipg"
+      ]
+    },
+    {
+      "id": "dlp-teams",
+      "title": "Block sensitive information in Teams chats and channels",
+      "category": "security",
+      "keywords": [
+        "dlp for teams",
+        "teams data loss prevention",
+        "communications dlp",
+        "block teams message",
+        "channel message dlp"
+      ],
+      "description": "Inspect Teams 1:1, group chat and channel messages for sensitive content and block or warn.",
+      "paths": [
+        "p-dlpteams-e5"
+      ]
+    },
+    {
+      "id": "dlp-for-copilot",
+      "title": "Stop Copilot from using labelled or sensitive files as grounding data",
+      "category": "security",
+      "keywords": [
+        "dlp for microsoft copilot",
+        "copilot data protection",
+        "restrict copilot grounding",
+        "sensitivity label copilot",
+        "copilot as a dlp location"
+      ],
+      "description": "A DLP policy location that excludes files carrying particular sensitivity labels or sensitive info types from Microsoft 365 Copilot and Copilot Chat processing.",
+      "paths": [
+        "p-dlpcopilot-e5"
+      ]
+    },
+    {
+      "id": "dlp-browser-network",
+      "title": "Inline DLP for data shared to cloud apps via the browser or network",
+      "category": "security",
+      "keywords": [
+        "browser dlp",
+        "network dlp",
+        "inline data protection",
+        "edge for business dlp",
+        "sase dlp",
+        "pay-as-you-go dlp"
+      ],
+      "description": "Inline detection and control of sensitive data shared to unmanaged cloud apps through Edge for Business or at the network layer.",
+      "paths": [
+        "p-dlpinline"
+      ]
+    },
+    {
+      "id": "insider-risk-management",
+      "title": "Detect risky or malicious insider activity (data theft, leaks, sabotage)",
+      "category": "security",
+      "keywords": [
+        "insider risk management",
+        "irm",
+        "data theft detection",
+        "departing employee",
+        "risky user activity",
+        "adaptive protection"
+      ],
+      "description": "Machine-learning policies that score risky user activities (mass download, exfiltration to personal cloud/USB, obfuscation) and route cases for investigation, with Adaptive Protection feeding risk levels to DLP and Conditional Access.",
+      "paths": [
+        "p-irm-e5",
+        "p-irm-addon"
+      ]
+    },
+    {
+      "id": "insider-risk-forensic-evidence",
+      "title": "Capture visual evidence of insider data security incidents",
+      "category": "security",
+      "keywords": [
+        "forensic evidence",
+        "insider risk forensic evidence",
+        "screen capture",
+        "visual capture",
+        "capacity add-on",
+        "insider investigation"
+      ],
+      "description": "An opt-in, capacity-metered add-on to Insider Risk Management that captures visual (screen) evidence for scoped users tied to policy matches.",
+      "paths": [
+        "p-irm-forensic"
+      ]
+    },
+    {
+      "id": "communication-compliance",
+      "title": "Detect harassment, threats or regulatory violations in messages",
+      "category": "security",
+      "keywords": [
+        "communication compliance",
+        "code of conduct",
+        "regulatory compliance messaging",
+        "harassment detection",
+        "teams message review",
+        "supervision"
+      ],
+      "description": "Reviews text and image messages in Teams, Outlook, Viva Engage and third-party channels for inappropriate content, sensitive-information oversharing and regulatory violations.",
+      "paths": [
+        "p-commcompliance-e5",
+        "p-commcompliance-addon"
+      ]
+    },
+    {
+      "id": "ediscovery-standard",
+      "title": "Legal hold and content search across Microsoft 365 (eDiscovery Standard)",
+      "category": "security",
+      "keywords": [
+        "ediscovery standard",
+        "content search",
+        "legal hold",
+        "litigation hold",
+        "export search results",
+        "case management"
+      ],
+      "description": "Create cases, place mailboxes/sites/Teams on hold, search across Microsoft 365 and export results. The baseline eDiscovery tier.",
+      "paths": [
+        "p-edisc-std-e3"
+      ]
+    },
+    {
+      "id": "audit-standard",
+      "title": "Search the unified audit log for who did what",
+      "category": "security",
+      "keywords": [
+        "audit standard",
+        "unified audit log",
+        "activity log search",
+        "forensic investigation",
+        "audit search",
+        "compliance logging"
+      ],
+      "description": "Log and search user and admin activity across Microsoft 365 services with the default retention period.",
+      "paths": [
+        "p-audit-std-e3"
+      ]
+    },
+    {
+      "id": "audit-premium",
+      "title": "One-year audit retention, high-value events and custom retention policies",
+      "category": "security",
+      "keywords": [
+        "audit premium",
+        "advanced audit",
+        "one year audit retention",
+        "crucial events",
+        "audit log retention policies",
+        "mailbox access events"
+      ],
+      "description": "Extends audit retention to one year (ten years with an add-on), logs high-value events (e.g. mail items accessed), and allows per-service custom retention policies plus high-bandwidth Management Activity API access.",
+      "paths": [
+        "p-audit-prem-e5",
+        "p-audit-prem-addon"
+      ]
+    },
+    {
+      "id": "audit-10-year-retention",
+      "title": "Keep audit logs for ten years",
+      "category": "security",
+      "keywords": [
+        "ten year audit retention",
+        "10-year audit log retention",
+        "long term audit",
+        "audit retention add-on",
+        "regulatory audit retention"
+      ],
+      "description": "Extends Audit (Premium) log retention from one year to ten for the assigned users, via retention policies.",
+      "paths": [
+        "p-audit-10yr"
+      ]
+    },
+    {
+      "id": "retention-policies",
+      "title": "Retain or delete content on a schedule across Microsoft 365",
+      "category": "security",
+      "keywords": [
+        "retention policy",
+        "retention labels",
+        "data lifecycle management",
+        "information governance",
+        "delete after",
+        "email archiving"
+      ],
+      "description": "Org-wide or location-wide retention and deletion policies and publishable retention labels for Exchange, SharePoint, OneDrive and Teams.",
+      "paths": [
+        "p-retention-e3"
+      ]
+    },
+    {
+      "id": "records-management",
+      "title": "Formal records management with file plan, disposition review and regulatory records",
+      "category": "security",
+      "keywords": [
+        "records management",
+        "file plan",
+        "disposition review",
+        "declare record",
+        "regulatory record",
+        "event-based retention",
+        "retention automation"
+      ],
+      "description": "Mark items as records or regulatory records, event-based retention, disposition review at end of life, and a file plan to manage the retention label taxonomy.",
+      "paths": [
+        "p-records-e5",
+        "p-records-eda"
+      ]
+    },
+    {
+      "id": "auto-apply-retention",
+      "title": "Auto-apply retention labels by sensitive info type or trainable classifier",
+      "category": "security",
+      "keywords": [
+        "auto-apply retention label",
+        "retention automation",
+        "trainable classifier retention",
+        "adaptive scope retention",
+        "default library label"
+      ],
+      "description": "Automatically apply retention labels to content matching sensitive info types, keywords, a trainable classifier, or a default library label, and target policies with adaptive scopes.",
+      "paths": [
+        "p-autoretention-e5"
+      ]
+    },
+    {
+      "id": "compliance-manager",
+      "title": "Track and improve a regulatory compliance posture with a score",
+      "category": "security",
+      "keywords": [
+        "compliance manager",
+        "compliance score",
+        "regulatory assessments",
+        "improvement actions",
+        "control mapping",
+        "premium templates"
+      ],
+      "description": "Prebuilt assessments for regulations and standards, improvement actions with guidance, and a risk-based compliance score.",
+      "paths": [
+        "p-compmgr-any"
+      ]
+    },
+    {
+      "id": "information-barriers",
+      "title": "Prevent specific groups from communicating with each other",
+      "category": "security",
+      "keywords": [
+        "information barriers",
+        "ethical wall",
+        "segment communication block",
+        "teams information barrier",
+        "conflict of interest",
+        "people picker restriction"
+      ],
+      "description": "Policies that block chat, calls, meetings and lookups between defined user segments (for example research and trading desks).",
+      "paths": [
+        "p-ib-e5",
+        "p-ib-addon"
+      ]
+    },
+    {
+      "id": "customer-lockbox",
+      "title": "Require explicit approval before a Microsoft engineer can access your content",
+      "category": "security",
+      "keywords": [
+        "customer lockbox",
+        "just-in-time access approval",
+        "microsoft engineer access",
+        "data access authorization",
+        "hipaa fedramp control"
+      ],
+      "description": "Brings the customer into the approval workflow for the rare cases a Microsoft support engineer needs access to content to fix an issue.",
+      "paths": [
+        "p-lockbox-e5",
+        "p-lockbox-addon"
+      ]
+    },
+    {
+      "id": "privileged-access-management",
+      "title": "Just-in-time approval for privileged admin tasks in Microsoft 365",
+      "category": "security",
+      "keywords": [
+        "privileged access management",
+        "pam",
+        "just in time access",
+        "task-level approval",
+        "exchange privileged access",
+        "zero standing access"
+      ],
+      "description": "Task-scoped, time-limited, approval-gated elevation for high-impact Microsoft 365 / Exchange admin operations - distinct from Entra Privileged Identity Management (which elevates directory roles).",
+      "paths": [
+        "p-pam-e5",
+        "p-pam-addon"
+      ]
+    },
+    {
+      "id": "third-party-data-connectors",
+      "title": "Import and archive third-party data (Bloomberg, Slack, etc.) for compliance",
+      "category": "security",
+      "keywords": [
+        "data connectors",
+        "third-party archiving",
+        "import bloomberg",
+        "slack archiving",
+        "non-microsoft data compliance",
+        "connector"
+      ],
+      "description": "Bring non-Microsoft communications and records into Microsoft 365 so Purview retention, eDiscovery and other solutions apply to them.",
+      "paths": [
+        "p-connectors-e5"
+      ]
+    },
+    {
+      "id": "data-security-posture-management",
+      "title": "Map where sensitive data is, who can access it and how it is protected (DSPM)",
+      "category": "security",
+      "keywords": [
+        "data security posture management",
+        "dspm",
+        "shadow data",
+        "oversharing assessment",
+        "data risk assessment",
+        "sensitive data map"
+      ],
+      "description": "A guided dashboard that discovers sensitive and over-permissioned data, analyses access, and drives one-click DLP / labelling remediation.",
+      "paths": [
+        "p-dspm-e5"
+      ]
+    },
+    {
+      "id": "dspm-for-ai",
+      "title": "Monitor and protect what staff share with AI apps including third-party AI",
+      "category": "security",
+      "keywords": [
+        "dspm for ai",
+        "data security posture management for ai",
+        "copilot data risk",
+        "chatgpt data leak",
+        "ai interaction monitoring",
+        "third-party ai app dlp"
+      ],
+      "description": "Dashboards and policies for AI interactions - Microsoft 365 Copilot and agents, and third-party generative AI sites - including sensitive-data detection and endpoint/browser DLP against AI apps.",
+      "paths": [
+        "p-dspmai-e5"
+      ]
+    },
+    {
+      "id": "priva-privacy-risk-management",
+      "title": "Proactively find and reduce privacy risks in personal data (data hoarding, oversharing, transfers)",
+      "category": "security",
+      "keywords": [
+        "priva",
+        "privacy risk management",
+        "personal data minimization",
+        "data overexposure",
+        "data transfer risk",
+        "gdpr risk",
+        "privacy by design"
+      ],
+      "description": "Surfaces personal data across Microsoft 365 and runs default or custom policies for data minimisation, overexposure and cross-border transfer, with user notifications and remediation.",
+      "paths": [
+        "p-priva-prm"
+      ]
+    },
+    {
+      "id": "subject-rights-requests",
+      "title": "Fulfil data subject / DSAR requests - find and review one person's data",
+      "category": "security",
+      "keywords": [
+        "subject rights requests",
+        "srr",
+        "dsar",
+        "data subject access request",
+        "dsr",
+        "gdpr subject request",
+        "ccpa request"
+      ],
+      "description": "Identify a data subject and collect, review and package their personal data held in Exchange, SharePoint, OneDrive and Teams.",
+      "paths": [
+        "p-srr-priva",
+        "p-srr-purview"
+      ]
+    },
+    {
+      "id": "app-protection-policies",
+      "title": "Protect corporate data in mobile apps without managing the whole device (MAM)",
+      "category": "security",
+      "keywords": [
+        "app protection policy",
+        "mam",
+        "mobile application management",
+        "byod",
+        "app-level wipe",
+        "managed app",
+        "without enrollment"
+      ],
+      "description": "Container-style policies (encryption, PIN, copy/paste and save-as restrictions, selective wipe) applied to managed apps on unenrolled or personally-owned devices.",
+      "paths": [
+        "p-mam-intune"
+      ]
+    },
+    {
+      "id": "endpoint-privilege-management",
+      "title": "Remove local admin rights but still let users elevate approved apps",
+      "category": "security",
+      "keywords": [
+        "endpoint privilege management",
+        "epm",
+        "least privilege",
+        "remove local admin",
+        "run as administrator",
+        "elevation rules",
+        "zero trust endpoint"
+      ],
+      "description": "Rules that allow specific applications or tasks to run elevated (auto or with approval) so standard users keep least privilege.",
+      "paths": [
+        "p-epm-standalone",
+        "p-epm-suite"
+      ]
+    },
+    {
+      "id": "intune-advanced-analytics",
+      "title": "Anomaly detection, device query and battery health for the endpoint fleet",
+      "category": "security",
+      "keywords": [
+        "intune advanced analytics",
+        "endpoint analytics",
+        "anomaly detection",
+        "device query",
+        "battery health",
+        "device timeline",
+        "custom device scopes"
+      ],
+      "description": "Advanced endpoint analytics: near-real-time device query, anomaly detection after config changes, enhanced device timeline, battery health reports and custom device scopes.",
+      "paths": [
+        "p-adv-analytics-standalone",
+        "p-adv-analytics-p2"
+      ]
+    },
+    {
+      "id": "cloud-pki",
+      "title": "Issue device certificates without running your own PKI/NDES",
+      "category": "security",
+      "keywords": [
+        "cloud pki",
+        "microsoft cloud pki",
+        "managed certificate authority",
+        "scep",
+        "certificate lifecycle",
+        "ndes replacement",
+        "device certificates"
+      ],
+      "description": "A Microsoft-hosted certificate authority that issues, renews and revokes certificates for Intune-managed devices across all platforms.",
+      "paths": [
+        "p-cloudpki-standalone",
+        "p-cloudpki-suite"
+      ]
+    },
+    {
+      "id": "tunnel-for-mam",
+      "title": "VPN access to on-prem resources from unenrolled mobile apps",
+      "category": "security",
+      "keywords": [
+        "microsoft tunnel for mam",
+        "tunnel mam",
+        "per-app vpn unenrolled",
+        "mobile app vpn",
+        "byod vpn",
+        "tunnel gateway"
+      ],
+      "description": "Extends the Microsoft Tunnel VPN gateway to unenrolled Android and iOS devices so MAM-protected apps can reach corporate resources.",
+      "paths": [
+        "p-tunnelmam-p2"
+      ]
+    },
+    {
+      "id": "enterprise-app-management",
+      "title": "Deploy and keep third-party Win32 apps updated from a catalog",
+      "category": "security",
+      "keywords": [
+        "enterprise app management",
+        "enterprise app catalog",
+        "win32 app catalog",
+        "app patching",
+        "third-party app updates",
+        "curated apps"
+      ],
+      "description": "An Intune catalog of pre-packaged Win32 apps with default install/detection logic and update management, hosted in Microsoft storage.",
+      "paths": [
+        "p-eam-standalone",
+        "p-eam-suite"
+      ]
+    },
+    {
+      "id": "intune-suite-all",
+      "title": "Buy all advanced Intune endpoint management and security as one add-on",
+      "category": "security",
+      "keywords": [
+        "intune suite",
+        "advanced endpoint management",
+        "intune add-ons bundle",
+        "epm remote help cloud pki",
+        "unified endpoint security",
+        "intune plan 2 included"
+      ],
+      "description": "The Microsoft Intune Suite bundles Remote Help, Endpoint Privilege Management, Advanced Analytics, Microsoft Tunnel for MAM, Cloud PKI, Enterprise App Management and specialty device management, and includes Intune Plan 2.",
+      "paths": [
+        "p-intunesuite"
+      ]
+    },
+    {
+      "id": "intune-plan2-capabilities",
+      "title": "The Intune Plan 2 tier - Remote Help, Advanced Analytics, Tunnel for MAM, specialty devices",
+      "category": "security",
+      "keywords": [
+        "intune plan 2",
+        "intune p2",
+        "remote help advanced analytics",
+        "specialty device management",
+        "firmware over the air",
+        "tunnel mam"
+      ],
+      "description": "Intune Plan 2 is additive to Plan 1 and includes Remote Help, Advanced Analytics, Microsoft Tunnel for MAM, firmware-over-the-air updates and AR/VR & meeting-room device management. It is a subset of the Intune Suite.",
+      "paths": [
+        "p-intune-p2"
+      ]
+    },
+    {
+      "id": "intune-device-only",
+      "title": "Manage kiosks and shared devices with no assigned user (device licences)",
+      "category": "security",
+      "keywords": [
+        "intune device license",
+        "device-only subscription",
+        "kiosk management",
+        "shared device",
+        "no user affinity",
+        "dedicated device"
+      ],
+      "description": "A device-only Intune subscription for kiosks, dedicated devices, phone-room devices and IoT that aren't tied to a user. App protection policies and Conditional Access aren't supported on device-only enrolments.",
+      "paths": [
+        "p-intune-deviceonly"
+      ]
+    },
+    {
+      "id": "specialty-device-management",
+      "title": "Manage AR/VR headsets, meeting-room and large-screen devices in Intune",
+      "category": "security",
+      "keywords": [
+        "specialty devices",
+        "ar vr headset management",
+        "meeting room device",
+        "teams rooms intune",
+        "hololens management",
+        "large screen device"
+      ],
+      "description": "Intune management for non-standard endpoints such as AR/VR headsets, conference-room and large smart-screen devices.",
+      "paths": [
+        "p-specialty-p2"
+      ]
+    },
+    {
+      "id": "android-firmware-ota",
+      "title": "Push firmware updates to rugged Android devices over the air",
+      "category": "security",
+      "keywords": [
+        "firmware over the air",
+        "fota",
+        "zebra lifeguard",
+        "android firmware update",
+        "rugged device updates",
+        "oem firmware"
+      ],
+      "description": "Remotely deliver OEM firmware updates (e.g. Zebra LifeGuard) to supported Android devices without user action.",
+      "paths": [
+        "p-fota-p2"
+      ]
+    },
+    {
+      "id": "co-management-configmgr",
+      "title": "Co-manage existing Configuration Manager devices with Intune",
+      "category": "security",
+      "keywords": [
+        "co-management",
+        "configuration manager",
+        "sccm intune",
+        "auto-enrollment",
+        "cloud attach",
+        "workload switch"
+      ],
+      "description": "Attach ConfigMgr-managed devices to Intune and shift management workloads to the cloud, with Entra auto-enrolment.",
+      "paths": [
+        "p-comgmt"
+      ]
+    },
+    {
+      "id": "windows-enterprise-e5",
+      "title": "Windows 11 Enterprise with endpoint EDR built in (E5)",
+      "category": "security",
+      "keywords": [
+        "windows 11 enterprise e5",
+        "windows enterprise e5",
+        "defender for endpoint included",
+        "per user windows e5",
+        "windows security stack"
+      ],
+      "description": "Windows 11 Enterprise E5 is Enterprise E3 plus Microsoft Defender for Endpoint Plan 2. Per-user only. Included in Microsoft 365 E5.",
+      "paths": [
+        "p-wine-e5"
+      ]
+    },
+    {
+      "id": "windows-autopatch",
+      "title": "Automate Windows, Office, Edge and Teams updates as a managed service",
+      "category": "security",
+      "keywords": [
+        "windows autopatch",
+        "automatic windows updates",
+        "update rings managed",
+        "driver update management",
+        "hotpatch",
+        "patch as a service"
+      ],
+      "description": "A cloud service that manages update rings, quality/feature/driver updates and Microsoft 365 Apps/Edge/Teams updates for enrolled Windows devices, with reporting and rollback.",
+      "paths": [
+        "p-autopatch"
+      ]
+    },
+    {
+      "id": "windows-ltsc",
+      "title": "Lock a specialised device to security-only servicing (Windows LTSC)",
+      "category": "security",
+      "keywords": [
+        "windows ltsc",
+        "long term servicing channel",
+        "fixed function device",
+        "no feature updates",
+        "regulated device",
+        "medical device windows",
+        "kiosk os"
+      ],
+      "description": "The Long-Term Servicing Channel edition for devices that must not change - security and critical fixes only, no annual feature updates, up to five years support.",
+      "paths": [
+        "p-ltsc"
+      ]
+    },
+    {
+      "id": "windows-subscription-activation",
+      "title": "Step devices from Windows Pro to Enterprise with no keys or reboots",
+      "category": "security",
+      "keywords": [
+        "windows subscription activation",
+        "step up pro to enterprise",
+        "no product key",
+        "automatic enterprise activation",
+        "windows edition upgrade"
+      ],
+      "description": "Sign-in with a Windows Enterprise-licensed account automatically upgrades a Windows Pro device to Enterprise, and steps back down when the licence is removed.",
+      "paths": [
+        "p-subact"
+      ]
+    },
+    {
+      "id": "windows-365-cloud-pc-enterprise",
+      "title": "Give users a full Cloud PC managed with Intune (Windows 365 Enterprise)",
+      "category": "security",
+      "keywords": [
+        "windows 365 enterprise",
+        "cloud pc",
+        "desktop as a service",
+        "daas",
+        "virtual desktop",
+        "intune managed cloud pc",
+        "w365"
+      ],
+      "description": "A per-user fixed-price Cloud PC streamed from Microsoft, managed in Intune with Entra and Defender integration and no seat limit.",
+      "paths": [
+        "p-w365-ent"
+      ]
+    },
+    {
+      "id": "windows-365-cloud-pc-business",
+      "title": "Cloud PCs for a small business without Intune (Windows 365 Business)",
+      "category": "security",
+      "keywords": [
+        "windows 365 business",
+        "cloud pc small business",
+        "simple cloud pc",
+        "no intune cloud pc",
+        "w365 business"
+      ],
+      "description": "A simplified per-user Cloud PC for organisations up to 300 users, bought and managed without Intune or the Windows/Entra prerequisites.",
+      "paths": [
+        "p-w365-biz"
+      ]
+    },
+    {
+      "id": "windows-365-frontline",
+      "title": "Share Cloud PCs across shift workers (Windows 365 Frontline / Flex)",
+      "category": "security",
+      "keywords": [
+        "windows 365 frontline",
+        "windows 365 flex",
+        "shared cloud pc",
+        "shift worker cloud pc",
+        "non-concurrent cloud pc",
+        "frontline daas"
+      ],
+      "description": "Cloud PC licences assigned to the tenant and shared (non-concurrently) across frontline/shift workers, or used in dedicated mode.",
+      "paths": [
+        "p-w365-flw"
+      ]
+    },
+    {
+      "id": "windows-365-for-agents",
+      "title": "Run AI agents / bots on a dedicated Cloud PC (pay-as-you-go)",
+      "category": "security",
+      "keywords": [
+        "windows 365 for agents",
+        "cloud pc for agents",
+        "agent desktop",
+        "bot cloud pc",
+        "unattended cloud pc",
+        "pay-as-you-go cloud pc"
+      ],
+      "description": "Cloud PCs provisioned for agent (non-human) use, billed pay-as-you-go on the compute the agent consumes rather than per-user per-month.",
+      "paths": [
+        "p-w365-agents"
+      ]
+    },
+    {
+      "id": "defender-suite-one-addon",
+      "title": "Buy the whole Microsoft Defender stack as one add-on (E5 Security)",
+      "category": "security",
+      "keywords": [
+        "microsoft 365 e5 security",
+        "e5 security add-on",
+        "defender suite",
+        "entra p2 defender bundle",
+        "security add-on for e3",
+        "xdr bundle"
+      ],
+      "description": "The Microsoft 365 E5 Security add-on bundles Entra ID P2, Defender for Endpoint P2, Defender for Office 365 P2, Defender for Identity and Defender for Cloud Apps onto a Microsoft 365 E3 (or Office 365 E3 + EMS E3) base.",
+      "paths": [
+        "p-e5sec"
+      ]
+    },
+    {
+      "id": "compliance-suite-one-addon",
+      "title": "Buy the whole Purview advanced compliance stack as one add-on (E5 Compliance)",
+      "category": "security",
+      "keywords": [
+        "microsoft 365 e5 compliance",
+        "e5 compliance add-on",
+        "purview advanced compliance",
+        "insider risk ediscovery bundle",
+        "compliance add-on for e3"
+      ],
+      "description": "The Microsoft 365 E5 Compliance add-on bundles Information Protection P2, Insider Risk Management, Communication Compliance, eDiscovery (Premium), Audit (Premium) and Records Management onto a Microsoft 365 E3 base.",
+      "paths": [
+        "p-e5comp"
+      ]
+    },
+    {
+      "id": "security-compliance-e3-vs-e5",
+      "title": "Understand what security and compliance is in Microsoft 365 E3 versus E5",
+      "category": "security",
+      "keywords": [
+        "e3 vs e5 security",
+        "what is in e5",
+        "microsoft 365 e5 security compliance",
+        "upgrade e3 to e5",
+        "e5 value",
+        "suite comparison"
+      ],
+      "description": "Microsoft 365 E3 includes Entra ID P1, Intune Plan 1, Defender for Endpoint P1, Purview DLP for Exchange/SharePoint/OneDrive, manual sensitivity labels, retention policies, eDiscovery/Audit Standard. E5 adds Entra ID P2, the full Defender suite, Purview advanced compliance and Power BI Pro.",
+      "paths": [
+        "p-e3-baseline",
+        "p-e5-full"
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "id": "p-mdo1-standalone",
+      "capabilityId": "email-safe-links-attachments",
+      "licenses": [
+        "mdo-p1"
+      ],
+      "conditions": [],
+      "rationale": "Safe Attachments, Safe Links and anti-phishing in Defender for Office 365 are the Plan 1 feature set. Plan 1 is sold standalone and is included in Microsoft 365 Business Premium; Plan 2 (in Microsoft 365 E5 and E5 Security) is a superset.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-office-365/mdo-about"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdo1-e5",
+      "capabilityId": "email-safe-links-attachments",
+      "licenses": [
+        "mdo-p2"
+      ],
+      "conditions": [],
+      "rationale": "Defender for Office 365 Plan 2 contains all of Plan 1, so a tenant that needs the investigation features too can license P2 instead of stacking P1 + P2.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-mdo2-standalone",
+      "capabilityId": "email-attack-investigation",
+      "licenses": [
+        "mdo-p2"
+      ],
+      "conditions": [],
+      "rationale": "Threat Explorer, automated investigation and response and campaign views are Defender for Office 365 Plan 2 capabilities. P2 is standalone or in Microsoft 365 E5 / Office 365 E5 / E5 Security.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-office-365/mdo-about"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdo2-e5sec",
+      "capabilityId": "email-attack-investigation",
+      "licenses": [
+        "e5-security"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Security add-on bundles Defender for Office 365 Plan 2 with Defender for Endpoint P2, Defender for Identity and Defender for Cloud Apps - the better buy when several Defender workloads are needed.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-ast-mdo2",
+      "capabilityId": "attack-simulation-training",
+      "licenses": [
+        "mdo-p2"
+      ],
+      "conditions": [],
+      "rationale": "Attack simulation training is a Defender for Office 365 Plan 2 feature; it is not in Plan 1. P2 is standalone or in Microsoft 365 E5 / Office 365 E5 / E5 Security.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-office-365/mdo-about"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mde1-in-e3",
+      "capabilityId": "endpoint-nextgen-protection",
+      "licenses": [
+        "mde-p1"
+      ],
+      "conditions": [],
+      "rationale": "Defender for Endpoint Plan 1 delivers the preventive controls (next-gen AV, ASR, device control, firewall). Plan 1 is included in Microsoft 365 E3/A3/G3 and sold standalone.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-endpoint/defender-endpoint-plan-1-2"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mde1-standalone",
+      "capabilityId": "endpoint-nextgen-protection",
+      "licenses": [
+        "mde-p2"
+      ],
+      "conditions": [],
+      "rationale": "Defender for Endpoint Plan 2 is a superset of Plan 1, so a tenant that wants EDR as well licenses P2 rather than both.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-endpoint/defender-endpoint-plan-1-2"
+      ]
+    },
+    {
+      "id": "p-edr-mde2-servers",
+      "capabilityId": "edr-endpoint",
+      "licenses": [
+        "defender-servers-p1"
+      ],
+      "conditions": [],
+      "rationale": "For server operating systems, EDR is licensed through Microsoft Defender for Cloud - Defender for Servers Plan 1 or Plan 2 - which provisions Defender for Endpoint on each server OSE and bills per server hour.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-servers-overview",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "note": "Client devices still need Defender for Endpoint P2 (or Microsoft 365 E5 / E5 Security)."
+    },
+    {
+      "id": "p-edr-mde2-win-e5",
+      "capabilityId": "edr-endpoint",
+      "licenses": [
+        "win-e5-user"
+      ],
+      "conditions": [],
+      "rationale": "Windows 11 Enterprise E5 (per user) includes Microsoft Defender for Endpoint Plan 2, so tenants standardising on Windows E5 get client EDR without a separate Defender add-on.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-vm-core-mde2",
+      "capabilityId": "endpoint-vulnerability-management",
+      "licenses": [
+        "mde-p2"
+      ],
+      "conditions": [],
+      "rationale": "Defender Vulnerability Management core capabilities (device inventory, vulnerability and misconfiguration assessment, security recommendations) are included in Defender for Endpoint Plan 2.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management-capabilities"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-vm-standalone",
+      "capabilityId": "endpoint-vulnerability-management",
+      "licenses": [
+        "mdvm-standalone"
+      ],
+      "conditions": [],
+      "rationale": "Organisations whose EDR is not Defender for Endpoint P2 can license Defender Vulnerability Management standalone to get the full (core + premium) vulnerability management programme.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management-capabilities"
+      ]
+    },
+    {
+      "id": "p-vmprem-addon",
+      "capabilityId": "vulnerability-management-premium",
+      "licenses": [
+        "mde-p2",
+        "mdvm-addon"
+      ],
+      "conditions": [],
+      "rationale": "Premium capabilities are the Defender Vulnerability Management add-on on top of Defender for Endpoint Plan 2 (or a plan that includes P2, e.g. Microsoft 365 E5).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management-capabilities"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-vmprem-standalone",
+      "capabilityId": "vulnerability-management-premium",
+      "licenses": [
+        "mdvm-standalone"
+      ],
+      "conditions": [],
+      "rationale": "The standalone Defender Vulnerability Management licence already contains the premium capabilities, for tenants without Defender for Endpoint P2.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management-capabilities"
+      ]
+    },
+    {
+      "id": "p-dfb-standalone",
+      "capabilityId": "defender-for-business-smb",
+      "licenses": [
+        "defender-business"
+      ],
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "rationale": "Microsoft Defender for Business is the SMB endpoint security SKU (<=300 employees), available standalone.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dfb-bp",
+      "capabilityId": "defender-for-business-smb",
+      "licenses": [
+        "m365-bp"
+      ],
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "rationale": "Microsoft 365 Business Premium includes Defender for Business plus Defender for Office 365 Plan 1, so it covers endpoint and email security for a small business in one suite.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-eiot-addon",
+      "capabilityId": "enterprise-iot-security",
+      "licenses": [
+        "mde-p2",
+        "eiot-addon"
+      ],
+      "conditions": [],
+      "rationale": "Enterprise IoT security needs Defender for Endpoint Plan 2 (or a plan that includes it) plus the per-device EIoT Device License add-on. Microsoft 365 E5 / E5 Security include a starting allowance of enterprise IoT device coverage.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-licenses"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdi-standalone",
+      "capabilityId": "defender-for-identity-threats",
+      "licenses": [
+        "mdi"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Defender for Identity is a per-user subscription, sold standalone or included in EMS E5 and Microsoft 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdi-emsE5",
+      "capabilityId": "defender-for-identity-threats",
+      "licenses": [
+        "ems-e5"
+      ],
+      "conditions": [],
+      "rationale": "Enterprise Mobility + Security E5 includes Defender for Identity alongside Entra ID P2 and Defender for Cloud Apps - a fit for an Office 365 tenant adding the identity security layer.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-mdca-discovery",
+      "capabilityId": "cloud-app-discovery",
+      "licenses": [
+        "mdca"
+      ],
+      "conditions": [],
+      "rationale": "Cloud Discovery is a Microsoft Defender for Cloud Apps capability. Defender for Cloud Apps is standalone or in EMS E5 / Microsoft 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-cloud-apps/editions-cloud-app-security-o365"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdca-full",
+      "capabilityId": "casb-saas-security",
+      "licenses": [
+        "mdca"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Defender for Cloud Apps provides the CASB feature set (app connectors, file and activity policies, threat detection). Standalone or in EMS E5 / Microsoft 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/en-us/defender-cloud-apps/editions-cloud-app-security-o365"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-appgov-mdca",
+      "capabilityId": "app-governance-oauth",
+      "licenses": [
+        "mdca"
+      ],
+      "conditions": [],
+      "rationale": "App governance is included in Microsoft Defender for Cloud Apps and every product that includes Defender for Cloud Apps (EMS E5, Microsoft 365 E5).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-caac",
+      "capabilityId": "conditional-access-app-control",
+      "licenses": [
+        "entra-p1",
+        "mdca"
+      ],
+      "conditions": [],
+      "rationale": "Conditional Access App Control needs Microsoft Entra ID P1 (to author the Conditional Access policy) plus Microsoft Defender for Cloud Apps (the session proxy).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-xdr-anyworkload",
+      "capabilityId": "defender-xdr-portal",
+      "licenses": [
+        "mde-p2"
+      ],
+      "conditions": [],
+      "rationale": "Defender XDR is included at no extra cost with a licence to any one of the Defender workloads (here Defender for Endpoint P2). Broader coverage comes from licensing more of the workloads.",
+      "sources": [
+        "https://learn.microsoft.com/defender-xdr/prerequisites"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-xdr-e5",
+      "capabilityId": "defender-xdr-portal",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 E5 (or E3 + the Defender suite / EMS E5 add-on) provides all the Defender workloads and the full Defender XDR experience.",
+      "sources": [
+        "https://learn.microsoft.com/defender-xdr/prerequisites"
+      ]
+    },
+    {
+      "id": "p-attackdisrupt",
+      "capabilityId": "automatic-attack-disruption",
+      "licenses": [
+        "mde-p2"
+      ],
+      "conditions": [],
+      "rationale": "Automatic attack disruption requires Microsoft Defender for Endpoint Plan 2 at minimum; wider disruption (identity, SaaS) needs Defender for Identity and Defender for Cloud Apps as well.",
+      "sources": [
+        "https://learn.microsoft.com/defender-xdr/prerequisites"
+      ],
+      "preferred": true,
+      "note": "Full scenario coverage needs Defender for Endpoint P2 + Defender for Identity + Defender for Cloud Apps + Defender for Office 365 P2."
+    },
+    {
+      "id": "p-dex-xdr",
+      "capabilityId": "managed-xdr-service",
+      "licenses": [
+        "defender-experts-xdr"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Defender Experts for XDR is a paid managed service layered on a qualifying Defender suite (Microsoft 365 E5, or E3 + the Defender suite / EMS E5 add-on).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description",
+        "https://learn.microsoft.com/defender-xdr/prerequisites"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dex-hunting",
+      "capabilityId": "managed-threat-hunting",
+      "licenses": [
+        "mde-p2",
+        "defender-experts-hunting"
+      ],
+      "conditions": [],
+      "rationale": "Defender Experts for Hunting requires Defender for Endpoint Plan 2 (with Defender Antivirus in active mode) at minimum; it also covers Defender for Office 365 P2, Defender for Identity, Defender for Cloud Apps and Entra ID P2 where licensed.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdti-premium",
+      "capabilityId": "threat-intelligence-portal",
+      "licenses": [
+        "mdti-premium"
+      ],
+      "conditions": [],
+      "rationale": "The full MDTI dataset (Microsoft IOCs, enriched OSINT, URL/file intelligence) requires Defender Threat Intelligence Premium. A limited set of articles and data is available free in the Defender portal.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-mdti-e5",
+      "capabilityId": "threat-intelligence-portal",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 E5 tenants get an expanded MDTI experience versus the free tier; the standalone Premium licence adds the remaining Microsoft-proprietary intelligence.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ]
+    },
+    {
+      "id": "p-sem",
+      "capabilityId": "security-exposure-management",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Security Exposure Management is available with Microsoft 365 E5, Microsoft 365 E3 with certain add-ons, or the Defender suite licences; full value also needs Defender Vulnerability Management and Defender for Cloud CSPM data.",
+      "sources": [
+        "https://learn.microsoft.com/security-exposure-management/prerequisites"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-seccopilot-scu",
+      "capabilityId": "security-copilot-soc",
+      "licenses": [
+        "security-copilot"
+      ],
+      "conditions": [],
+      "rationale": "Security Copilot is consumption-metered: a tenant provisions at least one Security Compute Unit (billed hourly) plus optional overage. No per-user licence.",
+      "sources": [
+        "https://learn.microsoft.com/copilot/security/security-compute-units-capacity",
+        "https://learn.microsoft.com/copilot/security/faq-security-copilot"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-seccopilot-e5",
+      "capabilityId": "security-copilot-soc",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 E5 and E7 tenants get an included Security Copilot allocation (about 400 SCUs per 1,000 user licences per month, reset monthly, no rollover) without provisioning hourly capacity.",
+      "sources": [
+        "https://learn.microsoft.com/copilot/security/security-copilot-inclusion"
+      ],
+      "note": "The included allocation does not roll over; heavy use still needs provisioned or overage SCUs."
+    },
+    {
+      "id": "p-copilot-intune",
+      "capabilityId": "copilot-in-intune",
+      "licenses": [
+        "intune-p1",
+        "security-copilot"
+      ],
+      "conditions": [],
+      "rationale": "Copilot in Intune needs an Intune licence plus Security Copilot capacity (SCUs) provisioned for the tenant; it is licensed through Security Copilot, not a separate Intune add-on.",
+      "sources": [
+        "https://learn.microsoft.com/intune/copilot/copilot-in-intune",
+        "https://learn.microsoft.com/copilot/security/security-compute-units-capacity"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-cspm-free",
+      "capabilityId": "cloud-posture-management",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [],
+      "rationale": "Foundational CSPM (secure score, MCSB recommendations, asset inventory, multicloud connectors) is free with any Azure subscription. From 27 Oct 2026 new subscriptions must opt in.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction",
+        "https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-cspm-defender",
+      "capabilityId": "cloud-posture-management",
+      "licenses": [
+        "azure-plan",
+        "defender-cspm"
+      ],
+      "conditions": [],
+      "rationale": "Attack path analysis, cloud security explorer, agentless scanning, data and AI security posture and governance need the paid Defender CSPM plan, billed per billable resource.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management"
+      ]
+    },
+    {
+      "id": "p-dfservers-p2",
+      "capabilityId": "cloud-server-protection",
+      "licenses": [
+        "azure-plan",
+        "defender-servers-p2"
+      ],
+      "conditions": [
+        {
+          "clarifier": "server-count",
+          "in": [
+            "many"
+          ]
+        }
+      ],
+      "rationale": "Defender for Servers Plan 2 gives the full server workload protection set, billed per server hour through the Azure subscription.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-servers-overview"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dfservers-p1",
+      "capabilityId": "cloud-server-protection",
+      "licenses": [
+        "azure-plan",
+        "defender-servers-p1"
+      ],
+      "conditions": [],
+      "rationale": "Defender for Servers Plan 1 covers just Defender for Endpoint on servers (EDR, integrated alerts). It can be scoped to individual machines.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-servers-overview"
+      ]
+    },
+    {
+      "id": "p-dfservers-dfb",
+      "capabilityId": "cloud-server-protection",
+      "licenses": [
+        "defender-business"
+      ],
+      "conditions": [
+        {
+          "clarifier": "server-count",
+          "in": [
+            "few"
+          ]
+        }
+      ],
+      "rationale": "For up to 60 servers in an SMB, the Microsoft Defender for Business servers add-on (on Business Premium or Defender for Business) is the sized-down alternative to Defender for Servers.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "note": "Cap of 60 server licences per customer; above that use Defender for Servers."
+    },
+    {
+      "id": "p-cwp-resource",
+      "capabilityId": "cloud-workload-protection-resource",
+      "licenses": [
+        "azure-plan",
+        "defender-cloud-cwp"
+      ],
+      "conditions": [],
+      "rationale": "Each Defender for Cloud workload plan (Storage, SQL, Containers, App Service, Key Vault, Resource Manager, APIs, DNS) is switched on per subscription in Defender for Cloud and billed per protected resource / transaction.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-aispm",
+      "capabilityId": "ai-security-posture",
+      "licenses": [
+        "azure-plan",
+        "defender-cspm"
+      ],
+      "conditions": [],
+      "rationale": "AI security posture management is part of the paid Defender CSPM plan in Microsoft Defender for Cloud.",
+      "sources": [
+        "https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-labels-e3",
+      "capabilityId": "sensitivity-labels-manual",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Manual sensitivity labelling is included in Microsoft 365 E3/E5/F1/F3/Business Premium, Office 365 E3/E5, EMS E3/E5 and AIP Plan 1/2.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-labels-aip1",
+      "capabilityId": "sensitivity-labels-manual",
+      "licenses": [
+        "aip-p1"
+      ],
+      "conditions": [],
+      "rationale": "On a lighter base (Exchange Online, Business Basic/Standard, Office 365 E1), Azure Information Protection Plan 1 adds manual labelling and Azure RMS protection.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-autolabel-e5",
+      "capabilityId": "auto-labeling",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Client- and service-side automatic sensitivity labelling requires Microsoft 365 E5, E5 Compliance, or E5 Information Protection and Governance (or Office 365 E5).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-autolabel-ipg",
+      "capabilityId": "auto-labeling",
+      "licenses": [
+        "purview-ipg"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Information Protection and Governance add-on to Microsoft 365 E3 grants automatic labelling and trainable classifiers without buying full E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-autolabel-aip2",
+      "capabilityId": "auto-labeling",
+      "licenses": [
+        "aip-p1",
+        "aip-p2"
+      ],
+      "conditions": [],
+      "rationale": "Azure Information Protection Plan 2 provides client-side automatic and recommended labelling; note AIP P1 must also be assigned for labelling to work.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "note": "AIP P2 alone gives client-side automatic labelling only; service-side auto-labelling needs an E5-level plan."
+    },
+    {
+      "id": "p-ome-e3",
+      "capabilityId": "message-encryption",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Purview Message Encryption is included in Microsoft 365 F3/E3/E5/Business Premium and Office 365 E3/E5; on lighter plans, AIP Plan 1 adds the right.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-ame-e5",
+      "capabilityId": "advanced-message-encryption",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Advanced Message Encryption requires Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-ame-ipg",
+      "capabilityId": "advanced-message-encryption",
+      "licenses": [
+        "purview-ipg"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Information Protection and Governance add-on covers Advanced Message Encryption on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-dke-e5",
+      "capabilityId": "double-key-encryption",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Double Key Encryption requires Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, or EMS E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-customerkey-e5",
+      "capabilityId": "customer-key",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Customer Key requires Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, or Office 365 E5, with enough Customer Key licences to cover Exchange/Teams/SharePoint users.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dca-e5",
+      "capabilityId": "data-classification-analytics",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "The Content and Activity Explorer interfaces require Microsoft 365 E5, E5 Compliance or E5 Information Protection and Governance (or Office 365 E5); E3 tenants still get Content Explorer data aggregation.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-labeldl-e5",
+      "capabilityId": "label-download-permissions",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "This capability requires Microsoft 365 E5 / E5 Compliance / E5 Information Protection and Governance plus SharePoint Advanced Management.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dlp-e5-endpoint",
+      "capabilityId": "dlp-email-external",
+      "licenses": [
+        "purview-ipg"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Information Protection and Governance add-on adds endpoint DLP and advanced Outlook policy tips on top of the Exchange/SharePoint/OneDrive DLP already in E3.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
+        "https://learn.microsoft.com/en-us/purview/dlp-microsoft-365-licensing"
+      ]
+    },
+    {
+      "id": "p-edlp-e5",
+      "capabilityId": "endpoint-dlp",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Endpoint DLP requires Microsoft 365 E5, E5 Compliance, or E5 Information Protection and Governance. It is not in Microsoft 365 E3.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-edlp-ipg",
+      "capabilityId": "endpoint-dlp",
+      "licenses": [
+        "purview-ipg"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Information Protection and Governance add-on grants Endpoint DLP on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-dlpteams-e5",
+      "capabilityId": "dlp-teams",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "DLP for Teams (the Microsoft Communications DLP service) requires Microsoft 365 E5, E5 Compliance, or E5 Information Protection and Governance. Not in Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dlpcopilot-e5",
+      "capabilityId": "dlp-for-copilot",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "DLP for Microsoft Copilot (restricting Copilot from processing files and emails) requires Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, or Office 365 E5. Prompt-safeguarding DLP is available to all Copilot users.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dlpinline",
+      "capabilityId": "dlp-browser-network",
+      "licenses": [
+        "m365-e5",
+        "azure-plan"
+      ],
+      "conditions": [],
+      "rationale": "Inline browser/network DLP is a pay-as-you-go capability: it needs a Microsoft 365 E5 (or equivalent) base plus the tenant linked to an Azure subscription for consumption billing.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true,
+      "note": "Protecting data in Entra-registered managed apps in Edge for Business is included in E5; unmanaged-app and network scenarios are metered."
+    },
+    {
+      "id": "p-irm-e5",
+      "capabilityId": "insider-risk-management",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Insider Risk Management requires Microsoft 365 E5, E5 Compliance, or the Microsoft 365 E5 Insider Risk Management add-on (or Office 365 E5 for some scenarios).",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-irm-addon",
+      "capabilityId": "insider-risk-management",
+      "licenses": [
+        "purview-irm"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Insider Risk Management add-on grants Insider Risk Management (plus Communication Compliance, Customer Lockbox, Information Barriers, PAM) on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-irm-forensic",
+      "capabilityId": "insider-risk-forensic-evidence",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Forensic Evidence is a capacity add-on (bought in 100 GB/month units) on top of Insider Risk Management, which itself needs Microsoft 365 E5 / E5 Compliance / E5 Insider Risk Management.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-commcompliance-e5",
+      "capabilityId": "communication-compliance",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Communication Compliance requires Microsoft 365 E5, E5 Compliance, the E5 Insider Risk Management add-on, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-commcompliance-addon",
+      "capabilityId": "communication-compliance",
+      "licenses": [
+        "purview-irm"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Insider Risk Management add-on covers Communication Compliance on a Microsoft 365 E3 base. Copilot prompt/response analysis additionally needs Microsoft 365 Copilot.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-edisc-std-e3",
+      "capabilityId": "ediscovery-standard",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "eDiscovery (Standard) - cases, hold, content search and export - is included in Microsoft 365 E3/E5 and Office 365 E3/E5. Holding a shared mailbox needs Exchange Online Plan 2 or the Archiving add-on.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
+        "https://learn.microsoft.com/en-us/purview/ediscovery"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-edisc-prem-e5edaaudit",
+      "capabilityId": "eDiscovery-premium",
+      "licenses": [
+        "purview-eda-audit"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 eDiscovery and Audit add-on grants eDiscovery (Premium) - custodian management, legal hold notifications, review sets, analytics and export - on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
+        "https://learn.microsoft.com/en-us/purview/ediscovery"
+      ]
+    },
+    {
+      "id": "p-edisc-prem-copilot",
+      "capabilityId": "eDiscovery-premium",
+      "licenses": [
+        "purview-eda",
+        "copilot-m365"
+      ],
+      "conditions": [],
+      "rationale": "To search, hold and review Microsoft 365 Copilot interactions with eDiscovery (Premium), users need Microsoft 365 E5 Compliance (or E5 eDiscovery and Audit) plus a Microsoft 365 Copilot licence.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "note": "Content search and legal hold for Copilot interactions is available with E3 + Copilot; Premium review of them needs E5-level eDiscovery + Copilot."
+    },
+    {
+      "id": "p-audit-std-e3",
+      "capabilityId": "audit-standard",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Audit (Standard) is included in Microsoft 365 E3/F3/F1, Office 365 E1/E3 and Microsoft 365 Business Basic/Standard/Premium.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-audit-prem-e5",
+      "capabilityId": "audit-premium",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Audit (Premium) requires Microsoft 365 E5, E5 Compliance, E5 eDiscovery and Audit, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-audit-prem-addon",
+      "capabilityId": "audit-premium",
+      "licenses": [
+        "purview-eda-audit"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 eDiscovery and Audit add-on grants Audit (Premium) on a Microsoft 365 E3 base. Ten-year retention needs the separate 10-Year Audit Log Retention add-on per user.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-audit-10yr",
+      "capabilityId": "audit-10-year-retention",
+      "licenses": [
+        "m365-e5",
+        "audit-10yr-addon"
+      ],
+      "conditions": [],
+      "rationale": "Ten-year retention needs Audit (Premium) plus the per-user 10-Year Audit Log Retention add-on.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-retention-e3",
+      "capabilityId": "retention-policies",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Static (org-wide / location-wide / include-exclude) retention policies and manual retention labels are included in Microsoft 365 E3/E5/Business Premium and Office 365 E3/E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-records-e5",
+      "capabilityId": "records-management",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Records Management (records/regulatory-records marking, event-based retention, disposition review, file plan) requires Microsoft 365 E5, E5 Compliance, or E5 Information Protection and Governance.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-records-eda",
+      "capabilityId": "records-management",
+      "licenses": [
+        "purview-eda"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Compliance add-on includes Records Management on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-autoretention-e5",
+      "capabilityId": "auto-apply-retention",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Auto-applying retention labels (by content, classifier or adaptive scope) requires Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-compmgr-any",
+      "capabilityId": "compliance-manager",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Compliance Manager is available to any Office 365 / Microsoft 365 subscription (including Business Premium); premium and custom assessment templates depend on E5-level licensing.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-ib-e5",
+      "capabilityId": "information-barriers",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Information Barriers requires Microsoft 365 E5, E5 Compliance, the E5 Insider Risk Management add-on, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-ib-addon",
+      "capabilityId": "information-barriers",
+      "licenses": [
+        "purview-irm"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Insider Risk Management add-on covers Information Barriers on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-lockbox-e5",
+      "capabilityId": "customer-lockbox",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Customer Lockbox requires Microsoft 365 E5, E5 Compliance, the E5 Insider Risk Management add-on, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-lockbox-addon",
+      "capabilityId": "customer-lockbox",
+      "licenses": [
+        "purview-irm"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Insider Risk Management add-on covers Customer Lockbox on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-pam-e5",
+      "capabilityId": "privileged-access-management",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Purview Privileged Access Management requires Microsoft 365 E5, E5 Compliance, the E5 Insider Risk Management add-on, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-pam-addon",
+      "capabilityId": "privileged-access-management",
+      "licenses": [
+        "purview-irm"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft 365 E5 Insider Risk Management add-on covers Privileged Access Management on a Microsoft 365 E3 base.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-connectors-e5",
+      "capabilityId": "third-party-data-connectors",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Data Connectors require Microsoft 365 E5, E5 Compliance, E5 Information Protection and Governance, E5 Insider Risk Management, E5 eDiscovery and Audit, or Office 365 E5.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dspm-e5",
+      "capabilityId": "data-security-posture-management",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Data Security Posture Management needs a supporting Purview licence - Microsoft 365 E5, E5 Compliance, or the E5 information-protection / data-security add-ons - per the Purview service description.",
+      "sources": [
+        "https://learn.microsoft.com/purview/data-security-posture-management-considerations",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-dspmai-e5",
+      "capabilityId": "dspm-for-ai",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "DSPM for AI's advanced capabilities (third-party AI app interaction detection and DLP) require Microsoft 365 E5 Compliance-level licensing; monitoring Copilot interactions also needs Microsoft 365 Copilot assigned to users. Devices must be onboarded to Purview for endpoint scenarios.",
+      "sources": [
+        "https://learn.microsoft.com/purview/dspm-for-ai-considerations",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true,
+      "note": "Prompt-level protections for Copilot are broadly available; the E5-level requirement is for the AI-app posture dashboards and third-party AI detection."
+    },
+    {
+      "id": "p-priva-prm",
+      "capabilityId": "priva-privacy-risk-management",
+      "licenses": [
+        "priva-prm"
+      ],
+      "conditions": [],
+      "rationale": "Priva Privacy Risk Management is an add-on that must be purchased on top of a qualifying Office 365 / Microsoft 365 E1/E3/E5 (or F) subscription.",
+      "sources": [
+        "https://learn.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-priva-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-srr-priva",
+      "capabilityId": "subject-rights-requests",
+      "licenses": [
+        "priva-srr"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Priva Subject Rights Requests is the dedicated DSR workflow, licensed per request as an add-on to a qualifying Office 365 / Microsoft 365 subscription.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/privacy/priva/subject-rights-requests",
+        "https://learn.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-priva-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-srr-purview",
+      "capabilityId": "subject-rights-requests",
+      "licenses": [
+        "purview-eda"
+      ],
+      "conditions": [],
+      "rationale": "The same collect-and-review outcome can be met with Microsoft Purview eDiscovery (Premium) - included in Microsoft 365 E5, E5 Compliance, or E5 eDiscovery and Audit - if that licensing is already in place.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/purview/ediscovery",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ]
+    },
+    {
+      "id": "p-mdm-intune-standalone",
+      "capabilityId": "mdm-enroll",
+      "licenses": [
+        "intune-p1"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Intune Plan 1 is the base cloud MDM/MAM service and is sold standalone as well as in EMS E3/E5 and Microsoft 365 E3/E5/F3/Business Premium.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-mam-intune",
+      "capabilityId": "app-protection-policies",
+      "licenses": [
+        "intune-p1"
+      ],
+      "conditions": [],
+      "rationale": "App protection / MAM policies are an Intune Plan 1 capability. A device-only Intune subscription does not support app protection policies.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-remotehelp-standalone",
+      "capabilityId": "remote-help",
+      "licenses": [
+        "intune-remote-help"
+      ],
+      "conditions": [],
+      "rationale": "Remote Help is sold as an individual standalone Intune add-on as well as inside the Intune Suite and Intune Plan 2; it needs Intune Plan 1 underneath.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ]
+    },
+    {
+      "id": "p-epm-standalone",
+      "capabilityId": "endpoint-privilege-management",
+      "licenses": [
+        "intune-epm"
+      ],
+      "conditions": [],
+      "rationale": "Endpoint Privilege Management is available as an individual standalone Intune add-on (as well as in the Intune Suite). It needs Intune Plan 1.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-epm-suite",
+      "capabilityId": "endpoint-privilege-management",
+      "licenses": [
+        "intune-suite"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft Intune Suite includes Endpoint Privilege Management along with the other advanced add-ons.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ]
+    },
+    {
+      "id": "p-adv-analytics-standalone",
+      "capabilityId": "intune-advanced-analytics",
+      "licenses": [
+        "intune-advanced-analytics"
+      ],
+      "conditions": [],
+      "rationale": "Advanced Analytics is available as an individual standalone Intune add-on. It requires Intune Plan 1.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-adv-analytics-p2",
+      "capabilityId": "intune-advanced-analytics",
+      "licenses": [
+        "intune-p2"
+      ],
+      "conditions": [],
+      "rationale": "Intune Plan 2 includes Advanced Analytics and Remote Help.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-cloudpki-standalone",
+      "capabilityId": "cloud-pki",
+      "licenses": [
+        "intune-cloud-pki"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Cloud PKI is available as an individual standalone Intune add-on; it needs Intune Plan 1.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-cloudpki-suite",
+      "capabilityId": "cloud-pki",
+      "licenses": [
+        "intune-suite"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft Intune Suite includes Microsoft Cloud PKI.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ]
+    },
+    {
+      "id": "p-tunnelmam-p2",
+      "capabilityId": "tunnel-for-mam",
+      "licenses": [
+        "intune-tunnel-mam"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft Tunnel for MAM is available only through Intune Plan 2 or the Intune Suite - it is not an individually sold standalone add-on. Intune Plan 1 is the base.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-eam-standalone",
+      "capabilityId": "enterprise-app-management",
+      "licenses": [
+        "intune-enterprise-app-mgmt"
+      ],
+      "conditions": [],
+      "rationale": "Enterprise App Management is available as an individual standalone Intune add-on; it needs Intune Plan 1.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-eam-suite",
+      "capabilityId": "enterprise-app-management",
+      "licenses": [
+        "intune-suite"
+      ],
+      "conditions": [],
+      "rationale": "The Microsoft Intune Suite includes Enterprise App Management.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ]
+    },
+    {
+      "id": "p-intunesuite",
+      "capabilityId": "intune-suite-all",
+      "licenses": [
+        "intune-suite"
+      ],
+      "conditions": [],
+      "rationale": "The Intune Suite is a single add-on (on top of Intune Plan 1 / a suite that includes it) that unifies the advanced endpoint management and security capabilities and includes Plan 2.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses",
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-intune-p2",
+      "capabilityId": "intune-plan2-capabilities",
+      "licenses": [
+        "intune-p2"
+      ],
+      "conditions": [],
+      "rationale": "Intune Plan 2 is sold as an add-on to Intune Plan 1 (or a suite that includes Plan 1). The Intune Suite includes Plan 2 plus EPM, Cloud PKI and Enterprise App Management.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-intune-deviceonly",
+      "capabilityId": "intune-device-only",
+      "licenses": [
+        "intune-p1"
+      ],
+      "conditions": [],
+      "rationale": "Intune offers a device-only subscription (a form of Intune Plan 1) for devices enrolled without user affinity - Autopilot self-deploying, Apple ADE without user affinity, Android Enterprise dedicated, etc.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-specialty-p2",
+      "capabilityId": "specialty-device-management",
+      "licenses": [
+        "intune-p2"
+      ],
+      "conditions": [],
+      "rationale": "Specialty (AR/VR, meeting-room) device management is available through Intune Plan 2 or the Intune Suite.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-fota-p2",
+      "capabilityId": "android-firmware-ota",
+      "licenses": [
+        "intune-p2"
+      ],
+      "conditions": [],
+      "rationale": "Android firmware-over-the-air update is available through Intune Plan 2 or the Intune Suite.",
+      "sources": [
+        "https://learn.microsoft.com/intune/fundamentals/add-ons"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-comgmt",
+      "capabilityId": "co-management-configmgr",
+      "licenses": [
+        "intune-p1",
+        "entra-p1"
+      ],
+      "conditions": [],
+      "rationale": "Co-management auto-enrolment needs Microsoft Entra ID P1 per user plus Intune Plan 1 (included automatically with Intune). Most licences that include Intune also grant Configuration Manager rights while the subscription is active.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-wine-e3-user",
+      "capabilityId": "win-enterprise",
+      "licenses": [
+        "win-e3-user"
+      ],
+      "conditions": [],
+      "rationale": "Windows 11 Enterprise E3 is a per-user subscription (up to 5 devices) that steps a qualifying Windows Pro device up to Enterprise edition, unlocking Credential Guard, AppLocker, App-V/UE-V and Managed User Experience. Included in Microsoft 365 E3/E5/F3.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing",
+        "https://learn.microsoft.com/en-us/windows/deployment/windows-enterprise-e3-overview"
+      ]
+    },
+    {
+      "id": "p-wine-device",
+      "capabilityId": "win-enterprise",
+      "licenses": [
+        "win-vda"
+      ],
+      "conditions": [
+        {
+          "clarifier": "win-device",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "Where devices are shared, unassigned, or thin clients not covered by a per-user Windows subscription, per-device Windows Enterprise (VDA) is the licensing route.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+      ],
+      "note": "Windows Enterprise E3/E5 are per-user only; per-device needs VDA or Enterprise LTSC via Volume Licensing."
+    },
+    {
+      "id": "p-wine-e5",
+      "capabilityId": "windows-enterprise-e5",
+      "licenses": [
+        "win-e5-user"
+      ],
+      "conditions": [],
+      "rationale": "Windows 11 Enterprise E5 (per user) adds Microsoft Defender for Endpoint Plan 2 on top of Enterprise E3 rights.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-autopatch",
+      "capabilityId": "windows-autopatch",
+      "licenses": [
+        "win-e3-user",
+        "intune-p1"
+      ],
+      "conditions": [],
+      "rationale": "Windows Autopatch is included with Windows 10/11 Enterprise E3 or E5 (in Microsoft 365 F3/E3/E5), Windows Education A3/A5, Windows Enterprise E3/E5 VDA, or Microsoft 365 Business Premium - plus Intune and Entra ID P1. Support requests need an E3+/F3 licence.",
+      "sources": [
+        "https://learn.microsoft.com/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites",
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-autopatch-bp",
+      "capabilityId": "windows-autopatch",
+      "licenses": [
+        "m365-bp"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 Business Premium also entitles Windows Autopatch (without the support-request feature that needs E3+/F3).",
+      "sources": [
+        "https://learn.microsoft.com/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites"
+      ]
+    },
+    {
+      "id": "p-ltsc",
+      "capabilityId": "windows-ltsc",
+      "licenses": [
+        "win-e3-user",
+        "win-ltsc"
+      ],
+      "conditions": [],
+      "rationale": "Windows LTSC Enterprise use rights come with a per-user Windows Enterprise E3/E5 subscription (a Software Assurance-style benefit), or per-device Enterprise LTSC through Volume Licensing. Not included in Windows Enterprise E3 within Microsoft 365 F3.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-subact",
+      "capabilityId": "windows-subscription-activation",
+      "licenses": [
+        "win-e3-user"
+      ],
+      "conditions": [],
+      "rationale": "Windows subscription activation is a use right of Windows Enterprise E3/E5 per-user subscriptions (including via Microsoft 365 E3/E5/F3). The device must already be licensed for Windows Pro.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/whats-new/windows-licensing",
+        "https://learn.microsoft.com/en-us/windows/deployment/windows-enterprise-e3-overview"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-w365-ent",
+      "capabilityId": "windows-365-cloud-pc-enterprise",
+      "licenses": [
+        "w365-enterprise",
+        "win-e3-user",
+        "intune-p1",
+        "entra-p1"
+      ],
+      "conditions": [
+        {
+          "clarifier": "cloudpc-management",
+          "in": [
+            "intune"
+          ]
+        }
+      ],
+      "rationale": "Windows 365 Enterprise requires, per user, the Windows 365 licence plus Windows Enterprise E3 (or higher), Microsoft Intune and Microsoft Entra ID P1. Microsoft 365 E3/E5 already provide the last three.",
+      "sources": [
+        "https://learn.microsoft.com/windows-365/enterprise/requirements",
+        "https://learn.microsoft.com/office365/servicedescriptions/windows-365-service-description/windows-365-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-w365-biz",
+      "capabilityId": "windows-365-cloud-pc-business",
+      "licenses": [
+        "w365-business"
+      ],
+      "conditions": [
+        {
+          "clarifier": "cloudpc-management",
+          "in": [
+            "simple"
+          ]
+        }
+      ],
+      "rationale": "Windows 365 Business is a self-contained per-user licence (max 300 users) with no separate Windows Enterprise, Intune or Entra ID P1 requirement.",
+      "sources": [
+        "https://learn.microsoft.com/office365/servicedescriptions/windows-365-service-description/windows-365-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-w365-flw",
+      "capabilityId": "windows-365-frontline",
+      "licenses": [
+        "w365-frontline",
+        "win-e3-user",
+        "intune-p1",
+        "entra-p1"
+      ],
+      "conditions": [
+        {
+          "clarifier": "cloudpc-management",
+          "in": [
+            "shared"
+          ]
+        }
+      ],
+      "rationale": "Windows 365 Frontline (Flex) requires the Windows 365 Frontline licence plus Windows Enterprise E3+, Intune and Entra ID P1 per user, with users added to the provisioning policy's Entra group.",
+      "sources": [
+        "https://learn.microsoft.com/windows-365/enterprise/requirements"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-w365-agents",
+      "capabilityId": "windows-365-for-agents",
+      "licenses": [
+        "w365-enterprise",
+        "azure-plan"
+      ],
+      "conditions": [],
+      "rationale": "Cloud PCs for agent use are billed pay-as-you-go through an Azure subscription rather than a fixed per-user licence. RPA / unattended UI automation on a human Windows 365 Enterprise Cloud PC additionally needs a Microsoft 365 Unattended licence.",
+      "sources": [
+        "https://learn.microsoft.com/windows-365/overview",
+        "https://learn.microsoft.com/office365/servicedescriptions/windows-365-service-description/windows-365-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-e5sec",
+      "capabilityId": "defender-suite-one-addon",
+      "licenses": [
+        "e5-security"
+      ],
+      "conditions": [],
+      "rationale": "One E5 Security add-on covers all five Defender/Entra security workloads and is the efficient buy when a Microsoft 365 E3 tenant needs more than one of them. It does not include the Purview advanced compliance solutions.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-e5comp",
+      "capabilityId": "compliance-suite-one-addon",
+      "licenses": [
+        "purview-eda"
+      ],
+      "conditions": [],
+      "rationale": "One E5 Compliance add-on covers the Purview advanced compliance solutions and is the efficient buy when a Microsoft 365 E3 tenant needs several of them. Narrower add-ons (E5 Information Protection & Governance, E5 eDiscovery & Audit, E5 Insider Risk Management) exist if only one area is needed.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-e3-baseline",
+      "capabilityId": "security-compliance-e3-vs-e5",
+      "licenses": [
+        "m365-e3"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 E3 is the security/compliance baseline: Entra ID P1 (Conditional Access), Intune Plan 1, Defender for Endpoint P1, Purview DLP (Exchange/SP/OneDrive), manual labels, retention, eDiscovery & Audit Standard.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options",
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description"
+      ],
+      "preferred": true
+    },
+    {
+      "id": "p-e5-full",
+      "capabilityId": "security-compliance-e3-vs-e5",
+      "licenses": [
+        "m365-e5"
+      ],
+      "conditions": [],
+      "rationale": "Microsoft 365 E5 adds Entra ID P2, Defender for Endpoint P2 + Office 365 P2 + Identity + Cloud Apps, Purview advanced compliance (IRM, Comms Compliance, eDiscovery/Audit Premium, auto-labelling, records) and Power BI Pro. The E5 Security and E5 Compliance add-ons deliver these two halves separately.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+      ]
+    }
+  ]
+}

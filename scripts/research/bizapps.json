@@ -1,0 +1,3778 @@
+{
+  "licenses": [
+    {
+      "id": "d365-sales-pro",
+      "name": "Dynamics 365 Sales Professional",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 30,
+      "note": "Core sales force automation (leads, opportunities, quotes, orders, in-app marketing) for teams that don't need Sales Enterprise's advanced customization or AI. Entities are a subset of Sales Enterprise.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/sales/overview"
+    },
+    {
+      "id": "microsoft-relationship-sales",
+      "name": "Microsoft Relationship Sales",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 58,
+      "note": "Dynamics 365 Sales Enterprise plus LinkedIn Sales Navigator Advanced Plus, for relationship-led selling. Not available for direct purchase - bought through a Microsoft representative or partner.",
+      "includes": [
+        "d365-sales-ent"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales"
+    },
+    {
+      "id": "d365-cs-ent",
+      "name": "Dynamics 365 Customer Service Enterprise",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 42,
+      "note": "Full case and knowledge management, entitlements, SLAs, Copilot Service workspace, and the base features of the built-in service agents. Required for the voice and digital messaging add-ons.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/customer-service/implement/customer-service-workspace-system-requirements"
+    },
+    {
+      "id": "d365-cs-pro",
+      "name": "Dynamics 365 Customer Service Professional",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 28,
+      "note": "Case management and knowledge base for smaller support teams. A subset of Customer Service Enterprise - no advanced routing, embedded intelligence, or the omnichannel add-ons.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/customer-service/implement/overview"
+    },
+    {
+      "id": "d365-cs-digital-messaging",
+      "name": "Digital Messaging add-on for Dynamics 365 Customer Service",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 20,
+      "note": "Adds web chat plus social, SMS, WhatsApp, Teams and custom Direct Line channels with unified routing. Includes Copilot Studio entitlements for building the agents used on those channels.",
+      "prerequisites": [
+        "Dynamics 365 Customer Service Enterprise"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/customer-service/develop/extend-omnichannel"
+    },
+    {
+      "id": "d365-cs-chat",
+      "name": "Chat add-on for Dynamics 365 Customer Service",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 16,
+      "note": "Adds the web chat channel only (plus telephony via third-party providers). Includes Copilot Studio entitlements for chat agents. Less than the Digital Messaging add-on, which also covers social/SMS/WhatsApp.",
+      "prerequisites": [
+        "Dynamics 365 Customer Service Enterprise"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/customer-service/develop/extend-omnichannel"
+    },
+    {
+      "id": "d365-cs-voice",
+      "name": "Voice Channel add-on for Dynamics 365 Customer Service",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 22,
+      "note": "Adds Microsoft's native PSTN voice channel (built on Azure Communication Services) to Customer Service, with call transcription, sentiment and unified routing. Azure Communication Services telephony usage is billed separately.",
+      "prerequisites": [
+        "Dynamics 365 Customer Service Enterprise",
+        "Digital Messaging or Chat add-on"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/customer-service/administer/voice-channel-install"
+    },
+    {
+      "id": "d365-contact-center",
+      "name": "Dynamics 365 Contact Center",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 40,
+      "note": "Microsoft's standalone AI-first contact-center solution (voice, digital channels, unified routing, Copilot). Can run on top of Dynamics 365 Customer Service or a third-party CRM ('Contact Center - embedded' vs '- standalone').",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/contact-center/implement/system-requirements-contact-center"
+    },
+    {
+      "id": "d365-field-service",
+      "name": "Dynamics 365 Field Service",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 40,
+      "note": "Work-order management, scheduling and dispatch, inventory, and the Field Service mobile app for frontline technicians. The mobile app is included with the licence.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/field-service/buy-fs"
+    },
+    {
+      "id": "d365-field-service-contractor",
+      "name": "Dynamics 365 Field Service Contractor",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 18,
+      "note": "A reduced Field Service licence for third-party technicians (typically added as Microsoft Entra B2B collaboration users) - a subset of the full Field Service features and capabilities.",
+      "prerequisites": [
+        "At least one full Dynamics 365 Field Service licence in the tenant"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/field-service/buy-fs"
+    },
+    {
+      "id": "d365-remote-assist",
+      "name": "Dynamics 365 Remote Assist",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 20,
+      "note": "Mixed-reality remote expert calling on HoloLens, mobile and Teams; a Microsoft Teams licence is included. Reaching end of support on 31 December 2026.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/mixed-reality/remote-assist/requirements"
+    },
+    {
+      "id": "d365-guides",
+      "name": "Dynamics 365 Guides",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 20,
+      "note": "Step-by-step holographic work instructions on HoloLens, with a PC authoring app; Dataverse and Power Apps are included. A Teams licence is not included. Reaching end of support on 31 December 2026.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/mixed-reality/guides/requirements"
+    },
+    {
+      "id": "d365-customer-insights",
+      "name": "Dynamics 365 Customer Insights",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 42,
+      "note": "The unified Customer Insights licence (sold since Sept 2023) covering both Customer Insights - Data (CDP) and Customer Insights - Journeys (real-time marketing). Entitles a base volume of unified people and interacted people; capacity add-ons increase both.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+    },
+    {
+      "id": "d365-customer-insights-attach",
+      "name": "Dynamics 365 Customer Insights (attach)",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 30,
+      "note": "Reduced-rate Customer Insights licence for tenants that already run a qualifying Dynamics 365 app (Sales, Customer Service, Field Service, Supply Chain, Finance or Commerce) with 10 or more users.",
+      "prerequisites": [
+        "A qualifying Dynamics 365 app with 10+ users"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+    },
+    {
+      "id": "d365-finance",
+      "name": "Dynamics 365 Finance",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 52,
+      "note": "Core financials - general ledger, AP, AR, budgeting, fixed assets, financial reporting. A finance and operations 'base' licence that other finance and operations apps can attach to.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "d365-scm",
+      "name": "Dynamics 365 Supply Chain Management",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 52,
+      "note": "Inventory, warehouse, manufacturing, procurement and planning. A finance and operations 'base' licence; also commonly bought as an attach licence for Finance users.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "d365-commerce",
+      "name": "Dynamics 365 Commerce",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 50,
+      "note": "Unified retail across in-store POS, call centre and e-commerce, built on the finance and operations platform. A base licence in the base + attach model.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "d365-human-resources",
+      "name": "Dynamics 365 Human Resources",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 40,
+      "note": "Core HR - employee records, leave and absence, benefits, compensation. A finance and operations base licence; Human Resources Self Service is a lighter companion licence.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "d365-project-operations",
+      "name": "Dynamics 365 Project Operations",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 48,
+      "note": "Connects project sales, resourcing, project management (Project for the web) and project accounting. A base licence; the 'integrated with ERP' deployment additionally needs Finance/Supply Chain Management.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/project-operations/welcome-to-project-operations"
+    },
+    {
+      "id": "d365-ops-activity",
+      "name": "Dynamics 365 Operations - Activity",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 16,
+      "note": "A light-use finance and operations licence for users who perform a limited set of operational tasks. One 'write' privilege outside the allowed scope escalates the user to a full base licence.",
+      "prerequisites": [
+        "A full finance and operations base licence in the tenant"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+    },
+    {
+      "id": "d365-attach",
+      "name": "Dynamics 365 attach (subsequent qualifying app)",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 25,
+      "note": "Not a product in itself - the reduced 'Attach to Qualifying Dynamics 365 Base Offer' rate at which a user who already holds one full base licence can license additional qualifying Dynamics 365 apps. Assign the base licence first, then the attach.",
+      "prerequisites": [
+        "One full Dynamics 365 base licence assigned to the same user"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "d365-device",
+      "name": "Dynamics 365 Device license",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 20,
+      "note": "A device-based licence for shared scenarios (shop floor, warehouse, retail) where many users take turns on one device using shared or individual sign-ins, instead of a named-user licence each.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+    },
+    {
+      "id": "operations-db-capacity",
+      "name": "Dynamics 365 Operations - Database Capacity",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 12,
+      "note": "Tenant-level add-on that increases database storage for finance and operations environments. Database entitlement is pooled with Dataverse database capacity for enforcement.",
+      "prerequisites": [
+        "A finance and operations app subscription"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+    },
+    {
+      "id": "operations-file-capacity",
+      "name": "Dynamics 365 Operations - File Capacity",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 10,
+      "note": "Tenant-level add-on that increases file storage for finance and operations environments; pooled with Dataverse file capacity.",
+      "prerequisites": [
+        "A finance and operations app subscription"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+    },
+    {
+      "id": "bc-essentials",
+      "name": "Dynamics 365 Business Central Essentials",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 35,
+      "note": "All-in-one ERP for SMBs - financials, sales, purchasing, inventory, projects. Full read/write access to Essentials companies. Sold only through CSP.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/deployment/licensing"
+    },
+    {
+      "id": "bc-premium",
+      "name": "Dynamics 365 Business Central Premium",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 42,
+      "note": "Business Central Essentials plus manufacturing and service management. Premium features are enabled per company; a Premium user can also open Essentials companies but not use Premium-only features there.",
+      "includes": [
+        "bc-essentials"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-manage-access"
+    },
+    {
+      "id": "bc-team-members",
+      "name": "Dynamics 365 Business Central Team Members",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 12,
+      "note": "Light Business Central access - read all data, plus a limited set of write scenarios (e.g. time sheets, approvals). Not for full operational use. Distinct from the Dynamics 365 (customer engagement) Team Members licence.",
+      "prerequisites": [
+        "A Business Central Essentials or Premium licence in the tenant"
+      ],
+      "source": "https://learn.microsoft.com/dynamics365/business-central/admin-access-with-m365-license"
+    },
+    {
+      "id": "bc-device",
+      "name": "Dynamics 365 Business Central Device",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 18,
+      "note": "Device licence letting multiple users share a covered device (POS, shop floor, warehouse). Members of the 'Dynamics 365 Business Central Device Users' group don't each need a user licence; a device user can't be the first to sign in.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/deployment/licensing"
+    },
+    {
+      "id": "project-plan3",
+      "name": "Project Plan 3",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 20,
+      "note": "Desktop and web project scheduling, including Project for the web. Grants premium Power Platform/Dataverse rights in the project context and is a qualifying base for Project Operations resourcing.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/pricing-billing-skus"
+    },
+    {
+      "id": "project-plan5",
+      "name": "Project Plan 5",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 25,
+      "note": "Project Plan 3 plus portfolio selection, demand management and enterprise resource capacity planning.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/pricing-billing-skus"
+    },
+    {
+      "id": "powerapps-per-app",
+      "name": "Power Apps per app plan",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 18,
+      "note": "Per-user, per-app licence: rights to run one app (canvas and/or model-driven) or one Power Pages site in a single environment, with full premium capabilities. Stackable - a user can hold several. Allocated to environments, not assigned to users directly.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+    },
+    {
+      "id": "powerapps-payg",
+      "name": "Power Apps pay-as-you-go",
+      "family": "bizapps",
+      "type": "consumption",
+      "rank": 15,
+      "note": "Run and share apps with no licence commitment, billed monthly through an Azure subscription per unique active user per app. Set at the environment level; requires an Azure subscription; per-app licences can't be used in a pay-as-you-go environment.",
+      "prerequisites": [
+        "An Azure subscription linked as a billing plan"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview"
+    },
+    {
+      "id": "powerapps-developer-plan",
+      "name": "Power Apps Developer Plan",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 5,
+      "note": "No-cost, individual, self-service plan providing a personal Developer environment with Dataverse and premium/custom connectors for building and testing (not production). 2 GB database, 750 flow runs/month; can't be extended with add-ons.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/developer/plan"
+    },
+    {
+      "id": "powerautomate-free",
+      "name": "Power Automate Free",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 5,
+      "note": "No-cost for work/school accounts: create and run cloud flows with standard connectors only (no sharing), and author/run desktop flows locally in attended mode.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+    },
+    {
+      "id": "powerautomate-process",
+      "name": "Power Automate Process",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 25,
+      "note": "Capacity licence allocated to a single cloud flow (higher action limits, premium/custom connectors regardless of triggering user) or to a machine as one unattended RPA bot. Flows must be in a solution. Stackable up to 10 per flow.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+    },
+    {
+      "id": "powerautomate-hosted-process",
+      "name": "Power Automate Hosted Process",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 28,
+      "note": "Capacity licence providing one Microsoft-hosted RPA bot - unattended desktop automation with no physical machine to manage. A superset of Power Automate Process. Sometimes called the hosted RPA add-on.",
+      "prerequisites": [
+        "A machine registered by a Power Automate Premium user for the triggering connection"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+    },
+    {
+      "id": "powerautomate-payg",
+      "name": "Power Automate pay-as-you-go",
+      "family": "bizapps",
+      "type": "consumption",
+      "rank": 15,
+      "note": "Pay for cloud-flow runs above the per-user/per-flow daily entitlement through an Azure subscription, metered as Power Platform requests. Also the pay-as-you-go option for Copilot Studio messages.",
+      "prerequisites": [
+        "An Azure subscription linked as a billing plan"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-meters"
+    },
+    {
+      "id": "powerpages-authenticated",
+      "name": "Power Pages authenticated users capacity",
+      "family": "bizapps",
+      "type": "consumption",
+      "rank": 18,
+      "note": "Capacity for unique authenticated (signed-in) users per website per month - sold as subscription capacity packs or as a pay-as-you-go meter. Includes some Dataverse database and file storage. Minimum 25 authenticated users assigned per environment.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+    },
+    {
+      "id": "powerpages-anonymous",
+      "name": "Power Pages anonymous users capacity",
+      "family": "bizapps",
+      "type": "consumption",
+      "rank": 15,
+      "note": "Capacity for unique anonymous (not signed-in) users per website per month - subscription packs or a pay-as-you-go meter. The sign-in page alone doesn't count. Minimum 200 anonymous users assigned per environment.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+    },
+    {
+      "id": "dataverse-db-capacity",
+      "name": "Microsoft Dataverse Database Capacity",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 12,
+      "note": "Per-GB add-on that increases the tenant's Dataverse database storage entitlement (the pooled base capacity plus per-user accruals). Bought in 1-GB increments.",
+      "prerequisites": [
+        "A Power Platform or Dynamics 365 subscription"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+    },
+    {
+      "id": "dataverse-file-capacity",
+      "name": "Microsoft Dataverse File Capacity",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 10,
+      "note": "Per-GB add-on that increases the tenant's Dataverse file storage entitlement. Database capacity can offset file overages, but not the reverse.",
+      "prerequisites": [
+        "A Power Platform or Dynamics 365 subscription"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+    },
+    {
+      "id": "dataverse-log-capacity",
+      "name": "Microsoft Dataverse Log Capacity",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 8,
+      "note": "Per-GB add-on that increases the tenant's Dataverse log storage entitlement (auditing, plug-in trace, elastic tables). Tracked separately from database and file.",
+      "prerequisites": [
+        "A Power Platform or Dynamics 365 subscription"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+    },
+    {
+      "id": "dataverse-teams",
+      "name": "Microsoft Dataverse for Teams",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 10,
+      "note": "Included with select Microsoft 365 subscriptions that have Power Platform and Teams capabilities. One environment per team (~1M rows / 2 GB), Teams channels only, no premium/custom connectors, AI Builder or desktop flows without additional Power Apps/Automate licensing.",
+      "prerequisites": [
+        "A qualifying Microsoft 365 subscription with Power Platform + Teams"
+      ],
+      "source": "https://learn.microsoft.com/power-platform/admin/about-teams-environment"
+    },
+    {
+      "id": "ai-builder-addon",
+      "name": "AI Builder capacity add-on",
+      "family": "bizapps",
+      "type": "addon",
+      "rank": 15,
+      "note": "Tenant-pooled AI Builder service credits (1M per unit per month) consumed by AI Builder models in Power Apps, Power Automate and Dynamics 365. New customers now buy Copilot Credits instead; seeded credits in premium licences end 1 Nov 2026.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/ai-builder/credit-management"
+    },
+    {
+      "id": "copilot-credits",
+      "name": "Microsoft Copilot Studio capacity (Copilot Credits)",
+      "family": "bizapps",
+      "type": "consumption",
+      "rank": 20,
+      "note": "The consumption currency for published Copilot Studio agents, Copilot Chat/SharePoint agents and many AI Builder scenarios. Bought as prepaid capacity packs (25,000 credits/month each) and/or metered pay-as-you-go via an Azure subscription; allocated to environments in the Power Platform admin center.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs"
+    },
+    {
+      "id": "copilot-studio-teams",
+      "name": "Microsoft Copilot Studio for Teams",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 12,
+      "note": "A subset of Copilot Studio included with select Microsoft 365 subscriptions: classic-orchestration agents published to Teams, using Dataverse for Teams. No generative orchestration, premium connectors, other channels or live handoff.",
+      "prerequisites": [
+        "A qualifying Microsoft 365 subscription with Power Platform + Teams"
+      ],
+      "source": "https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions"
+    },
+    {
+      "id": "powerbi-free",
+      "name": "Power BI (Fabric free) per-user license",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 5,
+      "note": "Free per-user licence: build content for personal use, and consume content shared by Pro/PPU users when it sits in a Fabric F64+ or Power BI Premium capacity. Cannot publish or share in shared capacity.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type"
+    }
+  ],
+  "clarifiers": [
+    {
+      "id": "crm-system",
+      "question": "Which CRM holds the customer data?",
+      "options": [
+        {
+          "id": "dynamics",
+          "label": "Dynamics 365 (Sales / Customer Service)"
+        },
+        {
+          "id": "salesforce",
+          "label": "Salesforce"
+        },
+        {
+          "id": "other",
+          "label": "Other / none yet"
+        }
+      ]
+    },
+    {
+      "id": "d365-user-role",
+      "question": "How will this person use the Dynamics 365 app?",
+      "options": [
+        {
+          "id": "full",
+          "label": "Full operational use"
+        },
+        {
+          "id": "team-member",
+          "label": "Light updates / self-service only"
+        },
+        {
+          "id": "readonly",
+          "label": "Read-only / occasional viewing"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "d365-sales",
+      "title": "Full sales pipeline and forecasting for a sales team",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 sales",
+        "crm",
+        "opportunity management",
+        "forecasting",
+        "pipeline",
+        "sales enterprise",
+        "sales professional",
+        "team members"
+      ],
+      "description": "Operational CRM for sellers plus lighter access for people who only need to read or lightly update records.",
+      "paths": [
+        "p-sales-ent",
+        "p-sales-pro",
+        "p-sales-team"
+      ]
+    },
+    {
+      "id": "sales-professional-crm",
+      "title": "Basic sales force automation for a small sales team",
+      "category": "bizapps",
+      "keywords": [
+        "sales professional",
+        "small business crm",
+        "leads",
+        "opportunities",
+        "quotes",
+        "lightweight crm",
+        "dynamics 365 sales professional"
+      ],
+      "description": "Lead-to-order CRM without the advanced customization, embedded intelligence or AI of Sales Enterprise. Entity set is a subset of Sales Enterprise.",
+      "paths": [
+        "p-sales-pro-only"
+      ]
+    },
+    {
+      "id": "sales-premium-ai",
+      "title": "AI-guided selling: conversation intelligence, predictive scoring, relationship analytics",
+      "category": "bizapps",
+      "keywords": [
+        "sales premium",
+        "conversation intelligence",
+        "predictive lead scoring",
+        "predictive opportunity scoring",
+        "sales accelerator",
+        "relationship intelligence",
+        "guided selling"
+      ],
+      "description": "The AI-driven seller experience on top of Sales Enterprise - call analysis, predictive models, relationship health, guided next-best-action. Sales Enterprise includes a limited monthly capacity of these features.",
+      "paths": [
+        "p-sales-premium",
+        "p-sales-ent-limited"
+      ]
+    },
+    {
+      "id": "relationship-sales-linkedin",
+      "title": "Connect CRM records to LinkedIn Sales Navigator",
+      "category": "bizapps",
+      "keywords": [
+        "microsoft relationship sales",
+        "linkedin sales navigator",
+        "sales insights",
+        "relationship selling",
+        "linkedin integration",
+        "lead data from linkedin"
+      ],
+      "description": "Surface LinkedIn people, company and relationship data inside Dynamics 365 Sales, and sync leads via LinkedIn Sales Insights.",
+      "paths": [
+        "p-relationship-sales"
+      ]
+    },
+    {
+      "id": "sales-forecasting",
+      "title": "Revenue forecasting and quota tracking",
+      "category": "bizapps",
+      "keywords": [
+        "sales forecasting",
+        "revenue forecast",
+        "quota",
+        "pipeline forecast",
+        "predictive forecasting",
+        "forecast accuracy"
+      ],
+      "description": "Project revenue over a period, roll up by hierarchy, track against quota, and (with Premium) apply predictive forecasting.",
+      "paths": [
+        "p-forecast-ent",
+        "p-forecast-predictive"
+      ]
+    },
+    {
+      "id": "sales-sequences",
+      "title": "Automated sales cadences and seller task lists (sales accelerator)",
+      "category": "bizapps",
+      "keywords": [
+        "sales accelerator",
+        "sales sequences",
+        "cadence",
+        "work list",
+        "seller productivity",
+        "next best action",
+        "outreach steps"
+      ],
+      "description": "Define multi-step sequences of calls, emails and tasks and assign them to leads/opportunities so sellers get a prioritized work list.",
+      "paths": [
+        "p-sequences-ent"
+      ]
+    },
+    {
+      "id": "copilot-in-d365-sales",
+      "title": "Built-in Copilot inside the Dynamics 365 Sales app (record summaries, email drafting, meeting prep)",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in dynamics 365 sales",
+        "record summarization",
+        "opportunity summary",
+        "email assist",
+        "meeting preparation",
+        "app skills",
+        "seller copilot in-app"
+      ],
+      "description": "The Copilot experience embedded in the Sales app (accessed from Copilot > App Skills) - summaries of leads/opportunities/accounts, recent-change catch-up, news, and email help. Grounded on Dataverse; distinct from the Sales agent that runs across Microsoft 365.",
+      "paths": [
+        "p-copilot-d365sales-included",
+        "p-copilot-d365sales-workiq"
+      ]
+    },
+    {
+      "id": "d365-sales-agent",
+      "title": "Use Sales agent (formerly Copilot for Sales) in Outlook and Teams",
+      "category": "bizapps",
+      "keywords": [
+        "sales agent",
+        "copilot for sales",
+        "sales copilot",
+        "viva sales",
+        "crm in outlook",
+        "crm in teams",
+        "seller copilot",
+        "sales chat",
+        "record summary"
+      ],
+      "description": "The seller assistant that brings Dynamics 365 Sales or Salesforce CRM context into Outlook and Teams and appears as an agent inside Microsoft 365 Copilot. Successor to Copilot for Sales.",
+      "paths": [
+        "p-sales-agent-full",
+        "p-sales-agent-crmonly",
+        "p-sales-agent-salesforce"
+      ]
+    },
+    {
+      "id": "d365-sales-dev-agent",
+      "title": "Use the Sales Development agent (SDR agent) with Dynamics 365 Sales",
+      "category": "bizapps",
+      "keywords": [
+        "sales development agent",
+        "sdr agent",
+        "sales development representative",
+        "prospecting agent",
+        "agent 365",
+        "copilot frontier",
+        "outreach agent",
+        "autonomous agent"
+      ],
+      "description": "The Frontier / Agent 365 agent that runs in Microsoft Teams, does autonomous prospect outreach, and syncs leads and interactions back to Dynamics 365 Sales. Currently in preview.",
+      "paths": [
+        "p-salesdev-agent"
+      ]
+    },
+    {
+      "id": "d365-builtin-sales-agents",
+      "title": "Use the built-in Dynamics 365 Sales agents (Sales Qualification / Sales Research / Opportunity)",
+      "category": "bizapps",
+      "keywords": [
+        "sales qualification agent",
+        "sales close agent",
+        "opportunity agent",
+        "sales research agent",
+        "dynamics 365 sales ai hub",
+        "lead qualification agent",
+        "built-in sales agent"
+      ],
+      "description": "Agents configured in the Sales Hub AI hub that research and qualify leads and progress opportunities. Metered on Copilot Studio credits.",
+      "paths": [
+        "p-builtin-sales-agents",
+        "p-builtin-sales-agents-premium"
+      ]
+    },
+    {
+      "id": "sales-team-member-light",
+      "title": "Light read/update access to CRM for sales support staff",
+      "category": "bizapps",
+      "keywords": [
+        "sales team member",
+        "team members license",
+        "read only crm",
+        "sales support",
+        "light user",
+        "occasional crm user"
+      ],
+      "description": "For account teams, operations and support staff who read Dynamics 365 data and do limited updates through the Sales Team Member app (max 15 entities).",
+      "paths": [
+        "p-sales-team-member"
+      ]
+    },
+    {
+      "id": "customer-service-cases",
+      "title": "Case and knowledge management for a support team",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 customer service",
+        "case management",
+        "knowledge base",
+        "sla",
+        "entitlements",
+        "support desk",
+        "ticketing",
+        "customer service enterprise"
+      ],
+      "description": "Track cases from creation to resolution, manage SLAs and entitlements, and build a knowledge base, in the Copilot Service workspace or Customer Service Hub.",
+      "paths": [
+        "p-cs-enterprise",
+        "p-cs-professional"
+      ]
+    },
+    {
+      "id": "customer-service-professional",
+      "title": "Basic case management for a small support team (Professional)",
+      "category": "bizapps",
+      "keywords": [
+        "customer service professional",
+        "basic case management",
+        "small helpdesk",
+        "knowledge base",
+        "dynamics 365 customer service professional"
+      ],
+      "description": "Case and knowledge management for smaller teams - a subset of Customer Service Enterprise, without advanced routing, embedded intelligence or the omnichannel add-ons.",
+      "paths": [
+        "p-cs-pro-only"
+      ]
+    },
+    {
+      "id": "omnichannel-digital-messaging",
+      "title": "Live chat plus SMS, WhatsApp, social and custom messaging channels for support",
+      "category": "bizapps",
+      "keywords": [
+        "omnichannel",
+        "digital messaging",
+        "live chat",
+        "whatsapp",
+        "sms",
+        "facebook messenger",
+        "social channels",
+        "direct line",
+        "unified routing"
+      ],
+      "description": "Add asynchronous and real-time messaging channels to Customer Service with unified routing and shared context. The Digital Messaging add-on also includes Copilot Studio entitlements for the agents on those channels.",
+      "paths": [
+        "p-cs-digital-messaging"
+      ]
+    },
+    {
+      "id": "omnichannel-chat-only",
+      "title": "Add a web chat channel to Customer Service",
+      "category": "bizapps",
+      "keywords": [
+        "chat add-on",
+        "web chat",
+        "live chat widget",
+        "customer service chat",
+        "chat for dynamics 365"
+      ],
+      "description": "The web chat channel (plus third-party telephony) without the broader social/SMS/WhatsApp channels of the Digital Messaging add-on. Includes Copilot Studio entitlements for chat agents.",
+      "paths": [
+        "p-cs-chat"
+      ]
+    },
+    {
+      "id": "customer-service-voice",
+      "title": "Inbound and outbound phone channel (voice) in Customer Service",
+      "category": "bizapps",
+      "keywords": [
+        "voice channel",
+        "customer service voice",
+        "pstn",
+        "call center telephony",
+        "azure communication services",
+        "call transcription",
+        "ivr"
+      ],
+      "description": "Microsoft's native PSTN voice channel embedded in Customer Service - real-time transcription, sentiment, unified routing. Requires Customer Service Enterprise plus a messaging add-on; ACS telephony usage is billed separately.",
+      "paths": [
+        "p-cs-voice"
+      ]
+    },
+    {
+      "id": "contact-center-standalone",
+      "title": "AI-first contact centre on top of an existing (non-Dynamics) CRM",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 contact center",
+        "contact center standalone",
+        "ccaas",
+        "digital contact center",
+        "voice and digital channels",
+        "unified routing",
+        "byo crm"
+      ],
+      "description": "Microsoft's standalone contact-centre product - voice, digital channels, unified routing, Copilot and IVR agents - usable with Salesforce, ServiceNow or any CRM ('embedded' when paired with Dynamics 365 Customer Service).",
+      "paths": [
+        "p-contact-center",
+        "p-contact-center-embedded"
+      ]
+    },
+    {
+      "id": "contact-center-voice",
+      "title": "Voice channel in Dynamics 365 Contact Center",
+      "category": "bizapps",
+      "keywords": [
+        "contact center voice",
+        "pstn contact center",
+        "inbound calls",
+        "outbound calls",
+        "call routing",
+        "azure communication services"
+      ],
+      "description": "The PSTN voice channel provisioned within Dynamics 365 Contact Center, per-channel-user licensing plus separate ACS telephony consumption.",
+      "paths": [
+        "p-cc-voice"
+      ]
+    },
+    {
+      "id": "contact-center-copilot-agents",
+      "title": "Self-service IVR and chat Copilot agents in the contact centre",
+      "category": "bizapps",
+      "keywords": [
+        "copilot agent",
+        "ivr agent",
+        "voice bot",
+        "customer assist agent",
+        "self-service deflection",
+        "agent session",
+        "copilot credits contact center"
+      ],
+      "description": "Automated voice/chat agents that deflect or triage contacts before a representative. Consumption-based Copilot Credits pay for the AI activity across voice and digital channels.",
+      "paths": [
+        "p-cc-copilot-agents"
+      ]
+    },
+    {
+      "id": "customer-service-copilot",
+      "title": "Copilot for service representatives: draft replies, answer from knowledge, summarize cases",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in customer service",
+        "agent copilot",
+        "case summary",
+        "draft email",
+        "ask a question",
+        "knowledge answers",
+        "conversation summary"
+      ],
+      "description": "The real-time AI assistance surfaced in the Copilot Service workspace - suggested responses grounded on knowledge and case data, plus case and conversation summaries.",
+      "paths": [
+        "p-cs-copilot-included",
+        "p-cs-copilot-workiq"
+      ]
+    },
+    {
+      "id": "customer-service-agent-m365",
+      "title": "Service agent inside Microsoft 365 Copilot (Customer Assist / Service in Copilot)",
+      "category": "bizapps",
+      "keywords": [
+        "service agent",
+        "service in microsoft 365 copilot",
+        "customer assist agent",
+        "case handling agent",
+        "copilot chat service",
+        "service app for copilot"
+      ],
+      "description": "The Service app that connects a Customer Service environment to Microsoft 365 Copilot so representatives can ask about cases, customers and interactions in Copilot Chat.",
+      "paths": [
+        "p-cs-agent-m365"
+      ]
+    },
+    {
+      "id": "customer-service-team-member",
+      "title": "Light case access for occasional Customer Service users",
+      "category": "bizapps",
+      "keywords": [
+        "customer service team member",
+        "team members license",
+        "read only cases",
+        "internal helpdesk light",
+        "occasional support user"
+      ],
+      "description": "For employees who need to log or view cases occasionally through the Customer Service Team Member app (max 15 entities), not run a service desk.",
+      "paths": [
+        "p-cs-team-member"
+      ]
+    },
+    {
+      "id": "unified-routing",
+      "title": "Skills-based routing of cases and conversations across channels",
+      "category": "bizapps",
+      "keywords": [
+        "unified routing",
+        "intelligent routing",
+        "skills based routing",
+        "work distribution",
+        "queues",
+        "capacity profiles",
+        "assignment rules"
+      ],
+      "description": "AI-assisted classification and assignment of work items (cases, chats, calls) to the best-fit representative by skills, capacity and priority.",
+      "paths": [
+        "p-unified-routing"
+      ]
+    },
+    {
+      "id": "customer-service-scheduling",
+      "title": "Service scheduling and appointment booking",
+      "category": "bizapps",
+      "keywords": [
+        "service scheduling",
+        "appointments",
+        "resource booking",
+        "customer service scheduling",
+        "bookable resources"
+      ],
+      "description": "Schedule resources, facilities and appointments for onsite or in-branch service within Customer Service.",
+      "paths": [
+        "p-cs-scheduling"
+      ]
+    },
+    {
+      "id": "field-service-work-orders",
+      "title": "Schedule and dispatch field technicians (work order management)",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 field service",
+        "work orders",
+        "scheduling",
+        "dispatch",
+        "schedule board",
+        "resource scheduling",
+        "service technician",
+        "field operations"
+      ],
+      "description": "Create work orders, schedule them to frontline workers manually or with resource scheduling optimization, and manage assets, inventory and agreements.",
+      "paths": [
+        "p-field-service"
+      ]
+    },
+    {
+      "id": "field-service-contractor",
+      "title": "Give third-party contractors limited Field Service access",
+      "category": "bizapps",
+      "keywords": [
+        "field service contractor",
+        "subcontractor",
+        "vendor technician",
+        "b2b collaboration",
+        "external technician",
+        "contractor license"
+      ],
+      "description": "License external technicians (added as Microsoft Entra B2B users) with a reduced Field Service Contractor licence rather than a full Field Service seat.",
+      "paths": [
+        "p-field-service-contractor"
+      ]
+    },
+    {
+      "id": "field-service-mobile",
+      "title": "Field technician mobile app for viewing and completing jobs",
+      "category": "bizapps",
+      "keywords": [
+        "field service mobile",
+        "mobile app",
+        "technician app",
+        "offline",
+        "bookings",
+        "work order mobile",
+        "frontline worker app"
+      ],
+      "description": "The Dynamics 365 Field Service mobile app used by frontline workers to see their schedule, update booking status and capture job details, including offline.",
+      "paths": [
+        "p-field-service-mobile"
+      ]
+    },
+    {
+      "id": "field-service-copilot",
+      "title": "Copilot work order summaries and recap in Field Service",
+      "category": "bizapps",
+      "keywords": [
+        "field service copilot",
+        "work order summary",
+        "work order recap",
+        "row summary field service",
+        "copilot in field service"
+      ],
+      "description": "AI-generated summaries of work orders and records inside the Field Service model-driven app.",
+      "paths": [
+        "p-fs-copilot-included",
+        "p-fs-copilot-workiq"
+      ]
+    },
+    {
+      "id": "remote-assist",
+      "title": "Remote expert video calling with mixed reality annotations",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 remote assist",
+        "hololens",
+        "remote expert",
+        "see what i see",
+        "mixed reality calling",
+        "spatial annotation",
+        "field collaboration"
+      ],
+      "description": "Frontline workers on HoloLens or mobile call a remote expert who can annotate their real-world view. A Teams licence is included. Reaching end of support 31 December 2026.",
+      "paths": [
+        "p-remote-assist"
+      ]
+    },
+    {
+      "id": "guides",
+      "title": "Step-by-step holographic work instructions",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 guides",
+        "hololens",
+        "work instructions",
+        "holographic",
+        "operator guidance",
+        "training",
+        "assembly instructions",
+        "mixed reality"
+      ],
+      "description": "Author and deliver spatial step-by-step instructions on HoloLens for assembly, maintenance and training. Dataverse and Power Apps are included; Teams is not. Reaching end of support 31 December 2026.",
+      "paths": [
+        "p-guides"
+      ]
+    },
+    {
+      "id": "customer-insights-data",
+      "title": "Unify customer data into a single profile (CDP)",
+      "category": "bizapps",
+      "keywords": [
+        "customer insights data",
+        "cdp",
+        "customer data platform",
+        "unified profile",
+        "data unification",
+        "segmentation",
+        "measures",
+        "audience"
+      ],
+      "description": "Ingest data from many sources, resolve it into unified 'people' profiles, enrich and segment them. Part of the unified Dynamics 365 Customer Insights licence.",
+      "paths": [
+        "p-ci-unified",
+        "p-ci-attach"
+      ]
+    },
+    {
+      "id": "customer-insights-journeys",
+      "title": "Real-time marketing journeys, email and event campaigns",
+      "category": "bizapps",
+      "keywords": [
+        "customer insights journeys",
+        "dynamics 365 marketing",
+        "real-time marketing",
+        "customer journey",
+        "email marketing",
+        "triggers",
+        "interacted people",
+        "lead nurturing"
+      ],
+      "description": "Design trigger-based and segment-based customer journeys across email, SMS, push and custom channels. Part of the unified Customer Insights licence; SMS delivery needs a separate provider.",
+      "paths": [
+        "p-ci-journeys",
+        "p-ci-attach-journeys"
+      ]
+    },
+    {
+      "id": "customer-insights-copilot",
+      "title": "Build segments and journeys in natural language (Copilot in Customer Insights)",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in customer insights",
+        "copilot marketing",
+        "natural language segment",
+        "journey copilot",
+        "content ideas",
+        "query assist"
+      ],
+      "description": "The Copilot experience in Customer Insights - Data and - Journeys for describing segments, journeys and content in plain language.",
+      "paths": [
+        "p-ci-copilot"
+      ]
+    },
+    {
+      "id": "d365-finance-core",
+      "title": "Core corporate financials (GL, AP, AR, budgeting, reporting)",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 finance",
+        "general ledger",
+        "accounts payable",
+        "accounts receivable",
+        "financial reporting",
+        "budgeting",
+        "fixed assets",
+        "erp finance"
+      ],
+      "description": "Enterprise financial management on the finance and operations platform. A 'base' licence in the base + attach model.",
+      "paths": [
+        "p-finance",
+        "p-finance-attach"
+      ]
+    },
+    {
+      "id": "d365-scm-core",
+      "title": "Supply chain: inventory, warehousing, manufacturing and planning",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 supply chain management",
+        "inventory",
+        "warehouse management",
+        "manufacturing",
+        "master planning",
+        "procurement",
+        "production control",
+        "erp scm"
+      ],
+      "description": "End-to-end supply chain on the finance and operations platform. A base licence, or an attach licence for users whose base is Finance.",
+      "paths": [
+        "p-scm",
+        "p-scm-attach"
+      ]
+    },
+    {
+      "id": "d365-commerce-core",
+      "title": "Unified retail POS and e-commerce",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 commerce",
+        "retail",
+        "point of sale",
+        "pos",
+        "e-commerce",
+        "omnichannel retail",
+        "store operations",
+        "call center commerce"
+      ],
+      "description": "In-store, call-centre and online retail on the finance and operations platform. A base licence in the base + attach model.",
+      "paths": [
+        "p-commerce"
+      ]
+    },
+    {
+      "id": "d365-human-resources-core",
+      "title": "Core HR: employee records, leave, benefits, compensation",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 human resources",
+        "hr",
+        "core hr",
+        "leave and absence",
+        "benefits",
+        "compensation",
+        "personnel management",
+        "hcm"
+      ],
+      "description": "Human capital management on the finance and operations platform. A base licence; also available as an attach licence.",
+      "paths": [
+        "p-human-resources",
+        "p-hr-attach"
+      ]
+    },
+    {
+      "id": "d365-project-operations-core",
+      "title": "Project-based selling, resourcing and accounting",
+      "category": "bizapps",
+      "keywords": [
+        "dynamics 365 project operations",
+        "project accounting",
+        "resource management",
+        "project for the web",
+        "time and expense",
+        "project invoicing",
+        "psa",
+        "professional services"
+      ],
+      "description": "Connects project sales, resourcing, delivery (Project for the web) and project financials. A base licence; the ERP-integrated deployment adds Finance/Supply Chain Management.",
+      "paths": [
+        "p-project-operations",
+        "p-project-operations-erp"
+      ]
+    },
+    {
+      "id": "fin-ops-base-attach",
+      "title": "License one user for two or more finance & operations apps cost-effectively",
+      "category": "bizapps",
+      "keywords": [
+        "base and attach",
+        "attach license",
+        "subsequent qualifying application",
+        "finance and operations licensing",
+        "multiple d365 apps",
+        "base then attach"
+      ],
+      "description": "Assign the highest-value app as the base licence, then license the user's other qualifying finance and operations apps at the reduced attach rate - assigned base-first in the Microsoft 365 admin center.",
+      "paths": [
+        "p-fno-base-attach"
+      ]
+    },
+    {
+      "id": "operations-activity-light",
+      "title": "Light operational task access to finance & operations (Operations - Activity)",
+      "category": "bizapps",
+      "keywords": [
+        "operations activity",
+        "light user finance and operations",
+        "operational tasks",
+        "approvals",
+        "time entry erp",
+        "read only erp"
+      ],
+      "description": "A lower-tier finance and operations licence for users doing a limited set of operational tasks; a single out-of-scope write privilege escalates them to a full base licence.",
+      "paths": [
+        "p-operations-activity"
+      ]
+    },
+    {
+      "id": "fin-ops-device-license",
+      "title": "Shared-device access for finance & operations (shop floor, warehouse, POS)",
+      "category": "bizapps",
+      "keywords": [
+        "device license",
+        "shared device",
+        "shop floor",
+        "warehouse scanner",
+        "kiosk",
+        "shift workers erp",
+        "point of sale device"
+      ],
+      "description": "License the device rather than each user where many people take turns at one terminal.",
+      "paths": [
+        "p-fno-device"
+      ]
+    },
+    {
+      "id": "fin-ops-team-members",
+      "title": "Read and light-write access to finance & operations data",
+      "category": "bizapps",
+      "keywords": [
+        "team members finance and operations",
+        "d365 team members",
+        "erp read only",
+        "self service erp",
+        "light erp user",
+        "expense entry"
+      ],
+      "description": "For employees who consume finance and operations data and perform designated self-service tasks (e.g. expenses, time), not full operational roles.",
+      "paths": [
+        "p-fno-team-members"
+      ]
+    },
+    {
+      "id": "fin-ops-copilot",
+      "title": "Copilot in finance and operations apps",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in finance",
+        "copilot in supply chain",
+        "finance and operations copilot",
+        "erp copilot",
+        "workspace copilot",
+        "summaries erp"
+      ],
+      "description": "The Copilot capabilities embedded in Dynamics 365 Finance, Supply Chain Management, Project Operations and Commerce.",
+      "paths": [
+        "p-fno-copilot-included",
+        "p-fno-copilot-workiq"
+      ]
+    },
+    {
+      "id": "operations-storage-capacity",
+      "title": "Add database or file capacity for finance & operations environments",
+      "category": "bizapps",
+      "keywords": [
+        "operations database capacity",
+        "operations file capacity",
+        "finance and operations storage",
+        "erp storage add-on",
+        "environment capacity"
+      ],
+      "description": "Buy Operations - Database or Operations - File capacity add-ons; these entitlements are pooled with Dataverse database and file capacity for enforcement.",
+      "paths": [
+        "p-operations-storage"
+      ]
+    },
+    {
+      "id": "business-central-essentials",
+      "title": "All-in-one ERP for a small or midsize business",
+      "category": "bizapps",
+      "keywords": [
+        "business central essentials",
+        "smb erp",
+        "financials",
+        "sales and purchasing",
+        "inventory",
+        "projects",
+        "dynamics 365 business central"
+      ],
+      "description": "Financials, sales, purchasing, inventory, project and warehouse management for SMBs. Full read/write in Essentials companies. Purchased through CSP.",
+      "paths": [
+        "p-bc-essentials"
+      ]
+    },
+    {
+      "id": "business-central-premium",
+      "title": "Business Central plus manufacturing and service management",
+      "category": "bizapps",
+      "keywords": [
+        "business central premium",
+        "manufacturing",
+        "service management",
+        "production orders",
+        "service orders",
+        "assembly",
+        "smb erp premium"
+      ],
+      "description": "Everything in Essentials plus manufacturing and service management. Premium features are enabled per company via the User Experience setting.",
+      "paths": [
+        "p-bc-premium"
+      ]
+    },
+    {
+      "id": "business-central-team-members",
+      "title": "Light read / limited-write Business Central access",
+      "category": "bizapps",
+      "keywords": [
+        "business central team members",
+        "bc team member",
+        "read data",
+        "approvals",
+        "time sheets",
+        "light bc user",
+        "occasional erp"
+      ],
+      "description": "Read all Business Central data plus a limited set of write scenarios (approvals, time sheets, own HR records). A different licence from the customer-engagement Team Members licence.",
+      "paths": [
+        "p-bc-team-members"
+      ]
+    },
+    {
+      "id": "business-central-m365-readonly",
+      "title": "Let any Microsoft 365 user view Business Central records in Teams",
+      "category": "bizapps",
+      "keywords": [
+        "business central microsoft 365 license",
+        "bc in teams",
+        "read only business central",
+        "share record teams",
+        "no bc license",
+        "master data access"
+      ],
+      "description": "Employees with a supported Microsoft 365 licence (and no Business Central licence) can read Business Central records shared into Teams chat and channels - read-only, Teams app only, when an admin has configured it.",
+      "paths": [
+        "p-bc-m365-readonly"
+      ]
+    },
+    {
+      "id": "business-central-device",
+      "title": "Shared-device Business Central access (POS, warehouse, shop floor)",
+      "category": "bizapps",
+      "keywords": [
+        "business central device",
+        "shared device bc",
+        "warehouse device",
+        "point of sale",
+        "shop floor terminal",
+        "device users group"
+      ],
+      "description": "License a device so multiple users can sign in to it concurrently up to the number of device licences; members of the Device Users group need no user licence, and a device user can't sign in first.",
+      "paths": [
+        "p-bc-device"
+      ]
+    },
+    {
+      "id": "business-central-copilot",
+      "title": "Copilot in Business Central",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in business central",
+        "bc copilot",
+        "marketing text",
+        "bank reconciliation assist",
+        "analysis assist",
+        "e-invoice matching",
+        "sales line suggestions"
+      ],
+      "description": "The Copilot features built into Business Central (e.g. marketing text, analysis assist, bank reconciliation assist, sales line suggestions).",
+      "paths": [
+        "p-bc-copilot"
+      ]
+    },
+    {
+      "id": "business-central-powerbi",
+      "title": "Power BI reporting on Business Central data",
+      "category": "bizapps",
+      "keywords": [
+        "business central power bi",
+        "bc power bi apps",
+        "financial reporting power bi",
+        "embedded reports",
+        "power bi free bc",
+        "power bi pro bc"
+      ],
+      "description": "View and build Power BI reports on Business Central data. A free Power BI licence covers personal-workspace use; Power BI Pro is needed to share and to use the Business Central Power BI apps, and every viewer still needs a paid Business Central licence.",
+      "paths": [
+        "p-bc-powerbi-free",
+        "p-bc-powerbi-pro"
+      ]
+    },
+    {
+      "id": "custom-canvas-app",
+      "title": "Build a custom business app with Power Apps",
+      "category": "bizapps",
+      "keywords": [
+        "power apps",
+        "canvas app",
+        "model-driven",
+        "dataverse",
+        "premium connector",
+        "low code",
+        "custom app",
+        "per app",
+        "pay as you go"
+      ],
+      "description": "A custom app for staff, potentially using Dataverse and premium connectors, licensed per user, per app, or pay-as-you-go.",
+      "paths": [
+        "p-papps-seeded",
+        "p-papps-premium",
+        "p-papps-perapp",
+        "p-papps-payg"
+      ]
+    },
+    {
+      "id": "model-driven-app",
+      "title": "Build a model-driven app on Dataverse",
+      "category": "bizapps",
+      "keywords": [
+        "model-driven app",
+        "dataverse app",
+        "business process app",
+        "forms and views",
+        "premium app",
+        "power apps model driven"
+      ],
+      "description": "A configuration-first app over Dataverse tables. Model-driven apps are premium by default - every user needs Power Apps premium use rights (per user or per app).",
+      "paths": [
+        "p-model-driven-premium",
+        "p-model-driven-perapp"
+      ]
+    },
+    {
+      "id": "power-apps-per-app-licensing",
+      "title": "License a user for just one or two custom apps",
+      "category": "bizapps",
+      "keywords": [
+        "power apps per app",
+        "per app plan",
+        "single app license",
+        "stackable license",
+        "one app",
+        "cost effective power apps"
+      ],
+      "description": "The Power Apps per app plan gives a user rights to one app (or one Power Pages site) in one environment with full premium capabilities; it's stackable and allocated to environments.",
+      "paths": [
+        "p-perapp-plan"
+      ]
+    },
+    {
+      "id": "power-apps-payg-licensing",
+      "title": "Run custom apps billed through Azure (pay-as-you-go)",
+      "category": "bizapps",
+      "keywords": [
+        "power apps pay as you go",
+        "azure billing power apps",
+        "no license commitment",
+        "per active user",
+        "meter",
+        "consumption power apps"
+      ],
+      "description": "Enable pay-as-you-go on an environment and pay monthly per unique active user per app through an Azure subscription - no upfront licences.",
+      "paths": [
+        "p-payg-plan"
+      ]
+    },
+    {
+      "id": "power-apps-seeded-m365",
+      "title": "Simple app over standard Microsoft 365 data only",
+      "category": "bizapps",
+      "keywords": [
+        "power apps for microsoft 365",
+        "seeded license",
+        "standard connectors",
+        "sharepoint app",
+        "office 365 data",
+        "no premium"
+      ],
+      "description": "Microsoft 365 subscriptions include seeded Power Apps rights to build and run canvas apps that use only standard connectors within the Microsoft 365 context. No premium connectors, Dataverse (beyond limited/Project use), or custom connectors.",
+      "paths": [
+        "p-seeded-m365"
+      ]
+    },
+    {
+      "id": "dataverse-for-teams-app",
+      "title": "Low-code app or bot for one team inside Microsoft Teams",
+      "category": "bizapps",
+      "keywords": [
+        "dataverse for teams",
+        "power apps in teams",
+        "teams app",
+        "low code teams",
+        "team environment",
+        "2 gb limit"
+      ],
+      "description": "Build an app, flow or simple agent scoped to a single team using Dataverse for Teams, included in qualifying Microsoft 365 subscriptions (~1M rows / 2 GB, Teams only, no premium connectors/AI Builder/desktop flows without extra licensing).",
+      "paths": [
+        "p-dataverse-teams"
+      ]
+    },
+    {
+      "id": "power-apps-developer-plan-cap",
+      "title": "Free individual environment for building and testing apps",
+      "category": "bizapps",
+      "keywords": [
+        "power apps developer plan",
+        "community plan",
+        "free dev environment",
+        "build and test",
+        "personal environment",
+        "premium connectors dev"
+      ],
+      "description": "A free, self-service Developer environment with Dataverse and premium/custom connectors for individual build-and-test use (not production); can't be shared or extended with add-ons.",
+      "paths": [
+        "p-dev-plan"
+      ]
+    },
+    {
+      "id": "managed-environments-governance",
+      "title": "Governance controls for Power Platform environments (managed environments)",
+      "category": "bizapps",
+      "keywords": [
+        "managed environments",
+        "power platform governance",
+        "maker onboarding",
+        "sharing limits",
+        "weekly digest",
+        "premium license required"
+      ],
+      "description": "Turn on managed-environment governance features; when active, all active usage in that environment requires a qualifying premium Power Apps/Automate licence per user (or capacity), regardless of app type.",
+      "paths": [
+        "p-managed-env"
+      ]
+    },
+    {
+      "id": "rpa-desktop-flow",
+      "title": "Automate a legacy desktop application (RPA)",
+      "category": "bizapps",
+      "keywords": [
+        "power automate",
+        "rpa",
+        "desktop flow",
+        "robotic process automation",
+        "unattended",
+        "attended",
+        "process automation",
+        "hosted rpa"
+      ],
+      "description": "Record and run UI automation against desktop or web apps, attended or unattended.",
+      "paths": [
+        "p-rpa-premium",
+        "p-rpa-unattended",
+        "p-rpa-hosted"
+      ]
+    },
+    {
+      "id": "cloud-flow-premium-connectors",
+      "title": "Automate a process across premium or on-premises systems",
+      "category": "bizapps",
+      "keywords": [
+        "power automate premium",
+        "premium connectors",
+        "cloud flow",
+        "on-premises data gateway",
+        "workflow automation",
+        "custom connector",
+        "sql dynamics connector"
+      ],
+      "description": "Build cloud flows that use premium connectors, custom connectors or an on-premises data gateway - beyond the standard-connector automation seeded in Microsoft 365.",
+      "paths": [
+        "p-flow-premium-user",
+        "p-flow-process",
+        "p-flow-payg"
+      ]
+    },
+    {
+      "id": "power-automate-per-flow",
+      "title": "License a single business-critical flow regardless of how many users trigger it",
+      "category": "bizapps",
+      "keywords": [
+        "power automate process",
+        "per flow license",
+        "capacity license flow",
+        "unattended cloud flow",
+        "shared flow",
+        "service account flow",
+        "flow group"
+      ],
+      "description": "The Power Automate Process licence is allocated to one cloud flow (or a flow group) - premium connectors and higher action limits regardless of the triggering user's licence. Flows must be in a solution.",
+      "paths": [
+        "p-process-license"
+      ]
+    },
+    {
+      "id": "rpa-unattended-scale",
+      "title": "Run desktop automation unattended and in parallel",
+      "category": "bizapps",
+      "keywords": [
+        "unattended rpa",
+        "unattended bot",
+        "power automate process machine",
+        "parallel runs",
+        "lights out automation",
+        "batch rpa"
+      ],
+      "description": "Allocate Power Automate Process capacity to machines as unattended bots (one desktop flow per bot at a time); buy one per parallel run needed. The triggering connection's user still needs a Premium (or desktop-flows) user licence.",
+      "paths": [
+        "p-rpa-unattended-only"
+      ]
+    },
+    {
+      "id": "rpa-hosted-bots",
+      "title": "Cloud-hosted RPA bots with no VM to manage",
+      "category": "bizapps",
+      "keywords": [
+        "hosted rpa",
+        "hosted machine",
+        "power automate hosted process",
+        "zero infrastructure rpa",
+        "hosted machine group",
+        "autoscale bots"
+      ],
+      "description": "The Power Automate Hosted Process licence provides one Microsoft-hosted RPA bot; a superset of Process, so it also covers unattended runs. Hosted machine groups add autoscale and load balancing.",
+      "paths": [
+        "p-rpa-hosted-only"
+      ]
+    },
+    {
+      "id": "process-mining",
+      "title": "Analyze process event logs to find inefficiencies",
+      "category": "bizapps",
+      "keywords": [
+        "process mining",
+        "task mining",
+        "process discovery",
+        "event log analysis",
+        "process map",
+        "power automate process mining"
+      ],
+      "description": "Import event logs and visualize process variants, bottlenecks and rework. Included with the Power Automate Premium user licence (50 MB process-mining data storage per licence).",
+      "paths": [
+        "p-process-mining"
+      ]
+    },
+    {
+      "id": "power-automate-free-standard",
+      "title": "Personal cloud flows with standard connectors at no cost",
+      "category": "bizapps",
+      "keywords": [
+        "power automate free",
+        "no cost automation",
+        "standard connectors",
+        "personal flow",
+        "office 365 flow",
+        "seeded automate"
+      ],
+      "description": "Work/school accounts get Power Automate Free - create and run unshared cloud flows with standard connectors, and run desktop flows locally attended.",
+      "paths": [
+        "p-automate-free"
+      ]
+    },
+    {
+      "id": "power-pages-authenticated-site",
+      "title": "External-facing website for signed-in users (portal)",
+      "category": "bizapps",
+      "keywords": [
+        "power pages",
+        "authenticated users",
+        "customer portal",
+        "partner portal",
+        "self-service website",
+        "power apps portals",
+        "dataverse website"
+      ],
+      "description": "A Power Pages site where external users sign in via an identity provider. Licensed by authenticated users per website per month - subscription capacity packs (min 25/environment) or a pay-as-you-go meter. CDN and WAF are included.",
+      "paths": [
+        "p-pages-authenticated"
+      ]
+    },
+    {
+      "id": "power-pages-anonymous-site",
+      "title": "Public anonymous website on Power Platform",
+      "category": "bizapps",
+      "keywords": [
+        "power pages anonymous",
+        "public website",
+        "anonymous users",
+        "marketing site",
+        "unauthenticated pages",
+        "page views"
+      ],
+      "description": "A publicly browsable Power Pages site. Licensed by anonymous users per website per month - subscription packs (min 200/environment) or a pay-as-you-go meter. The sign-in page alone is not counted.",
+      "paths": [
+        "p-pages-anonymous"
+      ]
+    },
+    {
+      "id": "power-pages-internal-site",
+      "title": "Employee-facing Power Pages site",
+      "category": "bizapps",
+      "keywords": [
+        "power pages internal",
+        "employee portal",
+        "intranet site",
+        "entra id login",
+        "internal authenticated users",
+        "staff website"
+      ],
+      "description": "For employees signing in with Microsoft Entra ID, use Power Apps per user (unlimited sites), Power Apps per app (one site), Dynamics 365 enterprise licences (unlimited sites in the app context), or the Power Pages authenticated per user/website subscription.",
+      "paths": [
+        "p-pages-internal-peruser",
+        "p-pages-internal-perapp",
+        "p-pages-internal-capacity"
+      ]
+    },
+    {
+      "id": "powerbi-share",
+      "title": "Publish and share Power BI reports across the organisation",
+      "category": "bizapps",
+      "keywords": [
+        "power bi",
+        "publish report",
+        "share dashboard",
+        "workspace",
+        "paginated report",
+        "premium per user",
+        "fabric capacity",
+        "power bi pro"
+      ],
+      "description": "Author reports and distribute them to colleagues who can view and interact with them.",
+      "paths": [
+        "p-pbi-pro",
+        "p-pbi-ppu",
+        "p-pbi-capacity"
+      ]
+    },
+    {
+      "id": "powerbi-free-consume",
+      "title": "Let people view shared Power BI reports for free",
+      "category": "bizapps",
+      "keywords": [
+        "power bi free",
+        "fabric free",
+        "consume reports",
+        "f64 capacity",
+        "premium capacity viewers",
+        "free viewers power bi"
+      ],
+      "description": "Free per-user licences can consume content that Pro/PPU authors publish only when that content sits in a Fabric F64+ (or Power BI Premium) capacity. In shared capacity, viewers need Power BI Pro.",
+      "paths": [
+        "p-pbi-free-f64"
+      ]
+    },
+    {
+      "id": "powerbi-paginated-large-models",
+      "title": "Paginated reports, large models and high refresh rates",
+      "category": "bizapps",
+      "keywords": [
+        "paginated reports",
+        "premium per user",
+        "large models",
+        "high refresh",
+        "xmla endpoint",
+        "power bi ppu",
+        "advanced power bi"
+      ],
+      "description": "Premium (capacity) features per user without buying a capacity. All users sharing a PPU workspace need PPU, unless the content is in a Premium capacity.",
+      "paths": [
+        "p-pbi-ppu-features"
+      ]
+    },
+    {
+      "id": "fabric-capacity-bi-distribution",
+      "title": "Distribute Power BI broadly via a Fabric capacity",
+      "category": "bizapps",
+      "keywords": [
+        "fabric capacity",
+        "f sku",
+        "f64",
+        "capacity units",
+        "power bi premium capacity",
+        "enterprise bi distribution"
+      ],
+      "description": "A provisioned Fabric capacity (F SKUs, billed on Capacity Units) lets Pro/PPU authors publish to capacity workspaces and, at F64+, share with free viewers. All Fabric workloads draw from the same CU pool.",
+      "paths": [
+        "p-fabric-capacity-bi"
+      ]
+    },
+    {
+      "id": "dataverse-default-capacity",
+      "title": "Understand default Dataverse storage entitlements",
+      "category": "bizapps",
+      "keywords": [
+        "dataverse capacity",
+        "default storage",
+        "per user accrual",
+        "database file log",
+        "3gb default environment",
+        "entitlement calculation"
+      ],
+      "description": "Dataverse capacity is a tenant pool: a base entitlement plus per-user accruals from qualifying licences (Team Members grant none). The default environment includes 3 GB database, 3 GB file and 1 GB log.",
+      "paths": [
+        "p-dataverse-default"
+      ]
+    },
+    {
+      "id": "dataverse-capacity-addon",
+      "title": "Buy more Dataverse database, file or log storage",
+      "category": "bizapps",
+      "keywords": [
+        "dataverse database capacity",
+        "dataverse file capacity",
+        "dataverse log capacity",
+        "storage add-on",
+        "capacity overage",
+        "pay as you go storage"
+      ],
+      "description": "Add per-GB Dataverse capacity add-ons, or link an environment to a pay-as-you-go plan so overage bills to Azure. Database capacity can offset log and file overages, but not vice versa.",
+      "paths": [
+        "p-dataverse-addon",
+        "p-dataverse-payg"
+      ]
+    },
+    {
+      "id": "ai-builder-forms",
+      "title": "Extract data from documents and forms with AI",
+      "category": "bizapps",
+      "keywords": [
+        "ai builder",
+        "form processing",
+        "document processing",
+        "ocr",
+        "invoice extraction",
+        "prediction",
+        "object detection",
+        "text recognition"
+      ],
+      "description": "Add prebuilt or custom AI models (document processing, prediction, category classification, text recognition) to apps and flows.",
+      "paths": [
+        "p-ai-builder"
+      ]
+    },
+    {
+      "id": "ai-builder-credits",
+      "title": "Provision AI Builder / Copilot Credit capacity",
+      "category": "bizapps",
+      "keywords": [
+        "ai builder credits",
+        "copilot credits",
+        "service credits",
+        "capacity add-on",
+        "credit management",
+        "tenant pooled credits"
+      ],
+      "description": "AI Builder consumes AI Builder credits or Copilot Credits depending on context, pooled at the tenant and allocated to environments. New customers buy Copilot Credits; seeded credits in premium licences end 1 November 2026.",
+      "paths": [
+        "p-ai-credits-addon",
+        "p-ai-credits-copilot"
+      ]
+    },
+    {
+      "id": "custom-agent",
+      "title": "Build a custom AI agent / chatbot for staff or customers",
+      "category": "bizapps",
+      "keywords": [
+        "copilot studio",
+        "agent",
+        "chatbot",
+        "virtual agent",
+        "conversational ai",
+        "bot",
+        "custom copilot",
+        "build agent",
+        "generative orchestration"
+      ],
+      "description": "A custom conversational agent with its own knowledge sources and actions, published to Teams, a website or other channels.",
+      "paths": [
+        "p-agent-studio",
+        "p-agent-studio-teams",
+        "p-agent-studio-payg"
+      ]
+    },
+    {
+      "id": "copilot-studio-teams-included",
+      "title": "Build a simple agent for Teams with what's included in Microsoft 365",
+      "category": "bizapps",
+      "keywords": [
+        "copilot studio for teams",
+        "included agent",
+        "dataverse for teams bot",
+        "classic orchestration",
+        "publish to teams",
+        "microsoft 365 agent"
+      ],
+      "description": "Select Microsoft 365 subscriptions include Copilot Studio for Teams: classic-orchestration agents on Dataverse for Teams, published to Teams only. No generative orchestration, premium connectors, other channels or live handoff.",
+      "paths": [
+        "p-cs-teams-plan"
+      ]
+    },
+    {
+      "id": "copilot-studio-autonomous",
+      "title": "Autonomous agents with generative orchestration",
+      "category": "bizapps",
+      "keywords": [
+        "autonomous agent",
+        "generative orchestration",
+        "copilot studio standalone",
+        "triggered agent",
+        "agent flows",
+        "copilot credits consumption",
+        "agentic"
+      ],
+      "description": "Generative-orchestration and autonomous agents require the standalone Copilot Studio subscription plus Copilot Credit capacity; published-agent sessions and agent-flow actions consume credits.",
+      "paths": [
+        "p-agent-autonomous"
+      ]
+    },
+    {
+      "id": "copilot-studio-payg-meter",
+      "title": "Meter Copilot Studio usage through Azure (pay-as-you-go)",
+      "category": "bizapps",
+      "keywords": [
+        "copilot studio pay as you go",
+        "azure billing agent",
+        "message meter",
+        "no upfront commitment",
+        "consumption agent",
+        "billing policy"
+      ],
+      "description": "Pay for Copilot Studio consumption per credit at the end of the monthly billing period via an Azure subscription billing policy, with no upfront capacity - on its own or as overage for prepaid packs.",
+      "paths": [
+        "p-agent-payg"
+      ]
+    },
+    {
+      "id": "copilot-chat-agents-capacity",
+      "title": "Pay for Microsoft 365 Copilot Chat and SharePoint agents",
+      "category": "bizapps",
+      "keywords": [
+        "copilot chat agents",
+        "sharepoint agents",
+        "copilot credit policy",
+        "capacity pack",
+        "25000 credits",
+        "pay as you go copilot chat",
+        "declarative agent billing"
+      ],
+      "description": "Agent interactions in Microsoft 365 Copilot Chat and SharePoint agents consume Copilot Credits - via prepaid capacity packs (25,000 credits/month), a Copilot credit policy scoped to user groups, and/or pay-as-you-go overage.",
+      "paths": [
+        "p-copilot-chat-capacity"
+      ]
+    },
+    {
+      "id": "copilot-in-dynamics-included",
+      "title": "Included Copilot features across Dynamics 365 apps",
+      "category": "bizapps",
+      "keywords": [
+        "copilot in dynamics 365",
+        "included copilot",
+        "dataverse grounding",
+        "record summary",
+        "enterprise license copilot",
+        "work iq dataverse"
+      ],
+      "description": "A Dynamics 365 Enterprise or Premium licence covers the Copilot features that are grounded on Dataverse in that app (summaries, natural-language questions, draft assistance).",
+      "paths": [
+        "p-copilot-d365-included"
+      ]
+    },
+    {
+      "id": "work-iq-dynamics",
+      "title": "Full Work IQ / Microsoft 365 grounding for Copilot in Dynamics 365",
+      "category": "bizapps",
+      "keywords": [
+        "work iq",
+        "microsoft 365 copilot in dynamics",
+        "graph grounding",
+        "outlook teams grounding",
+        "premium copilot features dynamics",
+        "cross-app copilot"
+      ],
+      "description": "To get Copilot capabilities beyond Dataverse grounding - Microsoft Graph content (Outlook mail, Teams meetings/chats) and premium agent features - each user also needs a Microsoft 365 Copilot licence on top of their Dynamics 365 Enterprise/Premium licence.",
+      "paths": [
+        "p-workiq-dynamics"
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "id": "p-sales-ent",
+      "capabilityId": "d365-sales",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "Sellers who run the full pipeline need a Dynamics 365 Sales Enterprise licence - opportunity management, forecasting, sales sequences, advanced customization and seeded Power Apps rights for the Sales context.",
+      "conditions": [
+        {
+          "clarifier": "d365-user-role",
+          "in": [
+            "full"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sales-pro",
+      "capabilityId": "d365-sales",
+      "licenses": [
+        "d365-sales-pro"
+      ],
+      "rationale": "Sales Professional is the lower-cost option for teams that only need core sales force automation (leads, opportunities, quotes, orders) without Sales Enterprise's advanced customization and intelligence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sales-team",
+      "capabilityId": "d365-sales",
+      "licenses": [
+        "d365-team-members"
+      ],
+      "rationale": "People who only read records or make light updates can use a Dynamics 365 Team Members licence via the Sales Team Member app, provided at least one full Dynamics 365 licence exists in the tenant.",
+      "conditions": [
+        {
+          "clarifier": "d365-user-role",
+          "in": [
+            "team-member",
+            "readonly"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/get-started/team-members-license"
+      ]
+    },
+    {
+      "id": "p-sales-pro-only",
+      "capabilityId": "sales-professional-crm",
+      "licenses": [
+        "d365-sales-pro"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Sales Professional provides lead-to-order CRM with an entity set that is a subset of Sales Enterprise, aimed at teams that don't need advanced customization or AI.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sales-premium",
+      "capabilityId": "sales-premium-ai",
+      "licenses": [
+        "d365-sales-prem"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Sales Premium adds the full AI-driven seller experience (conversation intelligence, predictive lead/opportunity scoring, relationship analytics, sales accelerator) on top of Sales Enterprise.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sales-ent-limited",
+      "capabilityId": "sales-premium-ai",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "rationale": "Sales Enterprise includes Sales Premium features such as the sales accelerator, conversation intelligence and predictive scoring with a limited monthly capacity - enough to evaluate them before upgrading to Premium.",
+      "note": "Capacity is limited; heavy use of conversation intelligence or predictive models needs Sales Premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-relationship-sales",
+      "capabilityId": "relationship-sales-linkedin",
+      "licenses": [
+        "microsoft-relationship-sales"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Relationship Sales bundles Sales Enterprise with LinkedIn Sales Navigator Advanced Plus, enabling the Sales Navigator embed and LinkedIn Sales Insights lead data. Bought via a Microsoft rep or partner, not directly.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-forecast-ent",
+      "capabilityId": "sales-forecasting",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "Manual and hierarchy-based revenue forecasting with quota tracking is part of Dynamics 365 Sales Enterprise.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-forecast-predictive",
+      "capabilityId": "sales-forecasting",
+      "licenses": [
+        "d365-sales-prem"
+      ],
+      "rationale": "Predictive forecasting (AI-projected revenue) is a Sales Premium capability; Sales Enterprise includes it only within a limited monthly capacity.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sequences-ent",
+      "capabilityId": "sales-sequences",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "The sales accelerator and sales sequences (multi-step cadences producing a prioritized seller work list) are included in Dynamics 365 Sales Enterprise, with fuller capacity in Sales Premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-copilot-d365sales-included",
+      "capabilityId": "copilot-in-d365-sales",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "Copilot in Dynamics 365 Sales (record summaries, recent-change catch-up, meeting prep, news, email assist grounded on Dataverse) is available to users with a Dynamics 365 Sales Enterprise or Premium licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/copilot-overview",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    },
+    {
+      "id": "p-copilot-d365sales-workiq",
+      "capabilityId": "copilot-in-d365-sales",
+      "licenses": [
+        "d365-sales-ent",
+        "copilot-m365"
+      ],
+      "rationale": "To use the Microsoft 365 Copilot experience in the Sales app and get Work IQ capabilities beyond Dataverse grounding, users need a Microsoft 365 Copilot licence in addition to their Dynamics 365 Sales licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/microsoft-365-copilot-chat-in-sales",
+        "https://learn.microsoft.com/power-apps/maker/model-driven-apps/add-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-sales-agent-full",
+      "capabilityId": "d365-sales-agent",
+      "licenses": [
+        "copilot-m365",
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "Sales agent is delivered through Microsoft 365 Copilot: a Microsoft 365 Copilot licence gives the full experience (Graph grounding of Outlook mail and Teams, use inside Copilot), and it needs a connected CRM - Dynamics 365 Sales Enterprise or Premium. Users need the Salesperson or Sales Manager role.",
+      "note": "If the Dynamics 365 Sales licence already grants Microsoft 365 Copilot access, no separate Copilot licence is needed.",
+      "conditions": [
+        {
+          "clarifier": "crm-system",
+          "in": [
+            "dynamics"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/dynamics365/sales/sales-copilot-faq"
+      ]
+    },
+    {
+      "id": "p-sales-agent-crmonly",
+      "capabilityId": "d365-sales-agent",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "rationale": "Sales Enterprise, Sales Premium and Relationship Sales include the basic features of Sales agent (email replies, conversation intelligence in Teams). Without Microsoft 365 Copilot there is no Graph grounding and no premium Sales agent functionality.",
+      "conditions": [
+        {
+          "clarifier": "crm-system",
+          "in": [
+            "dynamics"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/dynamics365/sales/overview"
+      ]
+    },
+    {
+      "id": "p-sales-agent-salesforce",
+      "capabilityId": "d365-sales-agent",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "rationale": "Sales agent in Microsoft 365 Copilot also works with Salesforce as the CRM, so a Dynamics 365 Sales licence is not required - a Microsoft 365 Copilot licence plus the Salesforce connection is enough.",
+      "conditions": [
+        {
+          "clarifier": "crm-system",
+          "in": [
+            "salesforce"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/sales-copilot-faq"
+      ]
+    },
+    {
+      "id": "p-salesdev-agent",
+      "capabilityId": "d365-sales-dev-agent",
+      "licenses": [
+        "copilot-m365",
+        "teams-ent",
+        "agent-365",
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "The Sales Development agent needs Microsoft 365 Copilot (Copilot Frontier enabled) and Microsoft Teams for each user who manages an instance, plus Microsoft Agent 365 for the agent's own identity, and a Dynamics 365 Sales licence assigned to the agent user for the Dynamics integration.",
+      "note": "Preview feature under supplemental preview terms - not for production. Agent 365 is currently a no-cost preview SKU.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    },
+    {
+      "id": "p-builtin-sales-agents",
+      "capabilityId": "d365-builtin-sales-agents",
+      "licenses": [
+        "d365-sales-ent",
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "The built-in Sales agents are configured in the Sales Hub AI hub and require a Dynamics 365 Sales licence plus Copilot Studio credit capacity (prepaid packs or pay-as-you-go) allocated to the environment. Sales Enterprise/Premium include the basic Sales agent features.",
+      "note": "Also needs server-side sync with Exchange and a Dataverse app user; a Power Platform admin completes setup.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales",
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management"
+      ]
+    },
+    {
+      "id": "p-builtin-sales-agents-premium",
+      "capabilityId": "d365-builtin-sales-agents",
+      "licenses": [
+        "d365-sales-ent",
+        "copilot-credits",
+        "copilot-m365"
+      ],
+      "rationale": "Premium features of the built-in Sales agents additionally require a Microsoft 365 Copilot licence per user, on top of the Dynamics 365 Sales licence and Copilot Studio credit capacity.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/sales/buy-dynamics-365-sales"
+      ]
+    },
+    {
+      "id": "p-sales-team-member",
+      "capabilityId": "sales-team-member-light",
+      "licenses": [
+        "d365-team-members"
+      ],
+      "preferred": true,
+      "rationale": "The Dynamics 365 Team Members licence covers read access and designated light-write scenarios through the Sales Team Member app (limited to 15 entities); it needs at least one full Dynamics 365 user licence in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/get-started/team-members-license"
+      ]
+    },
+    {
+      "id": "p-cs-enterprise",
+      "capabilityId": "customer-service-cases",
+      "licenses": [
+        "d365-cs-ent"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Customer Service Enterprise provides full case and knowledge management, SLAs, entitlements and the Copilot Service workspace, and is the prerequisite for the voice and digital messaging add-ons.",
+      "conditions": [
+        {
+          "clarifier": "d365-user-role",
+          "in": [
+            "full"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/implement/customer-service-workspace-system-requirements"
+      ]
+    },
+    {
+      "id": "p-cs-professional",
+      "capabilityId": "customer-service-cases",
+      "licenses": [
+        "d365-cs-pro"
+      ],
+      "rationale": "Customer Service Professional covers case and knowledge management for smaller teams - a subset of Enterprise, without advanced routing, embedded intelligence or the omnichannel add-ons.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/implement/overview"
+      ]
+    },
+    {
+      "id": "p-cs-pro-only",
+      "capabilityId": "customer-service-professional",
+      "licenses": [
+        "d365-cs-pro"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Customer Service Professional is the entry licence for basic case and knowledge management; it can't be combined with the omnichannel add-ons.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/implement/overview"
+      ]
+    },
+    {
+      "id": "p-cs-digital-messaging",
+      "capabilityId": "omnichannel-digital-messaging",
+      "licenses": [
+        "d365-cs-ent",
+        "d365-cs-digital-messaging"
+      ],
+      "preferred": true,
+      "rationale": "The Digital Messaging add-on adds web chat plus social, SMS, WhatsApp, Teams and custom Direct Line channels with unified routing on top of Customer Service Enterprise, and includes Copilot Studio entitlements for the channel agents.",
+      "note": "SMS still requires a third-party number/provider subscription.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/develop/extend-omnichannel"
+      ]
+    },
+    {
+      "id": "p-cs-chat",
+      "capabilityId": "omnichannel-chat-only",
+      "licenses": [
+        "d365-cs-ent",
+        "d365-cs-chat"
+      ],
+      "preferred": true,
+      "rationale": "The Chat add-on adds the web chat channel (and third-party telephony support) to Customer Service Enterprise, with Copilot Studio entitlements for chat agents - less than the Digital Messaging add-on which also covers social/SMS/WhatsApp.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/develop/extend-omnichannel"
+      ]
+    },
+    {
+      "id": "p-cs-voice",
+      "capabilityId": "customer-service-voice",
+      "licenses": [
+        "d365-cs-ent",
+        "d365-cs-digital-messaging",
+        "d365-cs-voice"
+      ],
+      "preferred": true,
+      "rationale": "The native voice channel in Customer Service requires Customer Service Enterprise, a messaging add-on (Digital Messaging or Chat), and the Voice Channel add-on per channel user. Azure Communication Services PSTN usage is billed separately.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/voice-channel-install",
+        "https://learn.microsoft.com/dynamics365/customer-service/develop/extend-omnichannel"
+      ]
+    },
+    {
+      "id": "p-contact-center",
+      "capabilityId": "contact-center-standalone",
+      "licenses": [
+        "d365-contact-center"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Contact Center (standalone) provides voice, digital channels, unified routing and Copilot on top of any CRM of choice - licensed per channel user, with separate telephony and Copilot Credit consumption.",
+      "conditions": [
+        {
+          "clarifier": "crm-system",
+          "in": [
+            "salesforce",
+            "other"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/contact-center/implement/system-requirements-contact-center",
+        "https://learn.microsoft.com/dynamics365/contact-center/implement/provision-channels"
+      ]
+    },
+    {
+      "id": "p-contact-center-embedded",
+      "capabilityId": "contact-center-standalone",
+      "licenses": [
+        "d365-contact-center",
+        "d365-cs-ent"
+      ],
+      "rationale": "Dynamics 365 Contact Center - embedded pairs the Contact Center licence with Dynamics 365 Customer Service so channels and routing run inside the Customer Service case management experience.",
+      "conditions": [
+        {
+          "clarifier": "crm-system",
+          "in": [
+            "dynamics"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/contact-center/implement/system-requirements-contact-center"
+      ]
+    },
+    {
+      "id": "p-cc-voice",
+      "capabilityId": "contact-center-voice",
+      "licenses": [
+        "d365-contact-center"
+      ],
+      "preferred": true,
+      "rationale": "The voice channel is provisioned within Dynamics 365 Contact Center; specific per-channel-user licensing applies and Azure Communication Services telephony is a separate consumption charge.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/voice-channel-install",
+        "https://learn.microsoft.com/dynamics365/contact-center/implement/system-requirements-contact-center"
+      ]
+    },
+    {
+      "id": "p-cc-copilot-agents",
+      "capabilityId": "contact-center-copilot-agents",
+      "licenses": [
+        "d365-contact-center",
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "Self-service IVR and chat Copilot agents in the contact centre are paid for with consumption-based Copilot Credits for the AI activity across voice and digital channels; each add-in application is also entitled to a number of agent sessions.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/bot-session-licensing",
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/configure-bot-virtual-agent"
+      ]
+    },
+    {
+      "id": "p-cs-copilot-included",
+      "capabilityId": "customer-service-copilot",
+      "licenses": [
+        "d365-cs-ent"
+      ],
+      "preferred": true,
+      "rationale": "Copilot features in the Copilot Service workspace (suggested responses grounded on knowledge, draft email/chat, case and conversation summaries) are available with an active Dynamics 365 Customer Service Enterprise subscription per user.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/configure-copilot-features",
+        "https://learn.microsoft.com/dynamics365/customer-service/use/record-summaries"
+      ]
+    },
+    {
+      "id": "p-cs-copilot-workiq",
+      "capabilityId": "customer-service-copilot",
+      "licenses": [
+        "d365-cs-ent",
+        "copilot-m365"
+      ],
+      "rationale": "To use the Microsoft 365 Copilot experience in Customer Service and Work IQ capabilities beyond Dataverse grounding, users also need a Microsoft 365 Copilot licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/use/use-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-cs-agent-m365",
+      "capabilityId": "customer-service-agent-m365",
+      "licenses": [
+        "d365-cs-ent",
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Service agent in Microsoft 365 Copilot requires the Service app installed by a Microsoft 365 admin, Microsoft 365 Copilot added to the Customer Service environment, and the relevant Dynamics 365 Customer Service licence for users who work with Customer Service data.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/administer/configure-service-agent",
+        "https://learn.microsoft.com/dynamics365/customer-service/use/use-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-cs-team-member",
+      "capabilityId": "customer-service-team-member",
+      "licenses": [
+        "d365-team-members"
+      ],
+      "preferred": true,
+      "rationale": "Occasional users log or view cases through the Customer Service Team Member app under a Dynamics 365 Team Members licence (max 15 entities); a full Customer Service licence is needed for real case work such as frequent case edits.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/get-started/team-members-license"
+      ]
+    },
+    {
+      "id": "p-unified-routing",
+      "capabilityId": "unified-routing",
+      "licenses": [
+        "d365-cs-ent"
+      ],
+      "preferred": true,
+      "rationale": "Unified (intelligent, skills-based) routing of cases and conversations is a Customer Service Enterprise capability; routing conversations additionally needs a messaging or voice add-on for those channels.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/implement/overview"
+      ]
+    },
+    {
+      "id": "p-cs-scheduling",
+      "capabilityId": "customer-service-scheduling",
+      "licenses": [
+        "d365-cs-ent"
+      ],
+      "preferred": true,
+      "rationale": "Service scheduling (bookable resources, facilities, appointments) is included in Dynamics 365 Customer Service Enterprise.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-service/implement/overview"
+      ]
+    },
+    {
+      "id": "p-field-service",
+      "capabilityId": "field-service-work-orders",
+      "licenses": [
+        "d365-field-service"
+      ],
+      "preferred": true,
+      "rationale": "The standard Dynamics 365 Field Service licence includes all core features - work orders, scheduling and dispatch, resource scheduling optimization, assets, inventory and agreements - plus the Field Service mobile app.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/field-service/buy-fs",
+        "https://learn.microsoft.com/dynamics365/field-service/users-licenses-permissions"
+      ]
+    },
+    {
+      "id": "p-field-service-contractor",
+      "capabilityId": "field-service-contractor",
+      "licenses": [
+        "d365-field-service-contractor"
+      ],
+      "preferred": true,
+      "rationale": "The Dynamics 365 Field Service Contractor licence gives third-party technicians (added as Microsoft Entra B2B collaboration users) a subset of Field Service capabilities at a lower cost than a full Field Service seat.",
+      "note": "Requires at least one full Field Service licence in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/field-service/buy-fs",
+        "https://learn.microsoft.com/dynamics365/field-service/users-licenses-permissions"
+      ]
+    },
+    {
+      "id": "p-field-service-mobile",
+      "capabilityId": "field-service-mobile",
+      "licenses": [
+        "d365-field-service"
+      ],
+      "preferred": true,
+      "rationale": "The Field Service mobile app (schedule view, booking status, offline job capture) is part of the Dynamics 365 Field Service licence - no separate mobile licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/field-service/buy-fs"
+      ]
+    },
+    {
+      "id": "p-fs-copilot-included",
+      "capabilityId": "field-service-copilot",
+      "licenses": [
+        "d365-field-service"
+      ],
+      "preferred": true,
+      "rationale": "Work order summaries and record (row) summaries in the Field Service model-driven app require a Dynamics 365 Enterprise or Premium licence per user.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/field-service/record-summaries",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    },
+    {
+      "id": "p-fs-copilot-workiq",
+      "capabilityId": "field-service-copilot",
+      "licenses": [
+        "d365-field-service",
+        "copilot-m365"
+      ],
+      "rationale": "The Microsoft 365 Copilot experience in Field Service and Work IQ capabilities beyond Dataverse grounding require a Microsoft 365 Copilot licence in addition to the Field Service licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/field-service/use-microsoft-365-copilot-model-driven-apps"
+      ]
+    },
+    {
+      "id": "p-remote-assist",
+      "capabilityId": "remote-assist",
+      "licenses": [
+        "d365-remote-assist"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Remote Assist licenses the remote-expert calling and spatial annotation experience on HoloLens, mobile and Teams; a Microsoft Teams licence is included.",
+      "note": "Reaching end of support on 31 December 2026.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/mixed-reality/remote-assist/requirements",
+        "https://learn.microsoft.com/lifecycle/announcements/dynamics-365-guides-remote-assist-end-of-support"
+      ]
+    },
+    {
+      "id": "p-guides",
+      "capabilityId": "guides",
+      "licenses": [
+        "d365-guides"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Guides licenses the PC authoring app and HoloLens app for holographic step-by-step instructions; Dataverse and Power Apps are included. A Teams licence is not included (unlike Remote Assist).",
+      "note": "Reaching end of support on 31 December 2026.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/mixed-reality/guides/requirements",
+        "https://learn.microsoft.com/lifecycle/announcements/dynamics-365-guides-remote-assist-end-of-support"
+      ]
+    },
+    {
+      "id": "p-ci-unified",
+      "capabilityId": "customer-insights-data",
+      "licenses": [
+        "d365-customer-insights"
+      ],
+      "preferred": true,
+      "rationale": "The unified Dynamics 365 Customer Insights licence (sold since Sept 2023) includes Customer Insights - Data with a base entitlement of unified people; capacity add-ons increase the number of unified people.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+      ]
+    },
+    {
+      "id": "p-ci-attach",
+      "capabilityId": "customer-insights-data",
+      "licenses": [
+        "d365-customer-insights-attach"
+      ],
+      "rationale": "Tenants that already run a qualifying Dynamics 365 app (Sales, Customer Service, Field Service, Supply Chain, Finance or Commerce) with 10+ users can license Customer Insights at the reduced attach rate.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+      ]
+    },
+    {
+      "id": "p-ci-journeys",
+      "capabilityId": "customer-insights-journeys",
+      "licenses": [
+        "d365-customer-insights"
+      ],
+      "preferred": true,
+      "rationale": "Customer Insights - Journeys (real-time marketing) is part of the unified Customer Insights licence, with a base entitlement of interacted people; add-ons increase that volume.",
+      "note": "Production SMS requires a separate provider such as Azure Communication Services.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+      ]
+    },
+    {
+      "id": "p-ci-attach-journeys",
+      "capabilityId": "customer-insights-journeys",
+      "licenses": [
+        "d365-customer-insights-attach"
+      ],
+      "rationale": "The Customer Insights attach licence also grants Customer Insights - Journeys for tenants with a qualifying Dynamics 365 app and 10+ users.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase"
+      ]
+    },
+    {
+      "id": "p-ci-copilot",
+      "capabilityId": "customer-insights-copilot",
+      "licenses": [
+        "d365-customer-insights"
+      ],
+      "preferred": true,
+      "rationale": "Copilot in Customer Insights - Data and - Journeys (natural-language segments, journeys, content ideas) is included with the Dynamics 365 Customer Insights licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/customer-insights/journeys/purchase",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    },
+    {
+      "id": "p-finance",
+      "capabilityId": "d365-finance-core",
+      "licenses": [
+        "d365-finance"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Finance is the named-user base licence for core corporate financials on the finance and operations platform.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion",
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/stay-compliant-user-license-requirement"
+      ]
+    },
+    {
+      "id": "p-finance-attach",
+      "capabilityId": "d365-finance-core",
+      "licenses": [
+        "d365-scm",
+        "d365-attach"
+      ],
+      "rationale": "A user whose base licence is another finance and operations app (e.g. Supply Chain Management) can add Finance as an attach licence at the reduced 'Attach to Qualifying Dynamics 365 Base Offer' rate - assign the base first, then the attach.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-scm",
+      "capabilityId": "d365-scm-core",
+      "licenses": [
+        "d365-scm"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Supply Chain Management is the base licence for inventory, warehouse, manufacturing and planning on the finance and operations platform.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+      ]
+    },
+    {
+      "id": "p-scm-attach",
+      "capabilityId": "d365-scm-core",
+      "licenses": [
+        "d365-finance",
+        "d365-attach"
+      ],
+      "rationale": "Users whose base is Finance can license Supply Chain Management as an attach licence at the reduced rate, assigned base-then-attach in the Microsoft 365 admin center.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-commerce",
+      "capabilityId": "d365-commerce-core",
+      "licenses": [
+        "d365-commerce"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Commerce is a finance and operations base licence covering POS, call centre and e-commerce retail operations.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+      ]
+    },
+    {
+      "id": "p-human-resources",
+      "capabilityId": "d365-human-resources-core",
+      "licenses": [
+        "d365-human-resources"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Human Resources is the base licence for core HR (employee records, leave and absence, benefits, compensation) on the finance and operations platform.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+      ]
+    },
+    {
+      "id": "p-hr-attach",
+      "capabilityId": "d365-human-resources-core",
+      "licenses": [
+        "d365-finance",
+        "d365-attach"
+      ],
+      "rationale": "Human Resources can be added as an attach licence for users who already hold another finance and operations base licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-project-operations",
+      "capabilityId": "d365-project-operations-core",
+      "licenses": [
+        "d365-project-operations"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Project Operations is a base licence connecting project sales, resourcing, Project for the web and project accounting.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/project-operations/welcome-to-project-operations"
+      ]
+    },
+    {
+      "id": "p-project-operations-erp",
+      "capabilityId": "d365-project-operations-core",
+      "licenses": [
+        "d365-project-operations",
+        "d365-finance"
+      ],
+      "rationale": "The 'Project Operations integrated with ERP' deployment extends Finance and Supply Chain Management, so those users need a finance and operations base licence in addition to Project Operations.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/project-operations/environment/project-operations-integrated-deployment-overview"
+      ]
+    },
+    {
+      "id": "p-fno-base-attach",
+      "capabilityId": "fin-ops-base-attach",
+      "licenses": [
+        "d365-finance",
+        "d365-attach"
+      ],
+      "preferred": true,
+      "rationale": "For a user who needs two or more finance and operations apps, assign the highest-value app as the base licence and the others at the 'Attach to Qualifying Dynamics 365 Base Offer' rate; assignment order (base first) matters for recognition.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion",
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-operations-activity",
+      "capabilityId": "operations-activity-light",
+      "licenses": [
+        "d365-ops-activity"
+      ],
+      "preferred": true,
+      "rationale": "Dynamics 365 Operations - Activity is the light licence for users doing a limited set of operational tasks in finance and operations; one out-of-scope write privilege escalates the user to a full base licence.",
+      "note": "Requires a full finance and operations base licence in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-fno-device",
+      "capabilityId": "fin-ops-device-license",
+      "licenses": [
+        "d365-device"
+      ],
+      "preferred": true,
+      "rationale": "A Dynamics 365 Device licence covers a shared terminal (shop floor, warehouse, POS) so the users taking turns on it don't each need a named-user licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lifecycle-services/expired-subscription-data-deletion"
+      ]
+    },
+    {
+      "id": "p-fno-team-members",
+      "capabilityId": "fin-ops-team-members",
+      "licenses": [
+        "d365-team-members"
+      ],
+      "preferred": true,
+      "rationale": "The Dynamics 365 Team Members licence covers reading finance and operations data and designated self-service tasks; it doesn't cover full operational roles (which need Finance, Supply Chain Management, etc.).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/get-started/team-members-license",
+        "https://learn.microsoft.com/dynamics365/fin-ops-core/dev-itpro/sysadmin/prepare-for-user-validation"
+      ]
+    },
+    {
+      "id": "p-fno-copilot-included",
+      "capabilityId": "fin-ops-copilot",
+      "licenses": [
+        "d365-finance"
+      ],
+      "preferred": true,
+      "rationale": "Copilot features grounded on Dataverse/finance and operations data are available to users with a Dynamics 365 Enterprise or Premium licence (Finance, Supply Chain Management, Project Operations, Commerce).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started",
+        "https://learn.microsoft.com/power-apps/maker/model-driven-apps/add-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-fno-copilot-workiq",
+      "capabilityId": "fin-ops-copilot",
+      "licenses": [
+        "d365-finance",
+        "copilot-m365"
+      ],
+      "rationale": "Work IQ capabilities beyond Dataverse grounding (Microsoft Graph content) require a Microsoft 365 Copilot licence in addition to the finance and operations licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-apps/maker/model-driven-apps/add-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-operations-storage",
+      "capabilityId": "operations-storage-capacity",
+      "licenses": [
+        "operations-db-capacity"
+      ],
+      "preferred": true,
+      "rationale": "Operations - Database and Operations - File capacity add-ons increase storage for finance and operations environments; the entitlements are pooled with Dataverse database and file capacity for overage enforcement.",
+      "note": "Add Operations - File Capacity instead/as well for file-heavy environments.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+      ]
+    },
+    {
+      "id": "p-bc-essentials",
+      "capabilityId": "business-central-essentials",
+      "licenses": [
+        "bc-essentials"
+      ],
+      "preferred": true,
+      "rationale": "Business Central Essentials gives full read/write access to Essentials companies (financials, sales, purchasing, inventory, projects). Purchased through CSP; entitlements are derived from the Microsoft Entra service plan.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/deployment/licensing"
+      ]
+    },
+    {
+      "id": "p-bc-premium",
+      "capabilityId": "business-central-premium",
+      "licenses": [
+        "bc-premium"
+      ],
+      "preferred": true,
+      "rationale": "Business Central Premium adds manufacturing and service management to Essentials. Premium features are enabled per company via the User Experience field; an Essentials user can't open a Premium company.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-manage-access"
+      ]
+    },
+    {
+      "id": "p-bc-team-members",
+      "capabilityId": "business-central-team-members",
+      "licenses": [
+        "bc-team-members"
+      ],
+      "preferred": true,
+      "rationale": "The Business Central Team Members licence allows reading all data plus limited write scenarios (approvals, time sheets, own HR records). It needs an Essentials or Premium licence in the tenant and is unrelated to the customer-engagement Team Members licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/admin-access-with-m365-license"
+      ]
+    },
+    {
+      "id": "p-bc-m365-readonly",
+      "capabilityId": "business-central-m365-readonly",
+      "licenses": [
+        "m365-e3"
+      ],
+      "preferred": true,
+      "rationale": "A supported Microsoft 365 licence (Business Standard/Premium, E3/E5 and similar) entitles a user with no Business Central licence to read Business Central records shared into Microsoft Teams - read-only, Teams app only, once an admin configures access. It grants nothing to tenants without a Business Central subscription.",
+      "note": "Requires the organisation to have a Business Central subscription and configured environments. If the user later needs to write, use a Team Members or Essentials/Premium licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/admin-access-with-m365-license"
+      ]
+    },
+    {
+      "id": "p-bc-device",
+      "capabilityId": "business-central-device",
+      "licenses": [
+        "bc-device"
+      ],
+      "preferred": true,
+      "rationale": "A Business Central Device licence lets multiple users concurrently sign in to one covered device up to the number of device licences purchased; members of the Device Users group need no user licence, but a device user can't be the first to sign in.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/deployment/licensing"
+      ]
+    },
+    {
+      "id": "p-bc-copilot",
+      "capabilityId": "business-central-copilot",
+      "licenses": [
+        "bc-essentials"
+      ],
+      "preferred": true,
+      "rationale": "Copilot in Business Central is available to licensed Business Central users (Essentials or Premium); some capacity-metered capabilities draw on Copilot/AI credits.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/deployment/licensing",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    },
+    {
+      "id": "p-bc-powerbi-free",
+      "capabilityId": "business-central-powerbi",
+      "licenses": [
+        "bc-essentials",
+        "powerbi-free"
+      ],
+      "rationale": "A free Power BI licence covers viewing and building Business Central reports in a personal workspace, but every viewer still needs a paid Business Central licence (Essentials, Premium or Team Member).",
+      "note": "The Business Central Power BI apps and sharing require Power BI Pro.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/admin-powerbi-setup"
+      ]
+    },
+    {
+      "id": "p-bc-powerbi-pro",
+      "capabilityId": "business-central-powerbi",
+      "licenses": [
+        "bc-essentials",
+        "powerbi-pro"
+      ],
+      "preferred": true,
+      "rationale": "Power BI Pro is needed to share Business Central reports, refresh extensively, and install the Business Central Power BI apps; each user also needs a paid Business Central licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/business-central/admin-powerbi-setup"
+      ]
+    },
+    {
+      "id": "p-papps-seeded",
+      "capabilityId": "custom-canvas-app",
+      "licenses": [
+        "m365-e3"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 licences include seeded Power Apps rights for canvas apps that use only standard connectors within the Microsoft 365 context. No premium licence if the app stays inside those limits.",
+      "conditions": [
+        {
+          "clarifier": "powerapps-context",
+          "in": [
+            "seeded"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pricing-billing-skus"
+      ]
+    },
+    {
+      "id": "p-papps-premium",
+      "capabilityId": "custom-canvas-app",
+      "licenses": [
+        "powerapps-premium"
+      ],
+      "preferred": true,
+      "rationale": "A standalone app, or one using premium/custom connectors, Dataverse or a model-driven design, needs Power Apps Premium per user for unlimited apps.",
+      "conditions": [
+        {
+          "clarifier": "powerapps-context",
+          "in": [
+            "standalone"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-papps-perapp",
+      "capabilityId": "custom-canvas-app",
+      "licenses": [
+        "powerapps-per-app"
+      ],
+      "rationale": "If a user only needs one or two specific premium apps, the Power Apps per app plan (one app or Power Pages site per licence, stackable, allocated to an environment) is cheaper than Premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-papps-payg",
+      "capabilityId": "custom-canvas-app",
+      "licenses": [
+        "powerapps-payg"
+      ],
+      "rationale": "For apps shared broadly with unpredictable usage, enable pay-as-you-go on the environment and pay per unique active user per app through an Azure subscription - no upfront licences.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview"
+      ]
+    },
+    {
+      "id": "p-model-driven-premium",
+      "capabilityId": "model-driven-app",
+      "licenses": [
+        "powerapps-premium"
+      ],
+      "preferred": true,
+      "rationale": "Model-driven apps use Dataverse and are premium by default; every user running one needs Power Apps premium use rights - Power Apps Premium covers unlimited apps.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-model-driven-perapp",
+      "capabilityId": "model-driven-app",
+      "licenses": [
+        "powerapps-per-app"
+      ],
+      "rationale": "A Power Apps per app plan also grants premium use rights and covers a single model-driven app in one environment.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-perapp-plan",
+      "capabilityId": "power-apps-per-app-licensing",
+      "licenses": [
+        "powerapps-per-app"
+      ],
+      "preferred": true,
+      "rationale": "The Power Apps per app plan gives a user rights to run one app (canvas and/or model-driven) or one Power Pages site in a single environment with full premium capabilities; it's stackable and allocated to environments rather than assigned directly to users.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-payg-plan",
+      "capabilityId": "power-apps-payg-licensing",
+      "licenses": [
+        "powerapps-payg"
+      ],
+      "preferred": true,
+      "rationale": "Power Apps pay-as-you-go bills monthly per unique active user per app through an Azure subscription; it's set at the environment level, needs an Azure subscription, and can't be mixed with per-app licences in the same environment.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview",
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-meters"
+      ]
+    },
+    {
+      "id": "p-seeded-m365",
+      "capabilityId": "power-apps-seeded-m365",
+      "licenses": [
+        "m365-e3"
+      ],
+      "preferred": true,
+      "rationale": "Power Apps for Microsoft 365 (seeded in Microsoft 365 plans) lets users build and run canvas apps on Microsoft 365 data and other standard connectors, but not premium/custom connectors or standalone Dataverse apps.",
+      "conditions": [
+        {
+          "clarifier": "powerapps-context",
+          "in": [
+            "seeded"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pricing-billing-skus"
+      ]
+    },
+    {
+      "id": "p-dataverse-teams",
+      "capabilityId": "dataverse-for-teams-app",
+      "licenses": [
+        "dataverse-teams"
+      ],
+      "preferred": true,
+      "rationale": "Dataverse for Teams is included in select Microsoft 365 subscriptions with Power Platform and Teams capabilities - one environment per team (~1M rows / 2 GB), Teams client only. Premium connectors, AI Builder or desktop flows still need Power Apps/Automate licensing.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/about-teams-environment",
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-dev-plan",
+      "capabilityId": "power-apps-developer-plan-cap",
+      "licenses": [
+        "powerapps-developer-plan"
+      ],
+      "preferred": true,
+      "rationale": "The free Power Apps Developer Plan provides a personal Developer environment with Dataverse and premium/custom connectors for individual build-and-test use; it can't be shared, used for production, or extended with add-ons.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/developer/plan"
+      ]
+    },
+    {
+      "id": "p-managed-env",
+      "capabilityId": "managed-environments-governance",
+      "licenses": [
+        "powerapps-premium"
+      ],
+      "preferred": true,
+      "rationale": "When managed environments are activated, all active usage in that environment requires a qualifying premium Power Apps/Automate licence per user (or capacity), regardless of whether the app uses only standard connectors.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-rpa-premium",
+      "capabilityId": "rpa-desktop-flow",
+      "licenses": [
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "Attended desktop flows (RPA) need Power Automate Premium per user - it includes machine registration, unlimited desktop flows and one attended bot per licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-rpa-unattended",
+      "capabilityId": "rpa-desktop-flow",
+      "licenses": [
+        "powerautomate-premium",
+        "powerautomate-process"
+      ],
+      "rationale": "Unattended desktop-flow runs need a Power Automate Process licence allocated to the machine (one unattended bot per licence); the user whose connection runs the flow still needs a Premium (or desktop-flows) user licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-rpa-hosted",
+      "capabilityId": "rpa-desktop-flow",
+      "licenses": [
+        "powerautomate-premium",
+        "powerautomate-hosted-process"
+      ],
+      "rationale": "The Power Automate Hosted Process licence provides one Microsoft-hosted RPA bot with no physical machine to manage; it's a superset of Process and also covers unattended runs.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-flow-premium-user",
+      "capabilityId": "cloud-flow-premium-connectors",
+      "licenses": [
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "Power Automate Premium per user grants unlimited cloud flows with standard, premium and custom connectors plus on-premises data gateway use, within per-user action limits.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-flow-process",
+      "capabilityId": "cloud-flow-premium-connectors",
+      "licenses": [
+        "powerautomate-process"
+      ],
+      "rationale": "A Power Automate Process licence allocated to a single cloud flow grants premium/custom connectors and higher action limits regardless of the triggering user's licence; the flow must be in a solution.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-flow-payg",
+      "capabilityId": "cloud-flow-premium-connectors",
+      "licenses": [
+        "powerautomate-payg"
+      ],
+      "rationale": "Pay-as-you-go bills cloud-flow usage above the daily Power Platform request entitlement to an Azure subscription, avoiding upfront per-user or per-flow purchases.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-meters"
+      ]
+    },
+    {
+      "id": "p-process-license",
+      "capabilityId": "power-automate-per-flow",
+      "licenses": [
+        "powerautomate-process"
+      ],
+      "preferred": true,
+      "rationale": "The Power Automate Process licence is a capacity licence allocated to one cloud flow (or a flow group of up to 25 flows); it includes ~250,000 actions/day and is stackable up to 10 per flow. Flows must be in a solution.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-rpa-unattended-only",
+      "capabilityId": "rpa-unattended-scale",
+      "licenses": [
+        "powerautomate-process",
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "Each Power Automate Process licence allocated to a machine is one unattended bot running one desktop flow at a time; buy one per parallel run needed. The connection user still needs a Premium user licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-rpa-hosted-only",
+      "capabilityId": "rpa-hosted-bots",
+      "licenses": [
+        "powerautomate-hosted-process",
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "The Power Automate Hosted Process licence provides one Microsoft-hosted RPA bot; hosted machine groups add autoscale and load balancing. It's a superset of Process so it also grants the unattended entitlement.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-process-mining",
+      "capabilityId": "process-mining",
+      "licenses": [
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "Process and task mining are included with the Power Automate Premium user licence (50 MB process-mining data storage per licence, up to 100 GB per tenant).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-automate-free",
+      "capabilityId": "power-automate-free-standard",
+      "licenses": [
+        "powerautomate-free"
+      ],
+      "preferred": true,
+      "rationale": "Power Automate Free (available to any work/school account) covers creating and running unshared cloud flows with standard connectors and running desktop flows locally attended.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types"
+      ]
+    },
+    {
+      "id": "p-pages-authenticated",
+      "capabilityId": "power-pages-authenticated-site",
+      "licenses": [
+        "powerpages-authenticated"
+      ],
+      "preferred": true,
+      "rationale": "Power Pages sites for external signed-in users are licensed by authenticated users per website per month - subscription capacity packs (100 users each, min 25 assigned per environment) or a pay-as-you-go meter. Dataverse storage, CDN and WAF are included.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq",
+        "https://learn.microsoft.com/power-pages/admin/capacity-management"
+      ]
+    },
+    {
+      "id": "p-pages-anonymous",
+      "capabilityId": "power-pages-anonymous-site",
+      "licenses": [
+        "powerpages-anonymous"
+      ],
+      "preferred": true,
+      "rationale": "Publicly browsable Power Pages sites are licensed by anonymous users per website per month - subscription packs (500 users each, min 200 assigned per environment) or a pay-as-you-go meter. A sign-in-only anonymous page isn't counted.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq",
+        "https://learn.microsoft.com/power-pages/admin/website-consumption-reports"
+      ]
+    },
+    {
+      "id": "p-pages-internal-peruser",
+      "capabilityId": "power-pages-internal-site",
+      "licenses": [
+        "powerapps-premium"
+      ],
+      "preferred": true,
+      "rationale": "Employees with a Power Apps Premium (per user) licence can access unlimited Power Pages websites when they sign in with Microsoft Entra ID via the built-in provider and their licence is in the same tenant as the site.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-pages-internal-perapp",
+      "capabilityId": "power-pages-internal-site",
+      "licenses": [
+        "powerapps-per-app"
+      ],
+      "rationale": "A Power Apps per app plan lets an internal user access one Power Pages website in the environment the per-app capacity is assigned to.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-pages-internal-capacity",
+      "capabilityId": "power-pages-internal-site",
+      "licenses": [
+        "powerpages-authenticated"
+      ],
+      "rationale": "Internal authenticated users can also be covered by the Power Pages authenticated per user/website subscription capacity, per site, instead of Power Apps licences.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq"
+      ]
+    },
+    {
+      "id": "p-pbi-pro",
+      "capabilityId": "powerbi-share",
+      "licenses": [
+        "powerbi-pro"
+      ],
+      "preferred": true,
+      "rationale": "Power BI Pro is the per-user licence to publish and to consume shared content in a non-capacity (shared) workspace. It is included in Microsoft 365 E5.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type"
+      ]
+    },
+    {
+      "id": "p-pbi-ppu",
+      "capabilityId": "powerbi-share",
+      "licenses": [
+        "powerbi-ppu"
+      ],
+      "rationale": "Premium Per User adds capacity features (paginated reports, large models, high refresh) per user without a capacity; everyone sharing a PPU workspace needs PPU unless the content sits in Premium capacity.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type"
+      ]
+    },
+    {
+      "id": "p-pbi-capacity",
+      "capabilityId": "powerbi-share",
+      "licenses": [
+        "powerbi-pro",
+        "fabric-capacity"
+      ],
+      "rationale": "With a Fabric capacity (F64 or above), Pro authors can publish to capacity workspaces and distribute to free viewers; authors still need Pro or PPU to create and save content there.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type",
+        "https://learn.microsoft.com/fabric/enterprise/licenses"
+      ]
+    },
+    {
+      "id": "p-pbi-free-f64",
+      "capabilityId": "powerbi-free-consume",
+      "licenses": [
+        "powerbi-free",
+        "fabric-capacity"
+      ],
+      "preferred": true,
+      "rationale": "Free per-user licences can consume content published by Pro/PPU users only when it sits in a Fabric F64+ (or Power BI Premium) capacity. In shared capacity, viewers need Power BI Pro.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type",
+        "https://learn.microsoft.com/fabric/enterprise/licenses"
+      ]
+    },
+    {
+      "id": "p-pbi-ppu-features",
+      "capabilityId": "powerbi-paginated-large-models",
+      "licenses": [
+        "powerbi-ppu"
+      ],
+      "preferred": true,
+      "rationale": "Premium Per User unlocks most Premium (capacity) features per user - paginated reports, larger models, higher refresh, XMLA - without buying a capacity; all collaborators in a PPU workspace need PPU.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type"
+      ]
+    },
+    {
+      "id": "p-fabric-capacity-bi",
+      "capabilityId": "fabric-capacity-bi-distribution",
+      "licenses": [
+        "fabric-capacity",
+        "powerbi-pro"
+      ],
+      "preferred": true,
+      "rationale": "A provisioned Fabric capacity (F SKUs, billed on Capacity Units) hosts capacity workspaces; at F64+ Pro/PPU authors can distribute to free viewers. Authoring and saving still requires a Pro or PPU per-user licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/fabric/enterprise/licenses",
+        "https://learn.microsoft.com/power-bi/fundamentals/service-features-license-type"
+      ]
+    },
+    {
+      "id": "p-dataverse-default",
+      "capabilityId": "dataverse-default-capacity",
+      "licenses": [
+        "powerapps-premium"
+      ],
+      "preferred": true,
+      "rationale": "Dataverse capacity is a tenant pool of a base entitlement plus per-user accruals from qualifying licences such as Power Apps Premium; Team Members licences grant no per-user database/file/log entitlement. The default environment includes 3 GB DB, 3 GB file, 1 GB log.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+      ]
+    },
+    {
+      "id": "p-dataverse-addon",
+      "capabilityId": "dataverse-capacity-addon",
+      "licenses": [
+        "dataverse-db-capacity"
+      ],
+      "preferred": true,
+      "rationale": "Per-GB Dataverse Database, File and Log capacity add-ons increase the tenant entitlement; database capacity can offset log and file overages via cross capacity-type borrowing, but file/log can't offset database.",
+      "note": "Add File and/or Log capacity add-ons as the overage type requires.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/capacity-storage"
+      ]
+    },
+    {
+      "id": "p-dataverse-payg",
+      "capabilityId": "dataverse-capacity-addon",
+      "licenses": [
+        "powerautomate-payg"
+      ],
+      "rationale": "Instead of buying capacity add-ons, an environment can be linked to a pay-as-you-go billing plan so Dataverse storage overage is charged to the associated Azure subscription.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/capacity-storage",
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview"
+      ]
+    },
+    {
+      "id": "p-ai-builder",
+      "capabilityId": "ai-builder-forms",
+      "licenses": [
+        "powerautomate-premium",
+        "ai-builder-addon"
+      ],
+      "preferred": true,
+      "rationale": "Running AI Builder models (document processing, prediction, classification, text recognition) requires AI Builder credit capacity in the environment; premium user licences seed a small amount (ending Nov 2026) and the AI Builder capacity add-on or Copilot Credits provide the rest.",
+      "note": "New customers buy Copilot Credits rather than the AI Builder capacity add-on.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/ai-builder/credit-management",
+        "https://learn.microsoft.com/ai-builder/administer-licensing"
+      ]
+    },
+    {
+      "id": "p-ai-credits-addon",
+      "capabilityId": "ai-builder-credits",
+      "licenses": [
+        "ai-builder-addon"
+      ],
+      "rationale": "Existing customers can still buy/renew the AI Builder capacity add-on (1M service credits per unit per month, tenant-pooled, allocated to environments) until 1 November 2026.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/ai-builder/credit-management"
+      ]
+    },
+    {
+      "id": "p-ai-credits-copilot",
+      "capabilityId": "ai-builder-credits",
+      "licenses": [
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "New customers provision Copilot Credits (prepaid capacity packs and/or pay-as-you-go) for AI Builder and agent scenarios; capacity is enforced monthly and allocated to environments in the Power Platform admin center.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/ai-builder/credit-management",
+        "https://learn.microsoft.com/power-platform/admin/manage-copilot-studio-copilot-credits-capacity"
+      ]
+    },
+    {
+      "id": "p-agent-studio",
+      "capabilityId": "custom-agent",
+      "licenses": [
+        "copilot-studio"
+      ],
+      "preferred": true,
+      "rationale": "Custom agents are built in the standalone Microsoft Copilot Studio subscription; published-agent usage consumes Copilot Studio capacity (Copilot Credits) via prepaid packs or pay-as-you-go.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-agent-studio-teams",
+      "capabilityId": "custom-agent",
+      "licenses": [
+        "copilot-studio-teams"
+      ],
+      "rationale": "For a simple Teams-only agent using classic orchestration on Dataverse for Teams, the Copilot Studio for Teams plan included in select Microsoft 365 subscriptions is enough - no generative orchestration, premium connectors, other channels or live handoff.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-agent-studio-payg",
+      "capabilityId": "custom-agent",
+      "licenses": [
+        "copilot-studio",
+        "copilot-credits"
+      ],
+      "rationale": "Agent consumption can be paid entirely pay-as-you-go through an Azure subscription billing policy, with no prepaid capacity commitment.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management",
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview"
+      ]
+    },
+    {
+      "id": "p-cs-teams-plan",
+      "capabilityId": "copilot-studio-teams-included",
+      "licenses": [
+        "copilot-studio-teams"
+      ],
+      "preferred": true,
+      "rationale": "Copilot Studio for Teams is included in select Microsoft 365 subscriptions with Power Platform and Teams capabilities (excludes GCC/GCC High/DoD, EDU A1, SUB SKUs); agents use classic orchestration on Dataverse for Teams and publish to Teams only.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-agent-autonomous",
+      "capabilityId": "copilot-studio-autonomous",
+      "licenses": [
+        "copilot-studio",
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "Generative orchestration and autonomous/triggered agents require the standalone Copilot Studio subscription plus Copilot Credit capacity; published sessions and agent-flow actions consume credits, and agent-flow runs are blocked when prepaid capacity is exhausted unless pay-as-you-go is enabled.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management",
+        "https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-agent-payg",
+      "capabilityId": "copilot-studio-payg-meter",
+      "licenses": [
+        "copilot-studio",
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "A pay-as-you-go billing policy linked to an Azure subscription meters Copilot Studio consumption per credit at the end of the monthly billing period, with no upfront capacity - used alone or as automatic overage for prepaid packs.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview",
+        "https://learn.microsoft.com/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs"
+      ]
+    },
+    {
+      "id": "p-copilot-chat-capacity",
+      "capabilityId": "copilot-chat-agents-capacity",
+      "licenses": [
+        "copilot-credits"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Copilot Chat and SharePoint agent interactions consume Copilot Credits - bought as prepaid capacity packs (25,000 credits/month each), governed by Copilot credit policies scoped to user groups (up to 10 per tenant), with optional pay-as-you-go overage requiring an Azure subscription.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs"
+      ]
+    },
+    {
+      "id": "p-copilot-d365-included",
+      "capabilityId": "copilot-in-dynamics-included",
+      "licenses": [
+        "d365-sales-ent"
+      ],
+      "preferred": true,
+      "rationale": "A Dynamics 365 Enterprise or Premium licence covers the Copilot features grounded on Dataverse in that app (record summaries, natural-language questions, draft assistance). Any full Dynamics 365 app licence qualifies for its own app.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started",
+        "https://learn.microsoft.com/power-apps/maker/model-driven-apps/add-microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-workiq-dynamics",
+      "capabilityId": "work-iq-dynamics",
+      "licenses": [
+        "d365-sales-ent",
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "To get Copilot capabilities in a Dynamics 365 app beyond Dataverse grounding - Microsoft Graph content (Outlook, Teams) and premium agent features - each user needs a Microsoft 365 Copilot licence in addition to a Dynamics 365 Enterprise or Premium licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/power-apps/maker/model-driven-apps/add-microsoft-365-copilot",
+        "https://learn.microsoft.com/dynamics365/copilot/ai-get-started"
+      ]
+    }
+  ]
+}

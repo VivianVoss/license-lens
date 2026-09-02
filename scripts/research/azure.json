@@ -1,0 +1,2868 @@
+{
+  "licenses": [
+    {
+      "id": "azure-reservation",
+      "name": "Azure Reservations",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 8,
+      "note": "A billing discount, not a product. Commit to a specific resource type in a region for one or three years to get a reduced rate. Covers the compute portion only, not software, OS, networking or storage, and does not reserve or guarantee capacity.",
+      "prerequisites": [
+        "An Azure subscription (EA, MCA or pay-as-you-go); Owner or Reservation Purchaser role"
+      ],
+      "source": "https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations"
+    },
+    {
+      "id": "azure-savings-plan",
+      "name": "Azure savings plan for compute",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 8,
+      "note": "A billing discount where you commit to a fixed hourly compute spend for one or three years. The discount then applies automatically across VM families, regions and eligible compute services (VMs, App Service, Functions Premium, Container Instances, Container Apps, Dedicated Host). Does not cover software, networking or storage.",
+      "prerequisites": [
+        "Resources under an Enterprise Agreement, Microsoft Customer Agreement or Microsoft Partner Agreement"
+      ],
+      "source": "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-overview"
+    },
+    {
+      "id": "azure-spot",
+      "name": "Azure Spot Virtual Machines",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 6,
+      "note": "Unused Azure capacity offered at a deep discount with no SLA. VMs can be evicted with about 30 seconds' notice when Azure needs the capacity back or the price exceeds your max price. Suited to interruptible batch, dev/test and large compute workloads.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/azure/virtual-machines/spot-vms"
+    },
+    {
+      "id": "azure-hub-linux",
+      "name": "Azure Hybrid Benefit for Linux",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 5,
+      "note": "A right to switch a Red Hat Enterprise Linux or SUSE Linux Enterprise Server VM between pay-as-you-go (subscription billed by Azure) and bring-your-own-subscription (BYOS) billing, so an existing RHEL or SLES subscription covers the software fee and you pay only Azure infrastructure. Only RHEL images published by Red Hat and SLES pay-as-you-go images are eligible.",
+      "prerequisites": [
+        "An eligible RHEL or SLES cloud-access subscription for BYOS"
+      ],
+      "source": "https://learn.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux"
+    },
+    {
+      "id": "macc",
+      "name": "Microsoft Azure Consumption Commitment (MACC)",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 5,
+      "note": "A contractual commitment to spend a set amount on Azure over a period. Eligible first-party Azure usage and Azure-benefit-eligible Microsoft Marketplace purchases (100% of the pretax amount) draw the commitment down when bought through the Azure portal. Azure prepayment purchases and licences used on-premises or in hybrid don't count.",
+      "prerequisites": [
+        "An Azure Consumption Commitment in an Enterprise Agreement or Microsoft Customer Agreement"
+      ],
+      "source": "https://learn.microsoft.com/marketplace/azure-consumption-commitment-benefit"
+    },
+    {
+      "id": "vs-pro",
+      "name": "Visual Studio Professional subscription",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 15,
+      "note": "Per-user. The Visual Studio Professional IDE plus subscriber benefits: a monthly individual Azure dev/test credit, discounted Azure Dev/Test rates for non-production, Azure DevOps Basic plan, and software downloads.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/visualstudio/subscriptions/what-are-subscriptions"
+    },
+    {
+      "id": "vs-enterprise",
+      "name": "Visual Studio Enterprise subscription",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 25,
+      "note": "Per-user. Visual Studio Enterprise IDE plus the largest set of subscriber benefits: the highest monthly Azure dev/test credit, discounted Azure Dev/Test rates, Azure DevOps Basic + Test Plans, a Microsoft 365 E5 developer subscription, and one extra self-hosted Azure Pipelines parallel job per subscriber.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/visualstudio/subscriptions/what-are-subscriptions"
+    },
+    {
+      "id": "azure-devtest",
+      "name": "Azure Dev/Test offers",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 8,
+      "note": "Discounted Azure rates for non-production development and testing. Enterprise Dev/Test (offer 0148P) requires an Enterprise Agreement; Pay-As-You-Go Dev/Test (offer 0023P) does not. Both require every user of the subscription to hold an active Visual Studio subscription, and both unlock the Windows client images in Marketplace.",
+      "prerequisites": [
+        "Active Visual Studio subscriptions for all users; an Enterprise Agreement for the Enterprise Dev/Test offer"
+      ],
+      "source": "https://learn.microsoft.com/azure/devtest/offer/overview-what-is-devtest-offer-visual-studio"
+    },
+    {
+      "id": "azure-support-dev",
+      "name": "Azure Developer support plan",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 8,
+      "note": "Entry paid support. Technical break-fix support during business hours, plus the billing and subscription-management support that all customers get. Trial and production guidance only, no architecture or operational advisory.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request"
+    },
+    {
+      "id": "azure-support-standard",
+      "name": "Azure Standard support plan",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 14,
+      "note": "24x7 technical break-fix support with faster response times than Developer. The minimum plan for opening a Sev A ticket and for services such as Azure Local support requests.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/azure/azure-local/manage/get-support"
+    },
+    {
+      "id": "azure-support-prodirect",
+      "name": "Azure Professional Direct (ProDirect) support plan",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 22,
+      "note": "For business-critical workloads. Fastest response, escalation management, ProDirect delivery managers, plus advisory and developer-mentoring services. Required (with Premier/Unified) to use the Azure Support REST API.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/rest/api/support/"
+    },
+    {
+      "id": "azure-support-unified",
+      "name": "Microsoft Unified support",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 40,
+      "note": "Account-managed enterprise support across all Microsoft products (formerly Premier). Includes a customer success account manager, proactive services and the highest-severity Azure response. Also satisfies the Support REST API requirement.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/rest/api/support/"
+    },
+    {
+      "id": "arc-servers",
+      "name": "Azure Arc-enabled servers",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 6,
+      "note": "Projects on-premises and other-cloud servers (and, similarly, Kubernetes clusters and VMware/SCVMM estates) into Azure. The control plane is free: resource organisation, tags, Azure Resource Graph, RBAC, templates and extensions. Any Azure service consumed through Arc (Monitor, Defender for Servers, Update Manager, Sentinel, Machine Configuration) is billed at its own rate.",
+      "prerequisites": [
+        "Azure Connected Machine agent installed and the server in a Connected state"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-arc/overview"
+    },
+    {
+      "id": "ws-payg-arc",
+      "name": "Windows Server pay-as-you-go enabled by Azure Arc",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 10,
+      "note": "A subscription alternative to perpetual Windows Server licensing for Windows Server 2025 and later. Connect the server to Azure Arc, enable pay-as-you-go, and the OS licence is billed per core per hour through Azure with no product key and no CALs for base functionality. Enrolment also includes the Windows Server management services at no extra cost.",
+      "prerequisites": [
+        "Windows Server 2025 or later; server connected to Azure Arc"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-arc/servers/billing-windows-server-pay-go"
+    },
+    {
+      "id": "ws-mgmt-arc",
+      "name": "Windows Server Management enabled by Azure Arc",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 6,
+      "note": "For Arc-connected Windows Server machines whose licences have active Software Assurance or are active subscription licences. After attestation, Azure Update Manager, Change Tracking and Inventory, Machine Configuration, Windows Admin Center in Azure, Remote Support, Best Practices Assessment, Azure Site Recovery configuration and discounted Azure File Sync are provided at no extra cost (log ingestion and downstream service costs still apply).",
+      "prerequisites": [
+        "Windows Server licences with active Software Assurance or an active subscription; attestation in the Azure portal"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-arc/servers/windows-server-management-overview"
+    },
+    {
+      "id": "esu-arc-windows",
+      "name": "Extended Security Updates for Windows Server enabled by Azure Arc",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 8,
+      "note": "Critical and Important security updates for Windows Server 2012/2012 R2 and 2016 after end of support, for up to three years, delivered to Arc-connected machines with no ESU product keys. Billed monthly pay-as-you-go through Azure and can draw down a MACC. Windows Server 2016 ESUs are configurable from 3 August 2026 with billing from 13 January 2027.",
+      "prerequisites": [
+        "Server connected to Azure Arc and in a Connected state"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-arc/servers/prepare-extended-security-updates"
+    },
+    {
+      "id": "esu-arc-sql",
+      "name": "SQL Server Extended Security Updates enabled by Azure Arc",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 8,
+      "note": "Security updates for SQL Server after end of support, for up to three years, billed on an hourly pay-as-you-go meter through Azure and cancellable at any time. Billed per virtual core (minimum four) or, with unlimited virtualisation, per physical core (minimum 16, Enterprise-edition meter). Software Assurance or a SQL Server subscription is a prerequisite for the program.",
+      "prerequisites": [
+        "SQL Server instance connected to Azure Arc; Software Assurance or a SQL Server subscription for the program"
+      ],
+      "source": "https://learn.microsoft.com/sql/sql-server/azure-arc/extended-security-updates"
+    },
+    {
+      "id": "arc-sql",
+      "name": "SQL Server enabled by Azure Arc",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 8,
+      "note": "Connects on-premises or other-cloud SQL Server instances to Azure. Offers a pay-as-you-go billing model (billed hourly through Azure) as an alternative to buying licences, for all versions from 2012 to 2022, licensed by virtual cores or by physical cores with unlimited virtualisation. Bring-your-own-licence is also supported, but unlimited virtualisation and features such as monitoring require Software Assurance or a subscription.",
+      "prerequisites": [
+        "Azure extension for SQL Server installed via the Azure Connected Machine agent"
+      ],
+      "source": "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-license-billing"
+    },
+    {
+      "id": "azure-local",
+      "name": "Azure Local",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 10,
+      "note": "Microsoft's hybrid infrastructure platform (formerly Azure Stack HCI). Billed as an Azure service at a flat rate per physical processor core in the on-premises cluster, through your Azure subscription. No traditional on-premises software licence, but guest VM operating systems still need licensing. Requires a connection to Azure at least every 30 days.",
+      "prerequisites": [
+        "Registered Azure subscription; cluster connected to Azure"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-local/concepts/billing"
+    },
+    {
+      "id": "avs",
+      "name": "Azure VMware Solution",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 20,
+      "note": "VMware vSphere private clouds on dedicated bare-metal Azure hosts. Billed by the number and size of hosts (minimum three per private cloud), not by VM. VMware components (vSphere, vSAN, NSX, HCX) are included; guest Windows Server, SQL Server and Linux still need licensing. Reserved instances (one or three year) include the software licensing cost.",
+      "prerequisites": [
+        "An Enterprise Agreement, Microsoft Customer Agreement or CSP Azure plan; approved host quota"
+      ],
+      "source": "https://learn.microsoft.com/azure/azure-vmware/introduction"
+    },
+    {
+      "id": "entra-external-id",
+      "name": "Microsoft Entra External ID",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 10,
+      "note": "The customer-identity (CIAM) and external-collaboration service, successor to Azure AD B2C. Core billing is per monthly active user (MAU) - unique external users who authenticate in a calendar month - with the first 50,000 MAU no-cost. Premium add-ons (machine-to-machine auth transactions, SMS second-factor) have no no-cost tier. The tenant must be linked to an Azure subscription.",
+      "prerequisites": [
+        "A workforce or external Microsoft Entra tenant linked to an Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/entra/external-id/external-identities-pricing"
+    },
+    {
+      "id": "azure-ai-foundry",
+      "name": "Azure AI Foundry model consumption",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 12,
+      "note": "Standard (pay-as-you-go) deployment of Azure OpenAI and other Foundry models, billed per input and output token. Foundry Agent Service adds no separate fee: agents are billed for the underlying model inference, plus Code Interpreter per session and File Search on vector storage.",
+      "prerequisites": [
+        "An Azure AI Foundry project / Azure OpenAI resource"
+      ],
+      "source": "https://learn.microsoft.com/azure/ai-foundry/openai/concepts/provisioned-throughput"
+    },
+    {
+      "id": "azure-openai-ptu",
+      "name": "Azure AI Foundry Provisioned Throughput (PTU)",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 20,
+      "note": "Provisioned Throughput Units reserve dedicated model-processing capacity for predictable latency and throughput. Granted as regional quota and billed hourly on the number of deployed PTUs regardless of utilisation. Quota is model-independent within a region and deployment type (Global, Data Zone, Regional).",
+      "prerequisites": [
+        "PTU quota in the target region and deployment type"
+      ],
+      "source": "https://learn.microsoft.com/azure/ai-foundry/openai/how-to/provisioned-throughput-onboarding"
+    },
+    {
+      "id": "azure-openai-ptu-reservation",
+      "name": "Azure Reservation for Azure AI Foundry Provisioned Throughput",
+      "family": "azure",
+      "type": "benefit",
+      "rank": 18,
+      "note": "A term discount on top of the hourly PTU rate, committing to a fixed number of PTUs for one month or one year. Purchased in the Azure portal, scoped flexibly (resource group, subscription, management group or billing account). Separate reservations are needed per deployment type; PTUs beyond the reserved amount bill at the hourly rate.",
+      "prerequisites": [
+        "Existing or planned provisioned deployments (azure-openai-ptu)"
+      ],
+      "source": "https://learn.microsoft.com/azure/cost-management-billing/reservations/azure-openai"
+    },
+    {
+      "id": "powerbi-embedded",
+      "name": "Power BI Embedded (A SKUs)",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 15,
+      "note": "Azure-billed capacity (A1-A8) for embedding Power BI content in custom applications, especially the app-owns-data model where end users are unlicensed. Billed hourly and can be paused to stop billing. A SKUs below the F64/P1 equivalent still require each internal viewer to hold Pro or PPU.",
+      "prerequisites": [
+        "An Azure subscription; a Pro or PPU licence to publish the content"
+      ],
+      "source": "https://learn.microsoft.com/power-bi/developer/embedded/embedded-capacity-planning"
+    },
+    {
+      "id": "azure-devops-basic",
+      "name": "Azure DevOps Basic access",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 10,
+      "note": "Per-user access level for Azure Boards, Repos, Pipelines and Artifacts. The first five users in an organisation are free; beyond that each assigned Basic user is billed to the linked Azure subscription. Included with Visual Studio Professional and Enterprise subscriptions.",
+      "prerequisites": [
+        "An Azure DevOps organisation with billing linked to an Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/azure/devops/organizations/billing/overview"
+    },
+    {
+      "id": "azure-devops-test-plans",
+      "name": "Azure DevOps Basic + Test Plans",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 16,
+      "note": "The Basic access level plus Azure Test Plans for planned manual testing, exploratory testing and stakeholder feedback. A per-user add-on billed to the linked Azure subscription; included with Visual Studio Enterprise subscriptions.",
+      "prerequisites": [
+        "An Azure DevOps organisation with billing linked to an Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/azure/devops/organizations/billing/buy-basic-access-add-users"
+    },
+    {
+      "id": "azure-pipelines-parallel",
+      "name": "Azure Pipelines parallel jobs",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 8,
+      "note": "Extra concurrency for CI/CD. The no-cost tier gives one Microsoft-hosted job (with a monthly minute cap) and one self-hosted job per organisation; the self-hosted no-cost tier also adds one job per active Visual Studio Enterprise subscriber. Additional Microsoft-hosted or self-hosted parallel jobs are a fixed monthly charge per job on the Azure subscription.",
+      "prerequisites": [
+        "An Azure DevOps organisation with billing linked to an Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/azure/devops/pipelines/licensing/concurrent-jobs"
+    },
+    {
+      "id": "ghazdo",
+      "name": "GitHub Advanced Security for Azure DevOps",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 15,
+      "note": "Secret scanning with push protection, code scanning and dependency review for Azure Repos. Billed monthly to the Azure subscription per active committer - anyone in a push to an Advanced Security-enabled repo within the last 90 days - deduplicated across the subscription. Sold bundled or as the standalone Secret Protection and Code Security products.",
+      "prerequisites": [
+        "Azure Repos; billing linked to an Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/azure/devops/repos/security/github-advanced-security-billing"
+    },
+    {
+      "id": "azure-dedicated-host",
+      "name": "Azure Dedicated Host",
+      "family": "azure",
+      "type": "consumption",
+      "rank": 22,
+      "note": "A physical server dedicated to one Azure subscription, billed per host. Lets you bring Windows Server and SQL Server licences via Azure Hybrid Benefit; licensing the whole host with Windows Server Datacenter or SQL Server Enterprise plus Software Assurance grants unlimited virtualisation. Windows/SQL Server 2012 workloads on the host get Extended Security Updates at no extra charge.",
+      "prerequisites": [
+        "An Azure subscription; licences with Software Assurance for host-level bring-your-own-licence"
+      ],
+      "source": "https://learn.microsoft.com/azure/virtual-machines/dedicated-hosts"
+    },
+    {
+      "id": "github-enterprise",
+      "name": "GitHub Enterprise",
+      "family": "azure",
+      "type": "standalone",
+      "rank": 22,
+      "note": "Seat-based licence for GitHub Enterprise Cloud, billed monthly per active user and payable through an Azure subscription. AI services (GitHub Copilot) and Advanced Security are priced separately.",
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/azure/devops/organizations/billing/overview"
+    }
+  ],
+  "clarifiers": [
+    {
+      "id": "azure-agreement",
+      "question": "How does the organisation buy Azure?",
+      "options": [
+        {
+          "id": "ea",
+          "label": "Enterprise Agreement"
+        },
+        {
+          "id": "mca",
+          "label": "Microsoft Customer Agreement (direct)"
+        },
+        {
+          "id": "csp",
+          "label": "Through a Cloud Solution Provider partner"
+        },
+        {
+          "id": "payg",
+          "label": "Pay-as-you-go from the Azure website"
+        },
+        {
+          "id": "unsure",
+          "label": "Not sure"
+        }
+      ]
+    },
+    {
+      "id": "vs-subscription",
+      "question": "Do the developers have Visual Studio subscriptions?",
+      "options": [
+        {
+          "id": "none",
+          "label": "No"
+        },
+        {
+          "id": "pro",
+          "label": "Visual Studio Professional"
+        },
+        {
+          "id": "enterprise",
+          "label": "Visual Studio Enterprise"
+        }
+      ]
+    },
+    {
+      "id": "commitment-pattern",
+      "question": "How predictable is the workload?",
+      "options": [
+        {
+          "id": "stable",
+          "label": "Stable and long-running, known size and region"
+        },
+        {
+          "id": "dynamic",
+          "label": "Variable or evolving across sizes / regions"
+        },
+        {
+          "id": "shortterm",
+          "label": "Short-term or interruptible"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "azure-commitment-discount-vm",
+      "title": "Lower Azure VM costs by committing for one or three years",
+      "category": "azure",
+      "keywords": [
+        "azure reservation",
+        "reserved instance",
+        "savings plan",
+        "committed use discount",
+        "vm cost",
+        "prepay compute",
+        "term discount"
+      ],
+      "description": "Reduce the rate on steady Azure compute by making a one or three year commitment, either to specific reserved instances or to a fixed hourly spend.",
+      "paths": [
+        "p-az-resv-vm",
+        "p-az-savings-vm"
+      ]
+    },
+    {
+      "id": "azure-savings-plan-flexible",
+      "title": "Get a compute discount that follows a changing workload",
+      "category": "azure",
+      "keywords": [
+        "azure savings plan",
+        "savings plan for compute",
+        "flexible discount",
+        "hourly commitment",
+        "dynamic workload",
+        "multi-region discount"
+      ],
+      "description": "Commit to a fixed hourly compute spend and have the discount apply automatically across VM families, regions and compute services as the workload evolves.",
+      "paths": [
+        "p-az-savings-flex"
+      ]
+    },
+    {
+      "id": "azure-reservation-specific",
+      "title": "Lock in a discount on a specific VM size and region",
+      "category": "azure",
+      "keywords": [
+        "azure reservation",
+        "reserved vm instance",
+        "capacity",
+        "1 year 3 year",
+        "stable workload",
+        "instance family discount"
+      ],
+      "description": "For workloads that run continuously with a known instance type and region, a reserved instance gives the deepest term discount on the compute meter.",
+      "paths": [
+        "p-az-resv-specific"
+      ]
+    },
+    {
+      "id": "reserve-azure-sql-compute",
+      "title": "Discount Azure SQL Database or Managed Instance compute with a commitment",
+      "category": "azure",
+      "keywords": [
+        "azure sql reservation",
+        "reserved capacity",
+        "sql database vcore",
+        "managed instance discount",
+        "database savings plan",
+        "compute commitment"
+      ],
+      "description": "Commit to Azure SQL Database or SQL Managed Instance vCore compute for one or three years to move matching usage off pay-as-you-go rates.",
+      "paths": [
+        "p-az-resv-sql"
+      ]
+    },
+    {
+      "id": "spot-vm-interruptible",
+      "title": "Run interruptible batch or dev workloads at a deep discount",
+      "category": "azure",
+      "keywords": [
+        "spot vm",
+        "azure spot",
+        "unused capacity",
+        "eviction",
+        "batch processing",
+        "low priority vm",
+        "cheap compute"
+      ],
+      "description": "Use Azure's unused capacity at a large discount for workloads that tolerate being evicted at short notice, such as batch jobs, rendering and dev/test.",
+      "paths": [
+        "p-az-spot"
+      ]
+    },
+    {
+      "id": "macc-marketplace-drawdown",
+      "title": "Make Marketplace and partner purchases count toward an Azure spend commitment",
+      "category": "azure",
+      "keywords": [
+        "macc",
+        "azure consumption commitment",
+        "marketplace",
+        "azure benefit eligible",
+        "drawdown",
+        "commitment",
+        "third party software"
+      ],
+      "description": "Route eligible Microsoft Marketplace and partner solution purchases through the Azure portal so their full pretax amount decrements a Microsoft Azure Consumption Commitment.",
+      "paths": [
+        "p-az-macc"
+      ]
+    },
+    {
+      "id": "azure-buying-agreement",
+      "title": "Choose how to buy Azure (Enterprise Agreement, MCA, CSP or pay-as-you-go)",
+      "category": "azure",
+      "keywords": [
+        "enterprise agreement",
+        "microsoft customer agreement",
+        "csp",
+        "cloud solution provider",
+        "mosp",
+        "pay as you go",
+        "azure plan",
+        "purchase options"
+      ],
+      "description": "The purchasing vehicle for Azure consumption, which affects available discounts, billing roles and which benefits (savings plans, centrally managed Hybrid Benefit) can be used.",
+      "paths": [
+        "p-az-agr-ea",
+        "p-az-agr-mca",
+        "p-az-agr-csp",
+        "p-az-agr-payg"
+      ]
+    },
+    {
+      "id": "vs-subscription-benefits",
+      "title": "Give developers the Visual Studio IDE and subscriber benefits",
+      "category": "azure",
+      "keywords": [
+        "visual studio subscription",
+        "visual studio professional",
+        "visual studio enterprise",
+        "msdn",
+        "ide licence",
+        "developer tools",
+        "subscriber benefits"
+      ],
+      "description": "Per-user Visual Studio subscriptions that bundle the IDE, monthly Azure dev/test credits, discounted Dev/Test rates, Azure DevOps access and software downloads.",
+      "paths": [
+        "p-az-vs-pro",
+        "p-az-vs-ent"
+      ]
+    },
+    {
+      "id": "personal-azure-dev-credit",
+      "title": "Give a developer a personal Azure sandbox with a monthly credit",
+      "category": "azure",
+      "keywords": [
+        "azure dev test credit",
+        "individual credit",
+        "monthly azure credit",
+        "visual studio credit",
+        "sandbox subscription",
+        "inner loop",
+        "non-production"
+      ],
+      "description": "The individual Azure credit that comes with a Visual Studio subscription, for one developer's own development and testing, with no payment method required and no production use.",
+      "paths": [
+        "p-az-vs-credit"
+      ]
+    },
+    {
+      "id": "team-devtest-discounted",
+      "title": "Run a shared team development and test environment at discounted rates",
+      "category": "azure",
+      "keywords": [
+        "enterprise dev test",
+        "pay as you go dev test",
+        "team dev test",
+        "non-production",
+        "0148p",
+        "0023p",
+        "discounted azure rates"
+      ],
+      "description": "Organisation-level Azure Dev/Test subscriptions that give a team discounted rates on non-production workloads, requiring each user to hold a Visual Studio subscription.",
+      "paths": [
+        "p-az-devtest-ea",
+        "p-az-devtest-payg"
+      ]
+    },
+    {
+      "id": "windows-client-images-devtest",
+      "title": "Run Windows 10/11 Enterprise client VMs in Azure for dev/test",
+      "category": "azure",
+      "keywords": [
+        "windows client image",
+        "windows 11 enterprise vm",
+        "dev test client",
+        "visual studio subscriber",
+        "azure marketplace client image",
+        "test desktop"
+      ],
+      "description": "Windows client (not Windows Server) images in Azure Marketplace, visible only to Visual Studio subscriber and Dev/Test offer subscriptions, for development and testing.",
+      "paths": [
+        "p-az-devtest-winclient"
+      ]
+    },
+    {
+      "id": "azure-billing-support",
+      "title": "Get billing and subscription-management support for Azure",
+      "category": "azure",
+      "keywords": [
+        "azure basic support",
+        "billing support",
+        "subscription support",
+        "quota request",
+        "free support",
+        "support plan"
+      ],
+      "description": "Billing, quota and subscription-management support, available to every Azure customer at no cost under the Basic support plan.",
+      "paths": [
+        "p-az-support-basic"
+      ]
+    },
+    {
+      "id": "azure-technical-support",
+      "title": "Get technical break-fix support for Azure",
+      "category": "azure",
+      "keywords": [
+        "azure developer support",
+        "azure standard support",
+        "break-fix",
+        "technical support",
+        "sev a",
+        "24x7 support",
+        "support plan"
+      ],
+      "description": "Paid technical support for Azure problems where Microsoft is the likely cause, ranging from business-hours Developer support to 24x7 Standard support.",
+      "paths": [
+        "p-az-support-dev",
+        "p-az-support-standard"
+      ]
+    },
+    {
+      "id": "azure-critical-workload-support",
+      "title": "Get fast-response support and advisory for business-critical Azure workloads",
+      "category": "azure",
+      "keywords": [
+        "professional direct",
+        "prodirect",
+        "azure support",
+        "escalation management",
+        "advisory services",
+        "delivery manager",
+        "business critical"
+      ],
+      "description": "The Professional Direct plan adds fast initial response, escalation management, service reviews and advisory guidance for production Azure workloads.",
+      "paths": [
+        "p-az-support-prodirect"
+      ]
+    },
+    {
+      "id": "azure-account-managed-support",
+      "title": "Get account-managed enterprise support across Microsoft products",
+      "category": "azure",
+      "keywords": [
+        "microsoft unified",
+        "premier support",
+        "enterprise support",
+        "customer success account manager",
+        "csam",
+        "proactive services",
+        "unified support"
+      ],
+      "description": "Microsoft Unified support gives an account-managed relationship, proactive services and the highest-severity response across Azure and other Microsoft products.",
+      "paths": [
+        "p-az-support-unified"
+      ]
+    },
+    {
+      "id": "azure-support-ticket-api",
+      "title": "Open and manage Azure support tickets programmatically",
+      "category": "azure",
+      "keywords": [
+        "azure support rest api",
+        "create support ticket api",
+        "programmatic support",
+        "support request contributor",
+        "automation",
+        "ticket api"
+      ],
+      "description": "Creating and updating Azure support tickets through the Support REST API, which requires a Professional Direct, Premier or Unified technical support plan.",
+      "paths": [
+        "p-az-support-api"
+      ]
+    },
+    {
+      "id": "windows-server-vm-ahb",
+      "title": "Apply existing Windows Server licences to Azure VMs",
+      "category": "azure",
+      "keywords": [
+        "azure hybrid benefit",
+        "windows server",
+        "byol",
+        "software assurance",
+        "windows vm discount",
+        "base compute rate",
+        "ahb"
+      ],
+      "description": "Azure Hybrid Benefit lets Windows Server Standard or Datacenter core licences with Software Assurance (or a subscription) cover the OS on Azure VMs, so you pay only the base compute rate.",
+      "paths": [
+        "p-az-wsahb",
+        "p-az-wsahb-none"
+      ]
+    },
+    {
+      "id": "sql-server-vm-ahb",
+      "title": "Apply existing SQL Server licences to a SQL Server Azure VM",
+      "category": "azure",
+      "keywords": [
+        "azure hybrid benefit sql",
+        "sql server vm",
+        "byol",
+        "software assurance",
+        "sql licensing",
+        "ahb",
+        "passive replica"
+      ],
+      "description": "Azure Hybrid Benefit for SQL Server allocates SQL Server Standard or Enterprise core licences with Software Assurance to a SQL Server on Azure VM, removing the SQL licence portion of the rate.",
+      "paths": [
+        "p-az-sqlahb"
+      ]
+    },
+    {
+      "id": "sql-server-vm-payg",
+      "title": "Run SQL Server on an Azure VM with the licence billed hourly",
+      "category": "azure",
+      "keywords": [
+        "sql server pay per usage",
+        "pay as you go sql",
+        "sql marketplace image",
+        "web standard enterprise",
+        "per-second licensing",
+        "no software assurance"
+      ],
+      "description": "A pay-as-you-go SQL Server VM image where the SQL Server licence cost (Web, Standard or Enterprise) is built into the per-second VM price, with no Software Assurance needed.",
+      "paths": [
+        "p-az-sqlpayg"
+      ]
+    },
+    {
+      "id": "sql-server-vm-free-edition",
+      "title": "Run SQL Server Developer or Express on an Azure VM at no licence cost",
+      "category": "azure",
+      "keywords": [
+        "sql server developer edition",
+        "sql express",
+        "free sql",
+        "dev test database",
+        "lightweight workload",
+        "no licence cost"
+      ],
+      "description": "SQL Server Developer edition (non-production) and Express edition (lightweight production) images that incur only the VM compute cost and no SQL Server licensing.",
+      "paths": [
+        "p-az-sqldev"
+      ]
+    },
+    {
+      "id": "sql-server-passive-replica-free",
+      "title": "Run a passive SQL Server replica on Azure for HA/DR at no licence cost",
+      "category": "azure",
+      "keywords": [
+        "sql server hadr",
+        "free passive replica",
+        "disaster recovery",
+        "always on availability group",
+        "ha dr license type",
+        "secondary replica"
+      ],
+      "description": "The HA/DR licence type for a SQL Server on Azure VM used only as a passive secondary for high availability or disaster recovery, which carries no SQL Server licence charge.",
+      "paths": [
+        "p-az-sqlhadr"
+      ]
+    },
+    {
+      "id": "linux-vm-byos",
+      "title": "Bring a RHEL or SLES subscription to Azure VMs (BYOS)",
+      "category": "azure",
+      "keywords": [
+        "azure hybrid benefit linux",
+        "rhel byos",
+        "sles byos",
+        "bring your own subscription",
+        "red hat",
+        "suse",
+        "linux licensing"
+      ],
+      "description": "Azure Hybrid Benefit for Linux switches eligible RHEL or SLES VMs to bring-your-own-subscription billing so an existing vendor subscription covers the software fee and Azure charges only infrastructure.",
+      "paths": [
+        "p-az-linux-byos"
+      ]
+    },
+    {
+      "id": "linux-vm-payg",
+      "title": "Run RHEL or SLES on Azure with the subscription billed by Azure",
+      "category": "azure",
+      "keywords": [
+        "rhel pay as you go",
+        "sles pay as you go",
+        "linux payg image",
+        "marketplace linux",
+        "software fee",
+        "azure billed subscription"
+      ],
+      "description": "Pay-as-you-go RHEL and SLES Marketplace images where the Linux vendor subscription fee is billed by Azure alongside the infrastructure cost, with no separate vendor contract.",
+      "paths": [
+        "p-az-linux-payg"
+      ]
+    },
+    {
+      "id": "centrally-managed-sql-ahb",
+      "title": "Manage SQL Server Azure Hybrid Benefit centrally across a subscription or billing account",
+      "category": "azure",
+      "keywords": [
+        "centrally managed azure hybrid benefit",
+        "cm-ahb",
+        "scope level ahb",
+        "sql license assignment",
+        "normalized cores",
+        "enterprise administrator",
+        "billing account"
+      ],
+      "description": "Assigning SQL Server core licences to a subscription or billing-account scope so Azure applies the Hybrid Benefit automatically across SQL Databases, Managed Instances, elastic pools and SQL Server VMs.",
+      "paths": [
+        "p-az-cmahb"
+      ]
+    },
+    {
+      "id": "dedicated-host-run",
+      "title": "Run VMs on a dedicated physical server in Azure",
+      "category": "azure",
+      "keywords": [
+        "azure dedicated host",
+        "isolated host",
+        "physical server",
+        "single tenant",
+        "compliance isolation",
+        "maintenance control"
+      ],
+      "description": "A physical server dedicated to one subscription for hardware isolation, maintenance control and the ability to bring Windows and SQL Server licences at host level.",
+      "paths": [
+        "p-az-dh"
+      ]
+    },
+    {
+      "id": "dedicated-host-unlimited-virt",
+      "title": "License Windows or SQL Server on a dedicated host with unlimited virtualisation",
+      "category": "azure",
+      "keywords": [
+        "unlimited virtualization",
+        "dedicated host licensing",
+        "windows server datacenter",
+        "sql server enterprise",
+        "software assurance",
+        "host level licence",
+        "1:2 ratio"
+      ],
+      "description": "Licensing every physical core of an Azure Dedicated Host with Windows Server Datacenter or SQL Server Enterprise plus Software Assurance, which allows running as many VMs as the hardware supports.",
+      "paths": [
+        "p-az-dh-uv"
+      ]
+    },
+    {
+      "id": "avs-run-vmware",
+      "title": "Run VMware vSphere workloads on Azure",
+      "category": "azure",
+      "keywords": [
+        "azure vmware solution",
+        "avs",
+        "vsphere",
+        "vsan",
+        "nsx",
+        "hcx",
+        "migrate vmware",
+        "bare metal hosts"
+      ],
+      "description": "Azure VMware Solution runs a Microsoft-managed VMware private cloud on dedicated Azure hosts, billed by host, for migrating or extending on-premises vSphere estates.",
+      "paths": [
+        "p-az-avs"
+      ]
+    },
+    {
+      "id": "avs-license-guest-software",
+      "title": "License Windows Server or SQL Server running inside Azure VMware Solution",
+      "category": "azure",
+      "keywords": [
+        "avs licensing",
+        "azure hybrid benefit vmware",
+        "unlimited virtualization avs",
+        "sql server enterprise avs",
+        "windows server datacenter",
+        "dedicated hosted cloud",
+        "placement policy"
+      ],
+      "description": "Covering the guest operating system and SQL Server inside an Azure VMware Solution private cloud, using Azure Hybrid Benefit with Software Assurance for unlimited virtualisation, or per-VM licensing.",
+      "paths": [
+        "p-az-avs-lic",
+        "p-az-avs-lic-nosa"
+      ]
+    },
+    {
+      "id": "arc-manage-hybrid-servers",
+      "title": "Manage on-premises and other-cloud servers from Azure",
+      "category": "azure",
+      "keywords": [
+        "azure arc",
+        "arc-enabled servers",
+        "hybrid management",
+        "connected machine agent",
+        "multicloud",
+        "azure resource graph",
+        "governance"
+      ],
+      "description": "Azure Arc projects non-Azure servers into Azure for tags, RBAC, policy and inventory. The control plane is free; Azure services consumed through Arc are billed separately.",
+      "paths": [
+        "p-az-arc-servers"
+      ]
+    },
+    {
+      "id": "arc-server-management-sa-benefit",
+      "title": "Get Azure server-management services at no extra cost with Windows Server Software Assurance",
+      "category": "azure",
+      "keywords": [
+        "windows server management enabled by azure arc",
+        "software assurance benefit",
+        "attestation",
+        "azure update manager free",
+        "change tracking",
+        "machine configuration",
+        "windows admin center"
+      ],
+      "description": "Attesting Software Assurance on Arc-connected Windows Server machines unlocks Azure Update Manager, Change Tracking and Inventory, Machine Configuration, Windows Admin Center, Remote Support and more at no extra cost.",
+      "paths": [
+        "p-az-arc-wsmgmt"
+      ]
+    },
+    {
+      "id": "windows-server-subscription-arc",
+      "title": "License Windows Server as a pay-as-you-go subscription via Azure Arc",
+      "category": "azure",
+      "keywords": [
+        "windows server pay-as-you-go",
+        "arc licensing",
+        "windows server 2025",
+        "subscription licensing",
+        "per core per hour",
+        "no product key",
+        "keyless activation"
+      ],
+      "description": "Windows Server pay-as-you-go enabled by Azure Arc bills the Windows Server 2025+ OS licence per core per hour through Azure, as an alternative to buying perpetual licences.",
+      "paths": [
+        "p-az-ws-payg-arc"
+      ]
+    },
+    {
+      "id": "arc-update-manager",
+      "title": "Patch on-premises and multicloud servers with Azure Update Manager",
+      "category": "azure",
+      "keywords": [
+        "azure update manager",
+        "patch management",
+        "update compliance",
+        "arc-enabled servers",
+        "maintenance window",
+        "hybrid patching",
+        "os updates"
+      ],
+      "description": "Centralised update assessment and deployment for Windows and Linux servers across Azure, on-premises and other clouds, delivered through Azure Arc.",
+      "paths": [
+        "p-az-arc-aum-sa",
+        "p-az-arc-aum-payg"
+      ]
+    },
+    {
+      "id": "arc-sql-manage",
+      "title": "Inventory and govern on-premises SQL Server instances from Azure",
+      "category": "azure",
+      "keywords": [
+        "sql server enabled by azure arc",
+        "sql inventory",
+        "arc sql",
+        "best practices assessment",
+        "sql monitoring",
+        "purview access policies",
+        "hybrid sql"
+      ],
+      "description": "Connecting SQL Server instances to Azure Arc for a central inventory, monitoring, best-practices assessment and Purview integration; connection is subject to outsourcing rules.",
+      "paths": [
+        "p-az-arc-sql"
+      ]
+    },
+    {
+      "id": "arc-sql-payg",
+      "title": "Pay for on-premises SQL Server by the hour via Azure Arc",
+      "category": "azure",
+      "keywords": [
+        "sql server pay as you go arc",
+        "hourly sql licensing",
+        "variable demand",
+        "no licence purchase",
+        "arc sql billing",
+        "scale down"
+      ],
+      "description": "The pay-as-you-go billing model for SQL Server enabled by Azure Arc, billed hourly through Azure as an alternative to buying licences, useful for variable or short-lived SQL workloads.",
+      "paths": [
+        "p-az-arc-sql-payg"
+      ]
+    },
+    {
+      "id": "arc-sql-unlimited-virt",
+      "title": "License on-premises SQL Server by physical cores with unlimited virtualisation",
+      "category": "azure",
+      "keywords": [
+        "sql server unlimited virtualization",
+        "physical core licence",
+        "sqlserverlicense resource",
+        "arc sql",
+        "16 core minimum",
+        "enterprise edition",
+        "byol"
+      ],
+      "description": "Creating a SQL Server licence resource in Azure Arc that covers physical hosts (minimum 16 cores) so every Arc-connected SQL Server VM on them is licensed, billed pay-as-you-go or as bring-your-own-licence with Software Assurance.",
+      "paths": [
+        "p-az-arc-sql-uv"
+      ]
+    },
+    {
+      "id": "arc-kubernetes-govern",
+      "title": "Connect and govern non-Azure Kubernetes clusters from Azure",
+      "category": "azure",
+      "keywords": [
+        "azure arc-enabled kubernetes",
+        "gitops",
+        "cluster governance",
+        "azure policy for kubernetes",
+        "hybrid kubernetes",
+        "multicloud k8s",
+        "cluster inventory"
+      ],
+      "description": "Azure Arc-enabled Kubernetes brings on-premises and other-cloud clusters into Azure for inventory, GitOps configuration, Azure Policy and Defender; add-on services are billed per their own rates.",
+      "paths": [
+        "p-az-arc-k8s"
+      ]
+    },
+    {
+      "id": "arc-data-services",
+      "title": "Run Azure data services on your own infrastructure",
+      "category": "azure",
+      "keywords": [
+        "azure arc-enabled data services",
+        "sql managed instance arc",
+        "postgresql arc",
+        "on-premises paas",
+        "data controller",
+        "consumption billing",
+        "hybrid database"
+      ],
+      "description": "Azure Arc-enabled data services run Azure SQL Managed Instance and PostgreSQL on customer-controlled Kubernetes, billed through Azure on a consumption basis.",
+      "paths": [
+        "p-az-arc-data"
+      ]
+    },
+    {
+      "id": "esu-windows-arc",
+      "title": "Keep an out-of-support Windows Server patched through Azure Arc",
+      "category": "azure",
+      "keywords": [
+        "extended security updates",
+        "esu windows server",
+        "windows server 2012 2016 end of support",
+        "azure arc esu",
+        "pay as you go esu",
+        "keyless",
+        "security updates"
+      ],
+      "description": "Enrolling an Arc-connected Windows Server 2012/2012 R2 or 2016 machine for Extended Security Updates after end of support, billed monthly pay-as-you-go with no ESU keys.",
+      "paths": [
+        "p-az-esu-ws-arc"
+      ]
+    },
+    {
+      "id": "esu-windows-azure-vm-free",
+      "title": "Get free Extended Security Updates for Windows Server on Azure VMs",
+      "category": "azure",
+      "keywords": [
+        "free esu",
+        "windows server 2012 azure vm",
+        "extended security updates included",
+        "migrate to azure",
+        "end of support",
+        "azure hosted"
+      ],
+      "description": "Windows Server 2012 and 2012 R2 workloads hosted on Azure virtual machines receive Extended Security Updates free of charge and enabled by default.",
+      "paths": [
+        "p-az-esu-ws-vm"
+      ]
+    },
+    {
+      "id": "esu-sql-arc",
+      "title": "Keep an out-of-support SQL Server patched through Azure Arc",
+      "category": "azure",
+      "keywords": [
+        "sql server extended security updates",
+        "esu sql arc",
+        "sql server 2014 2016 end of support",
+        "hourly esu meter",
+        "cancel anytime",
+        "security updates",
+        "software assurance"
+      ],
+      "description": "Subscribing an Arc-connected SQL Server instance to Extended Security Updates after end of support, billed on an hourly pay-as-you-go meter through Azure and cancellable at any time.",
+      "paths": [
+        "p-az-esu-sql-arc"
+      ]
+    },
+    {
+      "id": "esu-sql-arc-unlimited-virt",
+      "title": "Subscribe to SQL Server ESUs by physical cores with unlimited virtualisation",
+      "category": "azure",
+      "keywords": [
+        "sql server esu unlimited virtualization",
+        "physical core esu licence",
+        "sqlserveresulicenses",
+        "16 core minimum",
+        "enterprise meter",
+        "arc esu",
+        "host licensing"
+      ],
+      "description": "Creating a SQL Server ESU licence resource in Azure Arc covering physical hosts (minimum 16 cores, Enterprise meter) so all SQL Server VMs on them get Extended Security Updates.",
+      "paths": [
+        "p-az-esu-sql-uv"
+      ]
+    },
+    {
+      "id": "esu-sql-free-on-azure",
+      "title": "Get free SQL Server ESUs by migrating to an Azure VM",
+      "category": "azure",
+      "keywords": [
+        "free sql esu",
+        "sql server 2014 migrate azure vm",
+        "extended security updates included",
+        "lift and shift",
+        "azure sql",
+        "end of support"
+      ],
+      "description": "Migrating an out-of-support SQL Server as-is to an Azure VM: SQL Server 2014 gets free Extended Security Updates for the full ESU period, and moving to Azure SQL stops ESU charges while keeping access to updates.",
+      "paths": [
+        "p-az-esu-sql-vm"
+      ]
+    },
+    {
+      "id": "azure-local-run",
+      "title": "Run Microsoft-managed hybrid infrastructure on-premises",
+      "category": "azure",
+      "keywords": [
+        "azure local",
+        "azure stack hci",
+        "hyperconverged",
+        "per core billing",
+        "edge infrastructure",
+        "on-premises azure",
+        "physical cores"
+      ],
+      "description": "Azure Local is billed as an Azure service at a flat rate per physical processor core in the on-premises cluster, with no traditional on-premises software licence.",
+      "paths": [
+        "p-az-local"
+      ]
+    },
+    {
+      "id": "azure-local-ahb",
+      "title": "Waive Azure Local host fees with Windows Server Datacenter Software Assurance",
+      "category": "azure",
+      "keywords": [
+        "azure hybrid benefit azure local",
+        "waive host fee",
+        "windows server datacenter",
+        "software assurance",
+        "unlimited virtualization",
+        "guest subscription",
+        "hci ahb"
+      ],
+      "description": "Exchanging Windows Server Datacenter core licences with active Software Assurance for Azure Local physical cores waives the Azure Local host service fee and the Windows Server guest subscription.",
+      "paths": [
+        "p-az-local-ahb"
+      ]
+    },
+    {
+      "id": "azure-local-vm-os-licensing",
+      "title": "License Windows Server VMs running on Azure Local",
+      "category": "azure",
+      "keywords": [
+        "azure local guest licensing",
+        "windows server vm on hci",
+        "guest os licence",
+        "windows server subscription add-on",
+        "azure hybrid benefit",
+        "avd on azure local"
+      ],
+      "description": "Guest Windows Server VMs on Azure Local need OS licensing: either the Azure-billed Windows Server subscription add-on, or Azure Hybrid Benefit with Software Assurance. Windows client VMs need per-user licensing instead.",
+      "paths": [
+        "p-az-local-vm-sub",
+        "p-az-local-vm-ahb"
+      ]
+    },
+    {
+      "id": "customer-identity-ciam",
+      "title": "Add sign-in for customers or consumers to an app",
+      "category": "azure",
+      "keywords": [
+        "entra external id",
+        "ciam",
+        "customer identity",
+        "azure ad b2c successor",
+        "monthly active users",
+        "mau",
+        "consumer sign-in",
+        "social login"
+      ],
+      "description": "Microsoft Entra External ID provides sign-in and sign-up for customer-facing apps, billed per monthly active user with the first 50,000 MAU free; it replaces Azure AD B2C for new tenants.",
+      "paths": [
+        "p-az-extid"
+      ]
+    },
+    {
+      "id": "external-guest-access-billing",
+      "title": "Let external partners and guests use apps, billed by active users",
+      "category": "azure",
+      "keywords": [
+        "b2b collaboration",
+        "guest users",
+        "entra external id billing",
+        "mau",
+        "external identities",
+        "partner access",
+        "usertype guest"
+      ],
+      "description": "Microsoft Entra B2B guest access is billed under the External ID monthly-active-user model (guests with UserType Guest), provided the tenant is linked to an Azure subscription.",
+      "paths": [
+        "p-az-extid-b2b"
+      ]
+    },
+    {
+      "id": "azure-model-tokens-payg",
+      "title": "Call Azure OpenAI or Foundry models and pay per token",
+      "category": "azure",
+      "keywords": [
+        "azure openai",
+        "azure ai foundry",
+        "pay as you go tokens",
+        "standard deployment",
+        "gpt",
+        "model inference",
+        "consumption billing"
+      ],
+      "description": "Standard (pay-as-you-go) model deployments in Azure AI Foundry, billed per input and output token, suited to variable or lower-volume inference workloads.",
+      "paths": [
+        "p-az-aoai-payg"
+      ]
+    },
+    {
+      "id": "azure-model-provisioned-throughput",
+      "title": "Reserve dedicated throughput for Azure OpenAI models",
+      "category": "azure",
+      "keywords": [
+        "provisioned throughput units",
+        "ptu",
+        "azure openai provisioned",
+        "dedicated capacity",
+        "predictable latency",
+        "hourly ptu billing",
+        "quota"
+      ],
+      "description": "Provisioned Throughput deployments allocate a fixed number of PTUs for predictable latency and throughput, billed hourly on deployed PTUs regardless of utilisation.",
+      "paths": [
+        "p-az-aoai-ptu"
+      ]
+    },
+    {
+      "id": "azure-ptu-reservation-discount",
+      "title": "Discount provisioned AI throughput with a one-month or one-year commitment",
+      "category": "azure",
+      "keywords": [
+        "ptu reservation",
+        "azure openai reservation",
+        "provisioned throughput discount",
+        "term discount",
+        "azure reservation",
+        "committed ptu",
+        "ai cost savings"
+      ],
+      "description": "An Azure Reservation for Azure AI Foundry Provisioned Throughput commits to a fixed PTU count for one month or one year at a discount over the hourly rate; excess PTUs bill hourly.",
+      "paths": [
+        "p-az-aoai-ptu-resv"
+      ]
+    },
+    {
+      "id": "azure-ai-agent-hosting",
+      "title": "Build and host AI agents on Azure",
+      "category": "azure",
+      "keywords": [
+        "azure ai foundry agent service",
+        "agent hosting",
+        "code interpreter",
+        "file search",
+        "model inference billing",
+        "tools",
+        "foundry agents"
+      ],
+      "description": "Foundry Agent Service hosts agents with no separate service fee: billing is the underlying model inference, plus Code Interpreter per session and File Search on vector storage.",
+      "paths": [
+        "p-az-agent-svc"
+      ]
+    },
+    {
+      "id": "azure-flagship-model-choice",
+      "title": "Use non-OpenAI flagship models (Llama, Grok, DeepSeek) on Azure",
+      "category": "azure",
+      "keywords": [
+        "azure ai foundry models",
+        "models sold directly by azure",
+        "llama",
+        "grok",
+        "deepseek",
+        "provisioned throughput",
+        "model portfolio"
+      ],
+      "description": "Azure AI Foundry offers flagship model families beyond Azure OpenAI, usable with the same pay-as-you-go token billing or shared PTU quota and reservations.",
+      "paths": [
+        "p-az-model-choice"
+      ]
+    },
+    {
+      "id": "fabric-capacity-azure-billing",
+      "title": "Provision Microsoft Fabric capacity billed through Azure",
+      "category": "azure",
+      "keywords": [
+        "microsoft fabric capacity",
+        "f sku",
+        "capacity units",
+        "pay as you go fabric",
+        "pause capacity",
+        "azure billed",
+        "fabric compute"
+      ],
+      "description": "A Fabric F-SKU capacity (F2-F2048) billed on Capacity Units through an Azure subscription, powering all Fabric workloads; it can be paused to stop billing.",
+      "paths": [
+        "p-az-fabric-cap"
+      ]
+    },
+    {
+      "id": "fabric-capacity-reservation",
+      "title": "Reduce Microsoft Fabric capacity cost with a reservation",
+      "category": "azure",
+      "keywords": [
+        "fabric capacity reservation",
+        "reserved fabric",
+        "yearly commitment",
+        "fabric discount",
+        "f sku reservation",
+        "power bi report server key",
+        "cost savings"
+      ],
+      "description": "A one-year Fabric capacity reservation lowers the rate versus pay-as-you-go and also carries the Power BI Report Server licence key.",
+      "paths": [
+        "p-az-fabric-resv"
+      ]
+    },
+    {
+      "id": "powerbi-embedded-app",
+      "title": "Embed Power BI in a customer-facing application",
+      "category": "azure",
+      "keywords": [
+        "power bi embedded",
+        "a sku",
+        "app owns data",
+        "embed analytics",
+        "unlicensed users",
+        "azure billed capacity",
+        "pause"
+      ],
+      "description": "Power BI Embedded A-SKU capacity, billed hourly through Azure, for embedding reports in applications where external end users are not individually licensed.",
+      "paths": [
+        "p-az-pbi-embed"
+      ]
+    },
+    {
+      "id": "powerbi-report-server-run",
+      "title": "Run Power BI Report Server on-premises",
+      "category": "azure",
+      "keywords": [
+        "power bi report server",
+        "on-premises reporting",
+        "fabric capacity reservation",
+        "sql server enterprise software assurance",
+        "pbirs licence key",
+        "paginated reports"
+      ],
+      "description": "Power BI Report Server is licensed either through a Fabric capacity reservation or through SQL Server Enterprise edition with Software Assurance.",
+      "paths": [
+        "p-az-pbirs-fabric",
+        "p-az-pbirs-sql"
+      ]
+    },
+    {
+      "id": "pause-analytics-capacity",
+      "title": "Pause Fabric or Power BI Embedded capacity when not in use",
+      "category": "azure",
+      "keywords": [
+        "pause fabric capacity",
+        "pause power bi embedded",
+        "stop billing",
+        "azure capacity",
+        "cost control",
+        "scale down",
+        "resume capacity"
+      ],
+      "description": "Azure-billed Fabric F SKUs and Power BI Embedded A SKUs can be paused so no compute charges accrue while the capacity is stopped.",
+      "paths": [
+        "p-az-cap-pause"
+      ]
+    },
+    {
+      "id": "azure-devops-team",
+      "title": "Give a team work tracking, repos and pipelines",
+      "category": "azure",
+      "keywords": [
+        "azure devops",
+        "azure boards",
+        "azure repos",
+        "azure pipelines",
+        "basic access",
+        "first five users free",
+        "devops organisation"
+      ],
+      "description": "Azure DevOps Basic access covers Boards, Repos, Pipelines and Artifacts; the first five users are free and further Basic users bill to the linked Azure subscription.",
+      "paths": [
+        "p-az-ado-basic"
+      ]
+    },
+    {
+      "id": "azure-devops-test-plans",
+      "title": "Add planned and exploratory test management",
+      "category": "azure",
+      "keywords": [
+        "azure test plans",
+        "basic plus test plans",
+        "manual testing",
+        "exploratory testing",
+        "test case management",
+        "stakeholder feedback",
+        "devops add-on"
+      ],
+      "description": "The Basic + Test Plans access level adds Azure Test Plans for planned manual and exploratory testing, billed per user to the linked Azure subscription.",
+      "paths": [
+        "p-az-ado-tp"
+      ]
+    },
+    {
+      "id": "azure-pipelines-parallelism",
+      "title": "Run more concurrent CI/CD pipeline jobs",
+      "category": "azure",
+      "keywords": [
+        "azure pipelines parallel jobs",
+        "concurrent jobs",
+        "microsoft-hosted agent",
+        "self-hosted agent",
+        "buy parallelism",
+        "ci cd capacity",
+        "build minutes"
+      ],
+      "description": "Additional Microsoft-hosted or self-hosted parallel jobs beyond the free tier, billed as a fixed monthly amount per job; Visual Studio Enterprise subscribers each grant one extra self-hosted job.",
+      "paths": [
+        "p-az-ado-parallel",
+        "p-az-ado-vs-parallel"
+      ]
+    },
+    {
+      "id": "ghazdo-repo-security",
+      "title": "Secret scanning, code scanning and dependency review for Azure Repos",
+      "category": "azure",
+      "keywords": [
+        "github advanced security for azure devops",
+        "ghazdo",
+        "secret protection",
+        "code security",
+        "dependency scanning",
+        "active committer",
+        "push protection"
+      ],
+      "description": "GitHub Advanced Security for Azure DevOps, billed per active committer to Advanced Security-enabled Azure Repos, deduplicated across the Azure subscription.",
+      "paths": [
+        "p-az-ghazdo"
+      ]
+    },
+    {
+      "id": "github-enterprise-azure",
+      "title": "Buy GitHub Enterprise through an Azure subscription",
+      "category": "azure",
+      "keywords": [
+        "github enterprise",
+        "seat licence",
+        "azure billed github",
+        "developer platform",
+        "github enterprise cloud",
+        "per active user"
+      ],
+      "description": "GitHub Enterprise seats billed monthly per active user through an Azure subscription, with Copilot and Advanced Security priced separately.",
+      "paths": [
+        "p-az-ghe"
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "id": "p-az-resv-vm",
+      "capabilityId": "azure-commitment-discount-vm",
+      "licenses": [
+        "azure-plan",
+        "azure-reservation"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "commitment-pattern",
+          "in": [
+            "stable"
+          ]
+        }
+      ],
+      "rationale": "Azure Reservations give the deepest term discount on the compute meter when a workload runs continuously with a known instance type and region. The reservation is a billing discount only and does not guarantee capacity.",
+      "note": "For Windows or SQL VMs, combine with Azure Hybrid Benefit to also remove the licence portion. Reservations cover compute only, not software, storage or networking.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/prepay-reserved-vm-instances",
+        "https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations"
+      ]
+    },
+    {
+      "id": "p-az-savings-vm",
+      "capabilityId": "azure-commitment-discount-vm",
+      "licenses": [
+        "azure-plan",
+        "azure-savings-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "commitment-pattern",
+          "in": [
+            "dynamic"
+          ]
+        }
+      ],
+      "rationale": "Azure savings plan for compute commits to a fixed hourly spend and applies the discount automatically across VM families, regions and other compute services, which fits workloads that change shape over time.",
+      "note": "Requires an Enterprise Agreement, Microsoft Customer Agreement or Microsoft Partner Agreement. Does not cover software, networking or storage.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-overview",
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/decide-between-savings-plan-reservation"
+      ]
+    },
+    {
+      "id": "p-az-savings-flex",
+      "capabilityId": "azure-savings-plan-flexible",
+      "licenses": [
+        "azure-plan",
+        "azure-savings-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "The savings plan discount is applied each hour to the eligible compute usage with the greatest discount until the hourly commitment is exhausted, so it follows dynamic workloads across regions and compute services without being tied to an instance family.",
+      "note": "Only resources under an EA, MCA or MPA receive the discount. Each hour's benefit is use-it-or-lose-it.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/discount-application",
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-overview"
+      ]
+    },
+    {
+      "id": "p-az-resv-specific",
+      "capabilityId": "azure-reservation-specific",
+      "licenses": [
+        "azure-plan",
+        "azure-reservation"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "A reserved instance commits to a specific compute type in a specific region for one or three years and, when fully utilised, provides the greatest saving. It is a billing discount and does not pre-allocate infrastructure.",
+      "note": "Pair with On-demand Capacity Reservation if capacity assurance is also needed. Reservations bought after 1 February 2027 lose exchange rights where the service is covered by a savings plan.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/decide-between-savings-plan-reservation",
+        "https://learn.microsoft.com/azure/virtual-machines/prepay-reserved-vm-instances"
+      ]
+    },
+    {
+      "id": "p-az-resv-sql",
+      "capabilityId": "reserve-azure-sql-compute",
+      "licenses": [
+        "azure-plan",
+        "azure-reservation"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Reservations for Azure SQL Database and SQL Managed Instance discount the vCore compute cost for a one or three year commitment; matching primary and billable secondary replicas get the benefit automatically without failover.",
+      "note": "Covers vCore-based deployments only, not DTU-based databases, and not software, storage or networking. Database savings plans are an alternative for variable usage.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/database/reservations-discount-overview"
+      ]
+    },
+    {
+      "id": "p-az-spot",
+      "capabilityId": "spot-vm-interruptible",
+      "licenses": [
+        "azure-plan",
+        "azure-spot"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Spot Virtual Machines run on unused capacity at a large discount and can be evicted with roughly 30 seconds' notice when Azure needs the capacity or the price passes your max price, so they suit fault-tolerant batch and dev/test work.",
+      "note": "No SLA. Choose capacity-only eviction (price capped at pay-as-you-go) or price-or-capacity eviction, and Deallocate or Delete eviction policy.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/spot-vms",
+        "https://learn.microsoft.com/azure/architecture/guide/spot/spot-eviction"
+      ]
+    },
+    {
+      "id": "p-az-macc",
+      "capabilityId": "macc-marketplace-drawdown",
+      "licenses": [
+        "azure-plan",
+        "macc"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Eligible first-party Azure usage decrements a Microsoft Azure Consumption Commitment automatically, and Azure-benefit-eligible Marketplace or partner offers count 100% of the pretax amount when purchased through the Azure portal with a subscription tied to the agreement.",
+      "note": "Purchases made directly on Microsoft Marketplace by credit card, and anything covered by Azure prepayment or Azure credits, do not decrement the MACC. Licences used on-premises or in hybrid are excluded.",
+      "sources": [
+        "https://learn.microsoft.com/marketplace/azure-consumption-commitment-benefit",
+        "https://learn.microsoft.com/azure/cost-management-billing/benefits/macc/track-consumption-commitment"
+      ]
+    },
+    {
+      "id": "p-az-agr-ea",
+      "capabilityId": "azure-buying-agreement",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "ea"
+          ]
+        }
+      ],
+      "rationale": "An Enterprise Agreement suits large organisations and is required for the Enterprise Dev/Test offer and (with the Enterprise Administrator role) for centrally managed Azure Hybrid Benefit; reservations and savings plans are also available.",
+      "note": "Microsoft is transitioning EA customers to the Microsoft Customer Agreement; migrating is a billing change only, not a resource or access change.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/microsoft-customer-agreement/onboard-microsoft-customer-agreement"
+      ]
+    },
+    {
+      "id": "p-az-agr-mca",
+      "capabilityId": "azure-buying-agreement",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "mca"
+          ]
+        }
+      ],
+      "rationale": "The Microsoft Customer Agreement is a short digital agreement that does not expire, gives pay-as-you-go billing for most services, and supports reservations, savings plans and centrally managed Azure Hybrid Benefit (with billing-account or billing-profile roles).",
+      "note": "Can be signed through a Microsoft representative or directly on the Azure website in supported regions.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/microsoft-customer-agreement/onboard-microsoft-customer-agreement",
+        "https://learn.microsoft.com/azure/cost-management-billing/manage/view-all-accounts"
+      ]
+    },
+    {
+      "id": "p-az-agr-csp",
+      "capabilityId": "azure-buying-agreement",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "csp"
+          ]
+        }
+      ],
+      "rationale": "A Cloud Solution Provider partner sells Azure under an Azure plan on the Microsoft Customer Agreement and manages billing. Savings plans and reservations are available, but centrally managed Azure Hybrid Benefit is not offered to CSP-managed customers.",
+      "note": "The customer must sign the Microsoft Customer Agreement and the partner must have a reseller relationship in Partner Center.",
+      "sources": [
+        "https://learn.microsoft.com/partner-center/customers/azure-plan-lp",
+        "https://learn.microsoft.com/azure/cost-management-billing/scope-level/overview-azure-hybrid-benefit-scope"
+      ]
+    },
+    {
+      "id": "p-az-agr-payg",
+      "capabilityId": "azure-buying-agreement",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "payg",
+            "unsure"
+          ]
+        }
+      ],
+      "rationale": "Signing up on the Azure website creates a Microsoft Online Subscription Program (pay-as-you-go) account, billed by credit card. Reservations and savings plans can still be purchased, but savings plan discounts only apply under EA, MCA or MPA.",
+      "note": "Pay-as-you-go accounts in supported regions may be placed on a Microsoft Customer Agreement automatically, where the plan is simply called Microsoft Azure Plan.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/understand/pay-bill",
+        "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/discount-application"
+      ]
+    },
+    {
+      "id": "p-az-vs-pro",
+      "capabilityId": "vs-subscription-benefits",
+      "licenses": [
+        "vs-pro"
+      ],
+      "conditions": [
+        {
+          "clarifier": "vs-subscription",
+          "in": [
+            "pro"
+          ]
+        }
+      ],
+      "rationale": "Visual Studio Professional gives one developer the Professional IDE, a monthly individual Azure dev/test credit, discounted Azure Dev/Test rates, the Azure DevOps Basic plan and software downloads.",
+      "note": "The monthly Azure credit is for individual dev/test only and cannot be pooled or used for production.",
+      "sources": [
+        "https://learn.microsoft.com/visualstudio/subscriptions/what-are-subscriptions",
+        "https://learn.microsoft.com/visualstudio/subscriptions/vs-azure-eligibility"
+      ]
+    },
+    {
+      "id": "p-az-vs-ent",
+      "capabilityId": "vs-subscription-benefits",
+      "licenses": [
+        "vs-enterprise"
+      ],
+      "conditions": [
+        {
+          "clarifier": "vs-subscription",
+          "in": [
+            "enterprise"
+          ]
+        }
+      ],
+      "rationale": "Visual Studio Enterprise adds the Enterprise IDE, the largest monthly Azure dev/test credit, Azure DevOps Basic + Test Plans, a Microsoft 365 E5 developer subscription and one extra self-hosted Azure Pipelines parallel job per subscriber.",
+      "note": "Enterprise subscribers also enable per-subscriber self-hosted pipeline parallelism in any Azure DevOps organisation they belong to.",
+      "sources": [
+        "https://learn.microsoft.com/visualstudio/subscriptions/what-are-subscriptions",
+        "https://learn.microsoft.com/azure/devops/pipelines/licensing/concurrent-jobs"
+      ]
+    },
+    {
+      "id": "p-az-vs-credit",
+      "capabilityId": "personal-azure-dev-credit",
+      "licenses": [
+        "vs-pro"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Most Visual Studio subscriptions include a monthly individual Azure credit that activates a dedicated Azure credit subscription with no payment method required; usage stops when the credit is exhausted for the month.",
+      "note": "For individual dev/test only, no financially backed SLA. Microsoft can suspend instances running continuously beyond 120 hours or used for production. Visual Studio Enterprise carries a larger credit.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devtest/offer/quickstart-individual-credit",
+        "https://learn.microsoft.com/visualstudio/subscriptions/faq/subscriber/azure/"
+      ]
+    },
+    {
+      "id": "p-az-devtest-ea",
+      "capabilityId": "team-devtest-discounted",
+      "licenses": [
+        "azure-devtest",
+        "vs-pro"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "ea"
+          ]
+        }
+      ],
+      "rationale": "The Enterprise Dev/Test offer (0148P) gives a team discounted Azure rates for non-production workloads with enterprise-wide billing; it requires an Enterprise Agreement and every user of the subscription to hold an active Visual Studio subscription.",
+      "note": "Not available for Azure Government. An EA admin must enable Dev/Test on the enrolment account.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devtest/offer/overview-what-is-devtest-offer-visual-studio",
+        "https://learn.microsoft.com/azure/cost-management-billing/manage/direct-ea-administration"
+      ]
+    },
+    {
+      "id": "p-az-devtest-payg",
+      "capabilityId": "team-devtest-discounted",
+      "licenses": [
+        "azure-devtest",
+        "vs-pro"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "mca",
+            "csp",
+            "payg",
+            "unsure"
+          ]
+        }
+      ],
+      "rationale": "The Pay-As-You-Go Dev/Test offer (0023P) gives a team discounted non-production rates without an Enterprise Agreement, allows multiple users per subscription, and requires each user to hold a Visual Studio subscription.",
+      "note": "Useful for isolated projects or identities that should be billed separately from an organisation's main agreement.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devtest/offer/how-to-manage-reliability-performance"
+      ]
+    },
+    {
+      "id": "p-az-devtest-winclient",
+      "capabilityId": "windows-client-images-devtest",
+      "licenses": [
+        "azure-devtest",
+        "vs-pro"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Windows 10 and Windows 11 Enterprise client images in Azure Marketplace are only visible to Visual Studio subscriber offers and the Pay-As-You-Go and Enterprise Dev/Test offers, and are for development and testing.",
+      "note": "Individual Visual Studio credit subscriptions and the two organisation Dev/Test offers all qualify; standard pay-as-you-go subscriptions do not see the client images.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/windows/client-images"
+      ]
+    },
+    {
+      "id": "p-az-support-basic",
+      "capabilityId": "azure-billing-support",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Billing, quota and subscription-management support is included for every Azure customer under the Basic support plan at no cost; only technical break-fix support requires a paid plan.",
+      "note": "Basic cannot open technical support tickets and cannot be used for Azure Local support requests.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request",
+        "https://learn.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket"
+      ]
+    },
+    {
+      "id": "p-az-support-dev",
+      "capabilityId": "azure-technical-support",
+      "licenses": [
+        "azure-support-dev"
+      ],
+      "conditions": [],
+      "rationale": "The Developer plan is the entry paid plan that adds technical break-fix support during business hours, on top of the billing support all customers get.",
+      "note": "Trial and non-production guidance only; no Sev A, no architecture or operational advisory.",
+      "sources": [
+        "https://learn.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket"
+      ]
+    },
+    {
+      "id": "p-az-support-standard",
+      "capabilityId": "azure-technical-support",
+      "licenses": [
+        "azure-support-standard"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "The Standard plan provides 24x7 technical break-fix support with faster response than Developer and is the minimum plan for a Sev A ticket and for Azure Local support requests.",
+      "note": "Recommended baseline for any production Azure workload.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-local/manage/get-support",
+        "https://learn.microsoft.com/azure/sre-agent/create-support-request"
+      ]
+    },
+    {
+      "id": "p-az-support-prodirect",
+      "capabilityId": "azure-critical-workload-support",
+      "licenses": [
+        "azure-support-prodirect"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Professional Direct adds the fastest response for critical cases, escalation management, ProDirect delivery managers, service reviews and advisory and developer-mentoring services for business-critical workloads.",
+      "note": "Purchasable online or through an Enterprise Agreement for eligible Azure subscriptions.",
+      "sources": [
+        "https://learn.microsoft.com/azure/sre-agent/create-support-request",
+        "https://learn.microsoft.com/rest/api/support/"
+      ]
+    },
+    {
+      "id": "p-az-support-unified",
+      "capabilityId": "azure-account-managed-support",
+      "licenses": [
+        "azure-support-unified"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Microsoft Unified support (formerly Premier) provides an account-managed relationship with a customer success account manager, proactive services and the highest-severity response across Azure and other Microsoft products.",
+      "note": "Also satisfies the technical support plan requirement for the Azure Support REST API.",
+      "sources": [
+        "https://learn.microsoft.com/rest/api/support/",
+        "https://learn.microsoft.com/azure/china/concepts-support"
+      ]
+    },
+    {
+      "id": "p-az-support-api",
+      "capabilityId": "azure-support-ticket-api",
+      "licenses": [
+        "azure-support-prodirect"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Creating and updating support tickets and adding communications through the Azure Support REST API requires a Professional Direct, Premier or Unified technical support plan plus the Support Request Contributor role.",
+      "note": "Listing tickets needs only the Reader role. Billing and quota tickets do not need a paid plan.",
+      "sources": [
+        "https://learn.microsoft.com/rest/api/support/"
+      ]
+    },
+    {
+      "id": "p-az-wsahb",
+      "capabilityId": "windows-server-vm-ahb",
+      "licenses": [
+        "azure-plan",
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Azure Hybrid Benefit covers the Windows Server licence on Azure VMs when you hold Windows Server Standard or Datacenter core licences with active Software Assurance or a subscription, so the VM is charged at the base (Linux-equivalent) compute rate.",
+      "note": "Minimum 8 core licences per VM (or the core count if larger); one processor licence equals 16 core licences. Datacenter allows concurrent on-premises and Azure use; Standard allows a one-time 180-day migration overlap.",
+      "sources": [
+        "https://learn.microsoft.com/windows-server/get-started/azure-hybrid-benefit",
+        "https://learn.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing"
+      ]
+    },
+    {
+      "id": "p-az-wsahb-none",
+      "capabilityId": "windows-server-vm-ahb",
+      "licenses": [
+        "azure-plan"
+      ],
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "Without Windows Server licences under Software Assurance or a subscription, run a pay-as-you-go Windows image where the OS licence cost is built into the hourly rate. Reservations or a savings plan reduce the compute portion.",
+      "note": "Windows Server pay-as-you-go enabled by Azure Arc is a separate option for on-premises machines, not Azure VMs.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing"
+      ]
+    },
+    {
+      "id": "p-az-sqlahb",
+      "capabilityId": "sql-server-vm-ahb",
+      "licenses": [
+        "azure-plan",
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Azure Hybrid Benefit for SQL Server allocates SQL Server Standard or Enterprise core licences with Software Assurance (or a subscription) to a SQL Server on Azure VM, removing the SQL licence portion; you still pay compute, storage and backup. It also grants free passive HA and DR replicas.",
+      "note": "Core-based licensing only; Server+CAL SQL Server with SA can use licence mobility but not the other Hybrid Benefit features. Set the licence type via the SQL IaaS Agent extension; switching models has no downtime.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change",
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/pricing-guidance"
+      ]
+    },
+    {
+      "id": "p-az-sqlpayg",
+      "capabilityId": "sql-server-vm-payg",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "A pay-as-you-go SQL Server Web, Standard or Enterprise Marketplace image folds the SQL licence into the per-second VM price, with no Software Assurance required; the cost depends on VM vCPU count and is the same across SQL Server versions.",
+      "note": "Recommended for temporary, periodic or unpredictable workloads. Free passive HA/DR replicas are also available on pay-as-you-go since November 2022.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/pricing-guidance",
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview"
+      ]
+    },
+    {
+      "id": "p-az-sqldev",
+      "capabilityId": "sql-server-vm-free-edition",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "SQL Server Developer edition (full features, non-production) and Express edition (lightweight production) images incur only the VM compute cost, with no SQL Server licensing charge.",
+      "note": "Developer cannot be used in production. Express is limited (small memory, storage and no enterprise HA/DR).",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/pricing-guidance",
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal"
+      ]
+    },
+    {
+      "id": "p-az-sqlhadr",
+      "capabilityId": "sql-server-passive-replica-free",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "The HA/DR licence type on a SQL Server VM used only as a passive secondary for high availability or disaster recovery carries no SQL Server licence charge; it is available with both pay-as-you-go and Azure Hybrid Benefit primaries.",
+      "note": "Set with license type DR via the SQL IaaS Agent extension. The replica must remain passive to qualify.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change",
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/pricing-guidance"
+      ]
+    },
+    {
+      "id": "p-az-linux-byos",
+      "capabilityId": "linux-vm-byos",
+      "licenses": [
+        "azure-plan",
+        "azure-hub-linux"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Hybrid Benefit for Linux switches an eligible RHEL or SLES VM to bring-your-own-subscription billing, so your Red Hat or SUSE subscription covers the software fee and Azure charges only infrastructure; conversions are bidirectional and need no redeployment.",
+      "note": "Only RHEL images published by Red Hat and SLES pay-as-you-go images qualify. For RHEL the AHB extension is installed; for SLES the licence type is set directly.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux"
+      ]
+    },
+    {
+      "id": "p-az-linux-payg",
+      "capabilityId": "linux-vm-payg",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Deploying a pay-as-you-go RHEL or SLES Marketplace image means Azure bills both the infrastructure and the Linux vendor subscription fee, with no separate contract with Red Hat or SUSE.",
+      "note": "Switch to bring-your-own-subscription later with Azure Hybrid Benefit for Linux if you acquire a vendor subscription.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux"
+      ]
+    },
+    {
+      "id": "p-az-cmahb",
+      "capabilityId": "centrally-managed-sql-ahb",
+      "licenses": [
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "azure-agreement",
+          "in": [
+            "ea",
+            "mca"
+          ]
+        }
+      ],
+      "rationale": "Centrally managed Azure Hybrid Benefit assigns SQL Server Enterprise or Standard core licences (with Software Assurance or subscription) to a subscription or billing-account scope, and Azure applies the discount across SQL Databases, Managed Instances, elastic pools and SQL Server VMs using normalized-core ratios (1 Enterprise core covers 4 Standard).",
+      "note": "Available to Enterprise Agreement customers (Enterprise Administrator role) and Microsoft Customer Agreement customers who buy direct (billing account or billing profile roles). Not available for Windows Server or CSP-managed customers. Azure Dedicated Hosts and SSIS are still covered only at resource level.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cost-management-billing/scope-level/overview-azure-hybrid-benefit-scope",
+        "https://learn.microsoft.com/azure/cost-management-billing/scope-level/create-sql-license-assignments"
+      ]
+    },
+    {
+      "id": "p-az-dh",
+      "capabilityId": "dedicated-host-run",
+      "licenses": [
+        "azure-plan",
+        "azure-dedicated-host"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Dedicated Host provisions a physical server dedicated to one subscription for hardware isolation, near-complete control of maintenance events, and the ability to place VMs in a chosen configuration. It is billed per host regardless of how many VMs run on it.",
+      "note": "VM series availability varies by region. A savings plan for compute can cover Dedicated Host usage.",
+      "sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/dedicated-hosts"
+      ]
+    },
+    {
+      "id": "p-az-dh-uv",
+      "capabilityId": "dedicated-host-unlimited-virt",
+      "licenses": [
+        "azure-plan",
+        "azure-dedicated-host",
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Licensing every physical core of an Azure Dedicated Host with Windows Server Datacenter or SQL Server Enterprise plus Software Assurance and applying Azure Hybrid Benefit grants unlimited virtualisation, so you can run as many VMs as the hardware supports (for example a 1:2 vCore ratio).",
+      "note": "SQL Server Standard has only a per-VM option on Dedicated Host. Windows/SQL Server 2012 workloads on the host also get Extended Security Updates at no additional charge.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/dedicated-host",
+        "https://learn.microsoft.com/azure/virtual-machines/dedicated-hosts"
+      ]
+    },
+    {
+      "id": "p-az-avs",
+      "capabilityId": "avs-run-vmware",
+      "licenses": [
+        "azure-plan",
+        "avs"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure VMware Solution runs a Microsoft-managed VMware private cloud (vSphere, vSAN, NSX, HCX) on dedicated bare-metal Azure hosts, billed by the number and size of hosts rather than by VM, with a minimum of three hosts per private cloud.",
+      "note": "Requires an Enterprise Agreement, Microsoft Customer Agreement or CSP Azure plan and approved host quota. Reserved instances (one or three year) lower the rate and include software licensing. Generation 2 requires a VMware VCF portable subscription from Broadcom.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-vmware/introduction",
+        "https://learn.microsoft.com/azure/azure-vmware/reserved-instance"
+      ]
+    },
+    {
+      "id": "p-az-avs-lic",
+      "capabilityId": "avs-license-guest-software",
+      "licenses": [
+        "avs",
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Azure VMware Solution pricing includes the VMware components but not guest software. With Windows Server Datacenter or SQL Server Enterprise licences under Software Assurance, Azure Hybrid Benefit plus a VM-host placement policy licenses the physical cores of a host for unlimited virtualisation of that software, and gives 180 days of dual-use rights during migration.",
+      "note": "Standard editions can only be applied per VM (minimum 8 Windows Server cores or 4 SQL Server cores per VM). SQL Server licences are registered through Azure Arc.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-vmware/license-sql-windows-in-avs",
+        "https://learn.microsoft.com/azure/azure-vmware/sql-server-hybrid-benefit"
+      ]
+    },
+    {
+      "id": "p-az-avs-lic-nosa",
+      "capabilityId": "avs-license-guest-software",
+      "licenses": [
+        "avs"
+      ],
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "Without Software Assurance, guest Windows Server and SQL Server in Azure VMware Solution must be licensed under the updated Microsoft licensing terms for dedicated hosted cloud services, which limit migration and virtualisation benefits for licences acquired after 1 October 2019.",
+      "note": "The Microsoft Product Terms for SQL Server, Windows Server and Azure take precedence.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-vmware/license-sql-windows-in-avs"
+      ]
+    },
+    {
+      "id": "p-az-arc-servers",
+      "capabilityId": "arc-manage-hybrid-servers",
+      "licenses": [
+        "arc-servers"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Arc-enabled servers project non-Azure machines into Azure with a free control plane: resource organisation, tags, Azure Resource Graph, RBAC, templates and extensions. Any Azure service used through Arc, such as Monitor, Defender for Servers or Sentinel, is billed at its own rate.",
+      "note": "Requires the Azure Connected Machine agent and a Connected state; disconnected machines are not supported. The same free control plane applies to Arc-enabled VMware vSphere and SCVMM.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/overview",
+        "https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/arc-enabled-servers/eslz-cost-governance"
+      ]
+    },
+    {
+      "id": "p-az-arc-wsmgmt",
+      "capabilityId": "arc-server-management-sa-benefit",
+      "licenses": [
+        "arc-servers",
+        "ws-mgmt-arc"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Attesting Software Assurance (or subscription licences) on Arc-connected Windows Server machines activates Windows Server Management enabled by Azure Arc, which provides Azure Update Manager, Change Tracking and Inventory, Machine Configuration, Windows Admin Center in Azure, Remote Support, Best Practices Assessment, Azure Site Recovery configuration and discounted Azure File Sync at no extra cost.",
+      "note": "Log Analytics ingestion for Change Tracking and Best Practices Assessment, and downstream service costs such as Azure Site Recovery itself, still apply. Eligibility is not inferred from Arc onboarding; explicit attestation is required.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/servers/windows-server-management-overview"
+      ]
+    },
+    {
+      "id": "p-az-ws-payg-arc",
+      "capabilityId": "windows-server-subscription-arc",
+      "licenses": [
+        "arc-servers",
+        "ws-payg-arc"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Windows Server pay-as-you-go enabled by Azure Arc turns the Windows Server 2025+ OS licence into an Azure-billed subscription charged per core per hour, with no product key and no CALs for base functionality; Standard and Datacenter are billed at the same rate.",
+      "note": "Includes a seven-day trial per enrolled server and automatically activates the Windows Server management services. Billing adjusts within 24 hours of a core-count change.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/servers/billing-windows-server-pay-go",
+        "https://learn.microsoft.com/windows-server/get-started/windows-server-pay-as-you-go"
+      ]
+    },
+    {
+      "id": "p-az-arc-aum-sa",
+      "capabilityId": "arc-update-manager",
+      "licenses": [
+        "arc-servers",
+        "ws-mgmt-arc"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Azure Update Manager is included at no extra cost for Arc-connected servers whose Windows Server licences have Software Assurance and are attested, or that are enrolled in Windows Server pay-as-you-go, or that run on Azure VMs.",
+      "note": "Change Tracking data ingestion into Log Analytics may still incur cost.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/servers/windows-server-management-overview",
+        "https://learn.microsoft.com/azure/update-manager/extended-security-updates"
+      ]
+    },
+    {
+      "id": "p-az-arc-aum-payg",
+      "capabilityId": "arc-update-manager",
+      "licenses": [
+        "arc-servers"
+      ],
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "Servers connected to Azure Arc without Software Assurance or pay-as-you-go enrolment can still use Azure Update Manager, but it is billed per server per day. Linux servers are billed the same way.",
+      "note": "Azure Change Tracking and Inventory and Azure Machine Configuration are also purchasable per-server for non-SA Arc machines; other Windows Server management services are not.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/arc-enabled-servers/eslz-cost-governance",
+        "https://learn.microsoft.com/azure/azure-arc/servers/windows-server-management-overview"
+      ]
+    },
+    {
+      "id": "p-az-arc-sql",
+      "capabilityId": "arc-sql-manage",
+      "licenses": [
+        "arc-servers",
+        "arc-sql"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Installing the Azure extension for SQL Server on an Arc-connected machine brings the SQL Server instance into Azure for inventory, monitoring, best-practices assessment, least-privilege operation and Microsoft Purview integration. A licence type (licence-only, licence with Software Assurance/subscription, or pay-as-you-go) is a required parameter.",
+      "note": "Monitoring, client connection summary and the free Power BI Report Server licence require Software Assurance or a subscription (or pay-as-you-go). Connecting SQL Server to Arc is subject to Microsoft outsourcing rules.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/overview",
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-license-billing"
+      ]
+    },
+    {
+      "id": "p-az-arc-sql-payg",
+      "capabilityId": "arc-sql-payg",
+      "licenses": [
+        "arc-servers",
+        "arc-sql"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "SQL Server enabled by Azure Arc offers a pay-as-you-go billing model, billed hourly through Azure, as an alternative to buying SQL Server licences; it suits instances with variable compute demand or short-lived use and is available for all versions from 2012 to 2022.",
+      "note": "On Linux all instances are billed as active (no automatic passive-instance detection). Pay-as-you-go includes free version upgrades and the HA/DR benefit.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/overview",
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-license-billing"
+      ]
+    },
+    {
+      "id": "p-az-arc-sql-uv",
+      "capabilityId": "arc-sql-unlimited-virt",
+      "licenses": [
+        "arc-servers",
+        "arc-sql"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "A SQL Server licence resource in Azure Arc represents one or more physical hosts (minimum 16 physical cores) and, with all their VMs connected to Arc in the licence scope and set to use the physical-core licence, licenses every SQL Server instance on them. The billing plan is pay-as-you-go on an Enterprise-edition hourly meter, or bring-your-own-licence attesting an Enterprise licence with Software Assurance or a subscription.",
+      "note": "Unlimited virtualisation is not available on VMs from listed hosting providers; those must be licensed per virtual core.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-license-billing",
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-configuration"
+      ]
+    },
+    {
+      "id": "p-az-arc-k8s",
+      "capabilityId": "arc-kubernetes-govern",
+      "licenses": [
+        "arc-servers"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Arc-enabled Kubernetes connects non-Azure clusters to Azure for inventory, grouping and tagging at no extra cost. GitOps configuration and Azure Policy for Kubernetes are billed per vCPU beyond an initial free allowance, and other services such as Container Insights and Defender for Containers bill at their own rates.",
+      "note": "On AKS on Azure Local, GitOps configuration is included at no extra charge.",
+      "sources": [
+        "https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/arc-enabled-kubernetes/eslz-arc-kubernetes-cost-governance",
+        "https://learn.microsoft.com/azure/azure-arc/overview"
+      ]
+    },
+    {
+      "id": "p-az-arc-data",
+      "capabilityId": "arc-data-services",
+      "licenses": [
+        "arc-servers",
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Arc-enabled data services run Azure SQL Managed Instance and PostgreSQL on customer-managed Kubernetes, billed through Azure on a consumption basis; the Arc control plane that deploys and monitors them is free.",
+      "note": "Azure Hybrid Benefit can be applied to Arc-enabled SQL Managed Instance using existing SQL Server licences.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/overview",
+        "https://learn.microsoft.com/azure/azure-vmware/sql-server-hybrid-benefit"
+      ]
+    },
+    {
+      "id": "p-az-esu-ws-arc",
+      "capabilityId": "esu-windows-arc",
+      "licenses": [
+        "arc-servers",
+        "esu-arc-windows"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Enrolling an Arc-connected Windows Server 2012/2012 R2 or 2016 machine for Extended Security Updates delivers Critical and Important security updates for up to three years after end of support, with no ESU keys, billed monthly pay-as-you-go through Azure and eligible to draw down a MACC.",
+      "note": "Windows Server 2016 ESUs are configurable in the Azure portal from 3 August 2026, with billing beginning 13 January 2027. ESUs do not include new features or non-security hotfixes.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-arc/servers/prepare-extended-security-updates",
+        "https://learn.microsoft.com/azure/azure-arc/servers/cloud-native/licensing-cost-management"
+      ]
+    },
+    {
+      "id": "p-az-esu-ws-vm",
+      "capabilityId": "esu-windows-azure-vm-free",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Windows Server 2012 and 2012 R2 workloads running on Azure virtual machines receive Extended Security Updates free of charge and by default, with no separate ESU purchase.",
+      "note": "This free ESU applies to Azure-hosted VMs; on-premises or other-cloud machines need ESUs via Azure Arc.",
+      "sources": [
+        "https://learn.microsoft.com/azure/update-manager/extended-security-updates",
+        "https://learn.microsoft.com/lifecycle/announcements/sql-server-2012-windows-server-2012-end-of-support"
+      ]
+    },
+    {
+      "id": "p-az-esu-sql-arc",
+      "capabilityId": "esu-sql-arc",
+      "licenses": [
+        "arc-servers",
+        "esu-arc-sql"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "An Arc-connected SQL Server instance can subscribe to Extended Security Updates after end of support for up to three years, billed on an hourly pay-as-you-go meter through Azure; the subscription can be cancelled at any time without penalty and stops automatically on upgrade or migration to Azure SQL.",
+      "note": "Software Assurance is a prerequisite for the ESU program but the subscription must be activated separately. Billed per virtual core with a minimum of four; free HA passive replicas are not billed.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/extended-security-updates",
+        "https://learn.microsoft.com/sql/sql-server/end-of-support/extended-security-updates-frequently-asked-questions"
+      ]
+    },
+    {
+      "id": "p-az-esu-sql-uv",
+      "capabilityId": "esu-sql-arc-unlimited-virt",
+      "licenses": [
+        "arc-servers",
+        "esu-arc-sql"
+      ],
+      "conditions": [],
+      "rationale": "A SQL Server ESU licence resource in Azure Arc covers physical hosts (minimum 16 physical cores, Enterprise-edition meter) so that all ESU-eligible SQL Server instances in VMs on those hosts receive updates without an additional per-VM charge, provided every VM is connected to Arc in the licence scope.",
+      "note": "The ESU licence resource is always billed pay-as-you-go on an hourly meter. Not available for VMs on listed hosting providers.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/extended-security-updates",
+        "https://learn.microsoft.com/sql/sql-server/azure-arc/manage-configuration"
+      ]
+    },
+    {
+      "id": "p-az-esu-sql-vm",
+      "capabilityId": "esu-sql-free-on-azure",
+      "licenses": [
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Migrating an out-of-support SQL Server as-is to an Azure VM gives free Extended Security Updates: SQL Server 2014 for the full ESU period, and moving to Azure SQL Managed Instance or Database stops ESU charges while retaining access to updates.",
+      "note": "SQL Server 2016 ESUs on Azure VMs are chargeable under a changed price structure. Combine with Azure Hybrid Benefit to also cover the SQL and Windows licences.",
+      "sources": [
+        "https://learn.microsoft.com/sql/sql-server/end-of-support/sql-server-end-of-support-overview",
+        "https://learn.microsoft.com/lifecycle/announcements/sql-server-2012-windows-server-2012-end-of-support"
+      ]
+    },
+    {
+      "id": "p-az-local",
+      "capabilityId": "azure-local-run",
+      "licenses": [
+        "azure-plan",
+        "azure-local"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure Local is billed as an Azure service at a flat monthly rate per physical processor core in the on-premises cluster, through your Azure subscription, with no traditional on-premises software licence and no per-VM charge.",
+      "note": "The cluster must connect to Azure at least once every 30 days for billing. Guest VM operating systems still need licensing.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-local/concepts/billing"
+      ]
+    },
+    {
+      "id": "p-az-local-ahb",
+      "capabilityId": "azure-local-ahb",
+      "licenses": [
+        "azure-local",
+        "azure-hub"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Exchanging one core of Software Assurance-enabled Windows Server Datacenter for one physical core of Azure Local activates Azure Hybrid Benefit for Azure Local, which waives the Azure Local host service fee and the Windows Server guest subscription and provides unlimited virtualisation at no extra cost.",
+      "note": "Supported only for hyperconverged, cloud-connected deployments without external storage; not available with disconnected operations. Other Azure service costs still apply.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-local/concepts/azure-hybrid-benefit",
+        "https://learn.microsoft.com/windows-server/get-started/azure-hybrid-benefit"
+      ]
+    },
+    {
+      "id": "p-az-local-vm-sub",
+      "capabilityId": "azure-local-vm-os-licensing",
+      "licenses": [
+        "azure-local",
+        "azure-plan"
+      ],
+      "preferred": true,
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "no"
+          ]
+        }
+      ],
+      "rationale": "Without eligible Windows Server licences, Windows Server guest VMs on Azure Local are covered by the Azure-billed Windows Server guest subscription add-on charged per core, separate from the Azure Local host fee.",
+      "note": "Windows 11 multi-session or single-session VMs on Azure Local instead require per-user licensing such as Microsoft 365 E3/E5/F3, Business Premium, Windows Enterprise E3/E5 or Windows VDA.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-local/concepts/billing",
+        "https://learn.microsoft.com/azure/azure-local/manage/vm-activate"
+      ]
+    },
+    {
+      "id": "p-az-local-vm-ahb",
+      "capabilityId": "azure-local-vm-os-licensing",
+      "licenses": [
+        "azure-local",
+        "azure-hub"
+      ],
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "With Windows Server licences that have active Software Assurance or an active subscription, Azure Hybrid Benefit covers Windows Server guest VMs on Azure Local so the per-VM guest OS charge is not billed.",
+      "note": "Datacenter edition with SA and enough core licences for all physical cores grants unlimited Windows Server VMs on the cluster.",
+      "sources": [
+        "https://learn.microsoft.com/windows-server/get-started/azure-hybrid-benefit",
+        "https://learn.microsoft.com/azure/azure-local/manage/disconnected-operations-billing"
+      ]
+    },
+    {
+      "id": "p-az-extid",
+      "capabilityId": "customer-identity-ciam",
+      "licenses": [
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Microsoft Entra External ID in an external tenant provides customer sign-in and sign-up, billed per monthly active user (unique external users who authenticate in a calendar month) with the first 50,000 MAU free; premium add-ons such as machine-to-machine authentication and SMS second-factor are billed per transaction with no free tier.",
+      "note": "Successor to Azure AD B2C, which is no longer available to purchase for new customers as of 1 May 2025. The external tenant must be linked to an Azure subscription for billing.",
+      "sources": [
+        "https://learn.microsoft.com/entra/external-id/external-identities-pricing",
+        "https://learn.microsoft.com/entra/external-id/customers/faq-customers"
+      ]
+    },
+    {
+      "id": "p-az-extid-b2b",
+      "capabilityId": "external-guest-access-billing",
+      "licenses": [
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "B2B collaboration guests with UserType Guest (external or internal) are billed under the External ID monthly-active-user model rather than per-seat, once the workforce tenant is linked to an Azure subscription. Guest use of Entra ID P1/P2 features such as Conditional Access is included within the MAU model.",
+      "note": "The 50,000 free MAU allowance for P1/P2 features does not extend to Entra ID Governance for guests or Global Secure Access for guests. Member users authenticating across your own tenants are not counted.",
+      "sources": [
+        "https://learn.microsoft.com/entra/external-id/external-identities-pricing",
+        "https://learn.microsoft.com/entra/global-secure-access/reference-licensing-guest-users"
+      ]
+    },
+    {
+      "id": "p-az-aoai-payg",
+      "capabilityId": "azure-model-tokens-payg",
+      "licenses": [
+        "azure-plan",
+        "azure-ai-foundry"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Standard deployments of Azure OpenAI and other Foundry models are billed per input and output token with no commitment, which is the right choice for variable, spiky or lower-volume inference.",
+      "note": "For consistent high-volume traffic, Provisioned Throughput with a reservation is usually less expensive than scaling pay-as-you-go.",
+      "sources": [
+        "https://learn.microsoft.com/azure/ai-foundry/openai/how-to/provisioned-throughput-onboarding",
+        "https://learn.microsoft.com/azure/ai-foundry/openai/how-to/manage-costs"
+      ]
+    },
+    {
+      "id": "p-az-aoai-ptu",
+      "capabilityId": "azure-model-provisioned-throughput",
+      "licenses": [
+        "azure-plan",
+        "azure-openai-ptu"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Provisioned Throughput deployments allocate a fixed number of PTUs (granted as regional quota) and are billed hourly on the deployed PTU count regardless of utilisation, giving stable maximum latency and throughput. PTU quota is shared across supported models in a region and deployment type.",
+      "note": "Reservations for Global, Data Zone and Regional deployment types are not interchangeable. Create deployments before buying a reservation so capacity is confirmed.",
+      "sources": [
+        "https://learn.microsoft.com/azure/ai-foundry/openai/concepts/provisioned-throughput",
+        "https://learn.microsoft.com/azure/foundry/openai/concepts/provisioned-throughput-billing"
+      ]
+    },
+    {
+      "id": "p-az-aoai-ptu-resv",
+      "capabilityId": "azure-ptu-reservation-discount",
+      "licenses": [
+        "azure-plan",
+        "azure-openai-ptu",
+        "azure-openai-ptu-reservation"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "An Azure Reservation for Azure AI Foundry Provisioned Throughput commits to a fixed number of PTUs for one month or one year at a discount over the hourly rate, purchased in the Azure portal and scoped flexibly to a resource group, subscription, management group or billing account; PTUs deployed beyond the reserved amount bill at the hourly rate.",
+      "note": "Reservations guarantee a price, not capacity. Customers onboarded before the August 2024 self-service update may still use the older one-month Commitment model, scoped to a single Azure OpenAI resource.",
+      "sources": [
+        "https://learn.microsoft.com/azure/ai-foundry/openai/how-to/provisioned-throughput-onboarding",
+        "https://learn.microsoft.com/azure/ai-foundry/openai/concepts/provisioned-migration"
+      ]
+    },
+    {
+      "id": "p-az-agent-svc",
+      "capabilityId": "azure-ai-agent-hosting",
+      "licenses": [
+        "azure-plan",
+        "azure-ai-foundry"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Foundry Agent Service adds no separate service fee or quota: each agent is billed for the inference cost of its base model, the Code Interpreter tool is billed per session (active up to one hour), and File Search is billed on the vector storage used.",
+      "note": "Bring-your-own storage, Azure Cosmos DB or Azure AI Search for agent data is billed as those resources. Standard agent setup is required for Azure Functions tool integration.",
+      "sources": [
+        "https://learn.microsoft.com/azure/foundry/agents/faq",
+        "https://learn.microsoft.com/azure/foundry/concepts/manage-costs"
+      ]
+    },
+    {
+      "id": "p-az-model-choice",
+      "capabilityId": "azure-flagship-model-choice",
+      "licenses": [
+        "azure-plan",
+        "azure-ai-foundry"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure AI Foundry Models sold directly by Azure include non-OpenAI flagship families (Llama, Grok, DeepSeek and more), usable with the same pay-as-you-go token billing and, for supported models, the same shared PTU quota and reservations.",
+      "note": "New models onboard with the Global provisioned deployment option first; Data Zone and Regional options follow.",
+      "sources": [
+        "https://learn.microsoft.com/azure/ai-foundry/openai/concepts/provisioned-throughput"
+      ]
+    },
+    {
+      "id": "p-az-fabric-cap",
+      "capabilityId": "fabric-capacity-azure-billing",
+      "licenses": [
+        "azure-plan",
+        "fabric-capacity"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "A Microsoft Fabric F-SKU capacity (F2 to F2048) is billed on Capacity Units through an Azure subscription on a pay-as-you-go basis and can be paused to stop compute charges. All Fabric workloads draw from the same capacity.",
+      "note": "On F SKUs below F64, each user viewing Power BI content still needs Pro or PPU; F64 and above let Free users view. Fabric capacity can also be bought through a CSP.",
+      "sources": [
+        "https://learn.microsoft.com/fabric/enterprise/licenses"
+      ]
+    },
+    {
+      "id": "p-az-fabric-resv",
+      "capabilityId": "fabric-capacity-reservation",
+      "licenses": [
+        "azure-plan",
+        "fabric-capacity",
+        "azure-reservation"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "A one-year Fabric capacity reservation lowers the rate compared with pay-as-you-go for a steady capacity, and the Power BI Report Server key is delivered on the Fabric capacity tab.",
+      "note": "Buy the F SKU first, reassign workspaces and validate before cancelling any Power BI Premium P SKU being replaced.",
+      "sources": [
+        "https://learn.microsoft.com/power-bi/support/premium-migration-decision-guide",
+        "https://learn.microsoft.com/fabric/enterprise/licenses"
+      ]
+    },
+    {
+      "id": "p-az-pbi-embed",
+      "capabilityId": "powerbi-embedded-app",
+      "licenses": [
+        "azure-plan",
+        "powerbi-embedded",
+        "powerbi-pro"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Power BI Embedded A-SKU capacity is billed hourly through Azure and supports the app-owns-data model where external end users are unlicensed and a service principal authenticates. A Pro or PPU licence is still needed to publish the content.",
+      "note": "For embedding to internal Microsoft Entra users (user-owns-data) on an A SKU, each viewer needs Pro or PPU; a Fabric F64+ capacity removes that requirement. A SKUs can be paused.",
+      "sources": [
+        "https://learn.microsoft.com/power-bi/developer/embedded/embedded-capacity-planning",
+        "https://learn.microsoft.com/fabric/enterprise/licenses"
+      ]
+    },
+    {
+      "id": "p-az-pbirs-fabric",
+      "capabilityId": "powerbi-report-server-run",
+      "licenses": [
+        "azure-plan",
+        "fabric-capacity",
+        "azure-reservation"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Power BI Report Server can be licensed through a Fabric capacity reservation; after migrating from a Premium P SKU the Report Server key appears on the Fabric capacity tab of the admin portal.",
+      "note": "Verify Report Server licensing before cancelling a P SKU.",
+      "sources": [
+        "https://learn.microsoft.com/power-bi/support/premium-migration-decision-guide"
+      ]
+    },
+    {
+      "id": "p-az-pbirs-sql",
+      "capabilityId": "powerbi-report-server-run",
+      "licenses": [
+        "azure-hub"
+      ],
+      "conditions": [
+        {
+          "clarifier": "sa-server-licenses",
+          "in": [
+            "yes"
+          ]
+        }
+      ],
+      "rationale": "Power BI Report Server is also licensed through SQL Server Enterprise edition with active Software Assurance, without a Fabric capacity.",
+      "note": "This route reuses existing SQL Server Enterprise + SA entitlements rather than provisioning Azure capacity.",
+      "sources": [
+        "https://learn.microsoft.com/power-bi/support/premium-migration-decision-guide"
+      ]
+    },
+    {
+      "id": "p-az-cap-pause",
+      "capabilityId": "pause-analytics-capacity",
+      "licenses": [
+        "azure-plan",
+        "fabric-capacity"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure-billed Fabric F SKUs and Power BI Embedded A SKUs can be paused so no compute charges accrue while the capacity is stopped, then resumed on demand.",
+      "note": "Paused capacities do not serve workloads; schedule pauses outside business hours or automate them.",
+      "sources": [
+        "https://learn.microsoft.com/fabric/enterprise/licenses",
+        "https://learn.microsoft.com/power-bi/support/premium-migration-decision-guide"
+      ]
+    },
+    {
+      "id": "p-az-ado-basic",
+      "capabilityId": "azure-devops-team",
+      "licenses": [
+        "azure-devops-basic"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Azure DevOps Basic access covers Boards, Repos, Pipelines and Artifacts; the first five users are free and further Basic users are billed per user to the Azure subscription linked to the organisation. Assignment-based billing stops charges when a user is removed.",
+      "note": "Stakeholder access is free for users who only need limited work-item features. Visual Studio Professional and Enterprise subscribers get Basic (or Basic + Test Plans) included.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devops/organizations/billing/overview",
+        "https://learn.microsoft.com/azure/devops/organizations/billing/buy-basic-access-add-users"
+      ]
+    },
+    {
+      "id": "p-az-ado-tp",
+      "capabilityId": "azure-devops-test-plans",
+      "licenses": [
+        "azure-devops-test-plans"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "The Basic + Test Plans access level adds Azure Test Plans for planned manual testing, exploratory testing and stakeholder feedback, billed per user to the linked Azure subscription.",
+      "note": "Included with Visual Studio Enterprise subscriptions. Multi-organisation billing lets you pay for a user once across organisations under the same Azure subscription.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devops/organizations/billing/buy-basic-access-add-users",
+        "https://learn.microsoft.com/visualstudio/subscriptions/what-are-subscriptions"
+      ]
+    },
+    {
+      "id": "p-az-ado-parallel",
+      "capabilityId": "azure-pipelines-parallelism",
+      "licenses": [
+        "azure-pipelines-parallel"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "Beyond the free tier (one Microsoft-hosted job with a monthly minute cap plus one self-hosted job), additional Microsoft-hosted or self-hosted parallel jobs are purchased per job as a fixed monthly charge on the linked Azure subscription, removing time limits and adding concurrency.",
+      "note": "The first Microsoft-hosted purchase only removes the time limit on the first job; running two jobs concurrently needs two purchased parallel jobs. New organisations are capped at 25 Microsoft-hosted parallel jobs.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devops/pipelines/licensing/concurrent-jobs"
+      ]
+    },
+    {
+      "id": "p-az-ado-vs-parallel",
+      "capabilityId": "azure-pipelines-parallelism",
+      "licenses": [
+        "vs-enterprise"
+      ],
+      "conditions": [
+        {
+          "clarifier": "vs-subscription",
+          "in": [
+            "enterprise"
+          ]
+        }
+      ],
+      "rationale": "For private projects the self-hosted free tier includes one parallel job plus one additional self-hosted parallel job for each active Visual Studio Enterprise subscriber who is a member of the organisation, so Enterprise subscribers add pipeline concurrency at no extra cost.",
+      "note": "This applies to self-hosted agents only, not Microsoft-hosted jobs.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devops/pipelines/licensing/concurrent-jobs"
+      ]
+    },
+    {
+      "id": "p-az-ghazdo",
+      "capabilityId": "ghazdo-repo-security",
+      "licenses": [
+        "azure-devops-basic",
+        "ghazdo"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "GitHub Advanced Security for Azure DevOps is licensed per active committer - anyone present in a push to an Advanced Security-enabled repo within the last 90 days - and billed monthly to the Azure subscription associated with the organisation, with committers deduplicated across that subscription.",
+      "note": "Sold bundled or as the standalone Secret Protection and Code Security products (each billed per active committer per product). Works with Azure Repos only.",
+      "sources": [
+        "https://learn.microsoft.com/azure/devops/repos/security/github-advanced-security-billing",
+        "https://learn.microsoft.com/azure/devops/repos/security/configure-github-advanced-security-features"
+      ]
+    },
+    {
+      "id": "p-az-ghe",
+      "capabilityId": "github-enterprise-azure",
+      "licenses": [
+        "github-enterprise"
+      ],
+      "preferred": true,
+      "conditions": [],
+      "rationale": "GitHub Enterprise is licensed per seat on a unique-user model - each user consumes one seat regardless of how many environments they access - billed monthly on active users and payable through an Azure subscription.",
+      "note": "GitHub Copilot and GitHub Advanced Security are priced separately from the GitHub Enterprise licence.",
+      "sources": [
+        "https://learn.microsoft.com/azure/azure-sovereign-clouds/private/github-local/github-local-overview",
+        "https://learn.microsoft.com/azure/devops/organizations/billing/overview"
+      ]
+    }
+  ]
+}

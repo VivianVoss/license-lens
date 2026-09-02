@@ -1,0 +1,4172 @@
+{
+  "_family": "m365",
+  "_notes": [
+    "Research Agent 1 (m365). Sources are Microsoft Learn only. Point-in-time: 2026-09 dispatch, but several pages reflect 2026 changes: 'Microsoft 365 E7' (a.k.a. The Frontier Suite) = M365 E5 + Microsoft 365 Copilot + Microsoft Entra Suite + Microsoft Agent 365. 'Microsoft 365 E5 Security' has been renamed 'Microsoft Defender Suite' - kept as existing id e5-security. Microsoft docs now brand the Copilot add-on as 'Microsoft Copilot' (enterprise) / 'Microsoft Copilot Business' (Business plans); kept as existing id copilot-m365. 'Microsoft 365 Copilot Chat' is the no-cost tier (formerly 'Copilot Basic').",
+    "Entra / GSA / EMS capabilities are filed under category 'security' to match the app's CATEGORIES, and reuse existing capability ids (conditional-access, identity-protection-pim, mdm-enroll) where they exist.",
+    "No prices anywhere. Consumption items marked 'metered' / 'pay-as-you-go' / 'Copilot Credits' / 'no-cost'."
+  ],
+  "licenses": [
+    {
+      "id": "o365-e1",
+      "name": "Office 365 E1",
+      "family": "m365",
+      "type": "suite",
+      "rank": 20,
+      "note": "Web and mobile Office apps, Exchange Online Plan 1, SharePoint Online Plan 1, Teams and OneDrive. No desktop Office apps, no Entra ID P1/Intune/Windows Enterprise.",
+      "includes": [
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "onedrive-p1",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "o365-e3",
+      "name": "Office 365 E3",
+      "family": "m365",
+      "type": "suite",
+      "rank": 30,
+      "note": "Desktop and web Office apps plus Exchange Online Plan 2, SharePoint Online Plan 2, Teams and OneDrive, and Office 365 Purview basics (DLP, Azure Information Protection). No Entra ID P1, Intune or Windows Enterprise - those come with Microsoft 365 E3.",
+      "includes": [
+        "exo-p2",
+        "spo-p2",
+        "teams-ent",
+        "onedrive-p2",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "o365-e5",
+      "name": "Office 365 E5",
+      "family": "m365",
+      "type": "suite",
+      "rank": 55,
+      "note": "Office 365 E3 plus Power BI Pro, Teams Phone, Audio Conferencing, Microsoft Defender for Office 365 Plan 2 and the Microsoft Purview E5 compliance capabilities. Still has no Entra ID P2, Intune or Windows Enterprise (that is the Microsoft 365 E5 difference).",
+      "includes": [
+        "o365-e3",
+        "exo-p2",
+        "spo-p2",
+        "teams-ent",
+        "onedrive-p2",
+        "copilot-chat",
+        "teams-phone",
+        "teams-audio-conferencing",
+        "mdo-p2",
+        "powerbi-pro"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "o365-f3",
+      "name": "Office 365 F3",
+      "family": "m365",
+      "type": "suite",
+      "rank": 14,
+      "note": "Frontline Office 365 suite: web/mobile Office, Exchange Online Kiosk mailbox (2 GB), SharePoint Plan 1 and Teams. No desktop Office apps.",
+      "includes": [
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "onedrive-p1",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "m365-e3",
+      "name": "Microsoft 365 E3",
+      "family": "m365",
+      "type": "suite",
+      "rank": 45,
+      "note": "Office 365 E3 plus Enterprise Mobility + Security E3 (Entra ID P1, Intune Plan 1) and Windows 11 Enterprise E3 per-user rights. Includes Microsoft 365 Copilot Chat.",
+      "includes": [
+        "o365-e3",
+        "ems-e3",
+        "entra-p1",
+        "intune-p1",
+        "win-e3-user",
+        "exo-p2",
+        "spo-p2",
+        "teams-ent",
+        "onedrive-p2",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+    },
+    {
+      "id": "m365-e5",
+      "name": "Microsoft 365 E5",
+      "family": "m365",
+      "type": "suite",
+      "rank": 70,
+      "note": "Microsoft 365 E3 plus Entra ID P2, the full Microsoft Defender suite, Microsoft Purview E5 compliance, Power BI Pro, Audio Conferencing and Teams Phone.",
+      "includes": [
+        "m365-e3",
+        "o365-e3",
+        "ems-e3",
+        "ems-e5",
+        "entra-p1",
+        "entra-p2",
+        "intune-p1",
+        "win-e3-user",
+        "mde-p2",
+        "mdo-p2",
+        "e5-security",
+        "purview-eda",
+        "powerbi-pro",
+        "exo-p2",
+        "spo-p2",
+        "teams-ent",
+        "onedrive-p2",
+        "copilot-chat",
+        "teams-phone",
+        "teams-audio-conferencing"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+    },
+    {
+      "id": "m365-e7",
+      "name": "Microsoft 365 E7 (Frontier Suite)",
+      "family": "m365",
+      "type": "suite",
+      "rank": 80,
+      "note": "The top enterprise bundle, also called The Frontier Suite: Microsoft 365 E5 plus Microsoft 365 Copilot, the Microsoft Entra Suite (Internet Access, Private Access, ID Governance, ID Protection, Verified ID) and Microsoft Agent 365. Includes SharePoint Advanced Management.",
+      "includes": [
+        "m365-e5",
+        "m365-e3",
+        "o365-e3",
+        "ems-e3",
+        "ems-e5",
+        "entra-p1",
+        "entra-p2",
+        "intune-p1",
+        "win-e3-user",
+        "mde-p2",
+        "mdo-p2",
+        "e5-security",
+        "purview-eda",
+        "powerbi-pro",
+        "copilot-m365",
+        "copilot-chat",
+        "entra-suite",
+        "entra-id-governance",
+        "entra-internet-access",
+        "entra-private-access",
+        "entra-verified-id",
+        "agent-365",
+        "spo-advanced-mgmt",
+        "exo-p2",
+        "spo-p2",
+        "teams-ent",
+        "teams-phone",
+        "teams-audio-conferencing",
+        "onedrive-p2"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "m365-f1",
+      "name": "Microsoft 365 F1",
+      "family": "m365",
+      "type": "suite",
+      "rank": 15,
+      "note": "Frontline suite with no Office apps and no Exchange mailbox rights. SharePoint Plan 1, Teams, Entra ID P1 and Intune. Intended for kiosk/deskless staff who need communications and identity but not email or documents.",
+      "includes": [
+        "entra-p1",
+        "intune-p1",
+        "spo-p1",
+        "teams-ent",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "m365-f3",
+      "name": "Microsoft 365 F3",
+      "family": "m365",
+      "type": "suite",
+      "rank": 25,
+      "note": "Frontline-worker suite. Web/mobile Office, 2 GB Exchange Kiosk mailbox, SharePoint Plan 1, Teams, Entra ID P1, Intune and Windows Enterprise E3 rights. No desktop Office apps.",
+      "includes": [
+        "entra-p1",
+        "intune-p1",
+        "win-e3-user",
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "copilot-chat"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/frontline/flw-licensing-options"
+    },
+    {
+      "id": "m365-bb",
+      "name": "Microsoft 365 Business Basic",
+      "family": "m365",
+      "type": "suite",
+      "rank": 14,
+      "note": "For organisations under 300 seats. Web and mobile Office apps, Exchange Online, SharePoint, Teams and OneDrive. No desktop Office apps.",
+      "includes": [
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "onedrive-p1",
+        "copilot-chat"
+      ],
+      "prerequisites": [
+        "Tenant limited to 300 seats across the Business family of plans"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "m365-bs",
+      "name": "Microsoft 365 Business Standard",
+      "family": "m365",
+      "type": "suite",
+      "rank": 22,
+      "note": "Business Basic plus the desktop Office apps (formerly Office 365 Business Premium). Under 300 seats.",
+      "includes": [
+        "m365-bb",
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "onedrive-p1",
+        "copilot-chat"
+      ],
+      "prerequisites": [
+        "Tenant limited to 300 seats across the Business family of plans"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "m365-bp",
+      "name": "Microsoft 365 Business Premium",
+      "family": "m365",
+      "type": "suite",
+      "rank": 40,
+      "note": "For organisations under 300 seats. Business Standard plus Entra ID P1, Intune, Windows 11 Business, Defender for Business and Defender for Office 365 Plan 1. Entra ID P2 features are available via the Microsoft Defender Suite add-on for Business Premium.",
+      "includes": [
+        "m365-bs",
+        "m365-bb",
+        "entra-p1",
+        "intune-p1",
+        "exo-p1",
+        "spo-p1",
+        "teams-ent",
+        "onedrive-p1",
+        "copilot-chat"
+      ],
+      "prerequisites": [
+        "Tenant limited to 300 seats across the Business family of plans"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/business-premium/"
+    },
+    {
+      "id": "m365-apps",
+      "name": "Microsoft 365 Apps for enterprise",
+      "family": "m365",
+      "type": "suite",
+      "rank": 16,
+      "note": "The desktop and mobile Office apps plus OneDrive, with no Exchange, SharePoint or Teams services. Sold standalone or as part of the enterprise suites. Copilot is not available with device-based licensing of this SKU.",
+      "includes": [
+        "onedrive-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "copilot-m365",
+      "name": "Microsoft 365 Copilot",
+      "family": "m365",
+      "type": "addon",
+      "rank": 60,
+      "note": "Per-user add-on (branded 'Microsoft Copilot' for enterprise, 'Microsoft Copilot Business' for Business plans). Copilot embedded in Word, Excel, PowerPoint, Outlook and Teams, work-grounded Copilot Chat, Researcher and Analyst agents, and included use of Copilot agents / Copilot Studio agent capacity for the licensed user.",
+      "includes": [
+        "copilot-chat"
+      ],
+      "prerequisites": [
+        "A qualifying base licence: Microsoft 365 E3/E5/F1/F3 or E7; Office 365 E1/E3/E5/F3; Microsoft 365 Business Basic/Standard/Premium; Microsoft 365 Apps for business/enterprise; or a qualifying Teams/Exchange/SharePoint/OneDrive plan"
+      ],
+      "source": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+    },
+    {
+      "id": "copilot-chat",
+      "name": "Microsoft 365 Copilot Chat",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 8,
+      "note": "No extra cost for any Microsoft Entra user with an eligible Microsoft 365 or Office 365 subscription. Web-grounded AI chat, Copilot Pages, file upload and image generation, plus free Agent Store agents grounded on instructions and public web. Work (Graph) grounding and agents that read tenant data require either a Microsoft 365 Copilot licence or pay-as-you-go metering.",
+      "includes": [],
+      "prerequisites": [
+        "An eligible Microsoft 365 or Office 365 subscription"
+      ],
+      "source": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+    },
+    {
+      "id": "copilot-paygo",
+      "name": "Microsoft Copilot pay-as-you-go",
+      "family": "m365",
+      "type": "consumption",
+      "rank": 10,
+      "note": "Consumption billing to an Azure subscription for Copilot Chat agents and SharePoint agents that read tenant data, and for custom agents. Billed on the Copilot Studio message meter / Copilot Credits. Set up in the Microsoft 365 admin center or Power Platform admin center; no per-user licence.",
+      "includes": [],
+      "prerequisites": [
+        "An Azure subscription linked for billing; a Copilot Studio subscription or pay-as-you-go plan"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters"
+    },
+    {
+      "id": "copilot-studio",
+      "name": "Microsoft Copilot Studio",
+      "family": "bizapps",
+      "type": "standalone",
+      "rank": 30,
+      "note": "Build, publish and manage custom agents on any channel with premium connectors and generative orchestration. Licensed by a standalone tenant subscription with prepaid Copilot Credits, or by pay-as-you-go metering through an Azure subscription. A limited 'Copilot Studio for Teams' plan is included in select Microsoft 365 subscriptions (classic orchestration, publish to Teams only).",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"
+    },
+    {
+      "id": "agent-365",
+      "name": "Microsoft Agent 365",
+      "family": "m365",
+      "type": "addon",
+      "rank": 35,
+      "note": "Per-user control plane to observe, govern and secure AI agents: agent registry and map in the Microsoft 365 admin center, agent identities via Microsoft Entra Agent ID, Purview data protection and Defender threat protection for agents. Generally available (Commercial) since 1 May 2026. Works best with Microsoft 365 E5 as prerequisite; included in Microsoft 365 E7; available as an add-on to Microsoft 365 E5/A5/Business Premium (or the Defender + Purview suites).",
+      "includes": [],
+      "prerequisites": [
+        "At least one qualifying Microsoft Agent 365 licence in the tenant",
+        "Microsoft Entra ID P1 or Microsoft 365 E3 minimum; Microsoft 365 E5 recommended"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+    },
+    {
+      "id": "entra-id-free",
+      "name": "Microsoft Entra ID Free",
+      "family": "security",
+      "type": "standalone",
+      "rank": 5,
+      "note": "Included with any Microsoft cloud subscription (Azure, Microsoft 365). Directory, user/group management, SSO to SaaS apps, security defaults with Microsoft Authenticator MFA, self-service password change, and basic reports. No Conditional Access or SSPR writeback.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "entra-p1",
+      "name": "Microsoft Entra ID P1",
+      "family": "security",
+      "type": "standalone",
+      "rank": 20,
+      "note": "Conditional Access, self-service password reset with on-prem writeback, dynamic groups, group-based licensing, cloud MDM auto-enrolment, Entra Connect Health, custom roles and administrative units, application proxy. Included in EMS E3, Microsoft 365 E3/F1/F3 and Business Premium.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "entra-p2",
+      "name": "Microsoft Entra ID P2",
+      "family": "security",
+      "type": "standalone",
+      "rank": 30,
+      "note": "Everything in P1 plus Microsoft Entra ID Protection risk policies, Privileged Identity Management, and the access reviews / entitlement management capabilities that were previously GA in P2. Included in EMS E5, the Microsoft Defender Suite (E5 Security) and Microsoft 365 E5. No new identity-governance features are being added to P2.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "entra-id-governance",
+      "name": "Microsoft Entra ID Governance",
+      "family": "security",
+      "type": "addon",
+      "rank": 35,
+      "note": "Advanced identity governance on top of Entra ID P1 or P2: Lifecycle Workflows, entitlement management with manager/sponsor requests and custom extensions, ML-assisted access reviews, PIM for Groups and custom PIM extensions, Account Discovery. Sold as several products that differ only in prerequisite (P1, P2 step-up, F2, frontline). Also included in the Microsoft Entra Suite and Microsoft 365 E7.",
+      "includes": [],
+      "prerequisites": [
+        "A product with the Entra ID P1 or P2 service plan (e.g. Entra ID P1, Microsoft 365 E3/E5, EMS E3/E5)"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+    },
+    {
+      "id": "entra-suite",
+      "name": "Microsoft Entra Suite",
+      "family": "security",
+      "type": "suite",
+      "rank": 50,
+      "note": "Add-on bundle for Entra ID P1/P2 customers combining Microsoft Entra Internet Access, Microsoft Entra Private Access, Microsoft Entra ID Governance, Microsoft Entra ID Protection and Microsoft Entra Verified ID (premium, incl. Face Check). Available standalone or in Microsoft 365 E7. Includes all Conditional Access features.",
+      "includes": [
+        "entra-internet-access",
+        "entra-private-access",
+        "entra-id-governance",
+        "entra-verified-id"
+      ],
+      "prerequisites": [
+        "A Microsoft Entra ID P1 subscription, or a package that includes Entra ID P1"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "entra-internet-access",
+      "name": "Microsoft Entra Internet Access",
+      "family": "security",
+      "type": "standalone",
+      "rank": 22,
+      "note": "Identity-centric Secure Web Gateway for internet and SaaS traffic, part of Global Secure Access. Sold standalone or in the Microsoft Entra Suite / Microsoft 365 E7. Internet Access for Microsoft services (Microsoft 365 traffic) is included with Entra ID P1/P2. Per-user licensing; needs Entra ID P1/P2 underneath.",
+      "includes": [],
+      "prerequisites": [
+        "Microsoft Entra ID P1 or P2 for every user"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+    },
+    {
+      "id": "entra-private-access",
+      "name": "Microsoft Entra Private Access",
+      "family": "security",
+      "type": "standalone",
+      "rank": 22,
+      "note": "Zero Trust Network Access (VPN replacement) for private apps, part of Global Secure Access. Sold standalone or in the Microsoft Entra Suite / Microsoft 365 E7. Per-user licensing; needs Entra ID P1/P2 underneath.",
+      "includes": [],
+      "prerequisites": [
+        "Microsoft Entra ID P1 or P2 for every user"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+    },
+    {
+      "id": "entra-external-id",
+      "name": "Microsoft Entra External ID",
+      "family": "security",
+      "type": "consumption",
+      "rank": 10,
+      "note": "Monthly-active-user (MAU) billing for external identities: B2B collaboration guests in a workforce tenant, and customers/consumers in an external tenant. Core offering no-cost for the first 50,000 MAU; premium add-ons (ID Governance for guests, GSA for guests, Go-Local, M2M auth, SMS) billed separately. Requires an Azure subscription for billing.",
+      "includes": [],
+      "prerequisites": [
+        "An Azure subscription linked to the tenant for billing"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
+    },
+    {
+      "id": "entra-verified-id",
+      "name": "Microsoft Entra Verified ID",
+      "family": "security",
+      "type": "standalone",
+      "rank": 8,
+      "note": "Core issuance and verification of digital identity credentials, included at no extra cost with any Entra ID subscription (including Free). Face Check is a premium add-on and is a full capability of the Microsoft Entra Suite.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "ems-e3",
+      "name": "Enterprise Mobility + Security E3",
+      "family": "security",
+      "type": "suite",
+      "rank": 30,
+      "note": "The identity + management layer to add on top of Office 365: Microsoft Entra ID P1, Microsoft Intune Plan 1, and Microsoft Purview / Azure Information Protection P1. Maps to the EMS E3 portion of Microsoft 365 E3.",
+      "includes": [
+        "entra-p1",
+        "intune-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+    },
+    {
+      "id": "ems-e5",
+      "name": "Enterprise Mobility + Security E5",
+      "family": "security",
+      "type": "suite",
+      "rank": 45,
+      "note": "EMS E3 plus Microsoft Entra ID P2, Microsoft Defender for Cloud Apps, Microsoft Defender for Identity and Azure Information Protection P2. Maps to the EMS E5 portion of Microsoft 365 E5.",
+      "includes": [
+        "ems-e3",
+        "entra-p1",
+        "entra-p2",
+        "intune-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+    },
+    {
+      "id": "intune-p1",
+      "name": "Microsoft Intune Plan 1",
+      "family": "security",
+      "type": "standalone",
+      "rank": 18,
+      "note": "The base cloud endpoint-management service (MDM/MAM) for Windows, iOS/iPadOS, Android and macOS. Included in EMS E3/E5, Microsoft 365 E3/E5/F1/F3/E7 and Business Premium.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+    },
+    {
+      "id": "intune-device-only",
+      "name": "Microsoft Intune device-only subscription",
+      "family": "security",
+      "type": "standalone",
+      "rank": 10,
+      "note": "Per-device Intune subscription for devices not tied to a user - kiosks, dedicated devices, phone-room devices, IoT. Supports device-targeted policies and apps but not app protection policies, Conditional Access or user-based features like email.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+    },
+    {
+      "id": "exo-p1",
+      "name": "Exchange Online Plan 1",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 12,
+      "note": "Hosted business email with a 50 GB primary mailbox. No large archive or litigation hold unless the Exchange Online Archiving add-on is also assigned. Included in Office 365 E1 and the Business family suites.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits"
+    },
+    {
+      "id": "exo-p2",
+      "name": "Exchange Online Plan 2",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 16,
+      "note": "Hosted email with a 100 GB primary mailbox, an archive mailbox with auto-expanding archiving up to 1.5 TB, In-Place Hold and Litigation Hold, and data loss prevention. Included in Office 365 E3/E5 and Microsoft 365 E3/E5.",
+      "includes": [
+        "exo-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits"
+    },
+    {
+      "id": "exo-archiving",
+      "name": "Exchange Online Archiving",
+      "family": "m365",
+      "type": "addon",
+      "rank": 8,
+      "note": "Add-on for an Exchange Online Plan 1 mailbox (or an on-premises mailbox). Adds an archive mailbox with auto-expanding archiving up to 1.5 TB, plus In-Place Hold and Litigation Hold. Not needed where Exchange Online Plan 2 (or a suite that includes it) is present.",
+      "includes": [],
+      "prerequisites": [
+        "Exchange Online Plan 1 (standalone or via a suite), or an on-premises Exchange mailbox"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-archiving-service-description/exchange-online-archiving-service-description"
+    },
+    {
+      "id": "spo-p1",
+      "name": "SharePoint Online Plan 1",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 10,
+      "note": "Team sites, document libraries and intranet with standard capacity. Included in Office 365 E1/F3 and the Business family suites.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "spo-p2",
+      "name": "SharePoint Online Plan 2",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 14,
+      "note": "SharePoint with higher limits and eDiscovery/records features. Included in Office 365 E3/E5 and Microsoft 365 E3/E5.",
+      "includes": [
+        "spo-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "spo-advanced-mgmt",
+      "name": "SharePoint Advanced Management Plan 1",
+      "family": "m365",
+      "type": "addon",
+      "rank": 20,
+      "note": "Add-on (also called SharePoint Advanced Management standalone) for oversharing and access governance: data access governance reports, restricted access control, restricted site creation, site lifecycle policies. Also granted automatically when at least one user in the tenant has a Microsoft 365 Copilot licence, and included in Microsoft 365 E7.",
+      "includes": [],
+      "prerequisites": [
+        "SharePoint K, Plan 1 or Plan 2 in the tenant"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites"
+    },
+    {
+      "id": "onedrive-p1",
+      "name": "OneDrive for work and school Plan 1",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 8,
+      "note": "Standalone per-user OneDrive cloud storage with standard capacity. Included in the Business family suites and Office 365 E1.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "onedrive-p2",
+      "name": "OneDrive for work and school Plan 2",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 10,
+      "note": "Standalone OneDrive storage with unlimited/large capacity and advanced compliance. Included in Office 365 E3/E5 and Microsoft 365 E3/E5.",
+      "includes": [
+        "onedrive-p1"
+      ],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+    },
+    {
+      "id": "teams-ent",
+      "name": "Microsoft Teams Enterprise",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 12,
+      "note": "A Teams licence - either inside a Microsoft 365 / Office 365 suite or bought standalone. New enterprise customers buy Teams separately from the Office 365 suite. Teams EEA is the equivalent SKU for the EEA and Switzerland.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "teams-eea",
+      "name": "Microsoft Teams EEA",
+      "family": "m365",
+      "type": "standalone",
+      "rank": 12,
+      "note": "The Teams standalone SKU offered to customers in the European Economic Area and Switzerland, where Teams is unbundled from Office 365 / Microsoft 365. Functionally equivalent to Microsoft Teams Enterprise for licensing purposes.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "teams-phone",
+      "name": "Microsoft Teams Phone",
+      "family": "m365",
+      "type": "addon",
+      "rank": 20,
+      "note": "Cloud PBX add-on (formerly Phone System): calling in Teams, auto attendants and call queues. Requires PSTN connectivity added separately - Calling Plan, Operator Connect or Direct Routing. Included in Office 365 E5 and Microsoft 365 E5. On-premises PSTN needs only Teams Phone Standard, not a Calling Plan.",
+      "includes": [],
+      "prerequisites": [
+        "A Teams licence",
+        "A separate PSTN connectivity option"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "teams-phone-calling-plan",
+      "name": "Microsoft Teams Calling Plan",
+      "family": "m365",
+      "type": "addon",
+      "rank": 22,
+      "note": "Add-on that makes Microsoft the PSTN carrier for Teams Phone (domestic or international), with a monthly pooled minute allowance. Communication Credits can be added for overage and toll-no-cost scenarios.",
+      "includes": [
+        "teams-phone"
+      ],
+      "prerequisites": [
+        "Teams Phone",
+        "A Teams licence"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "teams-audio-conferencing",
+      "name": "Microsoft Teams Audio Conferencing",
+      "family": "m365",
+      "type": "addon",
+      "rank": 12,
+      "note": "Add-on that lets meeting attendees dial in to Teams meetings by phone (PSTN conferencing). A no-cost Audio Conferencing licence covers dial-in plus outbound calls to the US and Canada; the standard licence adds toll numbers worldwide and 60 pooled outbound minutes/user/month. Included in Office 365 E5 and Microsoft 365 E5.",
+      "includes": [],
+      "prerequisites": [
+        "A qualifying Microsoft 365 / Office 365 subscription with Teams"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "teams-premium",
+      "name": "Microsoft Teams Premium",
+      "family": "m365",
+      "type": "addon",
+      "rank": 30,
+      "note": "Per-user add-on on top of a Teams licence: intelligent meeting recap for more scenarios, live translated captions/transcripts, meeting templates and branding, advanced meeting protection (watermark, end-to-end encryption, sensitivity labels, prevent copy), advanced collaboration analytics, advanced Bookings, and the Queues app (with Teams Phone). Requires both a Teams licence and a Teams Premium licence.",
+      "includes": [],
+      "prerequisites": [
+        "An Office 365 / Microsoft 365 subscription and a Teams licence"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+    },
+    {
+      "id": "teams-rooms-pro",
+      "name": "Microsoft Teams Rooms Pro",
+      "family": "m365",
+      "type": "addon",
+      "rank": 25,
+      "note": "Per-device licence for a certified Teams Rooms system or Teams panel: enhanced in-room meeting experiences (Front row, intelligent audio/video, dual screen), Pro management portal, Teams Phone Standard, Audio Conferencing, Intune, Entra ID P1 and Defender for Endpoint P2 for the device. Assigned to the room resource account, not to users.",
+      "includes": [
+        "teams-audio-conferencing",
+        "teams-phone",
+        "entra-p1",
+        "intune-p1",
+        "mde-p2"
+      ],
+      "prerequisites": [
+        "A certified Microsoft Teams Rooms device or Teams panel"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/rooms/rooms-licensing"
+    },
+    {
+      "id": "teams-rooms-basic",
+      "name": "Microsoft Teams Rooms Basic",
+      "family": "m365",
+      "type": "addon",
+      "rank": 6,
+      "note": "No-cost per-device licence for up to 25 certified Teams Rooms systems: schedule and join meetings, share content, whiteboard, Audio Conferencing, plus basic inventory/monitoring. Payment details are required at sign-up but no charge is made. Above 25 rooms, or for Teams panels, use Teams Rooms Pro.",
+      "includes": [
+        "teams-audio-conferencing"
+      ],
+      "prerequisites": [
+        "A certified Microsoft Teams Rooms system",
+        "Maximum 25 per tenant"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/rooms/rooms-licensing"
+    },
+    {
+      "id": "teams-shared-space",
+      "name": "Microsoft Teams Shared Space",
+      "family": "m365",
+      "type": "addon",
+      "rank": 10,
+      "note": "Per-device add-on (renamed from Microsoft Teams Shared Devices in April 2026) for shared endpoints: common-area phones, desk docks for bookable desks, and Teams panels for meeting spaces. Not valid on Teams Rooms systems - those need a Teams Rooms Basic or Pro licence.",
+      "includes": [],
+      "prerequisites": [
+        "A supported shared Teams device"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "viva-suite",
+      "name": "Microsoft Viva Suite",
+      "family": "m365",
+      "type": "suite",
+      "rank": 40,
+      "note": "Per-user add-on bundling every paid Viva module: Viva Insights (incl. advanced/manager/leader insights), Viva Learning (with LMS integration), Viva Glint, Viva Pulse, Viva Amplify, Viva Engage premium and Answers in Viva.",
+      "includes": [
+        "viva-insights",
+        "viva-glint",
+        "viva-learning",
+        "viva-pulse",
+        "viva-comms"
+      ],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+    },
+    {
+      "id": "viva-waef",
+      "name": "Microsoft Viva Workplace Analytics and Employee Feedback",
+      "family": "m365",
+      "type": "addon",
+      "rank": 32,
+      "note": "Per-user add-on giving the analytics and feedback modules only: Viva Insights (advanced/manager/leader), Viva Glint and Viva Pulse. A subset of the full Viva Suite.",
+      "includes": [
+        "viva-insights",
+        "viva-glint",
+        "viva-pulse"
+      ],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva"
+      ],
+      "source": "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+    },
+    {
+      "id": "viva-insights",
+      "name": "Microsoft Viva Insights",
+      "family": "m365",
+      "type": "addon",
+      "rank": 20,
+      "note": "Per-user add-on for workplace analytics: manager and leader insights, advanced analysis tools, custom query engine and prebuilt accelerators, plus premium personal insights. Requires Exchange Online. Personal insights (Headspace, focus plans, briefing) are already free with most Microsoft 365 plans. The Copilot Dashboard / Advanced Copilot Reporting comes with Microsoft 365 Copilot or 10 Insights licences.",
+      "includes": [],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan with Exchange Online Plan 1 or 2"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+    },
+    {
+      "id": "viva-glint",
+      "name": "Microsoft Viva Glint",
+      "family": "m365",
+      "type": "addon",
+      "rank": 18,
+      "note": "Per-user 'voice of the employee' add-on: org-wide engagement surveys, people-science templates and action plans, comment analytics, benchmarks and predictive analytics. A Glint licence also grants Viva Pulse.",
+      "includes": [
+        "viva-pulse"
+      ],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva"
+      ],
+      "source": "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+    },
+    {
+      "id": "viva-learning",
+      "name": "Microsoft Viva Learning",
+      "family": "m365",
+      "type": "addon",
+      "rank": 16,
+      "note": "Per-user add-on unlocking the premium Viva Learning features: LMS and partner content-provider integration, content recommendation and completion tracking, adding learning to the calendar, and surfacing learning in Microsoft Search. The free tier (Teams app, org content, 125 LinkedIn Learning courses, Microsoft Learn) is in every Microsoft 365 plan.",
+      "includes": [],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+    },
+    {
+      "id": "viva-pulse",
+      "name": "Microsoft Viva Pulse",
+      "family": "m365",
+      "type": "addon",
+      "rank": 12,
+      "note": "Per-user add-on for lightweight, confidential team feedback surveys with research-backed templates and Copilot report summaries. Also included with Viva Glint, Viva Workplace Analytics and Employee Feedback, and the Viva Suite.",
+      "includes": [],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva"
+      ],
+      "source": "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+    },
+    {
+      "id": "viva-comms",
+      "name": "Microsoft Viva Employee Communities and Communications",
+      "family": "m365",
+      "type": "addon",
+      "rank": 16,
+      "note": "Per-user add-on for internal communicators: enables Viva Amplify (multi-channel campaign publishing and reporting) and Viva Engage premium (leadership corner, campaigns, advanced analytics, Answers). Amplify needs OneDrive and an Exchange mailbox.",
+      "includes": [],
+      "prerequisites": [
+        "A Microsoft 365 / Office 365 plan that enables the user for Viva",
+        "OneDrive and an Exchange mailbox for Amplify"
+      ],
+      "source": "https://learn.microsoft.com/en-us/viva/amplify/set-up-viva-amplify"
+    },
+    {
+      "id": "teams-comm-credits",
+      "name": "Communication Credits",
+      "family": "m365",
+      "type": "consumption",
+      "rank": 6,
+      "note": "A prepaid pool of minutes for PSTN calls beyond a Calling Plan allowance, and to enable toll-free numbers for Audio Conferencing, auto attendants and call queues. Consumption-based; can be disabled to avoid charges.",
+      "includes": [],
+      "prerequisites": [
+        "Teams Phone or Audio Conferencing"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+    },
+    {
+      "id": "exo-hve",
+      "name": "Exchange Online High Volume Email",
+      "family": "m365",
+      "type": "consumption",
+      "rank": 5,
+      "note": "Pay-as-you-go Exchange Online service for line-of-business apps and devices that send large volumes of automated, transactional or operational internal email, using dedicated service accounts. Billed on expanded recipients.",
+      "includes": [],
+      "prerequisites": [
+        "An Exchange Online / Microsoft 365 tenant; an Azure subscription for billing"
+      ],
+      "source": "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services"
+    },
+    {
+      "id": "entra-workload-id",
+      "name": "Microsoft Entra Workload ID",
+      "family": "security",
+      "type": "standalone",
+      "rank": 15,
+      "note": "Adds Conditional Access, risk detection and access reviews for application identities and service principals. Licensed per workload identity per month.",
+      "includes": [],
+      "prerequisites": [],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    },
+    {
+      "id": "entra-domain-services",
+      "name": "Microsoft Entra Domain Services",
+      "family": "security",
+      "type": "consumption",
+      "rank": 12,
+      "note": "A managed domain (LDAP, Kerberos, NTLM, domain join, group policy) for legacy apps, with no domain controllers to manage. Charges accrue per hour based on the SKU the tenant owner selects.",
+      "includes": [],
+      "prerequisites": [
+        "An Azure subscription"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+    }
+  ],
+  "clarifiers": [
+    {
+      "id": "external-users",
+      "question": "Who needs the access - your own employees, external business partners as guests, or customers/consumers of an app you publish?",
+      "options": [
+        {
+          "id": "employees",
+          "label": "Employees / internal staff"
+        },
+        {
+          "id": "partners",
+          "label": "External partners (B2B guests)"
+        },
+        {
+          "id": "customers",
+          "label": "Customers / consumers of an app"
+        }
+      ]
+    },
+    {
+      "id": "pstn-connectivity",
+      "question": "How will phone calls reach the public telephone network?",
+      "options": [
+        {
+          "id": "microsoft",
+          "label": "Microsoft as the carrier (Calling Plan)"
+        },
+        {
+          "id": "operator",
+          "label": "Operator Connect / Direct Routing (keep existing carrier or SBC)"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "email-mailbox-hosted",
+      "title": "Give staff a hosted business email mailbox",
+      "category": "m365",
+      "keywords": [
+        "exchange online",
+        "email",
+        "mailbox",
+        "hosted email",
+        "outlook",
+        "smtp"
+      ],
+      "description": "A cloud-hosted Exchange Online mailbox with Outlook on desktop, web and mobile.",
+      "paths": [
+        "p-exo-p1",
+        "p-exo-suite"
+      ]
+    },
+    {
+      "id": "large-mailbox-archive",
+      "title": "100 GB mailboxes with an auto-expanding archive",
+      "category": "m365",
+      "keywords": [
+        "exchange online plan 2",
+        "archive mailbox",
+        "auto-expanding archiving",
+        "100 gb mailbox",
+        "litigation hold",
+        "in-place hold"
+      ],
+      "description": "A 100 GB primary mailbox plus an archive mailbox that grows automatically to 1.5 TB, with In-Place Hold and Litigation Hold.",
+      "paths": [
+        "p-exo-p2",
+        "p-exo-archiving-addon"
+      ]
+    },
+    {
+      "id": "email-only-no-suite",
+      "title": "Just email, without a full Office suite",
+      "category": "m365",
+      "keywords": [
+        "exchange online standalone",
+        "email only",
+        "shared mailbox",
+        "resource mailbox",
+        "no office apps"
+      ],
+      "description": "Standalone Exchange Online for users or scenarios that need a mailbox but not the rest of Microsoft 365.",
+      "paths": [
+        "p-exo-standalone-p1",
+        "p-exo-standalone-p2"
+      ]
+    },
+    {
+      "id": "desktop-office-apps",
+      "title": "Install the desktop Office apps (Word, Excel, PowerPoint, Outlook)",
+      "category": "m365",
+      "keywords": [
+        "office desktop apps",
+        "microsoft 365 apps",
+        "word excel powerpoint",
+        "click-to-run",
+        "office proplus"
+      ],
+      "description": "The full locally installed Office applications on up to 5 devices per user.",
+      "paths": [
+        "p-office-apps-standalone",
+        "p-office-apps-suite"
+      ]
+    },
+    {
+      "id": "web-mobile-office-only",
+      "title": "Web and mobile Office apps only (no desktop install)",
+      "category": "m365",
+      "keywords": [
+        "office for the web",
+        "office online",
+        "mobile office",
+        "browser office",
+        "no desktop apps",
+        "frontline"
+      ],
+      "description": "Office in the browser and on phones/tablets, without the installed desktop applications - the model used by E1 and the frontline suites.",
+      "paths": [
+        "p-web-office-e1",
+        "p-web-office-frontline"
+      ]
+    },
+    {
+      "id": "office-shared-device",
+      "title": "Office and Teams on shared / kiosk devices",
+      "category": "m365",
+      "keywords": [
+        "shared device licensing",
+        "kiosk",
+        "frontline device",
+        "common area",
+        "device-based licensing"
+      ],
+      "description": "Licensing Office and the productivity services on devices shared by multiple frontline workers rather than assigned to one person.",
+      "paths": [
+        "p-shared-device-f3"
+      ]
+    },
+    {
+      "id": "teams-collab-baseline",
+      "title": "Microsoft Teams chat, meetings and collaboration",
+      "category": "m365",
+      "keywords": [
+        "microsoft teams",
+        "chat",
+        "meetings",
+        "video calls",
+        "collaboration",
+        "channels"
+      ],
+      "description": "The core Teams experience: 1:1 and group chat, channels, and meetings up to the standard limits.",
+      "paths": [
+        "p-teams-suite",
+        "p-teams-standalone"
+      ]
+    },
+    {
+      "id": "teams-without-office",
+      "title": "Buy Microsoft Teams without an Office 365 suite",
+      "category": "m365",
+      "keywords": [
+        "teams standalone",
+        "teams enterprise",
+        "teams eea",
+        "unbundled teams",
+        "teams essentials"
+      ],
+      "description": "A standalone Teams licence, needed for new enterprise customers (Teams is sold separately from Office 365) and for EEA/Switzerland customers (Teams EEA).",
+      "paths": [
+        "p-teams-ent-standalone",
+        "p-teams-eea"
+      ]
+    },
+    {
+      "id": "sharepoint-intranet",
+      "title": "SharePoint team sites and intranet",
+      "category": "m365",
+      "keywords": [
+        "sharepoint online",
+        "intranet",
+        "team sites",
+        "document libraries",
+        "communication sites"
+      ],
+      "description": "SharePoint sites for documents and an organisation intranet.",
+      "paths": [
+        "p-spo-suite",
+        "p-spo-standalone"
+      ]
+    },
+    {
+      "id": "sharepoint-oversharing-governance",
+      "title": "Control SharePoint oversharing and site sprawl",
+      "category": "m365",
+      "keywords": [
+        "sharepoint advanced management",
+        "sam",
+        "data access governance",
+        "restricted access control",
+        "site lifecycle",
+        "oversharing",
+        "restricted site creation"
+      ],
+      "description": "Advanced SharePoint governance - data-access-governance reports, restricted access control, restricted site creation and site lifecycle policies - often deployed alongside Copilot.",
+      "paths": [
+        "p-sam-addon",
+        "p-sam-copilot",
+        "p-sam-e7"
+      ]
+    },
+    {
+      "id": "onedrive-file-storage",
+      "title": "OneDrive personal cloud file storage for staff",
+      "category": "m365",
+      "keywords": [
+        "onedrive",
+        "file storage",
+        "cloud drive",
+        "known folder move",
+        "file sync"
+      ],
+      "description": "Per-user OneDrive storage with sync and sharing.",
+      "paths": [
+        "p-onedrive-suite",
+        "p-onedrive-standalone"
+      ]
+    },
+    {
+      "id": "email-archive-inplace",
+      "title": "In-place email archiving and litigation hold",
+      "category": "m365",
+      "keywords": [
+        "exchange online archiving",
+        "litigation hold",
+        "in-place hold",
+        "auto-expanding archive",
+        "email retention",
+        "1.5 tb archive"
+      ],
+      "description": "An archive mailbox with hold capability, either from Exchange Online Plan 2 or from the Exchange Online Archiving add-on on a Plan 1 mailbox.",
+      "paths": [
+        "p-archive-p2",
+        "p-archive-addon"
+      ]
+    },
+    {
+      "id": "frontline-worker-suite",
+      "title": "Low-cost suite for frontline / deskless workers",
+      "category": "m365",
+      "keywords": [
+        "frontline workers",
+        "microsoft 365 f3",
+        "microsoft 365 f1",
+        "deskless",
+        "retail",
+        "manufacturing",
+        "shift workers"
+      ],
+      "description": "A cut-down Microsoft 365 suite for mobile staff who work with customers rather than documents, with a mix-and-match model against enterprise licences for HQ staff.",
+      "paths": [
+        "p-flw-f3",
+        "p-flw-f1"
+      ]
+    },
+    {
+      "id": "frontline-no-mailbox",
+      "title": "Frontline staff who need Teams and SharePoint but no mailbox",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 f1",
+        "no exchange mailbox",
+        "teams only frontline",
+        "kiosk worker",
+        "communications only"
+      ],
+      "description": "Microsoft 365 F1 gives identity, Intune, Teams and SharePoint but no rights to an Exchange mailbox - for staff who only need communications and company resources.",
+      "paths": [
+        "p-flw-f1-nomailbox"
+      ]
+    },
+    {
+      "id": "smb-all-in-one",
+      "title": "All-in-one productivity and security suite for a business under 300 seats",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 business premium",
+        "smb",
+        "under 300 users",
+        "business standard",
+        "business basic",
+        "small business"
+      ],
+      "description": "The Business family of suites for organisations with fewer than 300 users; Business Premium adds Entra ID P1, Intune, Defender for Business and Defender for Office 365 Plan 1.",
+      "paths": [
+        "p-bp",
+        "p-bs",
+        "p-bb"
+      ]
+    },
+    {
+      "id": "e3-to-e5-delta",
+      "title": "What Microsoft 365 E5 adds over E3",
+      "category": "m365",
+      "keywords": [
+        "e3 vs e5",
+        "microsoft 365 e5",
+        "e5 upgrade",
+        "entra id p2",
+        "defender suite",
+        "purview e5",
+        "power bi pro",
+        "teams phone"
+      ],
+      "description": "E5 = E3 plus Entra ID P2, the full Microsoft Defender suite, Microsoft Purview E5 compliance, Power BI Pro, Audio Conferencing and Teams Phone.",
+      "paths": [
+        "p-e5-upgrade",
+        "p-e5-addons"
+      ]
+    },
+    {
+      "id": "o365-vs-m365-e3",
+      "title": "Difference between Office 365 E3 and Microsoft 365 E3",
+      "category": "m365",
+      "keywords": [
+        "office 365 e3",
+        "microsoft 365 e3",
+        "o365 vs m365",
+        "ems e3",
+        "windows enterprise e3",
+        "entra id p1"
+      ],
+      "description": "Microsoft 365 E3 = Office 365 E3 plus Enterprise Mobility + Security E3 (Entra ID P1, Intune) and Windows 11 Enterprise E3 per-user rights.",
+      "paths": [
+        "p-m365e3-vs-o365e3"
+      ]
+    },
+    {
+      "id": "add-identity-mgmt-to-o365",
+      "title": "Add identity and device management on top of Office 365",
+      "category": "security",
+      "keywords": [
+        "enterprise mobility security",
+        "ems e3",
+        "ems e5",
+        "entra plus intune",
+        "add to office 365",
+        "identity management bundle"
+      ],
+      "description": "Enterprise Mobility + Security bundles Entra ID (P1 or P2) with Intune and Azure Information Protection to layer on an Office 365 tenant.",
+      "paths": [
+        "p-ems-e3",
+        "p-ems-e5"
+      ]
+    },
+    {
+      "id": "frontier-everything-bundle",
+      "title": "The everything bundle: E5 plus Copilot, Entra Suite and Agent 365",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 e7",
+        "frontier suite",
+        "e5 plus copilot",
+        "entra suite included",
+        "agent 365 included",
+        "top tier bundle"
+      ],
+      "description": "Microsoft 365 E7 (The Frontier Suite) combines Microsoft 365 E5, Microsoft 365 Copilot, the Microsoft Entra Suite and Microsoft Agent 365 in one SKU.",
+      "paths": [
+        "p-e7"
+      ]
+    },
+    {
+      "id": "audio-conferencing-dialin",
+      "title": "Dial-in (PSTN) audio for Teams meetings",
+      "category": "m365",
+      "keywords": [
+        "audio conferencing",
+        "dial-in",
+        "pstn conferencing",
+        "call me",
+        "meeting phone numbers",
+        "toll-free conferencing"
+      ],
+      "description": "Lets meeting participants join a Teams meeting by phone and lets organisers dial out to phones. Included in E5; an add-on for E1/E3.",
+      "paths": [
+        "p-audioconf-addon",
+        "p-audioconf-e5"
+      ]
+    },
+    {
+      "id": "teams-phone-system",
+      "title": "Make and receive external phone calls in Teams (cloud PBX)",
+      "category": "m365",
+      "keywords": [
+        "teams phone",
+        "phone system",
+        "cloud pbx",
+        "voip",
+        "auto attendant",
+        "call queue",
+        "business phone"
+      ],
+      "description": "Teams Phone provides PBX calling in Teams; PSTN connectivity (Calling Plan, Operator Connect or Direct Routing) is licensed separately.",
+      "paths": [
+        "p-teamsphone-callingplan",
+        "p-teamsphone-operator",
+        "p-teamsphone-e5"
+      ]
+    },
+    {
+      "id": "teams-premium-meetings",
+      "title": "Advanced Teams meeting protection, branding and AI recap",
+      "category": "m365",
+      "keywords": [
+        "teams premium",
+        "intelligent recap",
+        "live translated captions",
+        "watermark",
+        "meeting templates",
+        "end-to-end encryption",
+        "advanced meeting protection"
+      ],
+      "description": "The Teams Premium add-on adds meeting intelligence, branding/templates, advanced protection (watermark, E2EE, sensitivity labels) and collaboration analytics on top of a Teams licence.",
+      "paths": [
+        "p-teams-premium"
+      ]
+    },
+    {
+      "id": "teams-queues-contact-centre",
+      "title": "Advanced call-queue and contact-centre management in Teams",
+      "category": "m365",
+      "keywords": [
+        "queues app",
+        "call queue management",
+        "auto attendant reporting",
+        "silent coaching",
+        "real-time metrics",
+        "teams contact center"
+      ],
+      "description": "The Queues app (part of Teams Premium) gives supervisors in-Teams call-queue and auto-attendant management, real-time and historical reporting, and monitor/whisper/barge - and needs Teams Phone.",
+      "paths": [
+        "p-queues-app"
+      ]
+    },
+    {
+      "id": "teams-bookings-appointments",
+      "title": "Advanced Bookings and SMS virtual-appointment reminders",
+      "category": "m365",
+      "keywords": [
+        "bookings",
+        "virtual appointments",
+        "sms notifications",
+        "appointment queue",
+        "scheduling",
+        "virtual visits"
+      ],
+      "description": "Teams Premium adds SMS reminders, queue views and organisational analytics to Bookings and virtual appointments; basic Bookings is in the suites.",
+      "paths": [
+        "p-bookings-premium",
+        "p-bookings-basic"
+      ]
+    },
+    {
+      "id": "teams-room-system-license",
+      "title": "License a Teams meeting-room system",
+      "category": "m365",
+      "keywords": [
+        "teams rooms pro",
+        "teams rooms basic",
+        "meeting room device",
+        "conference room",
+        "surface hub",
+        "teams panel",
+        "room resource account"
+      ],
+      "description": "A per-device licence for a certified Teams Rooms system: Pro for the full experience and management at scale, Basic (no cost, up to 25) for a few rooms.",
+      "paths": [
+        "p-rooms-pro",
+        "p-rooms-basic"
+      ]
+    },
+    {
+      "id": "teams-shared-endpoints",
+      "title": "Common-area phones and shared desk / panel devices",
+      "category": "m365",
+      "keywords": [
+        "teams shared space",
+        "teams shared devices",
+        "common area phone",
+        "hot desk",
+        "desk dock",
+        "teams panel",
+        "bookable desk"
+      ],
+      "description": "The Teams Shared Space add-on licenses shared endpoints (common-area phones, desk docks, panels) that are not full meeting-room systems.",
+      "paths": [
+        "p-shared-space"
+      ]
+    },
+    {
+      "id": "copilot-m365",
+      "title": "Copilot in Word, Excel, Outlook and Teams with company-data grounding",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 copilot",
+        "copilot",
+        "generative ai",
+        "word excel outlook teams",
+        "graph grounding",
+        "ai assistant",
+        "copilot premium"
+      ],
+      "description": "The Microsoft 365 Copilot add-on: Copilot embedded in the Office apps and Teams, grounded on the user's Microsoft Graph content, plus work-grounded Copilot Chat.",
+      "paths": [
+        "p-copilot-have-base",
+        "p-copilot-need-base"
+      ]
+    },
+    {
+      "id": "copilot-base-prereq",
+      "title": "What base licence is required before buying Microsoft 365 Copilot",
+      "category": "m365",
+      "keywords": [
+        "copilot prerequisite",
+        "copilot base license",
+        "qualifying license copilot",
+        "copilot eligibility",
+        "which license for copilot"
+      ],
+      "description": "Microsoft 365 Copilot is an add-on and needs a qualifying base: Microsoft 365 E3/E5/F1/F3/E7, Office 365 E1/E3/E5/F3, Microsoft 365 Business Basic/Standard/Premium, Microsoft 365 Apps, or a qualifying Teams/Exchange/SharePoint/OneDrive plan.",
+      "paths": [
+        "p-copilot-prereq-list"
+      ]
+    },
+    {
+      "id": "copilot-chat-free",
+      "title": "Free web AI chat for all staff",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 copilot chat",
+        "free copilot",
+        "copilot basic",
+        "web grounded chat",
+        "no cost ai chat",
+        "copilot pages"
+      ],
+      "description": "Microsoft 365 Copilot Chat is included at no extra cost with an eligible Microsoft 365 / Office 365 subscription: web-grounded chat, Pages, file upload, image generation and free Agent Store agents.",
+      "paths": [
+        "p-copilot-chat-free"
+      ]
+    },
+    {
+      "id": "copilot-chat-work-agents",
+      "title": "Let staff use agents that read company data, billed per use",
+      "category": "m365",
+      "keywords": [
+        "copilot chat pay-as-you-go",
+        "metered agents",
+        "graph grounded agents",
+        "copilot studio message meter",
+        "consumption agents",
+        "work grounded chat paygo"
+      ],
+      "description": "Without a full Copilot licence, agents that use Microsoft Graph / tenant data in Copilot Chat can be enabled on pay-as-you-go metering billed to an Azure subscription.",
+      "paths": [
+        "p-copilot-chat-paygo"
+      ]
+    },
+    {
+      "id": "copilot-agents-included-licensed",
+      "title": "Use and build Copilot agents at no extra usage cost for licensed users",
+      "category": "m365",
+      "keywords": [
+        "copilot agents included",
+        "microsoft 365 copilot usl",
+        "no charge agents",
+        "agent builder",
+        "declarative agents",
+        "b2e agents"
+      ],
+      "description": "For users with a Microsoft 365 Copilot licence, employee-facing use of Copilot agents and Copilot Studio features invoked under their identity is included in the Copilot subscription (subject to fair-use limits).",
+      "paths": [
+        "p-copilot-agents-licensed"
+      ]
+    },
+    {
+      "id": "copilot-researcher-analyst",
+      "title": "Deep-research (Researcher) and data-analysis (Analyst) agents in Copilot",
+      "category": "m365",
+      "keywords": [
+        "researcher agent",
+        "analyst agent",
+        "copilot researcher",
+        "copilot analyst",
+        "reasoning agents",
+        "deep research"
+      ],
+      "description": "The Researcher and Analyst reasoning agents in the Microsoft 365 Copilot app require a Microsoft 365 Copilot licence.",
+      "paths": [
+        "p-researcher-analyst"
+      ]
+    },
+    {
+      "id": "copilot-office-app-agents",
+      "title": "Word, Excel and PowerPoint agents in Copilot",
+      "category": "m365",
+      "keywords": [
+        "word agent",
+        "excel agent",
+        "powerpoint agent",
+        "office agents",
+        "edit with copilot",
+        "copilot frontier"
+      ],
+      "description": "The task-specific Word/Excel/PowerPoint agents in Microsoft 365 Copilot require a Microsoft 365 Copilot licence.",
+      "paths": [
+        "p-office-agents"
+      ]
+    },
+    {
+      "id": "sharepoint-site-agents",
+      "title": "AI agents grounded on a SharePoint site",
+      "category": "m365",
+      "keywords": [
+        "sharepoint agents",
+        "site agent",
+        "document library agent",
+        "copilot in sharepoint",
+        "pay-as-you-go sharepoint agent"
+      ],
+      "description": "SharePoint agents answer questions over a site or library; usable at no cost for Microsoft 365 Copilot licensed users, or on pay-as-you-go metering for unlicensed users.",
+      "paths": [
+        "p-spo-agents-licensed",
+        "p-spo-agents-paygo"
+      ]
+    },
+    {
+      "id": "build-custom-agent",
+      "title": "Build a custom AI agent / chatbot for staff or customers",
+      "category": "m365",
+      "keywords": [
+        "copilot studio",
+        "custom agent",
+        "chatbot",
+        "virtual agent",
+        "conversational ai",
+        "build agent",
+        "generative orchestration"
+      ],
+      "description": "Custom agents are built in Microsoft Copilot Studio, published to Teams, a website or other channels, with their own knowledge and actions.",
+      "paths": [
+        "p-agent-studio-standalone",
+        "p-agent-studio-teams"
+      ]
+    },
+    {
+      "id": "copilot-studio-consumption",
+      "title": "Pay for custom-agent usage with Copilot Credits or pay-as-you-go",
+      "category": "m365",
+      "keywords": [
+        "copilot credits",
+        "copilot studio billing",
+        "message packs",
+        "pay-as-you-go agent",
+        "agent metering",
+        "billed sessions",
+        "overage enforcement"
+      ],
+      "description": "Copilot Studio agent activity (classic/generative answers, agent actions, tenant graph grounding, agent flows, AI tools) is metered in Copilot Credits, bought as prepaid packs or billed pay-as-you-go via Azure.",
+      "paths": [
+        "p-copilot-credits"
+      ]
+    },
+    {
+      "id": "govern-ai-agents-tenant",
+      "title": "Give AI agents their own identity and govern them across the tenant",
+      "category": "m365",
+      "keywords": [
+        "microsoft agent 365",
+        "agent governance",
+        "agent registry",
+        "agent map",
+        "observe govern secure agents",
+        "agent lifecycle"
+      ],
+      "description": "Microsoft Agent 365 is the control plane to observe, govern and secure agents: registry/map, Entra Agent ID identities, Purview data protection and Defender threat protection for agents.",
+      "paths": [
+        "p-agent365",
+        "p-agent365-e7"
+      ]
+    },
+    {
+      "id": "agent-conditional-access",
+      "title": "Apply Conditional Access and Identity Protection to AI agents",
+      "category": "security",
+      "keywords": [
+        "conditional access for agents",
+        "agent identity",
+        "entra agent id",
+        "identity protection agents",
+        "agent access policy",
+        "agent 365"
+      ],
+      "description": "Extending Conditional Access and (soon) Identity Protection to agents through Microsoft Entra Agent ID requires a Microsoft Agent 365 licence alongside at least Entra ID P1 or Microsoft 365 E3.",
+      "paths": [
+        "p-agent-ca"
+      ]
+    },
+    {
+      "id": "agent-identity-basic",
+      "title": "Identities for AI agents in the directory",
+      "category": "security",
+      "keywords": [
+        "microsoft entra agent id",
+        "agent identity",
+        "agent blueprint",
+        "service principal for agent",
+        "agent directory object"
+      ],
+      "description": "Microsoft Entra Agent ID provides the platform to create and manage agent identities and is available to all Microsoft Entra customers; extending Entra security features to those agents needs Agent 365.",
+      "paths": [
+        "p-agent-id-free"
+      ]
+    },
+    {
+      "id": "measure-copilot-adoption",
+      "title": "Measure Copilot adoption and ROI",
+      "category": "m365",
+      "keywords": [
+        "copilot dashboard",
+        "copilot analytics",
+        "viva insights copilot",
+        "adoption reporting",
+        "advanced copilot reporting",
+        "copilot roi"
+      ],
+      "description": "The Microsoft Copilot Dashboard and Advanced Copilot Reporting in Viva Insights come with Microsoft 365 Copilot or with 10 Viva Insights licences.",
+      "paths": [
+        "p-copilot-dashboard-copilot",
+        "p-copilot-dashboard-insights"
+      ]
+    },
+    {
+      "id": "conditional-access",
+      "title": "Require MFA / device compliance for sign-in (Conditional Access)",
+      "category": "security",
+      "keywords": [
+        "conditional access",
+        "mfa",
+        "device compliance",
+        "sign-in policy",
+        "block legacy auth",
+        "zero trust",
+        "entra id p1"
+      ],
+      "description": "Policy-based access control evaluating user, device, location and risk before granting access to apps.",
+      "paths": [
+        "p-ca-p1",
+        "p-ca-bp"
+      ]
+    },
+    {
+      "id": "identity-protection-pim",
+      "title": "Risk-based identity protection and just-in-time admin access",
+      "category": "security",
+      "keywords": [
+        "identity protection",
+        "risky sign-in",
+        "privileged identity management",
+        "pim",
+        "just in time",
+        "access reviews",
+        "entra id p2"
+      ],
+      "description": "Automated response to risky users/sign-ins, time-bound elevation of admin roles, and periodic access recertification.",
+      "paths": [
+        "p-ipp-p2",
+        "p-ipp-e5sec",
+        "p-ipp-suite"
+      ]
+    },
+    {
+      "id": "sspr-writeback",
+      "title": "Self-service password reset with on-premises writeback",
+      "category": "security",
+      "keywords": [
+        "sspr",
+        "self-service password reset",
+        "password writeback",
+        "entra id p1",
+        "hybrid password reset",
+        "forgot password"
+      ],
+      "description": "Users reset or unlock their own accounts and the change is written back to on-premises Active Directory - an Entra ID P1 feature.",
+      "paths": [
+        "p-sspr-p1"
+      ]
+    },
+    {
+      "id": "dynamic-groups-licensing",
+      "title": "Dynamic membership groups and group-based licensing",
+      "category": "security",
+      "keywords": [
+        "dynamic groups",
+        "group-based licensing",
+        "attribute-based membership",
+        "automatic group membership",
+        "entra id p1"
+      ],
+      "description": "Groups whose membership is calculated from user attributes, and assigning Microsoft 365 licences to groups - both Entra ID P1 features.",
+      "paths": [
+        "p-dyn-groups-p1"
+      ]
+    },
+    {
+      "id": "entra-free-baseline",
+      "title": "Free directory, SSO and security defaults",
+      "category": "security",
+      "keywords": [
+        "entra id free",
+        "security defaults",
+        "free directory",
+        "sso saas",
+        "azure ad free",
+        "basic mfa"
+      ],
+      "description": "Microsoft Entra ID Free (included with any Microsoft cloud subscription): directory, user/group management, SSO to SaaS, security defaults with Authenticator MFA and basic reports.",
+      "paths": [
+        "p-entra-free"
+      ]
+    },
+    {
+      "id": "custom-roles-admin-units",
+      "title": "Custom directory roles and administrative units",
+      "category": "security",
+      "keywords": [
+        "custom roles",
+        "administrative units",
+        "delegated administration",
+        "scoped admin",
+        "entra id p1",
+        "rbac"
+      ],
+      "description": "Custom Entra roles and administrative-unit-scoped delegation require an Entra ID P1 licence for each admin (and each AU member if dynamic).",
+      "paths": [
+        "p-custom-roles-p1"
+      ]
+    },
+    {
+      "id": "entra-connect-health",
+      "title": "Monitor Entra Connect / AD FS sync health",
+      "category": "security",
+      "keywords": [
+        "entra connect health",
+        "ad fs monitoring",
+        "sync health",
+        "hybrid identity monitoring",
+        "connect health",
+        "entra id p1"
+      ],
+      "description": "Microsoft Entra Connect Health monitoring of sync and federation infrastructure requires Entra ID P1 licences.",
+      "paths": [
+        "p-connect-health-p1"
+      ]
+    },
+    {
+      "id": "cross-tenant-user-sync",
+      "title": "Sync users between your own Entra tenants",
+      "category": "security",
+      "keywords": [
+        "cross-tenant synchronization",
+        "multi-tenant organization",
+        "mto",
+        "b2b sync",
+        "merge tenants",
+        "entra id p1"
+      ],
+      "description": "Cross-tenant synchronization needs an Entra ID P1 licence for each synced user in the source tenant; all multitenant-organisation features are also in the Entra Suite.",
+      "paths": [
+        "p-xtenant-sync-p1"
+      ]
+    },
+    {
+      "id": "identity-governance-lifecycle",
+      "title": "Automated joiner / mover / leaver lifecycle workflows",
+      "category": "security",
+      "keywords": [
+        "lifecycle workflows",
+        "joiner mover leaver",
+        "onboarding automation",
+        "offboarding automation",
+        "entra id governance",
+        "identity lifecycle"
+      ],
+      "description": "Lifecycle Workflows automate onboarding/offboarding tasks and require Microsoft Entra ID Governance (or the Entra Suite / Microsoft 365 E7).",
+      "paths": [
+        "p-lcw-governance",
+        "p-lcw-suite"
+      ]
+    },
+    {
+      "id": "entitlement-management-access-packages",
+      "title": "Access packages and self-service access requests",
+      "category": "security",
+      "keywords": [
+        "entitlement management",
+        "access packages",
+        "access request",
+        "my access portal",
+        "entra id governance",
+        "entra id p2"
+      ],
+      "description": "Entitlement management bundles resources into access packages users request; core capability needs Entra ID P2, advanced options (manager/sponsor requests, auto-assignment, custom extensions) need Entra ID Governance.",
+      "paths": [
+        "p-em-p2",
+        "p-em-governance"
+      ]
+    },
+    {
+      "id": "access-reviews-recertification",
+      "title": "Periodic access reviews and recertification",
+      "category": "security",
+      "keywords": [
+        "access reviews",
+        "recertification",
+        "attestation",
+        "guest access review",
+        "entra id p2",
+        "entra id governance"
+      ],
+      "description": "Access reviews of group membership, app and role assignments; basic reviews need Entra ID P2, ML-assisted and inactive-user reviews need Entra ID Governance. Licence one per reviewer and per reviewed user.",
+      "paths": [
+        "p-ar-p2",
+        "p-ar-governance"
+      ]
+    },
+    {
+      "id": "entra-suite-zero-trust-access",
+      "title": "Full Zero-Trust workforce access bundle",
+      "category": "security",
+      "keywords": [
+        "microsoft entra suite",
+        "zero trust access",
+        "internet access",
+        "private access",
+        "id governance",
+        "id protection",
+        "verified id"
+      ],
+      "description": "The Microsoft Entra Suite combines Entra Internet Access, Private Access, ID Governance, ID Protection and Verified ID (premium) as an add-on to Entra ID P1/P2.",
+      "paths": [
+        "p-entra-suite",
+        "p-entra-suite-e7"
+      ]
+    },
+    {
+      "id": "secure-internet-access-swg",
+      "title": "Secure internet and SaaS access for staff (SWG)",
+      "category": "security",
+      "keywords": [
+        "microsoft entra internet access",
+        "secure web gateway",
+        "swg",
+        "global secure access",
+        "sse",
+        "web content filtering",
+        "sase"
+      ],
+      "description": "Microsoft Entra Internet Access is an identity-aware Secure Web Gateway for internet/SaaS traffic; sold standalone or in the Entra Suite / Microsoft 365 E7, and needs Entra ID P1/P2 underneath.",
+      "paths": [
+        "p-internet-access",
+        "p-internet-access-suite"
+      ]
+    },
+    {
+      "id": "replace-vpn-private-access",
+      "title": "Replace the VPN with Zero-Trust private app access",
+      "category": "security",
+      "keywords": [
+        "microsoft entra private access",
+        "ztna",
+        "vpn replacement",
+        "per-app access",
+        "global secure access",
+        "quick access",
+        "private apps"
+      ],
+      "description": "Microsoft Entra Private Access tunnels access to internal apps per-app with Conditional Access, no VPN; sold standalone or in the Entra Suite / Microsoft 365 E7, and needs Entra ID P1/P2.",
+      "paths": [
+        "p-private-access",
+        "p-private-access-suite"
+      ]
+    },
+    {
+      "id": "secure-m365-traffic-gsa",
+      "title": "Route and secure Microsoft 365 traffic through Global Secure Access",
+      "category": "security",
+      "keywords": [
+        "entra internet access for microsoft services",
+        "microsoft 365 traffic profile",
+        "global secure access",
+        "compliant network",
+        "m365 traffic acquisition"
+      ],
+      "description": "The Microsoft-services / Microsoft 365 traffic profile of Global Secure Access is included with Entra ID P1 or P2 - no Entra Suite needed for that profile.",
+      "paths": [
+        "p-gsa-m365-p1"
+      ]
+    },
+    {
+      "id": "invite-external-partners-b2b",
+      "title": "Invite external partners as guests (B2B collaboration)",
+      "category": "security",
+      "keywords": [
+        "b2b collaboration",
+        "guest users",
+        "external identities",
+        "partner access",
+        "mau billing",
+        "entra external id"
+      ],
+      "description": "B2B guest collaboration in a workforce tenant is billed on the Entra External ID monthly-active-user model (first 50,000 MAU free); one Entra ID P1 in the tenant enables auto-redemption.",
+      "paths": [
+        "p-b2b-mau"
+      ]
+    },
+    {
+      "id": "customer-signin-ciam",
+      "title": "Sign-in for customers / consumers of an app you build",
+      "category": "security",
+      "keywords": [
+        "entra external id",
+        "ciam",
+        "customer identity",
+        "external tenant",
+        "consumer sign-in",
+        "b2c",
+        "social login"
+      ],
+      "description": "Microsoft Entra External ID in an external tenant provides customer/consumer sign-in (email, social, passkey); billed on monthly active users with premium add-ons for M2M auth, Go-Local and SMS.",
+      "paths": [
+        "p-external-id-ciam"
+      ]
+    },
+    {
+      "id": "verified-id-credentials",
+      "title": "Issue and verify digital ID credentials",
+      "category": "security",
+      "keywords": [
+        "microsoft entra verified id",
+        "verifiable credentials",
+        "digital id",
+        "face check",
+        "credential issuance",
+        "decentralized identity"
+      ],
+      "description": "Core Verified ID issuance/verification is free with any Entra ID subscription; Face Check is a premium add-on and a full capability of the Entra Suite.",
+      "paths": [
+        "p-verified-id-core",
+        "p-verified-id-facecheck"
+      ]
+    },
+    {
+      "id": "manage-mobile-devices",
+      "title": "Manage and secure company and BYOD devices",
+      "category": "security",
+      "keywords": [
+        "microsoft intune",
+        "mdm",
+        "mam",
+        "byod",
+        "enroll devices",
+        "app protection",
+        "endpoint management"
+      ],
+      "description": "Enrol Windows, iOS/iPadOS, Android and macOS devices, push configuration and apps, and apply app protection policies with Microsoft Intune Plan 1.",
+      "paths": [
+        "p-mdm-intune"
+      ]
+    },
+    {
+      "id": "manage-shared-kiosk-devices",
+      "title": "Manage kiosks and shared devices without per-user licences",
+      "category": "security",
+      "keywords": [
+        "intune device-only",
+        "kiosk management",
+        "shared device",
+        "dedicated device",
+        "no user affinity",
+        "iot device management"
+      ],
+      "description": "A Microsoft Intune device-only subscription manages devices with no assigned user (kiosks, dedicated devices, phone rooms, IoT); no app protection or Conditional Access on those devices.",
+      "paths": [
+        "p-intune-device-only"
+      ]
+    },
+    {
+      "id": "viva-full-suite",
+      "title": "Full employee-experience suite (Microsoft Viva)",
+      "category": "m365",
+      "keywords": [
+        "microsoft viva suite",
+        "employee experience",
+        "viva bundle",
+        "insights learning glint pulse amplify engage",
+        "eXp platform"
+      ],
+      "description": "The Viva Suite bundles every paid Viva module - Insights, Learning, Glint, Pulse, Amplify, Engage premium and Answers - as one per-user add-on.",
+      "paths": [
+        "p-viva-suite"
+      ]
+    },
+    {
+      "id": "viva-insights-analytics",
+      "title": "Workplace analytics and advanced Viva Insights",
+      "category": "m365",
+      "keywords": [
+        "viva insights",
+        "workplace analytics",
+        "manager insights",
+        "leader insights",
+        "advanced insights",
+        "myanalytics"
+      ],
+      "description": "Manager/leader insights, custom analysis tools and premium personal insights need a Viva Insights subscription (or Viva Workplace Analytics and Employee Feedback, or the Viva Suite); basic personal insights are free.",
+      "paths": [
+        "p-viva-insights",
+        "p-viva-insights-suite"
+      ]
+    },
+    {
+      "id": "viva-learning-lms",
+      "title": "Learning in the flow of work with LMS integration",
+      "category": "m365",
+      "keywords": [
+        "viva learning",
+        "lms integration",
+        "learning management system",
+        "course recommendation",
+        "completion tracking",
+        "linkedin learning"
+      ],
+      "description": "LMS/partner-content integration, content recommendation, completion tracking and calendar learning need the Viva Learning add-on (or the Viva Suite); the free tier is in every Microsoft 365 plan.",
+      "paths": [
+        "p-viva-learning",
+        "p-viva-learning-suite"
+      ]
+    },
+    {
+      "id": "viva-engage-communities",
+      "title": "Employee communities (Yammer successor)",
+      "category": "m365",
+      "keywords": [
+        "viva engage",
+        "yammer",
+        "communities",
+        "storyline",
+        "employee social",
+        "knowledge sharing"
+      ],
+      "description": "Viva Engage core (communities, storyline, announcements, questions, virtual events) is free for all Microsoft 365 / Office 365 enterprise and frontline users.",
+      "paths": [
+        "p-viva-engage-core"
+      ]
+    },
+    {
+      "id": "viva-engage-premium",
+      "title": "Viva Engage premium: leadership corner, campaigns, Answers",
+      "category": "m365",
+      "keywords": [
+        "viva engage premium",
+        "leadership corner",
+        "campaigns",
+        "answers in viva",
+        "advanced analytics engage",
+        "recommended questions"
+      ],
+      "description": "Leadership corner, campaigns, advanced analytics and Answers in Viva need the Viva Suite or the Viva Employee Communities and Communications licence.",
+      "paths": [
+        "p-viva-engage-premium",
+        "p-viva-engage-premium-suite"
+      ]
+    },
+    {
+      "id": "viva-glint-engagement-surveys",
+      "title": "Org-wide employee engagement surveys",
+      "category": "m365",
+      "keywords": [
+        "viva glint",
+        "engagement survey",
+        "voice of the employee",
+        "pulse benchmarks",
+        "comment analytics",
+        "action plans"
+      ],
+      "description": "Org-wide engagement surveys with people-science templates, benchmarks and predictive analytics need Viva Glint (or Viva Workplace Analytics and Employee Feedback, or the Viva Suite).",
+      "paths": [
+        "p-viva-glint",
+        "p-viva-glint-suite"
+      ]
+    },
+    {
+      "id": "viva-pulse-team-feedback",
+      "title": "Lightweight team pulse feedback surveys",
+      "category": "m365",
+      "keywords": [
+        "viva pulse",
+        "team feedback",
+        "pulse survey",
+        "manager feedback",
+        "confidential survey",
+        "people science templates"
+      ],
+      "description": "Confidential team feedback surveys with research-backed templates and Copilot summaries need a Viva Pulse licence, or Viva Glint / Viva Workplace Analytics and Employee Feedback / the Viva Suite.",
+      "paths": [
+        "p-viva-pulse",
+        "p-viva-pulse-bundles"
+      ]
+    },
+    {
+      "id": "viva-amplify-campaigns",
+      "title": "Multi-channel internal communications campaigns",
+      "category": "m365",
+      "keywords": [
+        "viva amplify",
+        "internal communications",
+        "campaign management",
+        "multi-channel publishing",
+        "comms analytics",
+        "corporate communicators"
+      ],
+      "description": "Viva Amplify (campaign planning, multi-channel publishing to Outlook/Teams/SharePoint, reporting) needs the Viva Suite or the Viva Employee Communities and Communications licence; requires OneDrive and an Exchange mailbox.",
+      "paths": [
+        "p-viva-amplify"
+      ]
+    },
+    {
+      "id": "viva-connections-gateway",
+      "title": "Branded employee gateway / dashboard in Teams",
+      "category": "m365",
+      "keywords": [
+        "viva connections",
+        "employee gateway",
+        "intranet in teams",
+        "dashboard",
+        "company branding",
+        "adaptive cards"
+      ],
+      "description": "Viva Connections (desktop, dashboard, mobile) is available to all Microsoft 365 / Office 365 enterprise plan users at no extra cost.",
+      "paths": [
+        "p-viva-connections"
+      ]
+    },
+    {
+      "id": "power-platform-in-copilot",
+      "title": "Use Power Platform connectors and flows from Copilot",
+      "category": "m365",
+      "keywords": [
+        "power platform connectors copilot",
+        "power automate copilot",
+        "flow from agent",
+        "power platform licensing copilot",
+        "connector licensing"
+      ],
+      "description": "Power Platform licences are not included with Microsoft 365 Copilot; using Power Platform connectors or agent flows beyond the included Copilot allowance needs separate Power Platform / Power Automate licensing.",
+      "paths": [
+        "p-powerplatform-copilot"
+      ]
+    },
+    {
+      "id": "copilot-teams-phone-calls",
+      "title": "Copilot during Teams phone calls (VoIP and PSTN)",
+      "category": "m365",
+      "keywords": [
+        "copilot teams phone",
+        "call recap",
+        "voip copilot",
+        "pstn copilot",
+        "call notes",
+        "transcription"
+      ],
+      "description": "Copilot in Teams Phone needs a Microsoft Copilot licence for VoIP calls; PSTN calls additionally need a Teams Phone licence and a calling plan, plus transcription or recording turned on.",
+      "paths": [
+        "p-copilot-teamsphone-voip",
+        "p-copilot-teamsphone-pstn"
+      ]
+    },
+    {
+      "id": "office-apps-no-services",
+      "title": "Office apps only - no email, Teams or SharePoint",
+      "category": "m365",
+      "keywords": [
+        "microsoft 365 apps for enterprise",
+        "office proplus standalone",
+        "apps only",
+        "no exchange",
+        "no teams",
+        "desktop office subscription"
+      ],
+      "description": "Microsoft 365 Apps for enterprise licenses the installed Office applications and OneDrive with none of the collaboration services.",
+      "paths": [
+        "p-m365-apps-only"
+      ]
+    },
+    {
+      "id": "e5-compliance-meetings",
+      "title": "Sensitivity labels on Teams meetings",
+      "category": "security",
+      "keywords": [
+        "sensitivity labels meetings",
+        "teams premium e5",
+        "purview information protection meetings",
+        "meeting classification",
+        "protected meetings"
+      ],
+      "description": "Applying Microsoft Purview Information Protection sensitivity labels to Teams meetings needs Teams Premium plus a Microsoft 365 E5, E5 Compliance, F5 Compliance or F5 Security + Compliance subscription.",
+      "paths": [
+        "p-labels-meetings"
+      ]
+    },
+    {
+      "id": "copilot-gcc",
+      "title": "Microsoft 365 Copilot for US Government (GCC / GCC-High / DoD)",
+      "category": "m365",
+      "keywords": [
+        "copilot gcc",
+        "copilot government",
+        "gcc high copilot",
+        "dod copilot",
+        "government cloud copilot"
+      ],
+      "description": "Microsoft Copilot is available as an add-on in the GCC, GCC-High and DoD cloud environments on top of qualifying government plans.",
+      "paths": [
+        "p-copilot-gcc"
+      ]
+    },
+    {
+      "id": "copilot-education",
+      "title": "Microsoft 365 Copilot for faculty, staff and students",
+      "category": "m365",
+      "keywords": [
+        "copilot education",
+        "academic copilot",
+        "student copilot",
+        "faculty copilot",
+        "ees copilot"
+      ],
+      "description": "An academic offering of Microsoft Copilot for faculty, staff and students aged 13+, on top of Microsoft 365 / Office 365 A1/A3/A5, purchased through EES or a CSP.",
+      "paths": [
+        "p-copilot-edu"
+      ]
+    },
+    {
+      "id": "copilot-enterprise-data-protection",
+      "title": "Enterprise data protection for Copilot prompts and responses",
+      "category": "m365",
+      "keywords": [
+        "enterprise data protection",
+        "edp copilot",
+        "copilot data protection",
+        "prompts not used for training",
+        "copilot compliance boundary"
+      ],
+      "description": "Enterprise Data Protection covers Copilot Chat and Microsoft 365 Copilot prompts, responses and grounding data under the Microsoft 365 commercial terms; it is included with both.",
+      "paths": [
+        "p-copilot-edp"
+      ]
+    },
+    {
+      "id": "teams-communication-credits",
+      "title": "Prepaid calling minutes and toll-free numbers",
+      "category": "m365",
+      "keywords": [
+        "communication credits",
+        "prepaid minutes",
+        "toll-free numbers",
+        "calling plan overage",
+        "audio conferencing dial-out",
+        "pay per minute"
+      ],
+      "description": "Communication Credits is a prepaid pool of minutes for PSTN calls beyond a Calling Plan allowance, and for toll-free numbers on Audio Conferencing, auto attendants and call queues.",
+      "paths": [
+        "p-comm-credits"
+      ]
+    },
+    {
+      "id": "high-volume-transactional-email",
+      "title": "Send high volumes of automated / transactional internal email",
+      "category": "m365",
+      "keywords": [
+        "high volume email",
+        "hve",
+        "transactional email",
+        "line-of-business email",
+        "smtp relay",
+        "bulk internal mail"
+      ],
+      "description": "High Volume Email (HVE) is a pay-as-you-go Exchange Online service for apps and devices that send large volumes of automated internal email using dedicated service accounts.",
+      "paths": [
+        "p-hve-paygo"
+      ]
+    },
+    {
+      "id": "entra-workload-identities",
+      "title": "Secure identities for apps and service principals (Workload ID)",
+      "category": "security",
+      "keywords": [
+        "microsoft entra workload id",
+        "workload identities",
+        "service principal security",
+        "conditional access for workload identities",
+        "app identity protection"
+      ],
+      "description": "Microsoft Entra Workload ID adds Conditional Access, risk detection and access reviews for application identities and service principals, licensed per workload identity per month.",
+      "paths": [
+        "p-workload-id"
+      ]
+    },
+    {
+      "id": "entra-domain-services",
+      "title": "Managed domain services (LDAP / Kerberos / NTLM) in the cloud",
+      "category": "security",
+      "keywords": [
+        "microsoft entra domain services",
+        "managed domain",
+        "ldap cloud",
+        "kerberos",
+        "domain join azure vm",
+        "aadds"
+      ],
+      "description": "Microsoft Entra Domain Services provides a managed domain for legacy apps that need LDAP, Kerberos or NTLM; billed per hour by SKU, not per user.",
+      "paths": [
+        "p-entra-ds"
+      ]
+    },
+    {
+      "id": "sync-onprem-ad-to-entra",
+      "title": "Synchronise on-premises Active Directory to Entra ID",
+      "category": "security",
+      "keywords": [
+        "microsoft entra connect",
+        "directory sync",
+        "hybrid identity",
+        "password hash sync",
+        "connect sync",
+        "free ad sync"
+      ],
+      "description": "Microsoft Entra Connect (and Cloud Sync) synchronises on-premises AD accounts and password hashes to Entra ID and is free, included with any Azure subscription.",
+      "paths": [
+        "p-entra-connect-free"
+      ]
+    },
+    {
+      "id": "publish-onprem-web-apps",
+      "title": "Publish on-premises web apps without a VPN (Application Proxy)",
+      "category": "security",
+      "keywords": [
+        "microsoft entra application proxy",
+        "app proxy",
+        "publish internal web app",
+        "remote access web app",
+        "reverse proxy entra"
+      ],
+      "description": "Microsoft Entra application proxy publishes internal web applications for external access with pre-authentication; it requires Microsoft Entra ID P1 or P2.",
+      "paths": [
+        "p-app-proxy-p1"
+      ]
+    },
+    {
+      "id": "entra-monitoring-health",
+      "title": "Provisioning logs, Entra health and Graph activity logs",
+      "category": "security",
+      "keywords": [
+        "entra monitoring",
+        "provisioning logs",
+        "entra health",
+        "microsoft graph activity logs",
+        "usage and insights",
+        "sign-in logs retention"
+      ],
+      "description": "Provisioning logs, Microsoft Entra Health, Graph activity logs and usage/insights reporting require a Microsoft Entra ID P1 or P2 licence (audit and sign-in logs are free).",
+      "paths": [
+        "p-entra-monitoring-p1"
+      ]
+    },
+    {
+      "id": "govern-external-guest-access",
+      "title": "Govern external guest access with access reviews and packages",
+      "category": "security",
+      "keywords": [
+        "id governance for guests",
+        "guest access reviews",
+        "b2b entitlement management",
+        "guest lifecycle",
+        "mau governance add-on",
+        "external user governance"
+      ],
+      "description": "Applying Entra ID Governance (access packages, access reviews, lifecycle) to B2B guests in a workforce tenant uses the ID Governance premium add-on billed on monthly active users via an Azure subscription.",
+      "paths": [
+        "p-guest-governance"
+      ]
+    },
+    {
+      "id": "gsa-for-guest-users",
+      "title": "Global Secure Access coverage for guest users",
+      "category": "security",
+      "keywords": [
+        "gsa for guests",
+        "global secure access guests",
+        "guest network access",
+        "b2b secure access",
+        "mau gsa add-on"
+      ],
+      "description": "Extending Global Secure Access (Internet Access / Private Access) to guest users in a workforce tenant uses the GSA for Guests premium add-on billed on monthly active users.",
+      "paths": [
+        "p-gsa-guests"
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "id": "p-exo-p1",
+      "capabilityId": "email-mailbox-hosted",
+      "licenses": [
+        "exo-p1"
+      ],
+      "preferred": true,
+      "rationale": "Exchange Online Plan 1 is the minimum licence for a hosted 50 GB business mailbox with Outlook on desktop, web and mobile.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-exo-suite",
+      "capabilityId": "email-mailbox-hosted",
+      "licenses": [
+        "o365-e1"
+      ],
+      "rationale": "Any Office 365 / Microsoft 365 suite that includes Exchange Online (E1 and above, Business Basic and above) already covers a hosted mailbox; buy a suite rather than standalone Exchange if the other services are wanted too.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-exo-p2",
+      "capabilityId": "large-mailbox-archive",
+      "licenses": [
+        "exo-p2"
+      ],
+      "preferred": true,
+      "rationale": "Exchange Online Plan 2 gives a 100 GB primary mailbox plus an archive mailbox with auto-expanding archiving to 1.5 TB and Litigation Hold. It is included in Office 365 E3/E5 and Microsoft 365 E3/E5.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits"
+      ]
+    },
+    {
+      "id": "p-exo-archiving-addon",
+      "capabilityId": "large-mailbox-archive",
+      "licenses": [
+        "exo-p1",
+        "exo-archiving"
+      ],
+      "rationale": "If users only have Exchange Online Plan 1, the Exchange Online Archiving add-on adds the archive mailbox, auto-expanding archiving to 1.5 TB and In-Place/Litigation Hold without moving to Plan 2. The primary mailbox stays 50 GB.",
+      "conditions": [],
+      "note": "Auto-expanding archiving cannot be turned off once enabled.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-archiving-service-description/exchange-online-archiving-service-description",
+        "https://learn.microsoft.com/en-us/purview/autoexpanding-archiving"
+      ]
+    },
+    {
+      "id": "p-exo-standalone-p1",
+      "capabilityId": "email-only-no-suite",
+      "licenses": [
+        "exo-p1"
+      ],
+      "preferred": true,
+      "rationale": "Standalone Exchange Online Plan 1 covers a mailbox for users who do not need Office apps, Teams or SharePoint.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-exo-standalone-p2",
+      "capabilityId": "email-only-no-suite",
+      "licenses": [
+        "exo-p2"
+      ],
+      "rationale": "Standalone Exchange Online Plan 2 is the choice where the mailbox also needs 100 GB, a large archive or Litigation Hold. A shared mailbox over 50 GB, or on Litigation Hold, must itself be licensed with Plan 2 (or Plan 1 + Archiving).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits"
+      ]
+    },
+    {
+      "id": "p-office-apps-standalone",
+      "capabilityId": "desktop-office-apps",
+      "licenses": [
+        "m365-apps"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Apps for enterprise licenses the installed Word/Excel/PowerPoint/Outlook/OneNote apps on up to 5 devices per user, with OneDrive but no Exchange/SharePoint/Teams.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-office-apps-suite",
+      "capabilityId": "desktop-office-apps",
+      "licenses": [
+        "m365-bs"
+      ],
+      "rationale": "The desktop Office apps are included in Business Standard/Premium and in Office 365 / Microsoft 365 E3 and above. Business Basic and E1 give only web/mobile apps.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-web-office-e1",
+      "capabilityId": "web-mobile-office-only",
+      "licenses": [
+        "o365-e1"
+      ],
+      "preferred": true,
+      "rationale": "Office 365 E1 (and Microsoft 365 Business Basic) provide Office for the web and the mobile apps, Exchange, SharePoint and Teams, but no desktop Office install.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-web-office-frontline",
+      "capabilityId": "web-mobile-office-only",
+      "licenses": [
+        "m365-f3"
+      ],
+      "rationale": "Microsoft 365 F3 / Office 365 F3 give web and mobile Office for frontline staff; Microsoft 365 F1 gives only read access to Office for the web.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-shared-device-f3",
+      "capabilityId": "office-shared-device",
+      "licenses": [
+        "m365-f3"
+      ],
+      "preferred": true,
+      "rationale": "The frontline suites (F1/F3) are the licensing model for deskless staff sharing devices; Microsoft recommends mixing enterprise licences for information workers with frontline licences for mobile workers.",
+      "conditions": [],
+      "note": "Device-based licensing of Microsoft 365 Apps for enterprise exists but Copilot is not available on it.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/frontline/flw-licensing-options"
+      ]
+    },
+    {
+      "id": "p-teams-suite",
+      "capabilityId": "teams-collab-baseline",
+      "licenses": [
+        "o365-e1"
+      ],
+      "preferred": true,
+      "rationale": "Every Office 365 / Microsoft 365 suite from E1 / Business Basic upward includes a Microsoft Teams licence with chat, channels and meetings.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-teams-standalone",
+      "capabilityId": "teams-collab-baseline",
+      "licenses": [
+        "teams-ent"
+      ],
+      "rationale": "Where the suite does not include Teams (new enterprise purchases) or in the EEA/Switzerland, a standalone Microsoft Teams Enterprise or Teams EEA licence provides the core Teams experience.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-teams-ent-standalone",
+      "capabilityId": "teams-without-office",
+      "licenses": [
+        "teams-ent"
+      ],
+      "preferred": true,
+      "rationale": "New customers buy Teams licences separately from the Office 365 / Microsoft 365 subscription; Microsoft Teams Enterprise is the standalone SKU.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-teams-eea",
+      "capabilityId": "teams-without-office",
+      "licenses": [
+        "teams-eea"
+      ],
+      "rationale": "In the European Economic Area and Switzerland, Teams is unbundled from the suites and licensed as Microsoft Teams EEA.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-spo-suite",
+      "capabilityId": "sharepoint-intranet",
+      "licenses": [
+        "o365-e1"
+      ],
+      "preferred": true,
+      "rationale": "SharePoint Online is included in every Office 365 / Microsoft 365 suite from E1 / Business Basic upward (Plan 1 in E1/Business/F, Plan 2 in E3/E5).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-spo-standalone",
+      "capabilityId": "sharepoint-intranet",
+      "licenses": [
+        "spo-p1"
+      ],
+      "rationale": "SharePoint Online Plan 1 or Plan 2 can be bought standalone for users who need document libraries and an intranet without the rest of the suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-sam-addon",
+      "capabilityId": "sharepoint-oversharing-governance",
+      "licenses": [
+        "spo-advanced-mgmt"
+      ],
+      "preferred": true,
+      "rationale": "The SharePoint Advanced Management Plan 1 add-on (a.k.a. SharePoint Advanced Management standalone) is the licence for data-access-governance reports, restricted access control, restricted site creation and site lifecycle policies. Needs SharePoint K/P1/P2 in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites"
+      ]
+    },
+    {
+      "id": "p-sam-copilot",
+      "capabilityId": "sharepoint-oversharing-governance",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "rationale": "If at least one user in the tenant has a Microsoft 365 Copilot licence, SharePoint administrators automatically get the SharePoint Advanced Management capabilities that support a Copilot deployment - though a few features (e.g. restricted site creation) still need the SAM Plan 1 add-on.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites"
+      ]
+    },
+    {
+      "id": "p-sam-e7",
+      "capabilityId": "sharepoint-oversharing-governance",
+      "licenses": [
+        "m365-e7"
+      ],
+      "rationale": "Microsoft 365 E7 (The Frontier Suite) includes SharePoint Advanced Management.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites"
+      ]
+    },
+    {
+      "id": "p-onedrive-suite",
+      "capabilityId": "onedrive-file-storage",
+      "licenses": [
+        "m365-bb"
+      ],
+      "preferred": true,
+      "rationale": "OneDrive is included in every Office 365 / Microsoft 365 suite (Plan 1 in Business/E1/F, Plan 2 in E3/E5) and in Microsoft 365 Apps.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-onedrive-standalone",
+      "capabilityId": "onedrive-file-storage",
+      "licenses": [
+        "onedrive-p1"
+      ],
+      "rationale": "OneDrive for work and school Plan 1 or Plan 2 can be licensed standalone for users who need only cloud file storage.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-archive-p2",
+      "capabilityId": "email-archive-inplace",
+      "licenses": [
+        "exo-p2"
+      ],
+      "preferred": true,
+      "rationale": "Exchange Online Plan 2 includes the archive mailbox, auto-expanding archiving to 1.5 TB, In-Place Hold and Litigation Hold. Included in Office 365 E3/E5 and Microsoft 365 E3/E5.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits"
+      ]
+    },
+    {
+      "id": "p-archive-addon",
+      "capabilityId": "email-archive-inplace",
+      "licenses": [
+        "exo-p1",
+        "exo-archiving"
+      ],
+      "rationale": "Exchange Online Archiving is the add-on that gives a Plan 1 mailbox (or an on-premises mailbox) an archive with auto-expanding archiving and hold.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-archiving-service-description/exchange-online-archiving-service-description"
+      ]
+    },
+    {
+      "id": "p-flw-f3",
+      "capabilityId": "frontline-worker-suite",
+      "licenses": [
+        "m365-f3"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 F3 is the frontline suite for staff who need a small mailbox, web/mobile Office, Teams, SharePoint, Entra ID P1, Intune and Windows Enterprise rights. Mix with enterprise licences for HQ information workers.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/frontline/flw-licensing-options"
+      ]
+    },
+    {
+      "id": "p-flw-f1",
+      "capabilityId": "frontline-worker-suite",
+      "licenses": [
+        "m365-f1"
+      ],
+      "rationale": "Microsoft 365 F1 is the lower frontline tier - identity, Intune, Teams and SharePoint but no Exchange mailbox and no create/edit rights in Office for the web.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-flw-f1-nomailbox",
+      "capabilityId": "frontline-no-mailbox",
+      "licenses": [
+        "m365-f1"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 F1 has no rights to an Exchange mailbox; the Exchange Online K1 service plan may provision one to enable Teams but F1 users are not entitled to use it. Suits staff who only need Teams and company resources.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-bp",
+      "capabilityId": "smb-all-in-one",
+      "licenses": [
+        "m365-bp"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Business Premium is the all-in-one suite for organisations under 300 seats: Office apps, Exchange/SharePoint/Teams, Entra ID P1, Intune, Defender for Business and Defender for Office 365 Plan 1.",
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/business-premium/"
+      ]
+    },
+    {
+      "id": "p-bs",
+      "capabilityId": "smb-all-in-one",
+      "licenses": [
+        "m365-bs"
+      ],
+      "rationale": "Business Standard covers productivity (desktop Office, Exchange, SharePoint, Teams) for a business under 300 seats but adds no identity/device security - add Business Premium or the Defender suites for that.",
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-bb",
+      "capabilityId": "smb-all-in-one",
+      "licenses": [
+        "m365-bb"
+      ],
+      "rationale": "Business Basic covers web/mobile Office plus Exchange, SharePoint and Teams for a business under 300 seats, with no desktop apps.",
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-e5-upgrade",
+      "capabilityId": "e3-to-e5-delta",
+      "licenses": [
+        "m365-e5"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 E5 adds, over E3: Entra ID P2, Microsoft Defender for Endpoint P2, Defender for Office 365 P2, Defender for Identity, Defender for Cloud Apps, Safe Documents, the Microsoft Purview E5 suite (advanced eDiscovery/audit, insider risk, communication compliance, information barriers, customer key/lockbox), Power BI Pro, Audio Conferencing and Teams Phone.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-e5-addons",
+      "capabilityId": "e3-to-e5-delta",
+      "licenses": [
+        "m365-e3",
+        "e5-security",
+        "purview-eda"
+      ],
+      "rationale": "A Microsoft 365 E3 tenant can reach most of the E5 value by stacking the Microsoft Defender Suite (E5 Security) add-on and the Microsoft 365 E5 Compliance add-on, without Power BI Pro / Teams Phone / Audio Conferencing.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-m365e3-vs-o365e3",
+      "capabilityId": "o365-vs-m365-e3",
+      "licenses": [
+        "o365-e3",
+        "ems-e3",
+        "win-e3-user"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 E3 equals Office 365 E3 plus Enterprise Mobility + Security E3 (Entra ID P1, Intune Plan 1, AIP P1) plus Windows 11 Enterprise E3 per-user upgrade rights. Buying the three components separately gives the same entitlement set.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-ems-e3",
+      "capabilityId": "add-identity-mgmt-to-o365",
+      "licenses": [
+        "ems-e3"
+      ],
+      "preferred": true,
+      "rationale": "Enterprise Mobility + Security E3 adds Entra ID P1, Intune Plan 1 and Azure Information Protection P1 on top of an Office 365 tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-ems-e5",
+      "capabilityId": "add-identity-mgmt-to-o365",
+      "licenses": [
+        "ems-e5"
+      ],
+      "rationale": "Enterprise Mobility + Security E5 adds, over EMS E3, Entra ID P2, Microsoft Defender for Cloud Apps, Microsoft Defender for Identity and Azure Information Protection P2.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-e7",
+      "capabilityId": "frontier-everything-bundle",
+      "licenses": [
+        "m365-e7"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 E7 (The Frontier Suite) is a single SKU combining Microsoft 365 E5, Microsoft 365 Copilot, the Microsoft Entra Suite and Microsoft Agent 365, and includes SharePoint Advanced Management.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+        "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites"
+      ]
+    },
+    {
+      "id": "p-audioconf-addon",
+      "capabilityId": "audio-conferencing-dialin",
+      "licenses": [
+        "teams-audio-conferencing"
+      ],
+      "preferred": true,
+      "rationale": "An Audio Conferencing licence is the add-on that enables PSTN dial-in for meeting organisers. It must be bought separately for Office 365 / Microsoft 365 E1 and E3.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-audioconf-e5",
+      "capabilityId": "audio-conferencing-dialin",
+      "licenses": [
+        "m365-e5"
+      ],
+      "rationale": "Audio Conferencing is already included in Office 365 E5 and Microsoft 365 E5 - no add-on needed.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-teamsphone-callingplan",
+      "capabilityId": "teams-phone-system",
+      "licenses": [
+        "teams-ent",
+        "teams-phone-calling-plan"
+      ],
+      "preferred": true,
+      "rationale": "Teams Phone provides the cloud PBX; a Microsoft Calling Plan adds Microsoft as the PSTN carrier. The Calling Plan bundle includes Teams Phone. A Teams licence is required underneath.",
+      "conditions": [
+        {
+          "clarifier": "pstn-connectivity",
+          "in": [
+            "microsoft"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-teamsphone-operator",
+      "capabilityId": "teams-phone-system",
+      "licenses": [
+        "teams-ent",
+        "teams-phone"
+      ],
+      "rationale": "With Operator Connect or Direct Routing you keep your existing carrier or SBC and license only Teams Phone (Standard) plus a Teams licence - no Microsoft Calling Plan.",
+      "conditions": [
+        {
+          "clarifier": "pstn-connectivity",
+          "in": [
+            "operator"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/assign-teams-add-on-licenses"
+      ]
+    },
+    {
+      "id": "p-teamsphone-e5",
+      "capabilityId": "teams-phone-system",
+      "licenses": [
+        "m365-e5"
+      ],
+      "rationale": "Office 365 E5 and Microsoft 365 E5 already include Teams Phone; only PSTN connectivity (Calling Plan, Operator Connect or Direct Routing) still needs adding.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/assign-teams-add-on-licenses"
+      ]
+    },
+    {
+      "id": "p-teams-premium",
+      "capabilityId": "teams-premium-meetings",
+      "licenses": [
+        "teams-ent",
+        "teams-premium"
+      ],
+      "preferred": true,
+      "rationale": "Teams Premium is a per-user add-on that requires both a Teams licence and the Teams Premium licence. It bundles meeting intelligence, branding/templates, advanced protection and collaboration analytics.",
+      "conditions": [],
+      "note": "As of 1 April 2026 some previously-Premium features moved into Teams Enterprise; Premium keeps advanced meeting protection, advanced communication (Queues app), branding/personalisation and intelligence.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+      ]
+    },
+    {
+      "id": "p-queues-app",
+      "capabilityId": "teams-queues-contact-centre",
+      "licenses": [
+        "teams-ent",
+        "teams-premium",
+        "teams-phone"
+      ],
+      "preferred": true,
+      "rationale": "The Queues app is part of Teams Premium and requires a Teams Phone licence for call-queue and auto-attendant management, real-time/historical reporting and monitor/whisper/barge.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+      ]
+    },
+    {
+      "id": "p-bookings-premium",
+      "capabilityId": "teams-bookings-appointments",
+      "licenses": [
+        "teams-ent",
+        "teams-premium"
+      ],
+      "preferred": true,
+      "rationale": "SMS notifications, appointment queue views and organisational virtual-appointment analytics are Teams Premium features.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+      ]
+    },
+    {
+      "id": "p-bookings-basic",
+      "capabilityId": "teams-bookings-appointments",
+      "licenses": [
+        "o365-e1"
+      ],
+      "rationale": "Basic Bookings and virtual appointments (scheduling, email reminders, join from browser or Teams) are in the Microsoft 365 / Office 365 suites without Teams Premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+      ]
+    },
+    {
+      "id": "p-rooms-pro",
+      "capabilityId": "teams-room-system-license",
+      "licenses": [
+        "teams-rooms-pro"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Teams Rooms Pro is the per-device licence for the full meeting-room experience and at-scale management; it also carries Teams Phone Standard, Audio Conferencing, Intune, Entra ID P1 and Defender for Endpoint P2 for the device. Required above 25 rooms and for Teams panels.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/rooms/rooms-licensing"
+      ]
+    },
+    {
+      "id": "p-rooms-basic",
+      "capabilityId": "teams-room-system-license",
+      "licenses": [
+        "teams-rooms-basic"
+      ],
+      "rationale": "Teams Rooms Basic is a no-cost per-device licence for up to 25 certified Teams Rooms systems, covering join/share/whiteboard/Audio Conferencing and basic monitoring. Payment details are required at sign-up but no charge is made.",
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/rooms/rooms-licensing"
+      ]
+    },
+    {
+      "id": "p-shared-space",
+      "capabilityId": "teams-shared-endpoints",
+      "licenses": [
+        "teams-shared-space"
+      ],
+      "preferred": true,
+      "rationale": "The Microsoft Teams Shared Space add-on (formerly Teams Shared Devices) licenses common-area phones, desk docks for bookable desks and Teams panels. It does not work on Teams Rooms systems, which need a Rooms Basic or Pro licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-have-base",
+      "capabilityId": "copilot-m365",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Copilot is a per-user add-on. With a qualifying base already in place, only the add-on is needed for Copilot in the Office apps and Teams and work-grounded chat.",
+      "conditions": [
+        {
+          "clarifier": "base-license",
+          "in": [
+            "o365-e3",
+            "m365-e3",
+            "m365-e5",
+            "m365-bp",
+            "m365-f3"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-need-base",
+      "capabilityId": "copilot-m365",
+      "licenses": [
+        "m365-e3",
+        "copilot-m365"
+      ],
+      "rationale": "Microsoft 365 Copilot requires a qualifying base licence. With no base in place, a suite such as Microsoft 365 E3 must be licensed alongside the Copilot add-on.",
+      "conditions": [
+        {
+          "clarifier": "base-license",
+          "in": [
+            "none"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-prereq-list",
+      "capabilityId": "copilot-base-prereq",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Qualifying bases for the Microsoft 365 Copilot add-on include Microsoft 365 E3/E5/F1/F3/E7, Office 365 E1/E3/E5/F3, Microsoft 365 Business Basic/Standard/Premium, Microsoft 365 Apps for business/enterprise, and qualifying standalone Teams, Exchange, SharePoint, OneDrive, Planner/Project, Visio or Clipchamp plans. Business plans get the 'Microsoft Copilot Business' variant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-chat-free",
+      "capabilityId": "copilot-chat-free",
+      "licenses": [
+        "copilot-chat"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Copilot Chat is included at no extra cost for any Microsoft Entra user with an eligible Microsoft 365 / Office 365 subscription: web-grounded chat, Pages, file upload, image generation and free Agent Store agents grounded on instructions and public web.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-chat-paygo",
+      "capabilityId": "copilot-chat-work-agents",
+      "licenses": [
+        "copilot-chat",
+        "copilot-paygo"
+      ],
+      "preferred": true,
+      "rationale": "Agents in Copilot Chat that access shared tenant data (SharePoint, Graph connectors) are off by default and billed on metered consumption. An admin sets up pay-as-you-go billing to an Azure subscription via a Copilot Studio subscription; usage is charged on the Copilot Studio message meter.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/agents",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters"
+      ]
+    },
+    {
+      "id": "p-copilot-agents-licensed",
+      "capabilityId": "copilot-agents-included-licensed",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Employee-facing (B2E) use of Copilot Studio agents and the Copilot Studio features they invoke is included in the Microsoft 365 Copilot user subscription when the agent runs under the licensed user's identity - classic/generative answers, agent actions, tenant graph grounding and 'when an agent calls the flow' runs are at no charge, subject to fair-use limits.",
+      "conditions": [],
+      "note": "Computer-Using Agent usage is not included in the Copilot USL.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management"
+      ]
+    },
+    {
+      "id": "p-researcher-analyst",
+      "capabilityId": "copilot-researcher-analyst",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "The Researcher and Analyst reasoning agents in the Microsoft 365 Copilot app are Microsoft 365 Copilot (Premium) features and require a Microsoft 365 Copilot licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-office-agents",
+      "capabilityId": "copilot-office-app-agents",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Word, Excel and PowerPoint agents and 'Edit with Copilot' in the Office apps are Microsoft 365 Copilot (Premium) features requiring a Microsoft 365 Copilot licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-spo-agents-licensed",
+      "capabilityId": "sharepoint-site-agents",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "SharePoint agents are usable at no additional usage cost for users who have a Microsoft 365 Copilot licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-spo-agents-paygo",
+      "capabilityId": "sharepoint-site-agents",
+      "licenses": [
+        "copilot-paygo"
+      ],
+      "rationale": "For users without a Copilot licence, SharePoint agents can be enabled on pay-as-you-go billing (Copilot Studio message meter) to an Azure subscription - no full Copilot licence required.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters"
+      ]
+    },
+    {
+      "id": "p-agent-studio-standalone",
+      "capabilityId": "build-custom-agent",
+      "licenses": [
+        "copilot-studio"
+      ],
+      "preferred": true,
+      "rationale": "A standalone Microsoft Copilot Studio subscription is needed to build agents on any channel with premium connectors and generative orchestration. It is licensed with prepaid Copilot Credits or pay-as-you-go metering via Azure.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-agent-studio-teams",
+      "capabilityId": "build-custom-agent",
+      "licenses": [
+        "m365-e3"
+      ],
+      "rationale": "The 'Copilot Studio for Teams' plan included in select Microsoft 365 subscriptions lets you build classic-orchestration agents and publish them to Teams only, using Dataverse for Teams or Power Automate flows. It excludes premium connectors, generative orchestration and other channels.",
+      "conditions": [],
+      "note": "Excludes GCC/GCC-High/DoD, EDU A1 and SUB SKUs.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions"
+      ]
+    },
+    {
+      "id": "p-copilot-credits",
+      "capabilityId": "copilot-studio-consumption",
+      "licenses": [
+        "copilot-studio"
+      ],
+      "preferred": true,
+      "rationale": "Copilot Studio agent activity is metered in Copilot Credits: classic answer 1, generative answer 2, agent action 5, tenant graph grounding 10, agent flow actions 13 per 100, plus AI-tool and voice rates. Capacity is a tenant-pooled prepaid pack, or pay-as-you-go via an Azure subscription. Overage enforcement disables custom agents at 125% of prepaid capacity.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management"
+      ]
+    },
+    {
+      "id": "p-agent365",
+      "capabilityId": "govern-ai-agents-tenant",
+      "licenses": [
+        "agent-365"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Agent 365 is the per-user control plane for agents (registry, map, Entra Agent ID identities, Purview and Defender protection). GA for Commercial since 1 May 2026; at least one qualifying Agent 365 licence must be in the tenant. Microsoft 365 E5 is the recommended prerequisite; minimum is Entra ID P1 or Microsoft 365 E3.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+      ]
+    },
+    {
+      "id": "p-agent365-e7",
+      "capabilityId": "govern-ai-agents-tenant",
+      "licenses": [
+        "m365-e7"
+      ],
+      "rationale": "Microsoft 365 E7 includes Microsoft Agent 365 (and the Entra Suite), so E7 tenants have the agent control plane without a separate add-on.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-agent-ca",
+      "capabilityId": "agent-conditional-access",
+      "licenses": [
+        "agent-365",
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Applying Conditional Access to agents through Microsoft Entra Agent ID requires a Microsoft Agent 365 licence paired with at least Microsoft Entra ID P1 (or Microsoft 365 E3). ID Protection for agents will also require Agent 365. Microsoft 365 E7 covers this through the Entra Suite plus Agent 365.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-agent-id-free",
+      "capabilityId": "agent-identity-basic",
+      "licenses": [
+        "entra-id-free"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Agent ID - the platform for creating and managing agent identities and blueprints - is available to all Microsoft Entra customers. Extending Entra security features (Conditional Access, ID Protection, governance) to those agents requires Microsoft Agent 365.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-dashboard-copilot",
+      "capabilityId": "measure-copilot-adoption",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "The Microsoft Copilot Dashboard and Advanced Copilot Reporting in Viva Insights come with a Microsoft 365 Copilot licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-copilot-dashboard-insights",
+      "capabilityId": "measure-copilot-adoption",
+      "licenses": [
+        "viva-insights"
+      ],
+      "rationale": "Alternatively, the Copilot Dashboard / Advanced Copilot Reporting is available with 10 Viva Insights licences in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-ca-p1",
+      "capabilityId": "conditional-access",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Conditional Access is a Microsoft Entra ID P1 feature. P1 standalone is the minimum; it is also in EMS E3/E5, Microsoft 365 E3/E5/F1/F3 and Business Premium. Risk-based CA additionally needs Entra ID P2 (ID Protection).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-ca-bp",
+      "capabilityId": "conditional-access",
+      "licenses": [
+        "m365-bp"
+      ],
+      "rationale": "Microsoft 365 Business Premium customers also have access to Conditional Access, via the Entra ID P1 it includes.",
+      "conditions": [
+        {
+          "clarifier": "org-size",
+          "in": [
+            "smb"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-ipp-p2",
+      "capabilityId": "identity-protection-pim",
+      "licenses": [
+        "entra-p2"
+      ],
+      "preferred": true,
+      "rationale": "Identity Protection risk policies and Privileged Identity Management are Microsoft Entra ID P2 features. P2 is included in EMS E5 and Microsoft 365 E5. Licence P2 for every user managed by PIM and every reviewer/approver.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-ipp-e5sec",
+      "capabilityId": "identity-protection-pim",
+      "licenses": [
+        "e5-security"
+      ],
+      "rationale": "The Microsoft Defender Suite (formerly Microsoft 365 E5 Security) add-on includes Entra ID P2 and can be the better fit for a Microsoft 365 E3 tenant that also wants the Defender suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-ipp-suite",
+      "capabilityId": "identity-protection-pim",
+      "licenses": [
+        "entra-suite"
+      ],
+      "rationale": "The Microsoft Entra Suite includes Microsoft Entra ID Protection and all Conditional Access features, and Microsoft 365 E7 includes them through the Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-sspr-p1",
+      "capabilityId": "sspr-writeback",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Self-service password reset with writeback to on-premises Active Directory is a Microsoft Entra ID P1 feature (free SSPR is cloud-account only).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-dyn-groups-p1",
+      "capabilityId": "dynamic-groups-licensing",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Dynamic membership groups and group-based licensing are Microsoft Entra ID P1 features.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-entra-free",
+      "capabilityId": "entra-free-baseline",
+      "licenses": [
+        "entra-id-free"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra ID Free is included with any Microsoft cloud subscription and provides the directory, user/group management, SSO to SaaS apps, security defaults with Authenticator MFA, self-service password change and basic reports.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-custom-roles-p1",
+      "capabilityId": "custom-roles-admin-units",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Custom directory roles require a Microsoft Entra ID P1 licence for each user with a custom-role assignment; administrative-unit admins need P1, and AU members need P1 if dynamic membership rules are used.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-connect-health-p1",
+      "capabilityId": "entra-connect-health",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Connect Health monitoring requires Microsoft Entra ID P1 licences. Entra Connect sync itself is free.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-xtenant-sync-p1",
+      "capabilityId": "cross-tenant-user-sync",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Cross-tenant synchronization requires a Microsoft Entra ID P1 licence for each user synced from the source tenant, plus at least one P1 in the target tenant for auto-redemption. All multitenant-organisation features are also included in the Entra Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-lcw-governance",
+      "capabilityId": "identity-governance-lifecycle",
+      "licenses": [
+        "entra-id-governance"
+      ],
+      "preferred": true,
+      "rationale": "Lifecycle Workflows require Microsoft Entra ID Governance. Licence one for each member user in scope of, or configuring, a workflow. Needs an Entra ID P1/P2 prerequisite in the tenant.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-lcw-suite",
+      "capabilityId": "identity-governance-lifecycle",
+      "licenses": [
+        "entra-suite"
+      ],
+      "rationale": "The Microsoft Entra Suite (and Microsoft 365 E7) includes the full Entra ID Governance capability set, including Lifecycle Workflows.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-em-p2",
+      "capabilityId": "entitlement-management-access-packages",
+      "licenses": [
+        "entra-p2"
+      ],
+      "preferred": true,
+      "rationale": "The entitlement-management capabilities previously GA in Entra ID P2 (access packages, self-service requests, direct assignment, separation of duties) work with Entra ID P2. Licence P2 for every user who can request the packages.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-em-governance",
+      "capabilityId": "entitlement-management-access-packages",
+      "licenses": [
+        "entra-id-governance"
+      ],
+      "rationale": "Manager/sponsor requests, auto-assignment policies, custom Logic Apps extensions, Verified ID / Insider Risk integration and Entra-role access packages require Microsoft Entra ID Governance (or the Entra Suite).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-ar-p2",
+      "capabilityId": "access-reviews-recertification",
+      "licenses": [
+        "entra-p2"
+      ],
+      "preferred": true,
+      "rationale": "The access-review capabilities previously GA in Entra ID P2 work with P2. Licence P2 for each reviewer and each reviewed user (self-reviews need one per user).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-ar-governance",
+      "capabilityId": "access-reviews-recertification",
+      "licenses": [
+        "entra-id-governance"
+      ],
+      "rationale": "ML-assisted access certifications, PIM-for-Groups reviews, inactive-user-only reviews and catalog access reviews require Microsoft Entra ID Governance (or the Entra Suite).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-entra-suite",
+      "capabilityId": "entra-suite-zero-trust-access",
+      "licenses": [
+        "entra-suite"
+      ],
+      "preferred": true,
+      "rationale": "The Microsoft Entra Suite is an add-on to Entra ID P1/P2 combining Entra Internet Access, Private Access, ID Governance, ID Protection and Verified ID premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-entra-suite-e7",
+      "capabilityId": "entra-suite-zero-trust-access",
+      "licenses": [
+        "m365-e7"
+      ],
+      "rationale": "Microsoft 365 E7 includes the Microsoft Entra Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-internet-access",
+      "capabilityId": "secure-internet-access-swg",
+      "licenses": [
+        "entra-p1",
+        "entra-internet-access"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Internet Access (the SWG for internet and SaaS) is sold standalone but requires a Microsoft Entra ID P1 or P2 licence per user underneath.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+      ]
+    },
+    {
+      "id": "p-internet-access-suite",
+      "capabilityId": "secure-internet-access-swg",
+      "licenses": [
+        "entra-suite"
+      ],
+      "rationale": "Microsoft Entra Internet Access is included in the Microsoft Entra Suite and in Microsoft 365 E7.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+      ]
+    },
+    {
+      "id": "p-private-access",
+      "capabilityId": "replace-vpn-private-access",
+      "licenses": [
+        "entra-p1",
+        "entra-private-access"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Private Access (ZTNA / VPN replacement) is sold standalone but requires a Microsoft Entra ID P1 or P2 licence per user. Configuring Quick Access / connectors also needs P1/P2.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding"
+      ]
+    },
+    {
+      "id": "p-private-access-suite",
+      "capabilityId": "replace-vpn-private-access",
+      "licenses": [
+        "entra-suite"
+      ],
+      "rationale": "Microsoft Entra Private Access is included in the Microsoft Entra Suite and in Microsoft 365 E7.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+      ]
+    },
+    {
+      "id": "p-gsa-m365-p1",
+      "capabilityId": "secure-m365-traffic-gsa",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "The Microsoft-services / Microsoft 365 traffic-forwarding profile of Global Secure Access (Internet Access for Microsoft services) is included with a Microsoft Entra ID P1 or P2 licence - it does not require the Entra Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
+      ]
+    },
+    {
+      "id": "p-b2b-mau",
+      "capabilityId": "invite-external-partners-b2b",
+      "licenses": [
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "rationale": "B2B collaboration guests in a workforce tenant are billed on the Microsoft Entra External ID monthly-active-user model (first 50,000 MAU of the core offering free), requiring an Azure subscription linked for billing. At least one Entra ID P1 in the tenant enables auto-redemption; governing those guests adds the ID Governance MAU add-on.",
+      "conditions": [
+        {
+          "clarifier": "external-users",
+          "in": [
+            "partners"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
+      ]
+    },
+    {
+      "id": "p-external-id-ciam",
+      "capabilityId": "customer-signin-ciam",
+      "licenses": [
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra External ID in an external tenant provides customer/consumer sign-in, billed on monthly active users (first 50,000 free) via a linked Azure subscription. Premium add-ons (M2M authentication, Go-Local data residency, SMS) are billed separately with no free tier.",
+      "conditions": [
+        {
+          "clarifier": "external-users",
+          "in": [
+            "customers"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
+      ]
+    },
+    {
+      "id": "p-verified-id-core",
+      "capabilityId": "verified-id-credentials",
+      "licenses": [
+        "entra-id-free"
+      ],
+      "preferred": true,
+      "rationale": "Core Microsoft Entra Verified ID issuance and verification is included with any Entra ID subscription, including Entra ID Free, at no extra cost.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-verified-id-facecheck",
+      "capabilityId": "verified-id-credentials",
+      "licenses": [
+        "entra-suite"
+      ],
+      "rationale": "Face Check is a premium Verified ID capability - available as a paid add-on, and included as a full capability in the Microsoft Entra Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-mdm-intune",
+      "capabilityId": "manage-mobile-devices",
+      "licenses": [
+        "intune-p1"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Intune Plan 1 provides cloud MDM and MAM for Windows, iOS/iPadOS, Android and macOS. It is included in EMS E3/E5 and Microsoft 365 E3/E5/F1/F3/E7 and Business Premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-intune-device-only",
+      "capabilityId": "manage-shared-kiosk-devices",
+      "licenses": [
+        "intune-device-only"
+      ],
+      "preferred": true,
+      "rationale": "A Microsoft Intune device-only subscription licenses devices with no user affinity (Autopilot self-deploying, Apple ADE without user affinity, Android Enterprise dedicated, enrollment-manager accounts). App protection policies, Conditional Access and user-based features are not supported on those devices.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses"
+      ]
+    },
+    {
+      "id": "p-viva-suite",
+      "capabilityId": "viva-full-suite",
+      "licenses": [
+        "viva-suite"
+      ],
+      "preferred": true,
+      "rationale": "The Microsoft Viva Suite is the single per-user add-on that grants every paid Viva module (Insights, Learning, Glint, Pulse, Amplify, Engage premium, Answers). Requires a Microsoft 365 / Office 365 plan that enables the user for Viva.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-insights",
+      "capabilityId": "viva-insights-analytics",
+      "licenses": [
+        "viva-insights"
+      ],
+      "preferred": true,
+      "rationale": "Manager/leader insights, advanced analysis tools, the custom query engine and premium personal insights need a Viva Insights subscription; it requires Exchange Online Plan 1 or 2. Basic personal insights are already free with most Microsoft 365 plans.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-insights-suite",
+      "capabilityId": "viva-insights-analytics",
+      "licenses": [
+        "viva-waef"
+      ],
+      "rationale": "Viva Workplace Analytics and Employee Feedback (or the full Viva Suite) also includes the Viva Insights advanced analytics.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+      ]
+    },
+    {
+      "id": "p-viva-learning",
+      "capabilityId": "viva-learning-lms",
+      "licenses": [
+        "viva-learning"
+      ],
+      "preferred": true,
+      "rationale": "LMS and partner-content integration, content recommendation, completion tracking, calendar learning and learning in Microsoft Search require the Viva Learning add-on (or the Viva Suite). The Teams app, org content, 125 LinkedIn Learning courses and Microsoft Learn are free in every Microsoft 365 plan.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-learning-suite",
+      "capabilityId": "viva-learning-lms",
+      "licenses": [
+        "viva-suite"
+      ],
+      "rationale": "The Viva Suite includes Viva Learning premium.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-engage-core",
+      "capabilityId": "viva-engage-communities",
+      "licenses": [
+        "o365-e1"
+      ],
+      "preferred": true,
+      "rationale": "Viva Engage core functionality (communities, storyline, announcements, questions, virtual events) is included at no extra cost for all Microsoft 365 / Office 365 enterprise and frontline plan users. It is the evolution of Yammer.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-engage-premium",
+      "capabilityId": "viva-engage-premium",
+      "licenses": [
+        "viva-comms"
+      ],
+      "preferred": true,
+      "rationale": "Leadership corner, campaigns, advanced Engage analytics and Answers in Viva require the Viva Employee Communities and Communications licence (or the Viva Suite).",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-engage-premium-suite",
+      "capabilityId": "viva-engage-premium",
+      "licenses": [
+        "viva-suite"
+      ],
+      "rationale": "The Viva Suite includes Viva Engage premium and Answers in Viva.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-viva-glint",
+      "capabilityId": "viva-glint-engagement-surveys",
+      "licenses": [
+        "viva-glint"
+      ],
+      "preferred": true,
+      "rationale": "Org-wide engagement surveys with people-science templates, benchmarks, comment analytics and predictive analytics require Viva Glint. A Glint licence also grants Viva Pulse.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+      ]
+    },
+    {
+      "id": "p-viva-glint-suite",
+      "capabilityId": "viva-glint-engagement-surveys",
+      "licenses": [
+        "viva-waef"
+      ],
+      "rationale": "Viva Workplace Analytics and Employee Feedback (or the full Viva Suite) also includes Viva Glint.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+      ]
+    },
+    {
+      "id": "p-viva-pulse",
+      "capabilityId": "viva-pulse-team-feedback",
+      "licenses": [
+        "viva-pulse"
+      ],
+      "preferred": true,
+      "rationale": "Sending team feedback requests with the full premium experience needs a Viva Pulse licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+      ]
+    },
+    {
+      "id": "p-viva-pulse-bundles",
+      "capabilityId": "viva-pulse-team-feedback",
+      "licenses": [
+        "viva-glint"
+      ],
+      "rationale": "Viva Pulse is also included with Viva Glint, Viva Workplace Analytics and Employee Feedback, and the Viva Suite.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/pulse/get-started/licensing-requirements"
+      ]
+    },
+    {
+      "id": "p-viva-amplify",
+      "capabilityId": "viva-amplify-campaigns",
+      "licenses": [
+        "viva-comms"
+      ],
+      "preferred": true,
+      "rationale": "Viva Amplify (campaign planning, multi-channel publishing to Outlook/Teams/SharePoint, reporting) is enabled for licensed users of Microsoft Viva, Viva Employee Communities and Communications, or the Viva Suite. Requires OneDrive and an Exchange mailbox.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/viva/amplify/set-up-viva-amplify"
+      ]
+    },
+    {
+      "id": "p-viva-connections",
+      "capabilityId": "viva-connections-gateway",
+      "licenses": [
+        "o365-e1"
+      ],
+      "preferred": true,
+      "rationale": "Viva Connections (desktop, dashboard, mobile) with company branding and adaptive cards is available to all Microsoft 365 / Office 365 enterprise plan users at no additional cost.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-viva-service-description"
+      ]
+    },
+    {
+      "id": "p-powerplatform-copilot",
+      "capabilityId": "power-platform-in-copilot",
+      "licenses": [
+        "copilot-m365",
+        "powerautomate-premium"
+      ],
+      "preferred": true,
+      "rationale": "Power Platform licences are not included with Microsoft 365 Copilot. Using Power Platform connectors or agent flows beyond the allowance included for Copilot-licensed users needs separate Power Platform / Power Automate licensing.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-copilot-teamsphone-voip",
+      "capabilityId": "copilot-teams-phone-calls",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Copilot support across VoIP calls in Teams Phone needs a Microsoft Copilot licence, with transcription or recording turned on.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements"
+      ]
+    },
+    {
+      "id": "p-copilot-teamsphone-pstn",
+      "capabilityId": "copilot-teams-phone-calls",
+      "licenses": [
+        "copilot-m365",
+        "teams-phone",
+        "teams-phone-calling-plan"
+      ],
+      "rationale": "Copilot on PSTN calls additionally requires a Teams Phone licence and a calling plan, plus transcription or recording enabled.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements"
+      ]
+    },
+    {
+      "id": "p-m365-apps-only",
+      "capabilityId": "office-apps-no-services",
+      "licenses": [
+        "m365-apps"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft 365 Apps for enterprise licenses the installed Office applications and OneDrive with no Exchange, SharePoint or Teams services.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options"
+      ]
+    },
+    {
+      "id": "p-labels-meetings",
+      "capabilityId": "e5-compliance-meetings",
+      "licenses": [
+        "teams-ent",
+        "teams-premium",
+        "m365-e5"
+      ],
+      "preferred": true,
+      "rationale": "Assigning Microsoft Purview Information Protection sensitivity labels to Teams meetings requires a Teams Premium licence plus a Microsoft 365 E5, E5 Compliance, F5 Compliance or F5 Security + Compliance subscription.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/teams-premium-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-gcc",
+      "capabilityId": "copilot-gcc",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Copilot is available for GCC, GCC-High and DoD as an add-on to Microsoft 365 G3/G5, Microsoft 365 F1, Office 365 G1/G3/G5, Office 365 F3, and qualifying Exchange/SharePoint/OneDrive/Project/Visio plans. Some Copilot features are not yet available in government clouds.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-edu",
+      "capabilityId": "copilot-education",
+      "licenses": [
+        "copilot-m365"
+      ],
+      "preferred": true,
+      "rationale": "The academic Microsoft Copilot offering is an add-on to Microsoft 365 A1/A3/A5 or Office 365 A1/A3/A5 for faculty, staff and students aged 13+, obtained through Enrollment for Education Solutions (EES) or a CSP.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+      ]
+    },
+    {
+      "id": "p-copilot-edp",
+      "capabilityId": "copilot-enterprise-data-protection",
+      "licenses": [
+        "copilot-chat"
+      ],
+      "preferred": true,
+      "rationale": "Enterprise Data Protection is listed as included ('Yes') for both Microsoft 365 Copilot Chat and Microsoft 365 Copilot in the Copilot service description - prompts and responses are covered by the Microsoft 365 commercial data-protection terms with no separate licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot"
+      ]
+    },
+    {
+      "id": "p-comm-credits",
+      "capabilityId": "teams-communication-credits",
+      "licenses": [
+        "teams-comm-credits"
+      ],
+      "preferred": true,
+      "rationale": "Communication Credits is a prepaid add-on providing a pool of minutes for PSTN calls and enabling toll-free numbers for Audio Conferencing, auto attendants and call queues. It can be disabled to avoid additional billing.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing"
+      ]
+    },
+    {
+      "id": "p-hve-paygo",
+      "capabilityId": "high-volume-transactional-email",
+      "licenses": [
+        "exo-hve"
+      ],
+      "preferred": true,
+      "rationale": "High Volume Email is a pay-as-you-go Exchange Online service billed on the number of expanded recipients, using dedicated service accounts to keep system email separate from user mailboxes.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services"
+      ]
+    },
+    {
+      "id": "p-workload-id",
+      "capabilityId": "entra-workload-identities",
+      "licenses": [
+        "entra-workload-id"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Workload ID is licensed per workload identity per month and adds Conditional Access, risk detection and access reviews for application identities and service principals.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-entra-ds",
+      "capabilityId": "entra-domain-services",
+      "licenses": [
+        "entra-domain-services"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Domain Services charges accrue per hour based on the SKU the tenant owner selects; there is no per-user licence.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-entra-connect-free",
+      "capabilityId": "sync-onprem-ad-to-entra",
+      "licenses": [
+        "entra-id-free"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra Connect is free and included in your Azure subscription; it works with any Entra ID edition including Free.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-app-proxy-p1",
+      "capabilityId": "publish-onprem-web-apps",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Microsoft Entra application proxy requires Microsoft Entra ID P1 or P2 licenses.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-entra-monitoring-p1",
+      "capabilityId": "entra-monitoring-health",
+      "licenses": [
+        "entra-p1"
+      ],
+      "preferred": true,
+      "rationale": "Provisioning logs, Microsoft Entra Health, Microsoft Graph activity logs and usage/insights all require a Microsoft Entra ID P1 or P2 (or Entra Suite) licence; audit logs and sign-in logs are available on Free.",
+      "conditions": [],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "id": "p-guest-governance",
+      "capabilityId": "govern-external-guest-access",
+      "licenses": [
+        "entra-id-governance",
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "rationale": "Governing B2B guests with Entra ID Governance uses a monthly-active-user (MAU) billing model that requires an Azure subscription - the ID Governance premium add-on for External ID in a workforce tenant - in addition to the Entra ID Governance capability for member users.",
+      "conditions": [
+        {
+          "clarifier": "external-users",
+          "in": [
+            "partners"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing",
+        "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
+      ]
+    },
+    {
+      "id": "p-gsa-guests",
+      "capabilityId": "gsa-for-guest-users",
+      "licenses": [
+        "entra-suite",
+        "entra-external-id"
+      ],
+      "preferred": true,
+      "rationale": "The 'GSA for Guests' premium add-on for Microsoft Entra External ID extends Global Secure Access coverage to guest users in a workforce tenant, billed on monthly active users, on top of the Global Secure Access licensing for member users.",
+      "conditions": [
+        {
+          "clarifier": "external-users",
+          "in": [
+            "partners"
+          ]
+        }
+      ],
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
+      ]
+    }
+  ]
+}
