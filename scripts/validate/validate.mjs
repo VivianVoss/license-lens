@@ -40,7 +40,7 @@ for (const [n, ids] of Object.entries({ CATEGORIES: CATEGORIES.map(c=>c.id), LIC
 }
 
 const MS_HOST = /^https:\/\/([a-z0-9-]+\.)*(microsoft\.com|azure\.com|microsoftonline\.com|github\.com)\//i;
-const PRICE = /(\$|€|£|USD|EUR|DKK|\bper user\/month\b|\/mo\b)\s?\d|\bfree\b.*\/\s*month/i;
+const PRICE = /(\$|€|£|\bUSD\b|\bEUR\b|\bDKK\b)\s?\d|\d\s?(?:\/|per )\s?(?:user|seat)\s?\/\s?month|\bfree\b[^.]*\bfor\b[^.]*\bmonth/i;
 const okUrl = (u) => typeof u === "string" && MS_HOST.test(u);
 
 // --- META ---
