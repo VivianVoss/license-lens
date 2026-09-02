@@ -50,21 +50,54 @@
       .filter(function (p) { return p && pathViable(p, answers); });
   }
 
-  // Which clarifiers still matter for the current basket?
+  // Which clarifiers actually change the recommendation for the current basket?
   function openClarifiers() {
-    var wanted = [];
+    // every unanswered clarifier referenced by a viable path of a basket capability
+    var candidates = [];
     state.basket.forEach(function (capId) {
       var cap = CAP_BY_ID[capId]; if (!cap) return;
-      var paths = viablePaths(cap, state.answers);
-      // only ask if more than one path is still in play and a clarifier would separate them
-      if (paths.length < 2) return;
-      paths.forEach(function (p) {
+      viablePaths(cap, state.answers).forEach(function (p) {
         p.conditions.forEach(function (c) {
-          if (!state.answers[c.clarifier] && wanted.indexOf(c.clarifier) === -1) wanted.push(c.clarifier);
+          if (!state.answers[c.clarifier] && candidates.indexOf(c.clarifier) === -1) candidates.push(c.clarifier);
         });
       });
     });
-    return wanted.map(function (id) { return CLAR_BY_ID[id]; }).filter(Boolean);
+    var baseline = recommend(state.answers);
+    var baseSig = sig(baseline.chosen) + "|" + baseline.unresolved.length;
+    return candidates.filter(function (clarId) {
+      var cl = CLAR_BY_ID[clarId]; if (!cl) return false;
+      // ask only if answering it different ways yields different licence sets / resolves more
+      var sigs = cl.options.map(function (o) {
+        var probe = {}; for (var k in state.answers) probe[k] = state.answers[k];
+        probe[clarId] = o.id;
+        var r = recommend(probe);
+        return sig(r.chosen) + "|" + r.unresolved.length;
+      });
+      return sigs.some(function (s) { return s !== sigs[0]; }) || sigs.some(function (s) { return s !== baseSig; });
+    }).map(function (id) { return CLAR_BY_ID[id]; });
+  }
+
+  // capabilities close to `cap` that ARE resolvable with the current answers
+  var STOP = { the: 1, a: 1, an: 1, and: 1, or: 1, to: 1, for: 1, of: 1, in: 1, on: 1, with: 1, your: 1, "in-": 1, "": 1 };
+  function capTokens(c) {
+    var t = {};
+    (c.title + " " + c.keywords.join(" ") + " " + c.description).toLowerCase()
+      .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).forEach(function (w) { if (w.length > 2 && !STOP[w]) t[w] = 1; });
+    return t;
+  }
+  function siblingSuggestions(cap) {
+    var a = capTokens(cap);
+    var aN = Object.keys(a).length || 1;
+    return D.CAPABILITIES.map(function (o) {
+      if (o.id === cap.id || o.category !== cap.category || state.basket.indexOf(o.id) !== -1) return null;
+      if (viablePaths(o, state.answers).length === 0) return null;
+      var b = capTokens(o);
+      var shared = Object.keys(b).filter(function (w) { return a[w]; }).length;
+      return { o: o, score: shared / Math.min(aN, Object.keys(b).length || 1) };
+    }).filter(function (r) { return r && r.score >= 0.34; })
+      .sort(function (x, y) { return y.score - x.score; })
+      .slice(0, 3)
+      .map(function (r) { return r.o; });
   }
 
   function rankSum(licIds) {
@@ -84,14 +117,15 @@
   }
 
   // Greedy consolidation: cover every basket capability with the smallest sensible licence set.
-  function recommend() {
+  function recommend(answers) {
+    answers = answers || state.answers;
     var caps = state.basket.map(function (id) { return CAP_BY_ID[id]; }).filter(Boolean);
-    var entries = caps.map(function (cap) { return { cap: cap, paths: viablePaths(cap, state.answers) }; });
+    var entries = caps.map(function (cap) { return { cap: cap, paths: viablePaths(cap, answers) }; });
     var unresolved = entries.filter(function (e) { return e.paths.length === 0; });
     var solvable = entries.filter(function (e) { return e.paths.length > 0; });
 
     // an already-owned base licence seeds the chosen set (and everything it includes)
-    var baseAns = state.answers["base-license"];
+    var baseAns = answers["base-license"];
     var baseId = baseAns && baseAns !== "none" && LIC_BY_ID[baseAns] ? baseAns : null;
 
     var chosen = [];
@@ -143,7 +177,7 @@
     solvable.forEach(function (e) {
       var opts = e.paths.filter(function (p) { return p.licenses.every(has); });
       opts.sort(function (a, b) {
-        return (pathLocked(b, state.answers) - pathLocked(a, state.answers))
+        return (pathLocked(b, answers) - pathLocked(a, answers))
           || ((b.preferred ? 1 : 0) - (a.preferred ? 1 : 0))
           || (a.licenses.length - b.licenses.length)
           || (rankSum(a.licenses) - rankSum(b.licenses));
@@ -290,15 +324,37 @@
   function renderCategory(catId) {
     var cat = CAT_BY_ID[catId];
     if (!cat) return renderHome();
-    var caps = D.CAPABILITIES.filter(function (x) { return x.category === catId; });
+    var all = D.CAPABILITIES.filter(function (x) { return x.category === catId; });
     app.innerHTML =
       topBar() +
       (state.basket.length ? basketBar() + chipRow() : "") +
-      '<button class="btn-ghost" style="margin:14px 0" onclick="LLnav(\'home\')">&larr; Back</button>' +
+      '<button class="btn-ghost" style="margin:14px 0" onclick="LLnav(\'home\')">&larr; All areas</button>' +
       '<div class="sectionLabel" style="--cat-color:var(' + cat.colorVar + ')">' + esc(cat.name) + '</div>' +
-      caps.map(function (cap) { return capCard(cap); }).join("") +
+      '<div class="searchWrap" style="margin:0 0 18px"><div class="searchRow">' +
+      '<input id="catq" type="text" autocomplete="off" placeholder="Filter ' + all.length + ' scenarios…" oninput="LLcatFilter(this.value)"></div></div>' +
+      '<div id="catCount" class="hint" style="margin:-8px 0 14px"></div>' +
+      '<div id="catList">' +
+      all.map(function (cap) {
+        var hay = (cap.title + " " + cap.description + " " + cap.keywords.join(" ")).toLowerCase();
+        return '<div class="catItem" data-hay="' + esc(hay) + '">' + capCard(cap) + '</div>';
+      }).join("") +
+      '</div>' +
       disclaimer() + footer();
+    window._catQ = "";
   }
+  window.LLcatFilter = function (v) {
+    var q = v.toLowerCase().trim();
+    var terms = q.split(/\s+/).filter(Boolean);
+    var shown = 0;
+    Array.prototype.forEach.call(document.querySelectorAll("#catList .catItem"), function (el) {
+      var hay = el.getAttribute("data-hay");
+      var match = terms.every(function (t) { return hay.indexOf(t) !== -1; });
+      el.hidden = !match;
+      if (match) shown++;
+    });
+    var cc = document.getElementById("catCount");
+    if (cc) cc.textContent = q ? shown + " of " + document.querySelectorAll("#catList .catItem").length + " shown" : "";
+  };
 
   function capCard(cap, pick) {
     var inBasket = state.basket.indexOf(cap.id) !== -1;
@@ -361,11 +417,23 @@
             ' <a href="' + esc(p.sources[0]) + '" target="_blank" rel="noopener">source &nearr;</a></div>';
         }).join("") + '</div>';
     }).join("");
-    var altHtml = altItems ? '<details class="altBox" open><summary>Alternative routes considered</summary>' + altItems + '</details>' : "";
+    var altCount = rec.solvable.reduce(function (n, e) { return n + ((e.alts && e.alts.length) || 0); }, 0);
+    var altHtml = altItems ? '<details class="altBox"><summary>Alternative routes considered (' + altCount + ')</summary>' + altItems + '</details>' : "";
 
     var unresolvedHtml = rec.unresolved.length ? '<div class="card unresolved"><h3>Needs a human check</h3>' +
-      '<div class="sub">License Lens has no verified path for these with the answers given. They usually depend on details outside a licence lookup — confirm with Microsoft or a licensing specialist.</div>' +
-      '<ul class="covers">' + rec.unresolved.map(function (e) { return '<li><div class="cvTitle">' + esc(e.cap.title) + '</div></li>'; }).join("") + '</ul></div>' : "";
+      '<div class="sub">License Lens has no verified path for these with the answers given. Often it means a sibling scenario fits your answers better, or the detail sits outside a licence lookup.</div>' +
+      rec.unresolved.map(function (e) {
+        var sibs = siblingSuggestions(e.cap);
+        return '<div style="padding:12px 0;border-top:1px solid var(--border)">' +
+          '<div class="cvTitle">' + esc(e.cap.title) + '</div>' +
+          (sibs.length
+            ? '<div class="cvWhy" style="margin-top:6px">With your current answers, this may fit better:</div>' +
+              sibs.map(function (s) {
+                return '<button class="optBtn" style="margin:6px 6px 0 0" onclick="LLswap(\'' + e.cap.id + '\',\'' + s.id + '\')">' + esc(s.title) + ' &rarr;</button>';
+              }).join("")
+            : '<div class="cvWhy" style="margin-top:6px">Confirm with Microsoft or a licensing specialist.</div>') +
+          '</div>';
+      }).join("") + '</div>' : "";
 
     var addedCount = rec.chosen.length;
     var scen = rec.solvable.length + ' of your ' + state.basket.length + ' scenario' + (state.basket.length === 1 ? "" : "s");
@@ -441,6 +509,11 @@
     if (state.basket.indexOf(id) === -1) state.basket.push(id);
     save();
     if (location.hash === "#result") route(); else location.hash = "result";
+  };
+  window.LLswap = function (oldId, newId) {
+    state.basket = state.basket.filter(function (x) { return x !== oldId; });
+    if (state.basket.indexOf(newId) === -1) state.basket.push(newId);
+    save(); renderResult();
   };
   window.LLanswer = function (cid, oid) {
     if (oid) state.answers[cid] = oid; else delete state.answers[cid];
